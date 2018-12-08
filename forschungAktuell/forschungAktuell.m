@@ -44,11 +44,11 @@ for n = numel(mp3Links):-1:1
   n
   if numel(cell2mat(strfind(doneMp3, mp3Links(n)))) == 0
     [audio, ~, ~]=urlread(mp3Links{n});
-    fid = fopen("audio.mp3", "w")
+    fid = fopen("audio.mp3", "w");
     fwrite(fid, audio);
     fclose(fid);
     
-    system("audio.mp3")
+    system("audio.mp3");
     
     input("press enter for next");
     
