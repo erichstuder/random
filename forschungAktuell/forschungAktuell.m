@@ -48,7 +48,7 @@ for n = numel(links):-1:1
         if tolower(answer) == 'y'
           doneMp3 = [doneMp3 mp3Link];
           save("doneMp3", "doneMp3");
-          disp('Markd as heard.');
+          disp('Marked as heard.');
         end
         
         input("Press enter to play next");
