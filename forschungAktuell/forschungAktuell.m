@@ -1,8 +1,3 @@
-%[a, b, c]=urlread("http://podcast-mp3.dradio.de/podcast/2009/06/29/dlf_20090629_1635_2bf03d50.mp3");
-%fid = fopen("a.mp3", "w")
-%fwrite(fid, a);
-%fclose(fid);
-
 disp('Get links to broadcastings.');
 url = "https://www.podcast.de/podcast/11600/archiv/?podcast/11600/archiv/=&seite=";
 cnt = 1;
@@ -28,10 +23,9 @@ else
   doneMp3 = {};
 end
 
-disp('');
-disp('Get link to mp3 of broadcasting and play.');
 for n = numel(links):-1:1
-  disp(['Parsing link ' num2str(n) ' of ' num2str(numel(links)) ' links.']);
+  disp('');
+  disp(['Parsing broadcast link ' num2str(n) ' of ' num2str(numel(links)) ' links.']);
   siteText = urlread(links{n});
   siteLines = strsplit(siteText, "\n");
   for n = 1:numel(siteLines)
@@ -49,15 +43,23 @@ for n = numel(links):-1:1
         
         system("audio.mp3");
         
-        input("Press enter for next.");
+        answer = input("Mark as heard? [y/n]: ", 's');
         
-        doneMp3 = [doneMp3 mp3Link];
-        save("doneMp3", "doneMp3");
+        if tolower(answer) == 'y'
+          doneMp3 = [doneMp3 mp3Link];
+          save("doneMp3", "doneMp3");
+          disp('Markd as heard.');
+        end
+        
+        input("Press enter to play next");
       else
-        disp('Broadcast already heard.')
+        disp('Broadcast already heard.');
       end
     end
   end    
 end
 
-
+disp('');
+disp('*****');
+disp('YOU HAVE HEARD ALL THE BROADCASTS!!!'); %this will never happen :-D
+disp('*****');
