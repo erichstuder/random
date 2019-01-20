@@ -1,8 +1,8 @@
-# Created by Octave 4.4.1, Sun Jan 06 16:07:07 2019 GMT <unknown@erich-THINK>
+# Created by Octave 4.4.1, Sun Jan 20 12:19:27 2019 GMT <unknown@erich-THINK>
 # name: doneMp3
 # type: cell
 # rows: 1
-# columns: 59
+# columns: 67
 # name: <cell-element>
 # type: sq_string
 # elements: 1
@@ -472,6 +472,70 @@ http://podcast-mp3.dradio.de/podcast/2018/10/09/forschung_aktuell_09102018_kompl
 # elements: 1
 # length: 123
 http://podcast-mp3.dradio.de/podcast/2018/10/08/forschung_aktuell_08102018_komplette_sendung_dlf_20181008_1635_085cb306.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/11/forschung_aktuell_11012019_komplette_sendung_dlf_20190111_1635_61b2aeb8.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/10/forschung_aktuell_10012019_komplette_sendung_dlf_20190110_1635_378b03ed.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/09/forschung_aktuell_09012018_komplette_sendung_dlf_20190109_1635_1860bfce.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/08/forschung_aktuell_08012019_komplette_sendung_dlf_20190108_1635_673dce29.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/07/forschung_aktuell_07012019_komplette_sendung_dlf_20190107_1635_3a187329.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2018/10/05/forschung_aktuell_05102018_komplette_sendung_dlf_20181005_1635_47d25ee1.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2018/10/04/forschung_aktuell_04102018_komplette_sendung_dlf_20181004_1635_c4a49242.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/01/18/forschung_aktuell_18012019_komplette_sendung_dlf_20190118_1635_ffc38711.mp3
 
 
 
