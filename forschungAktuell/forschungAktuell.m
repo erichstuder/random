@@ -3,9 +3,9 @@ url = "https://www.podcast.de/podcast/11600/archiv/?podcast/11600/archiv/=&seite
 
 % find nrOfPages
 lastPageFindPattern = '" title="Zur letzten Seite">Seite ';
-lastPageFindPatternLength = numel(currentPageFindPattern);
+lastPageFindPatternLength = numel(lastPageFindPattern);
 siteText = urlread([url "1"]);
-startPos = strfind(siteText, lastPageFindPattern)+lastPageFindPatternLength+2;
+startPos = strfind(siteText, lastPageFindPattern)+lastPageFindPatternLength;
 endPos = startPos + strfind(siteText(startPos:end), '<')-2;
 nrOfPages = str2num(siteText(startPos:endPos(1)));
 
