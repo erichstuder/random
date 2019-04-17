@@ -1,0 +1,1 @@
+der Motor kommt in der grossen Aussparung rein und treibt das Schnecken-Gewinde an. Das Schneckengewinde muss von der anderen Seite her "angebohrt sein" und sich frei auf der Achse drehen können. (siehe Bild)
