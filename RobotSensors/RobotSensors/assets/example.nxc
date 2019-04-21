@@ -1,0 +1,382 @@
+/*
+\brief Example using the RobotSensors Api.
+\author Erich Studer
+\date July 2013
+update 15.7.2013 to V1.1
+update 17.7.2013 to V1.2
+*/
+
+#include "robotSensors.nxc"
+
+
+#define DELAY 4000
+#define ACCU_INDEX 0 //Don't change!!!
+task main(){
+
+	CommBTConnectionType args;
+	args.Action = true;
+	args.Name = "HTC ONE S"; //the name of your smartphone, found in the bluetooth settings.// e.g. "HTC ONE S";
+	args.ConnectionSlot = 1;
+	int cnt=0;
+	SysCommBTConnection (args)
+	
+	cnt=0;
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}
+	Wait(1000);
+
+
+	int status;
+	int wX, wY, wZ, year, aX, aY, aZ, bX, bY, bZ, temperature;
+	
+	unsigned int width, height, brightestX, brightestY, intensity, darkestX;
+	unsigned int darkestY, noiseLevel, brightness, millis, pressure, distance;
+	unsigned int humidity;
+	
+	unsigned byte r, g, b, month, day, dayOfWeek, hour, minute, second;
+	unsigned long timestampMs;
+	 
+	while(true){
+		
+		status = gyroscopeRead(wX, wY, wZ, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"readGyroscope");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("wX = ",NumToStr(wX)));
+			TextOut(0,LCD_LINE4,StrCat("wY = ",NumToStr(wY)));
+			TextOut(0,LCD_LINE5,StrCat("wZ = ",NumToStr(wZ)));
+			TextOut(0,LCD_LINE6,"timestampMs = ");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = cameraStart(BACK);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"cameraStart");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = cameraRead(ACCU_INDEX, width, height);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"cameraRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("width = ",NumToStr(width)));
+			TextOut(0,LCD_LINE4,StrCat("height = ",NumToStr(height)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuShow(ACCU_INDEX);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuShow");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY+3000);
+		
+		
+		status = cameraLightOn();
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"cameraLightOn");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = cameraLightOff();
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"cameraLightOff");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = cameraStop();
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"cameraStop");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuBrightestPoint(ACCU_INDEX, width, height, brightestX, brightestY, intensity);
+		pictureAccuShow(ACCU_INDEX);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuBrightestPoint");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("width      = ",NumToStr(width)));
+			TextOut(0,LCD_LINE4,StrCat("height     = ",NumToStr(height)));
+			TextOut(0,LCD_LINE5,StrCat("brightestX = ",NumToStr(brightestX)));
+			TextOut(0,LCD_LINE6,StrCat("brightestY = ",NumToStr(brightestY)));
+			TextOut(0,LCD_LINE7,StrCat("intensity  = ",NumToStr(intensity)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuDarkestPoint(ACCU_INDEX, width, height, darkestX, darkestY, intensity);
+		pictureAccuShow(ACCU_INDEX);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuDarkestPoint");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("width      = ",NumToStr(width)));
+			TextOut(0,LCD_LINE4,StrCat("height     = ",NumToStr(height)));
+			TextOut(0,LCD_LINE5,StrCat("darkestX   = ",NumToStr(darkestX)));
+			TextOut(0,LCD_LINE6,StrCat("darkestY   = ",NumToStr(darkestY)));
+			TextOut(0,LCD_LINE7,StrCat("intensity  = ",NumToStr(intensity)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuMeanColor(ACCU_INDEX, r, g, b);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuMeanColor");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("r = ",NumToStr(r)));
+			TextOut(0,LCD_LINE4,StrCat("g = ",NumToStr(g)));
+			TextOut(0,LCD_LINE5,StrCat("b = ",NumToStr(b)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuCut(ACCU_INDEX, 0, width/2, 0, height/2);
+		pictureAccuShow(ACCU_INDEX);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuCut");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuCopy (ACCU_INDEX, ACCU_INDEX+1);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuCopy");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = pictureAccuSubtract(ACCU_INDEX, ACCU_INDEX+1);
+		pictureAccuShow(ACCU_INDEX);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pictureAccuSubtract");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = microphoneNoiseLevel(noiseLevel);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"microphoneNoiseLevel");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("noiseLevel=",NumToStr(noiseLevel)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+		
+		
+		status = brightnessRead (brightness, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"brightnessRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,"brightness  =");
+			NumOut (0,LCD_LINE4,brightness);
+			TextOut(0,LCD_LINE5,"timestampMs =");
+			NumOut (0,LCD_LINE6,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = timeRead(year, month, day, dayOfWeek, hour, minute, second, millis);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"timeRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			TextOut(0,LCD_LINE3,StrCat("year   = ",NumToStr(year)));
+			TextOut(0,LCD_LINE4,StrCat("month  = ",NumToStr(month)));
+			TextOut(0,LCD_LINE5,StrCat("day    = ",NumToStr(day)));
+			TextOut(0,LCD_LINE6,StrCat("hour   = ",NumToStr(hour)));
+			TextOut(0,LCD_LINE7,StrCat("minute = ",NumToStr(minute)));	
+			TextOut(0,LCD_LINE8,StrCat("second = ",NumToStr(second)));
+			
+			//TextOut(0,LCD_LINE5,StrCat("day    = ",NumToStr(day),    " ; dayOfWeek = ", NumToStr(dayOfWeek)));	
+			//TextOut(0,LCD_LINE6,StrCat("hour   = ",NumToStr(hour),   " ; minute    = ", NumToStr(minute)));		
+			//TextOut(0,LCD_LINE8,StrCat("millis = ",NumToStr(millis)));	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+
+		
+		//since V 1.1
+		
+		status = accelerometerRead(NORMAL, aX, aY, aZ, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"accelerometerRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			float aXf = aX/100;
+			float aYf = aY/100;
+			float aZf = aZ/100;
+			
+			TextOut(0,LCD_LINE3,StrCat("aX = ",NumToStr(aXf)));
+			TextOut(0,LCD_LINE4,StrCat("aY = ",NumToStr(aYf)));
+			TextOut(0,LCD_LINE5,StrCat("aZ = ",NumToStr(aZf)));
+			
+			TextOut(0,LCD_LINE6,"timestampMs =");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = magneticFieldRead(bX, bY, bZ, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"magneticFieldRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			float bXf = bX/100;
+			float bYf = bY/100;
+			float bZf = bZ/100;
+			
+			TextOut(0,LCD_LINE3,StrCat("bX = ",NumToStr(bXf)));
+			TextOut(0,LCD_LINE4,StrCat("bY = ",NumToStr(bYf)));
+			TextOut(0,LCD_LINE5,StrCat("bZ = ",NumToStr(bZf)));
+			
+			TextOut(0,LCD_LINE6,"timestampMs =");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = pressureRead(pressure, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"pressureRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			
+			TextOut(0,LCD_LINE3,"pressure = ");
+			NumOut (0,LCD_LINE4,pressure);
+			
+			TextOut(0,LCD_LINE6,"timestampMs =");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+
+		//since V1.2
+
+		status = relativeHumidityRead(humidity, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"relativeHumidityRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			
+			TextOut(0,LCD_LINE3,"humidity = ");
+			NumOut (0,LCD_LINE4,humidity);
+			
+			TextOut(0,LCD_LINE6,"timestampMs =");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		status = ambientTemperatureRead(temperature, timestampMs);
+		ClearScreen();
+		TextOut(0,LCD_LINE1,"ambientTemperatureRead");
+		if(status == SUCCESS){
+			TextOut(0,LCD_LINE2,"success");
+			
+			TextOut(0,LCD_LINE3,"temperature = ");
+			NumOut (0,LCD_LINE4,temperature);
+			
+			TextOut(0,LCD_LINE6,"timestampMs =");
+			NumOut (0,LCD_LINE7,timestampMs);	
+		}else{
+			TextOut(0,LCD_LINE2,"error!!!");
+		}
+		
+		Wait(DELAY);
+
+
+		
+	}
+}
+

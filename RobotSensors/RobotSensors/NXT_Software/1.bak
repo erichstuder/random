@@ -1,0 +1,61 @@
+/** \file 1.nxc
+ *  \brief Doxy Test File
+ */
+
+
+/**
+ * \brief	Read the values of the gyroscope.
+ *
+ * \param	wX			Rate of rotation around the x axis [deg/s].  => Referenz zu Achsdefinition			
+ * \param	wY          Rate of rotation around the y axis [deg/s].  => Referenz zu Achsdefinition
+ * \param	wZ			Rate of rotation around the z axis [deg/s].  => Referenz zu Achsdefinition
+ * \param	timestampMs	Timestamp of the gyroscope values in milli seconds.
+ *
+ * \return	Status-Code => Referenz zu Status codes
+ */
+int readGyroscope(int &wX, int &wY, int &wZ, unsigned long &timestampMs){
+	byte buf[];
+	byte message[4];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+    message[MODUL_ID_INDEX] = GYROSCOPE;
+    message[CMD_ID_INDEX] = READ;
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == READ){
+		clearBTInputBuffer();	
+	}
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == READ));
+
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	wX = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+    	wY = buf[STATUS_ID_INDEX+3] + (buf[STATUS_ID_INDEX+4]<<8);
+    	wZ = buf[STATUS_ID_INDEX+5] + (buf[STATUS_ID_INDEX+6]<<8);
+    	timestampMs =  buf[STATUS_ID_INDEX+7] + (buf[STATUS_ID_INDEX+8]<<8) + (buf[STATUS_ID_INDEX+9]<<16) + (buf[STATUS_ID_INDEX+10]<<24);
+		//timestampMs =  buf[STATUS_ID_INDEX+7];
+//		NumOut(0,LCD_LINE5,buf[STATUS_ID_INDEX+ 7]);
+//		NumOut(0,LCD_LINE6,buf[STATUS_ID_INDEX+ 8]);
+//		NumOut(0,LCD_LINE7,buf[STATUS_ID_INDEX+ 9]);
+//		NumOut(0,LCD_LINE8,buf[STATUS_ID_INDEX+10]);
+
+		
+	}else{
+		wX = 0;
+		wY = 0;
+		wZ = 0;
+		timestampMs = 0;
+	}
+	
+	return status;
+}

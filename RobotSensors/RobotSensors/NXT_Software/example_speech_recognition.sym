@@ -1,0 +1,1088 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__D0strcmp_inline_main	6	1	0	4	2
+1	__D0main	6	1	4	4	27
+2	__D0magneticFieldRead	6	1	8	4	6
+3	__D0pictureAccuBrightestPoint	6	1	12	4	4
+4	__D0microphoneNoiseLevel	6	1	16	4	1
+5	__signed_stack_001speechRecognizerStop	6	1	20	4	2
+6	__D0gyroscopeReadFast	6	1	24	4	6
+7	__D0gyroscopeRead	6	1	28	4	6
+8	__D0cameraRead	6	1	32	4	2
+9	__signed_stack_002speechRecognizerRead	6	1	36	4	2
+10	__DU0isRobotSensorsMessage	5	1	40	4	4
+11	__D0isRobotSensorsMessage	6	1	44	4	11
+12	__D0pictureAccuCut	6	1	48	4	4
+13	__unsigned_stack_001speechRecognizerRead	5	1	52	4	4
+14	__D0speechRecognizerRead	6	1	56	4	16
+15	__signed_stack_001speechRecognizerStart	6	1	60	4	2
+16	__D0timeRead	6	1	64	4	2
+17	__D0speechRecognizerStop	6	1	68	4	2
+18	__D0speechRecognizerStart	6	1	72	4	2
+19	__D0proximityRead	6	1	76	4	4
+20	__D0pressureRead	6	1	80	4	4
+21	__D0pictureAccuDarkestPoint	6	1	84	4	4
+22	__DU0rsCmd	5	1	88	4	12
+23	__D0rsCmd	6	1	92	4	34
+24	__D0relativeHumidityRead	6	1	96	4	4
+25	__D0brightnessRead	6	1	100	4	4
+26	__signed_stack_001main	6	1	104	4	20
+27	__IOMRMutex	9	0	108	4	4
+28	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	112	4	6
+29	__CBTCSMutex	9	0	116	4	8
+30	__unsigned_stack_002isRobotSensorsMessage	5	1	120	4	2
+31	__TextOutMutex	9	0	124	4	14
+32	__signed_stack_002rsCmd	6	1	128	4	8
+33	__signed_stack_001rsCmd	6	1	132	4	15
+34	__PointOutMutex	9	0	136	4	6
+35	__signed_stack_002main	6	1	140	4	12
+36	__CBTWMutex	9	0	144	4	2
+37	__unsigned_stack_002rsCmd	5	1	148	4	8
+38	__signed_stack_001isRobotSensorsMessage	6	1	152	4	6
+39	__signed_stack_001speechRecognizerRead	6	1	156	4	12
+40	__D0accelerometerRead	6	1	160	4	6
+41	__unsigned_stack_001isRobotSensorsMessage	5	1	164	4	2
+42	__D0ambientTemperatureRead	6	1	168	4	4
+43	__signed_stack_002isRobotSensorsMessage	6	1	172	4	2
+44	__speechRecognizerRead_7qG2_temp_7qG2_002	4	1	176	2	2
+45	__speechRecognizerRead_7qG2_i_7qG2_001	4	1	178	2	7
+46	__strcmp_7qG2_result_7qG2_000_inline_main	4	1	180	2	4
+47	__constVal200	4	0	182	2	6
+48	__main_7qG2_status_7qG2_000	4	1	184	2	4
+49	__main_7qG2_cnt_7qG2_000	4	1	186	2	5
+50	__constVal1157	4	0	188	2	3
+51	__constVal1285	4	0	190	2	1
+52	__speechRecognizerStop_return	1	1	192	1	4
+53	__speechRecognizerStart_return	1	1	193	1	4
+54	__rsCmd_return	1	1	194	1	5
+55	____initialize_global_data_return	1	1	195	1	3
+56	__speechRecognizerRead_7qG2_status_7qG2_000	1	1	196	1	3
+57	__speechRecognizerRead_return	1	1	197	1	4
+58	__clearBTInputBuffer_return	1	1	198	1	3
+59	ROBOT_SENSORS_ID_2	1	1	199	1	1
+60	ROBOT_SENSORS_ID_1	1	0	200	1	1
+61	__rsCmd_7qG2_cmd_7qG2_000	1	1	201	1	6
+62	__rsCmd_7qG2_modul_7qG2_000	1	1	202	1	6
+63	__isRobotSensorsMessage_return	1	1	203	1	6
+64	__ArrHelper__isRobotSensorsMessage_98_0	1	1	204	1	4
+65	__constVal64	2	0	205	1	4
+66	__ArrHelper__rsCmd_98_0	1	1	206	1	8
+67	__ArrHelper__speechRecognizerStop_98_0	1	1	207	1	2
+68	__ArrHelper__speechRecognizerStart_98_0	1	1	208	1	2
+69	__constVal0	2	1	209	1	8
+70	__constVal1	2	0	210	1	11
+71	__constVal5	2	0	211	1	2
+72	__PFTmp	1	1	212	1	1
+73	__constValNeg1	2	0	213	1	1
+74	__zfmain	1	1	214	1	14
+75	__zfisRobotSensorsMessage	1	1	215	1	8
+76	__zfspeechRecognizerRead	1	1	216	1	12
+77	__zfrsCmd	1	1	217	1	33
+78	__ArrHelper__speechRecognizerRead_98_0	1	1	218	1	5
+79	__zfstrcmp_inline_main	1	1	219	1	6
+80	__TextOutArgs	8	0	4	16	42
+81	__TextOutArgs.Result	2	1	220	1	42
+82	__TextOutArgs.Location	8	0	2	4	42
+83	__TextOutArgs.Location.X	4	1	224	2	42
+84	__TextOutArgs.Location.Y	4	1	226	2	42
+85	__TextOutArgs.Text	7	0	228	4	42
+86	__TextOutArgs.Text.Text_type	1	0	0	1	0
+87	__TextOutArgs.Options	5	1	232	4	42
+88	__IOMWArgs	8	0	4	16	8
+89	__IOMWArgs.Result	2	1	236	1	8
+90	__IOMWArgs.ModuleName	7	0	238	4	8
+91	__IOMWArgs.ModuleName.ModuleName_type	1	0	0	1	0
+92	__IOMWArgs.Offset	3	1	240	2	8
+93	__IOMWArgs.Buffer	7	0	242	4	8
+94	__IOMWArgs.Buffer.Buffer_type	1	0	0	1	0
+95	__main_7qG2_args_7qG2_000	8	0	4	12	5
+96	__main_7qG2_args_7qG2_000.Result	2	1	244	1	5
+97	__main_7qG2_args_7qG2_000.Action	1	1	245	1	5
+98	__main_7qG2_args_7qG2_000.Name	7	0	246	4	5
+99	__main_7qG2_args_7qG2_000.Name.Name_type	1	0	0	1	0
+100	__main_7qG2_args_7qG2_000.ConnectionSlot	1	1	248	1	5
+101	__PointOutArgs	8	0	3	12	12
+102	__PointOutArgs.Result	2	1	252	1	12
+103	__PointOutArgs.Location	8	0	2	4	12
+104	__PointOutArgs.Location.X	4	1	256	2	12
+105	__PointOutArgs.Location.Y	4	1	258	2	12
+106	__PointOutArgs.Options	5	1	260	4	12
+107	__IOMRArgs	8	0	5	16	10
+108	__IOMRArgs.Result	2	1	264	1	10
+109	__IOMRArgs.ModuleName	7	0	266	4	10
+110	__IOMRArgs.ModuleName.ModuleName_type	1	0	0	1	0
+111	__IOMRArgs.Offset	3	1	268	2	10
+112	__IOMRArgs.Count	3	1	270	2	10
+113	__IOMRArgs.Buffer	7	0	272	4	10
+114	__IOMRArgs.Buffer.Buffer_type	1	0	0	1	0
+115	__CBTWArgs	8	0	3	8	4
+116	__CBTWArgs.Result	2	1	276	1	4
+117	__CBTWArgs.Connection	1	1	277	1	4
+118	__CBTWArgs.Buffer	7	0	278	4	4
+119	__CBTWArgs.Buffer.Buffer_type	1	0	0	1	0
+120	__CBTCSArgs	8	0	2	4	12
+121	__CBTCSArgs.Result	2	1	280	1	12
+122	__CBTCSArgs.Connection	1	1	281	1	12
+123	__constStr0013	7	0	282	4	1
+124	__constStr0013.__constStr0013_type	1	1	0	1	0
+125	__constStr0014	7	0	284	4	1
+126	__constStr0014.__constStr0014_type	1	1	0	1	0
+127	__strcmp_7qG2_str1_7qG2_000_inline_main	7	0	286	4	3
+128	__strcmp_7qG2_str1_7qG2_000_inline_main.__strcmp_7qG2_str1_7qG2_000_inline_main_type	1	0	0	1	0
+129	__strcmp_7qG2_str2_7qG2_000_inline_main	7	0	288	4	3
+130	__strcmp_7qG2_str2_7qG2_000_inline_main.__strcmp_7qG2_str2_7qG2_000_inline_main_type	1	0	0	1	0
+131	__constStr0011	7	0	290	4	1
+132	__constStr0011.__constStr0011_type	1	1	0	1	0
+133	__main_7qG2_word_7qG2_000	7	0	292	4	4
+134	__main_7qG2_word_7qG2_000.__main_7qG2_word_7qG2_000_type	1	0	0	1	0
+135	__constStr0012	7	0	294	4	1
+136	__constStr0012.__constStr0012_type	1	1	0	1	0
+137	__constStr0015	7	0	296	4	1
+138	__constStr0015.__constStr0015_type	1	1	0	1	0
+139	__strbufstrcmp_inline_main	7	0	298	4	8
+140	__strbufstrcmp_inline_main.__strbufstrcmp_inline_main_type	1	0	0	1	0
+141	__clearBTInputBuffer_7qG2_zeroPattern_7qG2_000	7	0	300	4	2
+142	__clearBTInputBuffer_7qG2_zeroPattern_7qG2_000.__clearBTInputBuffer_7qG2_zeroPattern_7qG2_000_type	1	0	0	1	0
+143	__constStr0009	7	0	302	4	4
+144	__constStr0009.__constStr0009_type	1	1	0	1	0
+145	__strtmpbufstrcmp_inline_main	7	0	304	4	4
+146	__strtmpbufstrcmp_inline_main.__strtmpbufstrcmp_inline_main_type	1	0	0	1	0
+147	__IOMWFlattenBuf	7	0	306	4	2
+148	__IOMWFlattenBuf.__IOMWFlattenBuf_type	1	0	0	1	0
+149	__strbufmain	7	0	308	4	14
+150	__strbufmain.__strbufmain_type	1	0	0	1	0
+151	__strbufspeechRecognizerRead	7	0	310	4	2
+152	__strbufspeechRecognizerRead.__strbufspeechRecognizerRead_type	1	0	0	1	0
+153	__isRobotSensorsMessage_7qG2_buf_7qG2_000	7	0	312	4	5
+154	__isRobotSensorsMessage_7qG2_buf_7qG2_000.__isRobotSensorsMessage_7qG2_buf_7qG2_000_type	1	0	0	1	0
+155	__speechRecognizerRead_7qG2_word_7qG2_000	7	0	314	4	3
+156	__speechRecognizerRead_7qG2_word_7qG2_000.__speechRecognizerRead_7qG2_word_7qG2_000_type	1	0	0	1	0
+157	__speechRecognizerRead_7qG2_data_7qG2_000	7	0	316	4	8
+158	__speechRecognizerRead_7qG2_data_7qG2_000.__speechRecognizerRead_7qG2_data_7qG2_000_type	1	0	0	1	0
+159	__constStr0010	7	0	318	4	1
+160	__constStr0010.__constStr0010_type	1	1	0	1	0
+161	__speechRecognizerStop_7qG2_data_7qG2_000	7	0	320	4	4
+162	__speechRecognizerStop_7qG2_data_7qG2_000.__speechRecognizerStop_7qG2_data_7qG2_000_type	1	0	0	1	0
+163	__rsCmd_7qG2_data_7qG2_000	7	0	322	4	16
+164	__rsCmd_7qG2_data_7qG2_000.__rsCmd_7qG2_data_7qG2_000_type	1	0	0	1	0
+165	__rsCmd_7qG2_message_7qG2_000	7	0	324	4	2
+166	__rsCmd_7qG2_message_7qG2_000.__rsCmd_7qG2_message_7qG2_000_type	1	0	0	1	0
+167	__speechRecognizerStart_7qG2_data_7qG2_000	7	0	326	4	4
+168	__speechRecognizerStart_7qG2_data_7qG2_000.__speechRecognizerStart_7qG2_data_7qG2_000_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	10	0	#line 10 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	11	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	10	2	#line 10 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	12	2	#line 12 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	13	2		set __main_7qG2_args_7qG2_000.Action, 1
+0	12	5	#line 12 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	12	5	#line 12 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	13	5	#line 13 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	14	5		strcat __strbufmain, __constStr0011
+0	13	9	#line 13 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	14	9		mov __main_7qG2_args_7qG2_000.Name, __strbufmain
+0	13	11	#line 13 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	14	11	#line 14 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	15	11		set __main_7qG2_args_7qG2_000.ConnectionSlot, 1
+0	14	14	#line 14 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	14	14	#line 14 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	15	14	#line 15 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	16	14		set __main_7qG2_cnt_7qG2_000, 0
+0	15	17	#line 15 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	16	17	#line 16 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	17	17	#pragma macro 4
+0	17	17	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	17	17		syscall 36, __main_7qG2_args_7qG2_000
+0	15	20	#line 15 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	15	20	#line 15 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	17	20	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	16	20	#line 16 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	17	20	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	18	20	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	20		set __main_7qG2_cnt_7qG2_000, 0
+0	18	23	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	18	23	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	18	23	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	23	#pragma macro 5
+0	19	23		acquire __CBTCSMutex
+0	19	24		mov __CBTCSArgs.Connection, __constVal1
+0	19	26		syscall 28, __CBTCSArgs
+0	19	29		mov __D0main, __CBTCSArgs.Result
+0	19	31		release __CBTCSMutex
+0	14694	32	#line 14694 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	18	32	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	32		mov __signed_stack_001main, __D0main
+0	18	34	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	34		set __D0main, 0
+0	18	37	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	37		cmp 5, __zfmain, __signed_stack_001main, __D0main
+0	18	41	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	41		mov __D0main, __zfmain
+0	19	43	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	20	43		brtst 4, __NXC_Label_2188, __zfmain
+0	19	46	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	20	46		set __signed_stack_001main, 0
+0	19	49	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	49	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	20	49		set __signed_stack_002main, 56
+0	19	52	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	19	52	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	20	52		mov __D0main, __main_7qG2_cnt_7qG2_000
+0	20	54	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	54		acquire __TextOutMutex
+0	20	55	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	55		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	20	57	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	57		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	20	59	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	59		set __TextOutArgs.Options, 0
+0	20	62	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	62		numtostr __TextOutArgs.Text, __D0main
+0	20	65	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	65		syscall 13, __TextOutArgs
+0	20	68	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	68		mov __D0main, __TextOutArgs.Result
+0	20	70	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	70		release __TextOutMutex
+0	20	71	#line 20 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	21	71	#line 21 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	22	71		add __main_7qG2_cnt_7qG2_000, __main_7qG2_cnt_7qG2_000, __constVal1
+0	21	75	#line 21 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	22	75	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	23	75		jmp __NXC_Label_2187
+0	22	77	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	22	77	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	23	77		set __Wait_7qG2_ms_7qG2_000_inline_main, 1000
+0	22	80	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	7921	80	#line 7921 "NXCDefs.h"
+0	7922	80		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	7921	83	#line 7921 "NXCDefs.h"
+0	24	83	#line 24 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	28	83	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	29	83		subcall speechRecognizerStart, __speechRecognizerStart_return
+0	28	85	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	29	85		mov __main_7qG2_status_7qG2_000, __D0speechRecognizerStart
+0	28	87	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	28	87	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	6069	87	#line 6069 "NXCDefs.h"
+0	6070	87	#pragma macro 6
+0	6070	87		acquire __PointOutMutex
+0	6070	88		mov __PointOutArgs.Location.X, __constVal200
+0	6070	90		mov __PointOutArgs.Location.Y, __constVal200
+0	6070	92		mov __PointOutArgs.Options, __constVal1
+0	6070	94		syscall 14, __PointOutArgs
+0	6070	97		release __PointOutMutex
+0	14779	98	#line 14779 "NXCDefs.h"
+0	6069	98	#line 6069 "NXCDefs.h"
+0	29	98	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	29	98	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	30	98		set __signed_stack_001main, 0
+0	29	101	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	29	101	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	30	101		set __signed_stack_002main, 56
+0	29	104	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	29	104	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	30	104		strcat __strbufmain, __constStr0012
+0	30	108	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	108		acquire __TextOutMutex
+0	30	109	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	109		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	30	111	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	111		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	30	113	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	113		set __TextOutArgs.Options, 0
+0	30	116	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	116		mov __TextOutArgs.Text, __strbufmain
+0	30	118	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	118		syscall 13, __TextOutArgs
+0	30	121	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	121		mov __D0main, __TextOutArgs.Result
+0	30	123	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	123		release __TextOutMutex
+0	30	124	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	30	124	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	124		mov __signed_stack_001main, __main_7qG2_status_7qG2_000
+0	30	126	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	30	126	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	126		set __D0main, 0
+0	30	129	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	129		cmp 5, __zfmain, __signed_stack_001main, __D0main
+0	30	133	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	133		mov __D0main, __zfmain
+0	31	135	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	135		brtst 4, __NXC_Label_2207, __zfmain
+0	31	138	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	138		set __signed_stack_001main, 0
+0	31	141	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	141	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	141		set __signed_stack_002main, 48
+0	31	144	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	31	144	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	144		strcat __strbufmain, __constStr0013
+0	32	148	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	148		acquire __TextOutMutex
+0	32	149	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	149		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	32	151	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	151		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	32	153	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	153		set __TextOutArgs.Options, 0
+0	32	156	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	156		mov __TextOutArgs.Text, __strbufmain
+0	32	158	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	158		syscall 13, __TextOutArgs
+0	32	161	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	161		mov __D0main, __TextOutArgs.Result
+0	32	163	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	163		release __TextOutMutex
+0	32	164	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	164	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	164		set __signed_stack_001main, 0
+0	32	167	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	167	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	167		set __signed_stack_002main, 40
+0	32	170	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	32	170	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	170		mov __D0main, __main_7qG2_status_7qG2_000
+0	33	172	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	172		acquire __TextOutMutex
+0	33	173	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	173		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	33	175	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	175		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	33	177	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	177		set __TextOutArgs.Options, 0
+0	33	180	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	180		numtostr __TextOutArgs.Text, __D0main
+0	33	183	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	183		syscall 13, __TextOutArgs
+0	33	186	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	186		mov __D0main, __TextOutArgs.Result
+0	33	188	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	188		release __TextOutMutex
+0	33	189	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	33	189	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	34	189		set __Wait_7qG2_ms_7qG2_000_inline_main, 3000
+0	33	192	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	7921	192	#line 7921 "NXCDefs.h"
+0	7922	192		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	7921	195	#line 7921 "NXCDefs.h"
+0	34	195	#line 34 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	35	195	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	36	195		jmp __NXC_Label_2220
+0	35	197	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	36	197		set __signed_stack_001main, 0
+0	35	200	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	35	200	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	36	200		set __signed_stack_002main, 48
+0	35	203	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	35	203	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	36	203		strcat __strbufmain, __constStr0014
+0	36	207	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	207		acquire __TextOutMutex
+0	36	208	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	208		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	36	210	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	210		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	36	212	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	212		set __TextOutArgs.Options, 0
+0	36	215	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	215		mov __TextOutArgs.Text, __strbufmain
+0	36	217	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	217		syscall 13, __TextOutArgs
+0	36	220	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	220		mov __D0main, __TextOutArgs.Result
+0	36	222	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	222		release __TextOutMutex
+0	36	223	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	36	223	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	37	223		set __D0main, 1
+0	37	226	#line 37 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	226		tst 5, __zfmain, __D0main
+0	37	229	#line 37 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	229		brtst 4, __NXC_Label_2226, __zfmain
+0	37	232	#line 37 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	232		mov __speechRecognizerRead_7qG2_word_7qG2_000, __main_7qG2_word_7qG2_000
+0	38	234	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	234		subcall speechRecognizerRead, __speechRecognizerRead_return
+0	38	236	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	236		mov __main_7qG2_word_7qG2_000, __speechRecognizerRead_7qG2_word_7qG2_000
+0	38	238	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	238		mov __main_7qG2_status_7qG2_000, __D0speechRecognizerRead
+0	38	240	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	240	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	240	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	240		mov __signed_stack_001main, __D0speechRecognizerRead
+0	38	242	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	38	242	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	242		set __D0main, 1
+0	38	245	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	245		cmp 5, __zfmain, __signed_stack_001main, __D0main
+0	38	249	#line 38 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	39	249		mov __D0main, __zfmain
+0	39	251	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	40	251		brtst 4, __NXC_Label_2233, __zfmain
+0	6069	254	#line 6069 "NXCDefs.h"
+0	6070	254	#pragma macro 6
+0	6070	254		acquire __PointOutMutex
+0	6070	255		mov __PointOutArgs.Location.X, __constVal200
+0	6070	257		mov __PointOutArgs.Location.Y, __constVal200
+0	6070	259		mov __PointOutArgs.Options, __constVal1
+0	6070	261		syscall 14, __PointOutArgs
+0	6070	264		release __PointOutMutex
+0	14972	265	#line 14972 "NXCDefs.h"
+0	6069	265	#line 6069 "NXCDefs.h"
+0	40	265	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	40	265	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	41	265		set __signed_stack_001main, 0
+0	40	268	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	40	268	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	41	268		set __signed_stack_002main, 56
+0	40	271	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	40	271	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	41	271		strcat __strbufmain, __main_7qG2_word_7qG2_000
+0	41	275	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	275		acquire __TextOutMutex
+0	41	276	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	276		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	41	278	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	278		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	41	280	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	280		set __TextOutArgs.Options, 0
+0	41	283	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	283		mov __TextOutArgs.Text, __strbufmain
+0	41	285	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	285		syscall 13, __TextOutArgs
+0	41	288	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	288		mov __D0main, __TextOutArgs.Result
+0	41	290	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	290		release __TextOutMutex
+0	41	291	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	41	291	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	291		set __Wait_7qG2_ms_7qG2_000_inline_main, 1000
+0	41	294	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	7921	294	#line 7921 "NXCDefs.h"
+0	7922	294		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	7921	297	#line 7921 "NXCDefs.h"
+0	42	297	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	297	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	297		strcat __strbufmain, __main_7qG2_word_7qG2_000
+0	42	301	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	301		mov __strcmp_7qG2_str1_7qG2_000_inline_main, __strbufmain
+0	42	303	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	303		strcat __strbufmain, __constStr0015
+0	42	307	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	307		mov __strcmp_7qG2_str2_7qG2_000_inline_main, __strbufmain
+0	18677	309	#line 18677 "NXCDefs.h"
+0	18678	309		mov __strcmp_7qG2_result_7qG2_000_inline_main, __constValNeg1
+0	18677	311	#line 18677 "NXCDefs.h"
+0	18677	311	#line 18677 "NXCDefs.h"
+0	18678	311		strcat __strbufstrcmp_inline_main, __strcmp_7qG2_str1_7qG2_000_inline_main
+0	18677	315	#line 18677 "NXCDefs.h"
+0	18678	315		mov __strtmpbufstrcmp_inline_main, __strbufstrcmp_inline_main
+0	18678	317	#line 18678 "NXCDefs.h"
+0	18679	317		strcat __strbufstrcmp_inline_main, __strcmp_7qG2_str2_7qG2_000_inline_main
+0	18678	321	#line 18678 "NXCDefs.h"
+0	18679	321		cmp 4, __zfstrcmp_inline_main, __strtmpbufstrcmp_inline_main, __strbufstrcmp_inline_main
+0	18678	325	#line 18678 "NXCDefs.h"
+0	18679	325		mov __D0strcmp_inline_main, __zfstrcmp_inline_main
+0	18678	327	#line 18678 "NXCDefs.h"
+0	18679	327		brtst 4, __001__NXC_Label_355, __zfstrcmp_inline_main
+0	18679	330	#line 18679 "NXCDefs.h"
+0	18680	330		set __strcmp_7qG2_result_7qG2_000_inline_main, 0
+0	18679	333	#line 18679 "NXCDefs.h"
+0	18679	333	#line 18679 "NXCDefs.h"
+0	18679	333	#line 18679 "NXCDefs.h"
+0	18680	333		jmp __001__NXC_Label_358
+0	18679	335	#line 18679 "NXCDefs.h"
+0	18680	335		strcat __strbufstrcmp_inline_main, __strcmp_7qG2_str1_7qG2_000_inline_main
+0	18679	339	#line 18679 "NXCDefs.h"
+0	18680	339		mov __strtmpbufstrcmp_inline_main, __strbufstrcmp_inline_main
+0	18680	341	#line 18680 "NXCDefs.h"
+0	18681	341		strcat __strbufstrcmp_inline_main, __strcmp_7qG2_str2_7qG2_000_inline_main
+0	18680	345	#line 18680 "NXCDefs.h"
+0	18681	345		cmp 1, __zfstrcmp_inline_main, __strtmpbufstrcmp_inline_main, __strbufstrcmp_inline_main
+0	18680	349	#line 18680 "NXCDefs.h"
+0	18681	349		mov __D0strcmp_inline_main, __zfstrcmp_inline_main
+0	18680	351	#line 18680 "NXCDefs.h"
+0	18681	351		brtst 4, __001__NXC_Label_361, __zfstrcmp_inline_main
+0	18681	354	#line 18681 "NXCDefs.h"
+0	18682	354		set __strcmp_7qG2_result_7qG2_000_inline_main, 1
+0	18681	357	#line 18681 "NXCDefs.h"
+0	18681	357	#line 18681 "NXCDefs.h"
+0	18681	357	#line 18681 "NXCDefs.h"
+0	18681	357	#line 18681 "NXCDefs.h"
+0	18682	357	#line 18682 "NXCDefs.h"
+0	18683	357		mov __signed_stack_001main, __strcmp_7qG2_result_7qG2_000_inline_main
+0	18682	359	#line 18682 "NXCDefs.h"
+0	18682	359	#line 18682 "NXCDefs.h"
+0	42	359	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	359	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	42	359	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	359		set __D0main, 0
+0	42	362	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	362		cmp 4, __zfmain, __signed_stack_001main, __D0main
+0	42	366	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	43	366		mov __D0main, __zfmain
+0	43	368	#line 43 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	44	368		brtst 4, __NXC_Label_2242, __zfmain
+0	44	371	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	45	371		jmp __NXC_Label_2226
+0	44	373	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	45	373	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	47	373	#line 47 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	48	373		jmp __NXC_Label_2243
+0	49	375	#line 49 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	51	375	#line 51 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	52	375		jmp __NXC_Label_2225
+0	51	377	#line 51 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	51	377	#line 51 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	52	377	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	53	377		subcall speechRecognizerStop, __speechRecognizerStop_return
+0	52	379	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	53	379		mov __D0main, __D0speechRecognizerStop
+0	52	381	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+0	53	381		exit -1, -1
+1	184	0	#line 184 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	185	0		arrinit __clearBTInputBuffer_7qG2_zeroPattern_7qG2_000, __constVal0, __constVal64
+1	184	4	#line 184 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	184	4	#line 184 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	185	4	#line 185 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	186	4	#pragma macro 18
+1	186	4		mov __IOMWArgs.ModuleName, __constStr0009
+1	186	6		mov __IOMWArgs.Offset, __constVal1157
+1	186	8		arrsubset __IOMWArgs.Buffer, __clearBTInputBuffer_7qG2_zeroPattern_7qG2_000, 65535, __constVal64
+1	186	13		syscall 33, __IOMWArgs
+1	5023	16	#line 5023 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	185	16	#line 185 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	185	16	#line 185 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	186	16	#line 186 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	187	16	#pragma macro 8
+1	187	16		mov __IOMWArgs.ModuleName, __constStr0009
+1	187	18		mov __IOMWArgs.Offset, __constVal1285
+1	187	20		flatten __IOMWFlattenBuf, __constVal0
+1	187	23		strtoarr __IOMWArgs.Buffer, __IOMWFlattenBuf
+1	187	26		syscall 33, __IOMWArgs
+1	5027	29	#line 5027 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	186	29	#line 186 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	186	29	#line 186 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	197	29	#line 197 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+1	198	29		subret __clearBTInputBuffer_return
+2	198	0	#line 198 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	199	0		arrsize __signed_stack_001isRobotSensorsMessage, __isRobotSensorsMessage_7qG2_buf_7qG2_000
+2	198	3	#line 198 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	198	3	#line 198 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	199	3		set __D0isRobotSensorsMessage, 2
+2	198	6	#line 198 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	199	6		cmp 0, __zfisRobotSensorsMessage, __signed_stack_001isRobotSensorsMessage, __D0isRobotSensorsMessage
+2	198	10	#line 198 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	199	10		mov __D0isRobotSensorsMessage, __zfisRobotSensorsMessage
+2	199	12	#line 199 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	200	12		brtst 4, __NXC_Label_491, __zfisRobotSensorsMessage
+2	200	15	#line 200 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	15		set __DU0isRobotSensorsMessage, 0
+2	200	18	#line 200 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	200	18	#line 200 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	18		subret __isRobotSensorsMessage_return
+2	200	20	#line 200 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	20	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	20		jmp __NXC_Label_494
+2	201	22	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	22		set __signed_stack_001isRobotSensorsMessage, 0
+2	201	25	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	25	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	25		index __ArrHelper__isRobotSensorsMessage_98_0, __isRobotSensorsMessage_7qG2_buf_7qG2_000, __signed_stack_001isRobotSensorsMessage
+2	201	29	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	29		mov __unsigned_stack_001isRobotSensorsMessage, __ArrHelper__isRobotSensorsMessage_98_0
+2	201	31	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	31	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	31		set __D0isRobotSensorsMessage, 238
+2	201	34	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	34		cmp 4, __zfisRobotSensorsMessage, __unsigned_stack_001isRobotSensorsMessage, __D0isRobotSensorsMessage
+2	201	38	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	38		mov __D0isRobotSensorsMessage, __zfisRobotSensorsMessage
+2	201	40	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	40		brtst 4, __NXC_Label_498, __zfisRobotSensorsMessage
+2	201	43	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	43		mov __signed_stack_001isRobotSensorsMessage, __D0isRobotSensorsMessage
+2	201	45	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	45		set __signed_stack_002isRobotSensorsMessage, 1
+2	201	48	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	48	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	48		index __ArrHelper__isRobotSensorsMessage_98_0, __isRobotSensorsMessage_7qG2_buf_7qG2_000, __signed_stack_002isRobotSensorsMessage
+2	201	52	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	52		mov __unsigned_stack_002isRobotSensorsMessage, __ArrHelper__isRobotSensorsMessage_98_0
+2	201	54	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	54	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	54		set __D0isRobotSensorsMessage, 0
+2	201	57	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	57		cmp 4, __zfisRobotSensorsMessage, __unsigned_stack_002isRobotSensorsMessage, __D0isRobotSensorsMessage
+2	201	61	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	201	61	#line 201 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	202	61		and __D0isRobotSensorsMessage, __signed_stack_001isRobotSensorsMessage, __zfisRobotSensorsMessage
+2	202	65	#line 202 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	203	65		mov __DU0isRobotSensorsMessage, __D0isRobotSensorsMessage
+2	202	67	#line 202 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	203	67		subret __isRobotSensorsMessage_return
+2	202	69	#line 202 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	215	69	#line 215 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	215	69	#line 215 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+2	216	69		subret __isRobotSensorsMessage_return
+3	218	0	#line 218 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	219	0		arrsize __signed_stack_001rsCmd, __rsCmd_7qG2_data_7qG2_000
+3	218	3	#line 218 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	220	3	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	220	3	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	220	3	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	220	3	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	221	3		arrbuild __rsCmd_7qG2_message_7qG2_000, ROBOT_SENSORS_ID_1, ROBOT_SENSORS_ID_2, __rsCmd_7qG2_modul_7qG2_000, __rsCmd_7qG2_cmd_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+3	220	11	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	220	11	#line 220 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	223	11	#line 223 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	11	#pragma macro 5
+3	224	11		acquire __CBTCSMutex
+3	224	12		mov __CBTCSArgs.Connection, __constVal1
+3	224	14		syscall 28, __CBTCSArgs
+3	224	17		mov __D0rsCmd, __CBTCSArgs.Result
+3	224	19		release __CBTCSMutex
+3	5165	20	#line 5165 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	223	20	#line 223 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	20		mov __signed_stack_001rsCmd, __D0rsCmd
+3	223	22	#line 223 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	22		set __D0rsCmd, 0
+3	223	25	#line 223 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	25		cmp 5, __zfrsCmd, __signed_stack_001rsCmd, __D0rsCmd
+3	223	29	#line 223 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	29		mov __D0rsCmd, __zfrsCmd
+3	224	31	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	31		brtst 4, __NXC_Label_510, __zfrsCmd
+3	224	34	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	34	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	34		jmp __NXC_Label_509
+3	224	36	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	36	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	36	#pragma macro 20
+3	225	36		acquire __IOMRMutex
+3	225	37		mov __IOMRArgs.ModuleName, __constStr0009
+3	225	39		mov __IOMRArgs.Offset, __constVal1157
+3	225	41		mov __IOMRArgs.Count, __constVal64
+3	225	43		syscall 32, __IOMRArgs
+3	225	46		mov __rsCmd_7qG2_data_7qG2_000, __IOMRArgs.Buffer
+3	225	48		release __IOMRMutex
+3	5184	49	#line 5184 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	49	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	224	49	#line 224 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	49	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	49		mov __isRobotSensorsMessage_7qG2_buf_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+3	225	51	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	51		subcall isRobotSensorsMessage, __isRobotSensorsMessage_return
+3	225	53	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	53		mov __DU0rsCmd, __DU0isRobotSensorsMessage
+3	225	55	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	55		tst 5, __zfrsCmd, __DU0rsCmd
+3	225	58	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	58		mov __D0rsCmd, __zfrsCmd
+3	225	60	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	60		brtst 4, __NXC_Label_514, __zfrsCmd
+3	225	63	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	63		mov __signed_stack_001rsCmd, __D0rsCmd
+3	225	65	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	65		set __signed_stack_002rsCmd, 2
+3	225	68	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	68	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	68		index __ArrHelper__rsCmd_98_0, __rsCmd_7qG2_data_7qG2_000, __signed_stack_002rsCmd
+3	225	72	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	72		mov __unsigned_stack_002rsCmd, __ArrHelper__rsCmd_98_0
+3	225	74	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	74	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	74		mov __DU0rsCmd, __rsCmd_7qG2_modul_7qG2_000
+3	225	76	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	76		cmp 4, __zfrsCmd, __unsigned_stack_002rsCmd, __DU0rsCmd
+3	225	80	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	80	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	80		and __D0rsCmd, __signed_stack_001rsCmd, __zfrsCmd
+3	225	84	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	84		tst 5, __zfrsCmd, __D0rsCmd
+3	225	87	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	87		mov __D0rsCmd, __zfrsCmd
+3	225	89	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	89		brtst 4, __NXC_Label_514, __zfrsCmd
+3	225	92	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	92		mov __signed_stack_001rsCmd, __D0rsCmd
+3	225	94	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	94		set __signed_stack_002rsCmd, 3
+3	225	97	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	97	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	97		index __ArrHelper__rsCmd_98_0, __rsCmd_7qG2_data_7qG2_000, __signed_stack_002rsCmd
+3	225	101	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	101		mov __unsigned_stack_002rsCmd, __ArrHelper__rsCmd_98_0
+3	225	103	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	103	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	103		mov __DU0rsCmd, __rsCmd_7qG2_cmd_7qG2_000
+3	225	105	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	105		cmp 4, __zfrsCmd, __unsigned_stack_002rsCmd, __DU0rsCmd
+3	225	109	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	225	109	#line 225 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	226	109		and __D0rsCmd, __signed_stack_001rsCmd, __zfrsCmd
+3	226	113	#line 226 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	227	113		tst 5, __zfrsCmd, __D0rsCmd
+3	226	116	#line 226 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	227	116		brtst 4, __NXC_Label_519, __zfrsCmd
+3	227	119	#line 227 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	228	119		subcall clearBTInputBuffer, __clearBTInputBuffer_return
+3	227	121	#line 227 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	229	121	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	229	121	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	121	#pragma macro 5
+3	230	121		acquire __CBTCSMutex
+3	230	122		mov __CBTCSArgs.Connection, __constVal1
+3	230	124		syscall 28, __CBTCSArgs
+3	230	127		mov __D0rsCmd, __CBTCSArgs.Result
+3	230	129		release __CBTCSMutex
+3	5262	130	#line 5262 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	229	130	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	130		mov __signed_stack_001rsCmd, __D0rsCmd
+3	229	132	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	132		set __D0rsCmd, 0
+3	229	135	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	135		cmp 5, __zfrsCmd, __signed_stack_001rsCmd, __D0rsCmd
+3	229	139	#line 229 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	139		mov __D0rsCmd, __zfrsCmd
+3	230	141	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	231	141		brtst 4, __NXC_Label_521, __zfrsCmd
+3	230	144	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	144	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	231	144		jmp __NXC_Label_520
+3	230	146	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	146	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	231	146	#pragma macro 6
+3	231	146		acquire __CBTWMutex
+3	231	147		mov __CBTWArgs.Connection, __constVal1
+3	231	149		mov __CBTWArgs.Buffer, __rsCmd_7qG2_message_7qG2_000
+3	231	151		syscall 29, __CBTWArgs
+3	231	154		mov __D0rsCmd, __CBTWArgs.Result
+3	231	156		release __CBTWMutex
+3	5281	157	#line 5281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	157	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	230	157	#line 230 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	232	157	#line 232 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	157	#pragma macro 5
+3	233	157		acquire __CBTCSMutex
+3	233	158		mov __CBTCSArgs.Connection, __constVal1
+3	233	160		syscall 28, __CBTCSArgs
+3	233	163		mov __D0rsCmd, __CBTCSArgs.Result
+3	233	165		release __CBTCSMutex
+3	5286	166	#line 5286 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	232	166	#line 232 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	166		mov __signed_stack_001rsCmd, __D0rsCmd
+3	232	168	#line 232 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	168		set __D0rsCmd, 0
+3	232	171	#line 232 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	171		cmp 5, __zfrsCmd, __signed_stack_001rsCmd, __D0rsCmd
+3	232	175	#line 232 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	175		mov __D0rsCmd, __zfrsCmd
+3	233	177	#line 233 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	234	177		brtst 4, __NXC_Label_525, __zfrsCmd
+3	233	180	#line 233 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	233	180	#line 233 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	234	180		jmp __NXC_Label_524
+3	233	182	#line 233 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	234	182	#line 234 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	182	#pragma macro 20
+3	235	182		acquire __IOMRMutex
+3	235	183		mov __IOMRArgs.ModuleName, __constStr0009
+3	235	185		mov __IOMRArgs.Offset, __constVal1157
+3	235	187		mov __IOMRArgs.Count, __constVal64
+3	235	189		syscall 32, __IOMRArgs
+3	235	192		mov __rsCmd_7qG2_data_7qG2_000, __IOMRArgs.Buffer
+3	235	194		release __IOMRMutex
+3	5306	195	#line 5306 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	234	195	#line 234 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	234	195	#line 234 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	195	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	195		mov __isRobotSensorsMessage_7qG2_buf_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+3	235	197	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	197		subcall isRobotSensorsMessage, __isRobotSensorsMessage_return
+3	235	199	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	199		mov __DU0rsCmd, __DU0isRobotSensorsMessage
+3	235	201	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	201		tst 5, __zfrsCmd, __DU0rsCmd
+3	235	204	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	204		mov __D0rsCmd, __zfrsCmd
+3	235	206	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	206		brtst 4, __NXC_Label_533, __zfrsCmd
+3	235	209	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	209		mov __signed_stack_001rsCmd, __D0rsCmd
+3	235	211	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	211		set __signed_stack_002rsCmd, 2
+3	235	214	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	214	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	214		index __ArrHelper__rsCmd_98_0, __rsCmd_7qG2_data_7qG2_000, __signed_stack_002rsCmd
+3	235	218	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	218		mov __unsigned_stack_002rsCmd, __ArrHelper__rsCmd_98_0
+3	235	220	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	220	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	220		mov __DU0rsCmd, __rsCmd_7qG2_modul_7qG2_000
+3	235	222	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	222		cmp 4, __zfrsCmd, __unsigned_stack_002rsCmd, __DU0rsCmd
+3	235	226	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	226	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	226		and __D0rsCmd, __signed_stack_001rsCmd, __zfrsCmd
+3	235	230	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	230		tst 5, __zfrsCmd, __D0rsCmd
+3	235	233	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	233		mov __D0rsCmd, __zfrsCmd
+3	235	235	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	235		brtst 4, __NXC_Label_533, __zfrsCmd
+3	235	238	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	238		mov __signed_stack_001rsCmd, __D0rsCmd
+3	235	240	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	240		set __signed_stack_002rsCmd, 3
+3	235	243	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	243	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	243		index __ArrHelper__rsCmd_98_0, __rsCmd_7qG2_data_7qG2_000, __signed_stack_002rsCmd
+3	235	247	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	247		mov __unsigned_stack_002rsCmd, __ArrHelper__rsCmd_98_0
+3	235	249	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	249	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	249		mov __DU0rsCmd, __rsCmd_7qG2_cmd_7qG2_000
+3	235	251	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	251		cmp 4, __zfrsCmd, __unsigned_stack_002rsCmd, __DU0rsCmd
+3	235	255	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	235	255	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	255		and __D0rsCmd, __signed_stack_001rsCmd, __zfrsCmd
+3	235	259	#line 235 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	259		not __D0rsCmd, __D0rsCmd
+3	236	262	#line 236 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	237	262		tst 5, __zfrsCmd, __D0rsCmd
+3	236	265	#line 236 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	237	265		brtst 4, __NXC_Label_529, __zfrsCmd
+3	236	268	#line 236 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	237	268		jmp __NXC_Label_528
+3	236	270	#line 236 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	236	270	#line 236 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	247	270	#line 247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+3	248	270		subret __rsCmd_return
+4	1247	0	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1248	0		arrinit __speechRecognizerStart_7qG2_data_7qG2_000, __constVal0, __constVal0
+4	1247	4	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1248	4		set __rsCmd_7qG2_modul_7qG2_000, 16
+4	1247	7	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1247	7	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1248	7		set __rsCmd_7qG2_cmd_7qG2_000, 5
+4	1247	10	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1247	10	#line 1247 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1248	10		mov __rsCmd_7qG2_data_7qG2_000, __speechRecognizerStart_7qG2_data_7qG2_000
+4	1249	12	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	12		subcall rsCmd, __rsCmd_return
+4	1249	14	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	14		mov __speechRecognizerStart_7qG2_data_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+4	1249	16	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1249	16	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	16		set __signed_stack_001speechRecognizerStart, 4
+4	1249	19	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1249	19	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	19		index __ArrHelper__speechRecognizerStart_98_0, __speechRecognizerStart_7qG2_data_7qG2_000, __signed_stack_001speechRecognizerStart
+4	1249	23	#line 1249 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	23		mov __D0speechRecognizerStart, __ArrHelper__speechRecognizerStart_98_0
+4	1250	25	#line 1250 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1250	25	#line 1250 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1251	25		subret __speechRecognizerStart_return
+4	1250	27	#line 1250 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1258	27	#line 1258 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+4	1259	27		subret __speechRecognizerStart_return
+5	1261	0	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1262	0		arrinit __speechRecognizerStop_7qG2_data_7qG2_000, __constVal0, __constVal0
+5	1261	4	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1262	4		set __rsCmd_7qG2_modul_7qG2_000, 16
+5	1261	7	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1261	7	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1262	7		set __rsCmd_7qG2_cmd_7qG2_000, 7
+5	1261	10	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1261	10	#line 1261 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1262	10		mov __rsCmd_7qG2_data_7qG2_000, __speechRecognizerStop_7qG2_data_7qG2_000
+5	1263	12	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	12		subcall rsCmd, __rsCmd_return
+5	1263	14	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	14		mov __speechRecognizerStop_7qG2_data_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+5	1263	16	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1263	16	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	16		set __signed_stack_001speechRecognizerStop, 4
+5	1263	19	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1263	19	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	19		index __ArrHelper__speechRecognizerStop_98_0, __speechRecognizerStop_7qG2_data_7qG2_000, __signed_stack_001speechRecognizerStop
+5	1263	23	#line 1263 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	23		mov __D0speechRecognizerStop, __ArrHelper__speechRecognizerStop_98_0
+5	1264	25	#line 1264 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1264	25	#line 1264 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1265	25		subret __speechRecognizerStop_return
+5	1264	27	#line 1264 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1274	27	#line 1274 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+5	1275	27		subret __speechRecognizerStop_return
+6	1277	0	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1278	0		arrinit __speechRecognizerRead_7qG2_data_7qG2_000, __constVal0, __constVal0
+6	1277	4	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1278	4		set __rsCmd_7qG2_modul_7qG2_000, 16
+6	1277	7	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1277	7	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1278	7		set __rsCmd_7qG2_cmd_7qG2_000, 0
+6	1277	10	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1277	10	#line 1277 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1278	10		mov __rsCmd_7qG2_data_7qG2_000, __speechRecognizerRead_7qG2_data_7qG2_000
+6	1279	12	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1280	12		subcall rsCmd, __rsCmd_return
+6	1279	14	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1280	14		mov __speechRecognizerRead_7qG2_data_7qG2_000, __rsCmd_7qG2_data_7qG2_000
+6	1279	16	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1279	16	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1280	16		set __signed_stack_001speechRecognizerRead, 4
+6	1279	19	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1279	19	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1280	19		index __ArrHelper__speechRecognizerRead_98_0, __speechRecognizerRead_7qG2_data_7qG2_000, __signed_stack_001speechRecognizerRead
+6	1279	23	#line 1279 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1280	23		mov __speechRecognizerRead_7qG2_status_7qG2_000, __ArrHelper__speechRecognizerRead_98_0
+6	1281	25	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1281	25	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1282	25		mov __unsigned_stack_001speechRecognizerRead, __ArrHelper__speechRecognizerRead_98_0
+6	1281	27	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1281	27	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1282	27		set __D0speechRecognizerRead, 1
+6	1281	30	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1282	30		cmp 5, __zfspeechRecognizerRead, __unsigned_stack_001speechRecognizerRead, __D0speechRecognizerRead
+6	1281	34	#line 1281 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1282	34		mov __D0speechRecognizerRead, __zfspeechRecognizerRead
+6	1282	36	#line 1282 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1283	36		brtst 4, __NXC_Label_2150, __zfspeechRecognizerRead
+6	1283	39	#line 1283 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1284	39		set __speechRecognizerRead_7qG2_i_7qG2_001, 5
+6	1283	42	#line 1283 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1284	42	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	42		mov __signed_stack_001speechRecognizerRead, __speechRecognizerRead_7qG2_i_7qG2_001
+6	1284	44	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1284	44	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	44		index __ArrHelper__speechRecognizerRead_98_0, __speechRecognizerRead_7qG2_data_7qG2_000, __signed_stack_001speechRecognizerRead
+6	1284	48	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	48		mov __unsigned_stack_001speechRecognizerRead, __ArrHelper__speechRecognizerRead_98_0
+6	1284	50	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1284	50	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	50		set __D0speechRecognizerRead, 0
+6	1284	53	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	53		cmp 4, __zfspeechRecognizerRead, __unsigned_stack_001speechRecognizerRead, __D0speechRecognizerRead
+6	1284	57	#line 1284 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1285	57		mov __D0speechRecognizerRead, __zfspeechRecognizerRead
+6	1285	59	#line 1285 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1286	59		brtst 4, __NXC_Label_2159, __zfspeechRecognizerRead
+6	1286	62	#line 1286 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1287	62		jmp __NXC_Label_2154
+6	1286	64	#line 1286 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1287	64	#line 1287 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1288	64		jmp __NXC_Label_2160
+6	1288	66	#line 1288 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1289	66		add __speechRecognizerRead_7qG2_i_7qG2_001, __speechRecognizerRead_7qG2_i_7qG2_001, __constVal1
+6	1288	70	#line 1288 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1289	70	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1289	70	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1290	70		mov __signed_stack_001speechRecognizerRead, __speechRecognizerRead_7qG2_i_7qG2_001
+6	1289	72	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1289	72	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1290	72		arrsize __D0speechRecognizerRead, __speechRecognizerRead_7qG2_data_7qG2_000
+6	1289	75	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1290	75		cmp 0, __zfspeechRecognizerRead, __signed_stack_001speechRecognizerRead, __D0speechRecognizerRead
+6	1289	79	#line 1289 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1290	79		mov __D0speechRecognizerRead, __zfspeechRecognizerRead
+6	1291	81	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	81		brtst 4, __NXC_Label_2154, __zfspeechRecognizerRead
+6	1291	84	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	84		jmp __NXC_Label_2153
+6	1291	86	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1291	86	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1291	86	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	86		mov __signed_stack_001speechRecognizerRead, __speechRecognizerRead_7qG2_i_7qG2_001
+6	1291	88	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1291	88	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	88		arrsize __D0speechRecognizerRead, __speechRecognizerRead_7qG2_data_7qG2_000
+6	1291	91	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	91		cmp 0, __zfspeechRecognizerRead, __signed_stack_001speechRecognizerRead, __D0speechRecognizerRead
+6	1291	95	#line 1291 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	95		mov __D0speechRecognizerRead, __zfspeechRecognizerRead
+6	1292	97	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1293	97		brtst 4, __NXC_Label_2165, __zfspeechRecognizerRead
+6	1292	100	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	100	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	100	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1292	100	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1293	100		sub __signed_stack_001speechRecognizerRead, __speechRecognizerRead_7qG2_i_7qG2_001, __constVal5
+6	1292	104	#line 1292 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1294	104	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1294	104	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1295	104		add __speechRecognizerRead_7qG2_temp_7qG2_002, __signed_stack_001speechRecognizerRead, __constVal1
+6	1294	108	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1294	108	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1295	108		arrsubset __speechRecognizerRead_7qG2_word_7qG2_000, __speechRecognizerRead_7qG2_data_7qG2_000, __constVal5, __speechRecognizerRead_7qG2_temp_7qG2_002
+6	1294	113	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1294	113	#line 1294 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1297	113	#line 1297 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1298	113		jmp __NXC_Label_2170
+6	6069	115	#line 6069 "NXCDefs.h"
+6	6070	115	#pragma macro 6
+6	6070	115		acquire __PointOutMutex
+6	6070	116		mov __PointOutArgs.Location.X, __constVal200
+6	6070	118		mov __PointOutArgs.Location.Y, __constVal200
+6	6070	120		mov __PointOutArgs.Options, __constVal1
+6	6070	122		syscall 14, __PointOutArgs
+6	6070	125		release __PointOutMutex
+6	14577	126	#line 14577 "NXCDefs.h"
+6	6069	126	#line 6069 "NXCDefs.h"
+6	1298	126	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1298	126	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1299	126		set __signed_stack_001speechRecognizerRead, 0
+6	1298	129	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1298	129	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1299	129		set __signed_stack_002speechRecognizerRead, 0
+6	1298	132	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1298	132	#line 1298 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1299	132		strcat __strbufspeechRecognizerRead, __constStr0010
+6	1299	136	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	136		acquire __TextOutMutex
+6	1299	137	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	137		mov __TextOutArgs.Location.X, __signed_stack_001speechRecognizerRead
+6	1299	139	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	139		mov __TextOutArgs.Location.Y, __signed_stack_002speechRecognizerRead
+6	1299	141	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	141		set __TextOutArgs.Options, 0
+6	1299	144	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	144		mov __TextOutArgs.Text, __strbufspeechRecognizerRead
+6	1299	146	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	146		syscall 13, __TextOutArgs
+6	1299	149	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	149		mov __D0speechRecognizerRead, __TextOutArgs.Result
+6	1299	151	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	151		release __TextOutMutex
+6	1299	152	#line 1299 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	152	#line 1300 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1301	152		set __speechRecognizerRead_7qG2_status_7qG2_000, 1
+6	1300	155	#line 1300 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1300	155	#line 1300 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1302	155	#line 1302 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1302	155	#line 1302 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1303	155	#line 1303 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1304	155		mov __D0speechRecognizerRead, __speechRecognizerRead_7qG2_status_7qG2_000
+6	1303	157	#line 1303 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1303	157	#line 1303 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1304	157		subret __speechRecognizerRead_return
+6	1303	159	#line 1303 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1309	159	#line 1309 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc"
+6	1310	159		subret __speechRecognizerRead_return
+7	55	0	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc"
+7	56	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc
+1	clearBTInputBuffer	384	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+2	isRobotSensorsMessage	415	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+3	rsCmd	486	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+4	speechRecognizerStart	758	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+5	speechRecognizerStop	787	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+6	speechRecognizerRead	816	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\.\robotSensors.nxc
+7	__initialize_global_data	977	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\example_speech_recognition.nxc

@@ -1,0 +1,430 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__ArrHelper__main_76_0	6	1	0	4	2
+1	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	4	4	2
+2	__unsigned_stack_001main	5	1	8	4	28
+3	__ArrHelper__main_5_0	5	1	12	4	4
+4	__FOMutex	9	0	16	4	2
+5	__main_7qG2_oldTick_7qG2_000	5	1	20	4	5
+6	__DU0main	5	1	24	4	12
+7	__D0main	6	1	28	4	37
+8	__main_7qG2_tick_7qG2_000	5	1	32	4	8
+9	__main_7qG2_i_7qG2_000	3	1	36	2	21
+10	__constVal20480	4	0	38	2	1
+11	__main_7qG2_cnt_7qG2_000	3	1	40	2	6
+12	__constVal1000	4	0	42	2	3
+13	__SetSensorMode_7qG2_mode_7qG2_000_inline_main	1	1	44	1	2
+14	__constVal96	2	0	45	1	4
+15	__SetSensorMode_7qG2_port_7qG2_000_inline_main	1	1	46	1	2
+16	__SetSensorType_7qG2_port_7qG2_000_inline_main	1	1	47	1	2
+17	__SetSensorType_7qG2_type_7qG2_000_inline_main	1	1	48	1	2
+18	__constVal1	2	0	49	1	5
+19	__constVal32	2	0	50	1	12
+20	__constVal0	2	1	51	1	21
+21	__constVal63	2	0	52	1	4
+22	__constVal3	2	0	53	1	4
+23	____initialize_global_data_return	1	1	54	1	3
+24	__main_7qG2_handle_7qG2_000	1	1	55	1	8
+25	__zfmain	1	1	56	1	15
+26	__PFTmp	1	1	57	1	1
+27	__FCArgs	8	0	2	4	3
+28	__FCArgs.Result	3	1	60	2	3
+29	__FCArgs.FileHandle	1	1	62	1	3
+30	__FOArgs	8	0	4	12	5
+31	__FOArgs.Result	3	1	64	2	5
+32	__FOArgs.FileHandle	1	1	66	1	5
+33	__FOArgs.Filename	7	0	68	4	5
+34	__FOArgs.Filename.Filename_type	1	0	0	1	0
+35	__FOArgs.Length	5	1	72	4	5
+36	__FWriteArgs	8	0	4	12	42
+37	__FWriteArgs.Result	3	1	76	2	42
+38	__FWriteArgs.FileHandle	1	1	78	1	42
+39	__FWriteArgs.Buffer	7	0	80	4	42
+40	__FWriteArgs.Buffer.Buffer_type	1	0	0	1	0
+41	__FWriteArgs.Length	5	1	84	4	42
+42	__main_7qG2_temp_7qG2_002	7	0	88	4	6
+43	__main_7qG2_temp_7qG2_002.__main_7qG2_temp_7qG2_002_type	1	0	0	1	0
+44	__main_7qG2_brightness_7qG2_000	7	0	90	4	6
+45	__main_7qG2_brightness_7qG2_000.__main_7qG2_brightness_7qG2_000_type	5	0	0	4	0
+46	__constStr0011	7	0	92	4	1
+47	__constStr0011.__constStr0011_type	1	1	0	1	0
+48	__constStr0010	7	0	94	4	2
+49	__constStr0010.__constStr0010_type	1	1	0	1	0
+50	__constStr0009	7	0	96	4	1
+51	__constStr0009.__constStr0009_type	1	1	0	1	0
+52	__main_7qG2_ticks_7qG2_000	7	0	98	4	6
+53	__main_7qG2_ticks_7qG2_000.__main_7qG2_ticks_7qG2_000_type	5	0	0	4	0
+54	__main_7qG2_motorRot_7qG2_000	7	0	100	4	6
+55	__main_7qG2_motorRot_7qG2_000.__main_7qG2_motorRot_7qG2_000_type	6	0	0	4	0
+56	__strbufmain	7	0	102	4	6
+57	__strbufmain.__strbufmain_type	1	0	0	1	0
+58	__strretvalmain	7	0	104	4	6
+59	__strretvalmain.__strretvalmain_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	4	0	#line 4 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	5	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	4	2	#line 4 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	8	2	#line 8 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	9	2		arrinit __main_7qG2_motorRot_7qG2_000, __constVal0, __constVal1000
+0	9	6	#line 9 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	10	6		arrinit __main_7qG2_ticks_7qG2_000, __constVal0, __constVal1000
+0	17	10	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	18	10		arrinit __main_7qG2_brightness_7qG2_000, __constVal0, __constVal1000
+0	17	14	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	18	14		set __SetSensorType_7qG2_port_7qG2_000_inline_main, 0
+0	17	17	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	17	17	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	18	17		set __SetSensorType_7qG2_type_7qG2_000_inline_main, 6
+0	17	20	#line 17 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	3663	20	#line 3663 "NXCDefs.h"
+0	3664	20		setin __SetSensorType_7qG2_type_7qG2_000_inline_main, __SetSensorType_7qG2_port_7qG2_000_inline_main, 0
+0	3663	24	#line 3663 "NXCDefs.h"
+0	18	24	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	18	24	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	19	24		set __SetSensorMode_7qG2_port_7qG2_000_inline_main, 0
+0	18	27	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	18	27	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	19	27		set __SetSensorMode_7qG2_mode_7qG2_000_inline_main, 0
+0	18	30	#line 18 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	3676	30	#line 3676 "NXCDefs.h"
+0	3677	30		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_main, __SetSensorMode_7qG2_port_7qG2_000_inline_main, 1
+0	3676	34	#line 3676 "NXCDefs.h"
+0	19	34	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	19	34	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	20	34		set __Wait_7qG2_ms_7qG2_000_inline_main, 1000
+0	19	37	#line 19 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	7921	37	#line 7921 "NXCDefs.h"
+0	7922	37		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	7921	40	#line 7921 "NXCDefs.h"
+0	21	40	#line 21 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	21	40	#line 21 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	22	40		set __D0main, 100
+0	22	43	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	23	43	#pragma macro 7
+0	23	43		setout __constVal0, 2, __D0main, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	3703	66	#line 3703 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	22	66	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	22	66	#line 22 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	23	66		set __D0main, 100
+0	24	69	#line 24 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	25	69	#pragma macro 7
+0	25	69		setout __constVal1, 2, __D0main, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	3710	92	#line 3710 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	24	92	#line 24 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	26	92	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	92		set __main_7qG2_oldTick_7qG2_000, 0
+0	26	95	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	26	95	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	95		set __main_7qG2_i_7qG2_000, 0
+0	26	98	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	26	98	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	98		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	26	100	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	26	100	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	100		set __D0main, 400
+0	26	103	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	103		cmp 0, __zfmain, __unsigned_stack_001main, __D0main
+0	26	107	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	107		mov __D0main, __zfmain
+0	26	109	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	109		brtst 4, __NXC_Label_506, __zfmain
+0	26	112	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	112		jmp __NXC_Label_507
+0	26	114	#line 26 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	27	114		add __main_7qG2_i_7qG2_000, __main_7qG2_i_7qG2_000, __constVal1
+0	27	118	#line 27 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	28	118		jmp __NXC_Label_505
+0	28	120	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	29	120		gettick __main_7qG2_tick_7qG2_000
+0	28	122	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	28	122	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	28	122	#line 28 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	29	122	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	30	122		mov __unsigned_stack_001main, __main_7qG2_oldTick_7qG2_000
+0	29	124	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	29	124	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	30	124		mov __DU0main, __main_7qG2_tick_7qG2_000
+0	29	126	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	30	126		cmp 4, __zfmain, __unsigned_stack_001main, __DU0main
+0	29	130	#line 29 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	30	130		mov __D0main, __zfmain
+0	30	132	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	31	132		brtst 4, __NXC_Label_514, __zfmain
+0	30	135	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	31	135		jmp __NXC_Label_513
+0	30	137	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	30	137	#line 30 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	31	137	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	32	137		mov __main_7qG2_oldTick_7qG2_000, __main_7qG2_tick_7qG2_000
+0	31	139	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	31	139	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	31	139	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	32	139		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	31	141	#line 31 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	32	141	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	33	141		mov __DU0main, __main_7qG2_tick_7qG2_000
+0	32	143	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	33	143		replace __main_7qG2_ticks_7qG2_000, __main_7qG2_ticks_7qG2_000, __unsigned_stack_001main, __DU0main
+0	32	148	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	32	148	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	33	148		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	32	150	#line 32 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	33	150	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	34	150		getout __D0main, __constVal0, 14
+0	33	154	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	34	154		replace __main_7qG2_motorRot_7qG2_000, __main_7qG2_motorRot_7qG2_000, __unsigned_stack_001main, __D0main
+0	33	159	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	33	159	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	34	159		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	33	161	#line 33 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	34	161	#line 34 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	35	161		getin __D0main, __constVal0, 2
+0	34	165	#line 34 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	35	165		replace __main_7qG2_brightness_7qG2_000, __main_7qG2_brightness_7qG2_000, __unsigned_stack_001main, __D0main
+0	34	170	#line 34 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	35	170	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	36	170		jmp __NXC_Label_508
+0	35	172	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	35	172	#line 35 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	36	172		set __D0main, 0
+0	36	175	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	37	175	#pragma macro 7
+0	37	175		setout __constVal0, 2, __D0main, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	3842	198	#line 3842 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	36	198	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	36	198	#line 36 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	37	198		set __D0main, 0
+0	39	201	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	201	#pragma macro 7
+0	40	201		setout __constVal1, 2, __D0main, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+0	3849	224	#line 3849 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	39	224	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	39	224	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	224		set __main_7qG2_i_7qG2_000, 401
+0	39	227	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	39	227	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	227		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	39	229	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	39	229	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	229		set __D0main, 1000
+0	39	232	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	232		cmp 0, __zfmain, __unsigned_stack_001main, __D0main
+0	39	236	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	236		mov __D0main, __zfmain
+0	39	238	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	238		brtst 4, __NXC_Label_538, __zfmain
+0	39	241	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	241		jmp __NXC_Label_539
+0	39	243	#line 39 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	40	243		add __main_7qG2_i_7qG2_000, __main_7qG2_i_7qG2_000, __constVal1
+0	40	247	#line 40 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	41	247		jmp __NXC_Label_537
+0	41	249	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	42	249		gettick __main_7qG2_tick_7qG2_000
+0	41	251	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	41	251	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	41	251	#line 41 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	42	251	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	43	251		mov __unsigned_stack_001main, __main_7qG2_oldTick_7qG2_000
+0	42	253	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	42	253	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	43	253		mov __DU0main, __main_7qG2_tick_7qG2_000
+0	42	255	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	43	255		cmp 4, __zfmain, __unsigned_stack_001main, __DU0main
+0	42	259	#line 42 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	43	259		mov __D0main, __zfmain
+0	43	261	#line 43 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	44	261		brtst 4, __NXC_Label_546, __zfmain
+0	43	264	#line 43 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	44	264		jmp __NXC_Label_545
+0	43	266	#line 43 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	43	266	#line 43 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	44	266	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	45	266		mov __main_7qG2_oldTick_7qG2_000, __main_7qG2_tick_7qG2_000
+0	44	268	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	44	268	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	44	268	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	45	268		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	44	270	#line 44 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	45	270	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	46	270		mov __DU0main, __main_7qG2_tick_7qG2_000
+0	45	272	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	46	272		replace __main_7qG2_ticks_7qG2_000, __main_7qG2_ticks_7qG2_000, __unsigned_stack_001main, __DU0main
+0	45	277	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	45	277	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	46	277		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	45	279	#line 45 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	46	279	#line 46 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	47	279		getout __D0main, __constVal0, 14
+0	46	283	#line 46 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	47	283		replace __main_7qG2_motorRot_7qG2_000, __main_7qG2_motorRot_7qG2_000, __unsigned_stack_001main, __D0main
+0	46	288	#line 46 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	46	288	#line 46 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	47	288		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	46	290	#line 46 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	47	290	#line 47 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	48	290		getin __D0main, __constVal0, 2
+0	47	294	#line 47 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	48	294		replace __main_7qG2_brightness_7qG2_000, __main_7qG2_brightness_7qG2_000, __unsigned_stack_001main, __D0main
+0	47	299	#line 47 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	52	299	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	53	299		jmp __NXC_Label_540
+0	52	301	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	52	301	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	53	301	#pragma macro 7
+0	53	301		acquire __FOMutex
+0	53	302		mov __FOArgs.Filename, __constStr0009
+0	53	304		mov __FOArgs.Length, __constVal20480
+0	53	306		syscall 1, __FOArgs
+0	53	309		mov __main_7qG2_handle_7qG2_000, __FOArgs.FileHandle
+0	53	311		mov __D0main, __FOArgs.Result
+0	53	313		release __FOMutex
+0	3959	314	#line 3959 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	52	314	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	52	314	#line 52 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	54	314	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	314		set __main_7qG2_i_7qG2_000, 0
+0	54	317	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	54	317	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	317		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	54	319	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	54	319	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	319		set __D0main, 1000
+0	54	322	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	322		cmp 0, __zfmain, __unsigned_stack_001main, __D0main
+0	54	326	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	326		mov __D0main, __zfmain
+0	54	328	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	328		brtst 4, __NXC_Label_566, __zfmain
+0	54	331	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	331		jmp __NXC_Label_567
+0	54	333	#line 54 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	333		add __main_7qG2_i_7qG2_000, __main_7qG2_i_7qG2_000, __constVal1
+0	55	337	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	337		jmp __NXC_Label_565
+0	55	339	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	339		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	55	341	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	55	341	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	341		index __ArrHelper__main_5_0, __main_7qG2_ticks_7qG2_000, __unsigned_stack_001main
+0	55	345	#line 55 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	345		mov __DU0main, __ArrHelper__main_5_0
+0	56	347	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	347		numtostr __strretvalmain, __DU0main
+0	56	350	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	350		strcat __strbufmain, __strretvalmain
+0	56	354	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	354		mov __main_7qG2_temp_7qG2_002, __strbufmain
+0	56	356	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	356	#pragma macro 8
+0	57	356		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	57	358		strtoarr __FWriteArgs.Buffer, __main_7qG2_temp_7qG2_002
+0	57	361		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	57	364		syscall 4, __FWriteArgs
+0	57	367		mov __D0main, __FWriteArgs.Result
+0	57	369		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4014	371	#line 4014 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	371	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	56	371	#line 56 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	371	#line 57 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	58	371	#pragma macro 8
+0	58	371		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	58	373		strtoarr __FWriteArgs.Buffer, __constStr0010
+0	58	376		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	58	379		syscall 4, __FWriteArgs
+0	58	382		mov __D0main, __FWriteArgs.Result
+0	58	384		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4018	386	#line 4018 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	386	#line 57 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	57	386	#line 57 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	59	386	#line 59 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	386		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	59	388	#line 59 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	59	388	#line 59 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	388		index __ArrHelper__main_76_0, __main_7qG2_motorRot_7qG2_000, __unsigned_stack_001main
+0	59	392	#line 59 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	392		mov __D0main, __ArrHelper__main_76_0
+0	60	394	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	394		numtostr __strretvalmain, __D0main
+0	60	397	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	397		strcat __strbufmain, __strretvalmain
+0	60	401	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	401		mov __main_7qG2_temp_7qG2_002, __strbufmain
+0	60	403	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	403	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	403	#pragma macro 8
+0	61	403		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	61	405		strtoarr __FWriteArgs.Buffer, __main_7qG2_temp_7qG2_002
+0	61	408		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	61	411		syscall 4, __FWriteArgs
+0	61	414		mov __D0main, __FWriteArgs.Result
+0	61	416		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4041	418	#line 4041 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	418	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	60	418	#line 60 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	418	#line 61 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	62	418	#pragma macro 8
+0	62	418		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	62	420		strtoarr __FWriteArgs.Buffer, __constStr0010
+0	62	423		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	62	426		syscall 4, __FWriteArgs
+0	62	429		mov __D0main, __FWriteArgs.Result
+0	62	431		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4045	433	#line 4045 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	433	#line 61 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	61	433	#line 61 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	63	433	#line 63 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	433		mov __unsigned_stack_001main, __main_7qG2_i_7qG2_000
+0	63	435	#line 63 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	63	435	#line 63 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	435		index __ArrHelper__main_5_0, __main_7qG2_brightness_7qG2_000, __unsigned_stack_001main
+0	63	439	#line 63 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	439		mov __DU0main, __ArrHelper__main_5_0
+0	64	441	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	441		numtostr __strretvalmain, __DU0main
+0	64	444	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	444		strcat __strbufmain, __strretvalmain
+0	64	448	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	448		mov __main_7qG2_temp_7qG2_002, __strbufmain
+0	64	450	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	450	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	450	#pragma macro 8
+0	65	450		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	65	452		strtoarr __FWriteArgs.Buffer, __main_7qG2_temp_7qG2_002
+0	65	455		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	65	458		syscall 4, __FWriteArgs
+0	65	461		mov __D0main, __FWriteArgs.Result
+0	65	463		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4068	465	#line 4068 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	465	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	64	465	#line 64 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	465	#line 65 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	66	465	#pragma macro 8
+0	66	465		mov __FWriteArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	66	467		strtoarr __FWriteArgs.Buffer, __constStr0011
+0	66	470		arrsize __FWriteArgs.Length, __FWriteArgs.Buffer
+0	66	473		syscall 4, __FWriteArgs
+0	66	476		mov __D0main, __FWriteArgs.Result
+0	66	478		mov __main_7qG2_cnt_7qG2_000, __FWriteArgs.Length
+0	4072	480	#line 4072 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	480	#line 65 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	65	480	#line 65 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	74	480	#line 74 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	75	480		jmp __NXC_Label_568
+0	74	482	#line 74 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	74	482	#line 74 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	75	482	#pragma macro 5
+0	75	482		mov __FCArgs.FileHandle, __main_7qG2_handle_7qG2_000
+0	75	484		syscall 5, __FCArgs
+0	75	487		mov __D0main, __FCArgs.Result
+0	4080	489	#line 4080 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	74	489	#line 74 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	74	489	#line 74 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+0	75	489		exit -1, -1
+1	78	0	#line 78 "C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc"
+1	79	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc
+1	__initialize_global_data	492	C:\Users\erich\MyData\app_sache\workspace\RobotSensors\NXT_Software\segway_sensor_speed.nxc

@@ -1,0 +1,65 @@
+ 
+ 
+ 
+task main(){
+	byte handle;
+	unsigned int cnt;
+	
+	long motorRot[1000];
+	unsigned long ticks[1000];
+	unsigned long brightness[1000];
+	
+	
+	/*while(1){
+		long count = MotorRotationCount (OUT_A);
+		NumOut(0,LCD_LINE1,count);
+	}*/
+	
+	SetSensorType(IN_1, IN_TYPE_LIGHT_INACTIVE);
+  	SetSensorMode(IN_1, IN_MODE_RAW);
+  	Wait(1000);
+	
+	OnFwd(OUT_A, 100);
+  	OnFwd(OUT_B, 100);
+	
+	unsigned int i;
+	unsigned long tick,oldTick=0;
+	for(i=0; i<500; i++){
+		do{
+			tick = CurrentTick();
+		}while(oldTick == tick);
+		oldTick = tick;
+		ticks[i]= tick;
+		motorRot[i] = MotorRotationCount (OUT_A);
+		brightness[i] = SensorRaw(IN_1);
+	}
+	OnFwd(OUT_A, 0);
+  	OnFwd(OUT_B, 0);
+	
+	
+	
+	
+	CreateFile 	("aalues.txt", 20*1024, handle);
+	
+	for(i=0; i<1000; i++){
+		string temp = NumToStr(ticks[i]); 
+		WriteString(handle, temp, cnt);
+		WriteString(handle, ";", cnt);
+		
+		temp = NumToStr(motorRot[i]);
+		WriteString(handle, temp, cnt);
+		WriteString(handle, ";", cnt);
+		
+		temp = NumToStr(brightness[i]);
+		WriteString(handle, temp, cnt);
+		WriteString(handle, "\n", cnt);
+			
+	}
+	
+	/*WriteLnString(handle, "Hallo00\nHallo", cnt);
+	WriteLnString(handle, "Hallo", cnt);
+	WriteLnString(handle, "Hallo", cnt);
+	WriteLnString(handle, "Hallo222", cnt);*/
+	
+	CloseFile(handle);
+}

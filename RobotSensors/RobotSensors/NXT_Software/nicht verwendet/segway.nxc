@@ -1,0 +1,126 @@
+#include "robotSensors.nxc"
+
+//SysCommBTConnection
+
+task main(void){
+	float wX, wY, wZ; 
+	//float vZ, wZold, sZ;
+	float sX, temp;
+	unsigned long timestampMs, timestampOld, dt;
+	int pwr;
+	int pwrtemp;
+	unsigned long tick, oldTick, time, maxTime;
+	
+	CommBTConnectionType args;
+	args.Action = true;
+	args.Name = "HTC ONE S";
+	args.ConnectionSlot = 1;
+	int cnt=0;
+	/*while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}*/
+	SysCommBTConnection (args)
+//	cnt=0;
+//	while(args.Result != LDR_SUCCESS){
+//		NumOut(0,LCD_LINE1,cnt);
+//		cnt--;
+//		NumOut(0,LCD_LINE2,args.Result);
+//		Wait(100);
+//	}
+
+	
+	cnt=0;
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}
+	Wait(1000);
+	
+	SetSensorTouch(S1);
+
+	start_read_gyroscope_fast();
+	wX=0.0;
+	//wY=0.0;
+	sX = 0.0;//evlt. von anderem Sensor direkt einlesen
+	//sZ = 0.0;
+	read_gyroscope_fast(wX, wY, wZ, timestampOld);//timestamp old initialisieren
+	tick = 0;
+	oldTick=0;
+	maxTime = 0;
+	while(true){
+	
+	tick = CurrentTick();
+
+		if(read_gyroscope_fast(wX, wY, wZ, timestampMs)<0){
+			ClearScreen();
+			TextOut(0,LCD_LINE1,"<0");
+			Wait(100);
+			continue;
+		}
+		
+		if(timestampMs == timestampOld){
+			//ClearScreen();
+			TextOut(0,LCD_LINE1,"stamp");
+			//Wait(100);
+			continue;
+		}
+		
+		
+		
+		if(SensorValueBool(S1)==true){
+		
+			dt = timestampMs - timestampOld;
+
+			//temp = (dt * wX) /1000;
+			//sX = sX + temp;
+			//wY = (wY-9.81)*(wZ/abs(wZ));
+			
+			//vZ = ((wZ - wZold)/dt)*1000;
+			//wZold = wZ;
+			sX += (wX * dt) / 1000;
+			if(sX > 100.0) sX = 100.0;
+			if(sX < -100.0) sX = -100.0;
+			
+			//pwrtemp = 500 * sX + 300 * wX;
+			//pwrtemp = 50*wZ; + 10*sZ + vZ;
+			//pwrtemp = 50*sZ;
+			pwrtemp = 50*wX;
+			
+			
+			if(pwrtemp > 100.0){
+				pwr = 100;
+			}else if(pwrtemp < (-100.0)){
+				pwr = -100;
+			}else{
+				pwr = pwrtemp;
+			}
+		}else{pwr=0; sX=0.0; maxTime = 0;}
+
+		
+		
+		OnFwd(OUT_A, pwr);
+     	OnFwd(OUT_B, pwr);
+		
+		ClearScreen();
+		NumOut(0,LCD_LINE2,wX);
+        NumOut(0,LCD_LINE3,sX);
+        NumOut(0,LCD_LINE4,wZ);
+        NumOut(0,LCD_LINE5,pwr);
+        NumOut(0,LCD_LINE6,timestampMs);
+        
+        timestampOld = timestampMs;
+        
+        //Wait(100);
+       time = tick-oldTick;
+       NumOut(50,LCD_LINE1,time);
+	   if(time > maxTime) maxTime = time;
+	   NumOut(70,LCD_LINE1,maxTime);
+	   
+	    
+       oldTick=tick; 
+        
+	}
+
+
+}

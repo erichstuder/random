@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html itemscope="" itemtype="http://schema.org/Blog" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="de" lang="de"><head>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="de">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="imagetoolbar" content="no">
+
+<title>Lego Mindstorms NXT und RCX Forum - Thema anzeigen - GPS für NXT (NXC version)</title>
+
+
+
+<link rel="stylesheet" href="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/stylesheet.css" type="text/css">
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="./styles/avalonblue/theme/ie7.css" />
+<![endif]-->
+
+<script src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+// <![CDATA[
+
+        var onload_functions = new Array();
+        var onunload_functions = new Array();
+        var ca_main_width = '100%';
+
+
+
+function popup(url, width, height, name)
+{
+        if (!name)
+        {
+                name = '_popup';
+        }
+
+        window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
+        return false;
+}
+
+function jumpto()
+{
+        var page = prompt('Gib die Nummer der Seite an, zu der du gehen möchtest.:', '1');
+        var per_page = '';
+        var base_url = '';
+
+        if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0)
+        {
+                if (base_url.indexOf('?') == -1)
+                {
+                        document.location.href = base_url + '?start=' + ((page - 1) * per_page);
+                }
+                else
+                {
+                        document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * per_page);
+                }
+        }
+}
+
+/**
+* Find a member
+*/
+function find_username(url)
+{
+        popup(url, 760, 570, '_usersearch');
+        return false;
+}
+
+/**
+* Mark/unmark checklist
+* id = ID of parent container, name = name prefix, state = state [true/false]
+*/
+function marklist(id, name, state)
+{
+        var parent = document.getElementById(id);
+        if (!parent)
+        {
+                eval('parent = document.' + id);
+        }
+
+        if (!parent)
+        {
+                return;
+        }
+
+        var rb = parent.getElementsByTagName('input');
+
+        for (var r = 0; r < rb.length; r++)
+        {
+                if (rb[r].name.substr(0, name.length) == name)
+                {
+                        rb[r].checked = state;
+                }
+        }
+}
+
+
+
+        /**
+        * New function for handling multiple calls to window.onload and window.unload by pentapenguin
+        */
+        window.onload = function()
+        {
+                for (var i = 0; i < onload_functions.length; i++)
+                {
+                        eval(onload_functions[i]);
+                }
+        }
+
+        window.onunload = function()
+        {
+                for (var i = 0; i < onunload_functions.length; i++)
+                {
+                        eval(onunload_functions[i]);
+                }
+        }
+
+
+if(navigator.userAgent && navigator.userAgent.indexOf('Mac OS X') > 0)
+{
+        document.write('<link rel="stylesheet" href="./styles/avalonblue/theme/mac.css" type="text/css" />');
+}
+
+// ]]>
+</script>
+<script type="text/javascript" src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/ca_scripts.js"></script>
+
+
+
+
+
+</head>
+<body onload="rotate();" class="ltr">
+<div id="body">
+
+<a name="top"></a>
+ <table id="maintable" border="0" width="100%"><tbody><tr><td><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/logo.png" align="left"></td><td align="center" valign="middle">
+
+<!-- Update your html tag to include the itemscope and itemtype attributes -->
+
+
+<!-- Add the following three tags to your body -->
+<span itemprop="name">Mindstormsforum</span>
+<span itemprop="description">Lego Mindstorms NXT Forum</span>
+
+            <a class="mainmenu" href="#" onclick="window.open('uploads/', 'NewWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=880,height=800')"><font color="red"><b>Dateiupload</b></font> </a>  |
+           <!----- <a href="#" onClick="window.open('http://fb1.parsimony.net/cgi-bin/bot/bot.cgi?Nummer=1207', 'NewWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=800,height=500')"><font size="2" color="white"  face="verdana"><b>Chat-Bot</a> | ------>
+            <a href="#" onclick="window.open('faqNeu/index.php', 'NewWindow','toolbar=no,location=no,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no,width=900,height=600')"><font color="#0050A0" face="verdana" size="2"><b>FAQ</b></font></a><font color="#0050A0" face="verdana" size="2"><b> |
+             <a href="#" onclick="window.open('linkliste/index.php', 'NewWindow','toolbar=no,location=no,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no,width=900,height=600')"><font weight="bold" color="#0050A0" face="verdana" size="2"><b>Links</b></font></a><font weight="bold" color="#0050A0" face="verdana" size="2"><b> |
+            <a target="_blank" href="http://www.ev3-wissen.de/"><font weight="bold" color="#0050A0" face="verdana" size="2"><b>Lexikon</b></font></a><font weight="bold" color="#0050A0" face="verdana" size="2"><b> |
+            <a target="_blank" href="http://www.nxt-roboter.de/"><font weight="bold" color="#0050A0" face="verdana" size="2"><b>NXT Shop</b></font></a><font weight="bold" color="#0050A0" face="verdana" size="2"><b>  |
+            <a href="#" onclick="window.open('../../../nxBuch/index.html', 'NewWindow','toolbar=yes,location=no,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no,width=750,height=800')"><font color="#0050A0" face="verdana" size="2"><b>NXT-Bücher</b></font></a><font color="#0050A0" face="verdana" size="2"><b> |
+<a href="#" onclick="window.open('../../../wettbewerb/wettbewerbe.php', 'NewWindow','toolbar=no,location=no,directories=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no,width=650,height=650')"><font color="#0050A0" face="verdana" size="2"><b>Wettbewerbe</b></font></a><font color="#0050A0" face="verdana" size="2"><b>
+<!---- | <a target="unten" href="http://www.nxt-forum.de/geomap.php"><font size="2" color="#0050A0" weight="bold" face="verdana"><b>Karte</a> |
+ ---->
+
+
+
+</b></font></b></font></b></font></b></font></b></font></b></font></td> <td><a target="_blank" href="http://www.dulciman.de/"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/banner.jpg"></a>  </td>   </tr></tbody></table><br>
+
+
+<table id="maintable" align="center" border="5" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="row-left" valign="top"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/row_left_top.gif" alt="" height="100" width="4"></td>
+        <td id="header" align="center" valign="top">
+
+
+        <div class="navrow">
+            <a href="http://www.mindstormsforum.de/ucp.php?mode=register&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Registrieren</a> • 
+            <a href="http://www.mindstormsforum.de/faq.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469">FAQ</a>
+             • <a href="http://www.mindstormsforum.de/search.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469">Suche</a> • <a href="http://www.mindstormsforum.de/ucp.php?mode=login&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Anmelden</a>
+         <!-----   <li class="icon-news"> <a href="" title="{ NEWS }">{ NEWS }</a></li>   ------>
+        </div>
+
+
+
+        </td>
+        <td class="row-right" valign="top"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/row_right_top.gif" alt="" height="100" width="4"></td>
+</tr>
+<tr>
+    <td class="row-left"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/spacer.gif" alt="" height="1" width="4"></td>
+        <td id="contentrow">
+
+
+
+    <table cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="gensmall">
+            <a href="http://www.mindstormsforum.de/search.php?search_id=unanswered&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Unbeantwortete Themen</a> | <a href="http://www.mindstormsforum.de/search.php?search_id=active_topics&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Aktive Themen</a>
+        </td>
+        <td class="gensmall" align="right">
+            Aktuelle Zeit: 23. Mai 2013 18:29<br>
+            
+        </td>
+    </tr>
+    </tbody></table>
+
+        <table class="tablebg breadcrumb" style="margin-top: 5px;" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="http://www.mindstormsforum.de/index.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469">Foren-Übersicht</a> » <a href="http://www.mindstormsforum.de/viewforum.php?f=83&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Robotik-Hardware</a> » <a href="http://www.mindstormsforum.de/viewforum.php?f=73&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Bastelecke</a></p>
+			<p class="datetime">Alle Zeiten sind UTC [ Sommerzeit ]</p>
+		</td>
+	</tr>
+	</tbody></table>
+        <center><!-- $Id: did_you_know.html 6 2009-10-17 20:11:28Z Wuerzi $ --></center>
+
+<div id="pageheader">
+	<h2><a class="titles" href="http://www.mindstormsforum.de/viewtopic.php?f=73&amp;t=6089&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">GPS für NXT (NXC version)</a></h2>
+
+
+	<p class="moderators">Moderator: <a style="color:#00CC00;" href="http://www.mindstormsforum.de/memberlist.php?mode=group&amp;g=144&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Moderatoren</a></p>
+
+</div>
+
+<br clear="all"><br>
+
+<div id="pagecontent">
+
+	<table cellspacing="1" width="100%">
+	<tbody><tr>
+		
+			<td align="left" nowrap="nowrap" valign="middle">
+				<a href="http://www.mindstormsforum.de/posting.php?mode=reply&amp;f=73&amp;t=6089&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/button_topic_reply.gif" alt="Auf das Thema antworten" title="Auf das Thema antworten" height="22"></a>
+			</td>
+		
+			<td class="nav" nowrap="nowrap" valign="middle">&nbsp;Seite <strong>1</strong> von <strong>1</strong><br></td>
+			<td class="gensmall" nowrap="nowrap">&nbsp;[ 1 Beitrag ]&nbsp;</td>
+			<td class="gensmall" align="right" nowrap="nowrap" width="100%"></td>
+		
+	</tr>
+	</tbody></table>
+
+			<table cellspacing="0" width="100%">
+			<tbody><tr>
+				<td class="nav" nowrap="nowrap">
+				
+				</td>
+				<td class="nav" align="right" nowrap="nowrap"><a href="http://www.mindstormsforum.de/viewtopic.php?f=73&amp;t=6089&amp;view=previous&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Vorheriges Thema</a> | <a href="http://www.mindstormsforum.de/viewtopic.php?f=73&amp;t=6089&amp;view=next&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Nächstes Thema</a>&nbsp;</td>
+			</tr>
+			</tbody></table>
+
+	<div class="block-start">
+	<div class="cap-div"><div class="cap-left"><div class="cap-right">GPS für NXT (NXC version)&nbsp;</div></div></div>
+	<table class="tablebg" cellspacing="0" width="100%">
+        
+        <tbody><tr>
+            <th>Autor</th>
+            <th width="100%">Nachricht</th>
+        </tr>
+        <tr class="row1">
+
+			<td class="row" align="center" valign="top">
+				<a name="p51311"></a>
+				<div class="postauthor" style="color: #AA0000">HaWe</div>
+				<div class="posterrank">Administrator</div><div class="postrankimg"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/PDT_Rangad.gif" alt="Administrator" title="Administrator"></div><div class="postavatar"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/file.jpg" alt="Benutzeravatar" height="90" width="100"></div>
+
+				<div class="postdetails">
+					<br><b>Registriert:</b> 11. Jan 2006 21:01<br><b>Beiträge:</b> 3577<br><b>Wohnort:</b> ein kleiner Planet in der Nähe von Beteigeuze
+				</div>
+				<img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/spacer.gif" alt="" height="1" width="120">
+			</td>
+			<td class="row" height="25" valign="top" width="100%">
+				<div style="float: right;"></div>
+				<div class="postsubject"><a href="http://www.mindstormsforum.de/viewtopic.php?p=51311&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469#p51311"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/icon_topic_latest.gif" alt="Beitrag" title="Beitrag" height="9" width="13"></a>&nbsp;GPS für NXT (NXC version)</div>
+
+					
+
+						<div class="postbody">bevor es verloren geht- 
+<br>GPS für NXT mit NXC:
+<br>
+<br>gps_master_1_04.nxc (main program) by Antonio Scarfone
+<br><div class="codewrapper"><div class="codetitle"><b>Code:</b></div><div class="codecontent">/*******************************************************************************<br>&nbsp;*&nbsp; &nbsp;MASTER CONNECTION for Bluetooth GPS Receiver -GPS Data in NMEA Format-&nbsp; &nbsp; *<br>&nbsp;*******************************************************************************<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Workarround to handle bluetooth GPS receiver Data 
+stream&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; with NXC language from John Hansen version 
+1.0.1.32beta&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; and NXT-Lego Firmware 1.04. Bluetooth GPS-Receiver in 
+this&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp; 
+&nbsp; &nbsp; example is a Navilock BT-348 with a NMEA GPS-Data 
+output&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; format, but other models of such kind should also 
+work.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Both devices (NXT and GPS receiver) work with 4600 
+baud.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Normally, this workarround should not be possible, 
+because&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; of some NXC-Language or NXT-Firmware lacks, but so 
+what,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; I have beaten the devil!&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Author: Antonio Scarfone&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Email:&nbsp; a.scarfone@web.de&nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *<br>&nbsp;*&nbsp;
+ &nbsp; &nbsp; Date:&nbsp; &nbsp;10.09.2007&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*<br>&nbsp;*******************************************************************************/<br><br>#include "NXCDefs.h"<br><br>#include "strip_gps.nxc"<br><br>#define BT_CONN 1&nbsp; &nbsp;//Bluetooth connection port<br>#define INBOX 1&nbsp; &nbsp; &nbsp;//Mailbox or QUEUE number<br>#define INBUFFER 128&nbsp; &nbsp;//The input buffer, where the GPS data are written<br>#define INBUFFERSMALL 58 //Workarround buffer of 58 bytes, because nxc is only able to read max 58 bytes<br>#define INBUFFERSMALL2 12&nbsp; //Workarround buffer 2 x 58 = 116, remains 12 bytes to 128 bytes<br>#define STARTOFFSET 0&nbsp; &nbsp; &nbsp;//Offset start<br>// #define FILENAME "GPSData.txt" //Name of the file to write the GPS data<br>#define WAITCYCLEFAST 100 //Wait Cycle, because of 4600 baud , is the GPS-receiver connected to a satelite yes or no?<br>#define WAITCYCLESLOW 1500 //If no wait longer, because the data rate is not so high<br><br>/*Struct, where to hold the gps data stream sentences for one read cycle, one read cycle brings up to 2 or 3 sentences.<br>For security reason, there is a fourth sentence struct variable implemented*/<br>struct sentence_struct {<br>&nbsp; string sentence1;<br>&nbsp; string sentence2;<br>&nbsp; string sentence3;<br>&nbsp; string sentence4;<br>};<br><br>sentence_struct gpsSentences;&nbsp; //Global struct variable for the GPS sentences<br>string out,tmpstr;&nbsp; //out: output for the sentences, all in one string . tmpstr: debug string<br>// temp. buffer for the workarround input buffer to read splitted in 58,58,12 bytes buffers<br>byte tmpbuffer0[];<br>byte tmpbuffer1[];<br>byte tmpbuffer2[];<br>//Buffer to clear or init the real 128 byte input buffer<br>byte clearbuffer[];<br>//Buffer for init the request of the GPS Data<br>byte startreadbuf[];<br>//Create or append file for output data only for debug phase<br>//bool filewritten;<br>int dataflow = 0; //Speed of the data flow, depends if the GPS-Receiver is connected to satelite or not<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //If yes there is higher data rate per time unit.<br><br>//Sub routine to check Bluetooth connection, exits the program if no connection<br>sub BTCheck(int conn){<br>&nbsp; &nbsp;if (!BluetoothStatus(conn) == NO_ERR){<br>&nbsp; &nbsp; &nbsp; TextOut(5,LCD_LINE2,"Error");<br>&nbsp; &nbsp; &nbsp; Wait(1000);<br>&nbsp; &nbsp; &nbsp; Stop(true);<br>&nbsp; &nbsp;}<br>}<br><br><br>/*<br><br>// Writes the sentences stored in out to a file, only for debug<br>void WriteData (string afile, string Data)<br>{<br>byte handle;<br>int slen;<br>int fsize;<br><br><br>&nbsp; &nbsp; &nbsp;if (!filewritten) {<br>&nbsp; &nbsp; &nbsp; &nbsp;if (CreateFile(afile, 10048, handle) == NO_ERR ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; slen = StrLen(Data);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WriteBytes(handle, Data, slen);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CloseFile(handle);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filewritten = true;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp;} else {<br>&nbsp; &nbsp; &nbsp; &nbsp; if (OpenFileAppend(afile, fsize, handle) == NO_ERR ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; slen = StrLen(Data);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WriteBytes(handle, Data, slen);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CloseFile(handle);<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp;}<br>}<br><br>*/<br><br>int GetSentences (sentence_struct &amp;ret,byte buffer1[],byte buffer2[],byte buffer3[],byte asciibegin, byte asciiend)<br>{<br>byte sarray[],rarray[];<br>string astr = "";<br><br>int beg = -1;<br>int ends = -1;<br>int ii = 0;<br>int xx = 0;<br>int num = -1;<br>byte alen = 0;<br>byte lensplit = 0;<br>bool startsplit = true;<br><br>ArrayInit(sarray, 0, INBUFFER);<br>ArrayInit(rarray, 0, INBUFFER);<br>ArrayBuild(sarray, buffer1, buffer2, buffer3);<br>alen = ArrayLen(sarray);<br><br><br>for (ii=0;ii&lt;alen;ii++)<br>&nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp;if (sarray[ii] == asciibegin)<br>&nbsp; &nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp; &nbsp;if (startsplit == true &amp;&amp; beg == -1 &amp;&amp; ends == -1)<br>&nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; beg = ii;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; startsplit=false;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br><br>&nbsp; &nbsp; &nbsp; &nbsp;if (startsplit == false &amp;&amp; beg &gt; -1 &amp;&amp; ends == -1)<br>&nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ends = ii;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; num++;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lensplit = (ends - beg);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataflow+=lensplit;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ArraySubset(rarray, sarray, beg, lensplit);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ByteArrayToStrEx(rarray, astr);<br><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (xx == 0)ret.sentence1 = astr;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (xx == 1)ret.sentence2 = astr;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (xx == 2)ret.sentence3 = astr;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (xx == 3)ret.sentence4 = astr;<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ArrayInit(rarray, 0, INBUFFER);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; astr = "";<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; startsplit = true;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ends = -1;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; beg = -1;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; xx++;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ii = ii - 1;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp;}<br>&nbsp; // astr=SubStr(ret.sentence1, 1, 9);<br>&nbsp; // TextOut(0,LCD_LINE1,astr);<br>&nbsp; &nbsp;num++;<br>&nbsp; &nbsp;return num;<br>}<br><br><br>task main(){<br>&nbsp; &nbsp;string sdumy;<br>&nbsp; &nbsp;int numsent = 0;// Number of sentences received in one read cycle<br><br>&nbsp; &nbsp;//init the following buffers<br>&nbsp; &nbsp;ArrayInit(tmpbuffer0, 0, INBUFFERSMALL);<br>&nbsp; &nbsp;ArrayInit(tmpbuffer1, 0, INBUFFERSMALL);<br>&nbsp; &nbsp;ArrayInit(tmpbuffer2, 0, INBUFFERSMALL2);<br>&nbsp; &nbsp;ArrayInit(clearbuffer, 0, INBUFFER);<br>&nbsp; &nbsp;ArrayInit(startreadbuf, 0, INBUFFERSMALL);<br><br><br>&nbsp; &nbsp;BTCheck(BT_CONN); //check slave connection<br>&nbsp; &nbsp;//Check if file is already written<br>&nbsp; &nbsp;// filewritten = false;<br>&nbsp; &nbsp;ReceiveRemoteString(INBOX, 1, startreadbuf); //Start a receive sequence to fill up the input buffer with GPS data<br><br>&nbsp; &nbsp;while(true){<br>&nbsp; &nbsp; &nbsp; &nbsp;//init the struct to hold the sentences<br>&nbsp; &nbsp; &nbsp; &nbsp;gpsSentences.sentence1 = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;gpsSentences.sentence2 = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;gpsSentences.sentence3 = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;gpsSentences.sentence4 = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;//init the output string, which hold up the gpsSentences struct<br>&nbsp; &nbsp; &nbsp; &nbsp;out = "";<br><br>&nbsp; &nbsp; &nbsp; &nbsp;//make sure one receive sequence is not pending or not in error<br>&nbsp; &nbsp; &nbsp; &nbsp;until(BluetoothStatus(BT_CONN) == NO_ERR);<br>&nbsp;
+ &nbsp; &nbsp; &nbsp;//Start a receive sequence to fill up the input 
+buffer with GPS data , before reading the input buffer<br>&nbsp; &nbsp; &nbsp; &nbsp;ReceiveRemoteString(INBOX, 1, startreadbuf);<br>&nbsp;
+ &nbsp; &nbsp; &nbsp;//Get the 128 byte large input buffer in three 
+temp. buffer splitted up in 58,58 and 12 bytes long bytes arrays,<br>&nbsp; &nbsp; &nbsp; &nbsp;//in order to workarround the ability of nxc to handle only 58 bytes large buffers.<br>&nbsp; &nbsp; &nbsp; &nbsp;GetBTInputBuffer(STARTOFFSET, INBUFFERSMALL, tmpbuffer0);<br>&nbsp; &nbsp; &nbsp; &nbsp;GetBTInputBuffer(INBUFFERSMALL, INBUFFERSMALL, tmpbuffer1);<br>&nbsp; &nbsp; &nbsp; &nbsp;GetBTInputBuffer(2*INBUFFERSMALL, INBUFFERSMALL2, tmpbuffer2);<br>&nbsp; &nbsp; &nbsp; &nbsp;//make sure one receive sequence is not pending or not in error<br>&nbsp; &nbsp; &nbsp; &nbsp;until(BluetoothStatus(BT_CONN) == NO_ERR);<br>&nbsp; &nbsp; &nbsp; &nbsp;//Submit the three temp. input buffers, in order to extract the sentences.<br>&nbsp;
+ &nbsp; &nbsp; &nbsp;//Each sentence starts with a '$' char ascii=36 and
+ ends with a '*' char ascii=42 to follow a checksum and a CR+LF.<br>&nbsp; &nbsp; &nbsp; &nbsp;numsent = GetSentences(gpsSentences, tmpbuffer0, tmpbuffer1, tmpbuffer2, 36, 42);<br>&nbsp; &nbsp; &nbsp; &nbsp;//Output the extracted sentences to out string<br>&nbsp; &nbsp; &nbsp; &nbsp;if (gpsSentences.sentence1 != "")out=StrCat(out,gpsSentences.sentence1);<br>&nbsp; &nbsp; &nbsp; &nbsp;if (gpsSentences.sentence2 != "")out=StrCat(out,gpsSentences.sentence2);<br>&nbsp; &nbsp; &nbsp; &nbsp;if (gpsSentences.sentence3 != "")out=StrCat(out,gpsSentences.sentence3);<br>&nbsp; &nbsp; &nbsp; &nbsp;if (gpsSentences.sentence4 != "")out=StrCat(out,gpsSentences.sentence4);<br>&nbsp; &nbsp; &nbsp; &nbsp;//Clear up the input buffer and set the input buffer pointer at the beginning of the buffer<br>&nbsp; &nbsp; &nbsp; &nbsp;SetBTInputBuffer(STARTOFFSET, INBUFFER, clearbuffer);<br>&nbsp; &nbsp; &nbsp; &nbsp;SetBTInputBufferInPtr(0);<br>&nbsp; &nbsp; &nbsp; &nbsp;//clear up the temp. buffers<br>&nbsp; &nbsp; &nbsp; &nbsp;ArrayInit(tmpbuffer0, 0, INBUFFERSMALL);<br>&nbsp; &nbsp; &nbsp; &nbsp;ArrayInit(tmpbuffer1, 0, INBUFFERSMALL);<br>&nbsp; &nbsp; &nbsp; &nbsp;ArrayInit(tmpbuffer2, 0, INBUFFERSMALL2);<br>&nbsp; &nbsp; &nbsp; &nbsp;ArrayInit(clearbuffer, 0, INBUFFER);<br><br><br>&nbsp; &nbsp; &nbsp; &nbsp;//debug output<br>&nbsp; &nbsp; &nbsp; //tmpstr=SubStr(out, 5, 13);<br>&nbsp; &nbsp; &nbsp;// TextOut(0,LCD_LINE4,tmpstr);<br>&nbsp; &nbsp; // NumOut(0,LCD_LINE4, Strlen(out));<br>&nbsp; &nbsp; &nbsp; &nbsp;//write the sentences in a file<br>&nbsp; &nbsp; &nbsp; &nbsp;//WriteData(FILENAME,out);<br><br>&nbsp; &nbsp; &nbsp; &nbsp; //sdumy=SubStr(out, 1, 9);<br>&nbsp; &nbsp; &nbsp; &nbsp;//TextOut(0,LCD_LINE1,sdumy);<br>&nbsp; &nbsp; &nbsp; &nbsp;strip_gps_data(out);<br><br>&nbsp; &nbsp; &nbsp; &nbsp;numsent = 0;<br>&nbsp; &nbsp; &nbsp; &nbsp;//wait between 1500ms, in order&nbsp; to respect the baudrate of 4600 baud<br>&nbsp; &nbsp; &nbsp; &nbsp;//if data rate is slow, that means no connection to the satelite<br>&nbsp; &nbsp; &nbsp; &nbsp;//wait only 100ms, if the data rate is high, connection to the satelite is established.<br>&nbsp; &nbsp; &nbsp; &nbsp;//the nxt firmware works with 4600 baud<br>&nbsp; &nbsp; &nbsp; &nbsp;//my bluetooth GPS-receiver too.<br>&nbsp; &nbsp; &nbsp; &nbsp;//the model is a Navilock BT-348<br>&nbsp; &nbsp; &nbsp; &nbsp;if (numsent == 0 &amp;&amp; dataflow == 0) //no data available<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataflow = 0;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Wait(WAITCYCLEFAST);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp;
+ &nbsp; &nbsp; &nbsp;if ((numsent == 0 || numsent == 1) &amp;&amp; 
+dataflow &gt; 60) //data rate is high, less sentences per read cycle in 
+the in buffer<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataflow = 0;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Wait(WAITCYCLEFAST);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp;
+ &nbsp; &nbsp; &nbsp;if ((numsent == 2 || numsent == 3) &amp;&amp; 
+dataflow &gt; 100) //data rate is slow, more sentences per read cycle in
+ the in buffer<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataflow = 0;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Wait(WAITCYCLESLOW);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp;}<br>}<br></div></div><br>strip_gps.nxc (included file) by Robokalle<br><div class="codewrapper"><div class="codetitle"><b>Code:</b></div><div class="codecontent">/* *********************************************************************<br>Hello, with this little tool you can analyze the GPS-Out-string<br>I use only the GPPGGA string.<br><br>You must the code include in "Antonio Scarfone" "gps_master_1_04.nxc"<br><br>copy and paste or<br><br>#include "strip_gps.nxc"<br><br>after<br>.....<br>#include "NXCDefs.h"<br>.......<br><br>start the tool with<br><br>.......<br>&nbsp; &nbsp; &nbsp; &nbsp;//debug output<br>&nbsp; &nbsp; &nbsp; &nbsp;//tmpstr=SubStr(out, 5, 13);<br>&nbsp; &nbsp; &nbsp; &nbsp;//TextOut(0,LCD_LINE4,tmpstr);<br>&nbsp; &nbsp; &nbsp; &nbsp;//NumOut(0,LCD_LINE5,numsent);<br>&nbsp; &nbsp; &nbsp; &nbsp;//write the sentences in a file<br><br>&nbsp; &nbsp;strip_gps_data(out);&nbsp; &nbsp;//-this is new<br><br>&nbsp; &nbsp; &nbsp; &nbsp;// WriteData(FILENAME,out);<br>&nbsp; &nbsp; &nbsp; &nbsp;numsent = 0;<br>...........<br><br>possibly you must comment out TextOUT or NumOUT from gps_master_1_04.nxc<br><br>Author: Robokalle<br>Date:&nbsp; &nbsp;19.11.2007<br><br>************************************************************************** */<br>#include "NXCDefs.h"<br><br>struct GPGGA_struct {<br>&nbsp; &nbsp; &nbsp; &nbsp;long clock_high;<br>&nbsp; &nbsp; &nbsp; &nbsp;long clock_low;<br>&nbsp; &nbsp; &nbsp; &nbsp;unsigned int latitude_high;<br>&nbsp; &nbsp; &nbsp; &nbsp;int latitude_low;<br>&nbsp; &nbsp; &nbsp; &nbsp;string N_direction;<br>&nbsp; &nbsp; &nbsp; &nbsp;unsigned int longitude_high;<br>&nbsp; &nbsp; &nbsp; &nbsp;int longitude_low;<br>&nbsp; &nbsp; &nbsp; &nbsp;string E_direction;<br>&nbsp; &nbsp; &nbsp; &nbsp;byte quality;<br>&nbsp; &nbsp; &nbsp; &nbsp;byte Sat_number;<br>&nbsp; &nbsp; &nbsp; &nbsp;byte accurateness_high;<br>&nbsp; &nbsp; &nbsp; &nbsp;byte accurateness_low;<br>&nbsp; &nbsp; &nbsp; &nbsp;int altitude_high;<br>&nbsp; &nbsp; &nbsp; &nbsp;int altitude_low;<br>&nbsp; &nbsp; &nbsp; &nbsp;string altitude_measure;<br>};<br>GPGGA_struct GPGGA;<br><br>void&nbsp; GPGGAtoScreen() {<br>&nbsp; &nbsp;ClearScreen();<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE1,GPGGA.clock_high);<br>&nbsp; &nbsp;TextOut(36,LCD_LINE1,".");<br>&nbsp; &nbsp;NumOut(42,LCD_LINE1,GPGGA.clock_low);<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE2,GPGGA.latitude_high);<br>&nbsp; &nbsp;TextOut(36,LCD_LINE2,".");<br>&nbsp; &nbsp;NumOut(42,LCD_LINE2,GPGGA.latitude_low);<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE3,GPGGA.longitude_high);<br>&nbsp; &nbsp;TextOut(36,LCD_LINE3,".");<br>&nbsp; &nbsp;NumOut(42,LCD_LINE3,GPGGA.longitude_low);<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE4,GPGGA.altitude_high);<br>&nbsp; &nbsp;TextOut(36,LCD_LINE4,".");<br>&nbsp; &nbsp;NumOut(42,LCD_LINE4,GPGGA.altitude_low);<br>&nbsp; &nbsp;TextOut(48,LCD_LINE4,GPGGA.altitude_measure);<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE5,GPGGA.accurateness_high);<br>&nbsp; &nbsp;TextOut(36,LCD_LINE5,".");<br>&nbsp; &nbsp;NumOut(42,LCD_LINE5,GPGGA.accurateness_low);<br><br>&nbsp; &nbsp;NumOut(0,LCD_LINE6,GPGGA.quality);<br>&nbsp; &nbsp;NumOut(0,LCD_LINE7,GPGGA.Sat_number);<br><br>} // GPGGA<br><br>void copytostruct(int item,string sdumy){<br>int len,j;<br>string dumy, dumy1;<br>len= StrLen(sdumy);<br><br>switch(item){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 1:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0; j &lt; len ;j++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(sdumy,j)== 46){ // nach "." suchen<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1= SubStr( sdumy,0,j ) ;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGA.clock_high = StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1=SubStr( sdumy,j+1, len - j);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGA.clock_low =StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }// if str<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} // for j<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 2:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0; j &lt; len ;j++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(sdumy,j)== 46){ // nach "." suchen<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1= SubStr( sdumy,0,j ) ;<br>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; GPGGA.latitude_high = StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1=SubStr( sdumy,j+1, len - j);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGA.latitude_low =StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }// if str<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} // for j<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 3:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPGGA.N_direction=sdumy;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 4:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0; j &lt; len ;j++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(sdumy,j)== 46){ // nach "." suchen<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1= SubStr( sdumy,0,j ) ;<br>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; GPGGA.longitude_high = StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1=SubStr( sdumy,j+1, len - j);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGA.longitude_low =StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }// if str<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} // for j<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 5:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPGGA.E_direction=sdumy;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 6:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPGGA.quality=StrToNum(sdumy);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 7:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPGGA.Sat_number=StrToNum(sdumy);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 8:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0; j &lt; len ;j++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(sdumy,j)== 46){ // nach "." suchen<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1= SubStr( sdumy,0,j ) ;<br>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; GPGGA.accurateness_high = StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1=SubStr( sdumy,j+1, len - j);<br>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; GPGGA.accurateness_low =StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }// if str<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} // for j<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 9:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0; j &lt; len ;j++){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(sdumy,j)== 46){ // nach "." suchen<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1= SubStr( sdumy,0,j ) ;<br>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; GPGGA.altitude_high = StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dumy1=SubStr( sdumy,j+1, len - j);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGA.altitude_low =StrToNum(dumy1);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }// if str<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} // for j<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 10:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPGGA.altitude_measure=sdumy;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br><br><br>}// switch<br><br><br>} // -copytostr<br><br>void strip_gps_data(string GPS_data){<br>int lendata, i, begin, last, item ;<br>string sdumy;<br>bool GGA;<br>GGA = false;<br>i=0;<br>lendata= StrLen(GPS_data);<br>begin = -1;<br>item=0;<br><br>while (StrIndex(GPS_data,i) ==36 &amp;&amp; i &lt; lendata){// suchen "$"<br>&nbsp; &nbsp; &nbsp; i++;<br>&nbsp; &nbsp; &nbsp; begin =i;<br>&nbsp; &nbsp; &nbsp; } // while<br>if (begin &gt;-1){<br>&nbsp; &nbsp; for (i=begin; i &lt; lendata ;i++) {<br>&nbsp; &nbsp; &nbsp; &nbsp; if (StrIndex(GPS_data,i)== 44){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;last=i;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sdumy=SubStr(GPS_data,begin,last-begin);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (sdumy == "GPGGA"){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GGA = true;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (GGA){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NumOut(0,LCD_LINE6,GGA);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copytostruct(item,sdumy);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; begin=i+1;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// NumOut(0,LCD_LINE8,item);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; item++;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (item &gt; 10){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i=lendata;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//&nbsp; Wait(500);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GPGGAtoScreen();<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i=lendata;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp; }// if strindex<br>&nbsp; &nbsp; }// for begin<br>} // if<br>} // -copy<br><br><br>// -<br>// only for testing: uncomment task main()!<br>// -<br>/*<br>task main (){&nbsp; &nbsp;// Testing main<br>string GPS_data = "$GPGGA,123522.798,5016.9430,N,01776.7081,E,1,05,5.0,564.2,M,,,,0000*0F";<br><br>&nbsp;strip_gps_data(GPS_data);<br><br><br>&nbsp;Wait(1000);<br>}&nbsp; //-main<br>&nbsp;*/<br></div></div></div>
+
+					
+						<div class="postbody signature"><br><span class="line">_________________</span><br>Gruß,<br>HaWe<br>±·≠≈²³αβγδε∂ζλμνπξφωΔΦ≡ΠΣΨΩ∫√∀∃∈∉∧∨¬⊂⊄∩∪∅∞<br>NXC NXT CHESS SCHACH: <!-- w --><a class="postlink" href="http://www.mindstormsforum.de/viewtopic.php?f=70&amp;t=6790" onclick="window.open(this.href);<br />            return false;">www.mindstormsforum.de/viewtopic.php?f=70&amp;t=6790</a><!-- w --></div>
+					<br clear="all"><br>
+			</td>
+		</tr>
+
+		<tr class="row1">
+
+			<td class="postbottom" align="center">16. Okt 2010 11:42</td>
+			<td class="postbottom postbuttons" valign="middle">
+				
+					<div style="float: right">
+					
+					</div>
+				<a href="http://www.mindstormsforum.de/memberlist.php?mode=viewprofile&amp;u=229&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/icon_user_profile.gif" alt="Profil" title="Profil" height="13"></a> 
+			</td>
+    	
+		</tr>
+	
+	<tr>
+		<td class="cat" colspan="2" align="center"><form name="viewtopic" method="post" action="./viewtopic.php?f=73&amp;t=6089&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469"><span class="gensmall">Beiträge der letzten Zeit anzeigen:</span> <select name="st" id="st"><option value="0" selected="selected">Alle Beiträge</option><option value="1">1 Tag</option><option value="7">7 Tage</option><option value="14">2 Wochen</option><option value="30">1 Monat</option><option value="90">3 Monate</option><option value="180">6 Monate</option><option value="365">1 Jahr</option></select>&nbsp;<span class="gensmall">Sortiere nach</span> <select name="sk" id="sk"><option value="a">Autor</option><option value="t" selected="selected">Erstellungsdatum</option><option value="s">Betreff</option></select> <select name="sd" id="sd"><option value="a" selected="selected">Aufsteigend</option><option value="d">Absteigend</option></select>&nbsp;<input class="btnlite" value="Los" name="sort" type="submit"></form></td>
+	</tr>
+	
+	</tbody></table>
+	<div class="block-end-left"><div class="block-end-right"></div></div></div>
+
+	<table cellspacing="1" width="100%">
+	<tbody><tr>
+		
+			<td align="left" nowrap="nowrap" valign="middle">
+				<a href="http://www.mindstormsforum.de/posting.php?mode=reply&amp;f=73&amp;t=6089&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/button_topic_reply.gif" alt="Auf das Thema antworten" title="Auf das Thema antworten" height="22"></a>&nbsp;
+			</td>
+		
+			<td class="nav" nowrap="nowrap" valign="middle">&nbsp;Seite <strong>1</strong> von <strong>1</strong><br></td>
+			<td class="gensmall" nowrap="nowrap">&nbsp;[ 1 Beitrag ]&nbsp;</td>
+			<td class="gensmall" align="right" nowrap="nowrap" width="100%"></td>
+		
+	</tr>
+	</tbody></table>
+
+</div>
+
+
+
+<div id="pagefooter"></div>
+
+<table class="tablebg breadcrumb" style="margin-top: 5px;" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="http://www.mindstormsforum.de/index.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469">Foren-Übersicht</a> » <a href="http://www.mindstormsforum.de/viewforum.php?f=83&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Robotik-Hardware</a> » <a href="http://www.mindstormsforum.de/viewforum.php?f=73&amp;sid=b1aad8a6e1256b3cf4c034ba5d2da469">Bastelecke</a></p>
+			<p class="datetime">Alle Zeiten sind UTC [ Sommerzeit ]</p>
+		</td>
+	</tr>
+	</tbody></table>
+	<br clear="all">
+
+	<table class="tablebg" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="cat"><h4>Wer ist online?</h4></td>
+	</tr>
+	<tr>
+		<td class="row1"><p class="gensmall">Mitglieder in diesem Forum: 0 Mitglieder und 7 Gäste</p></td>
+	</tr>
+	</tbody></table>
+
+
+<br clear="all">
+
+<table cellspacing="1" width="100%">
+<tbody><tr>
+	<td align="left" nowrap="nowrap" valign="top" width="40%"></td>
+	<td align="right" nowrap="nowrap" valign="top"><span class="gensmall">Du darfst <strong>keine</strong> neuen Themen in diesem Forum erstellen.<br>Du darfst <strong>keine</strong> Antworten zu Themen in diesem Forum erstellen.<br>Du darfst deine Beiträge in diesem Forum <strong>nicht</strong> ändern.<br>Du darfst deine Beiträge in diesem Forum <strong>nicht</strong> löschen.<br>Du darfst <strong>keine</strong> Dateianhänge in diesem Forum erstellen.<br></span></td>
+</tr>
+</tbody></table>
+
+<br clear="all">
+
+<table cellspacing="0" width="100%">
+<tbody><tr>
+	<td><form method="post" name="search" action="./search.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469"><span class="gensmall">Suche nach:</span> <input class="post" name="keywords" size="20" type="text"> <input class="btnlite" value="Los" type="submit"></form></td>
+	<td align="right">
+	<form method="post" name="jumpbox" action="./viewforum.php?sid=b1aad8a6e1256b3cf4c034ba5d2da469" onsubmit="if(document.jumpbox.f.value == -1){return false;}">
+
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td nowrap="nowrap"><span class="gensmall">Gehe zu:</span>&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+
+		
+			<option value="-1">Wähle ein Forum aus</option>
+		<option value="-1">------------------</option>
+			<option value="82">Allgemeines zu Lego®  Mindstorms</option>
+		
+			<option value="71">&nbsp; &nbsp;Allgemeines zu Lego Mindstorms NXT und EV3</option>
+		
+			<option value="70">&nbsp; &nbsp;Projekte, Showcase, Bauanleitungen</option>
+		
+			<option value="83">Robotik-Hardware</option>
+		
+			<option value="89">&nbsp; &nbsp;MINDSTORMS-Generation EV3</option>
+		
+			<option value="79">&nbsp; &nbsp;Lego® Mindstorms NXT Hardware</option>
+		
+			<option value="77">&nbsp; &nbsp;Tetrix, Lego Technik, Wedo ...</option>
+		
+			<option value="73" selected="selected">&nbsp; &nbsp;Bastelecke</option>
+		
+			<option value="78">&nbsp; &nbsp;allgemeine / nicht-Lego-Robotik</option>
+		
+			<option value="85">&nbsp; &nbsp;RCX</option>
+		
+			<option value="2">&nbsp; &nbsp;&nbsp; &nbsp;Robotics Invention Systeme</option>
+		
+			<option value="86">&nbsp; &nbsp;qfix robotics</option>
+		
+			<option value="80">&nbsp; &nbsp;&nbsp; &nbsp;qfix robotics</option>
+		
+			<option value="81">&nbsp; &nbsp;&nbsp; &nbsp;News</option>
+		
+			<option value="84">Software/Programmieren</option>
+		
+			<option value="74">&nbsp; &nbsp;grafische Programmiersoftware für NXT</option>
+		
+			<option value="25">&nbsp; &nbsp;textbasierte Programmiersoftware für NXT</option>
+		
+			<option value="90">&nbsp; &nbsp;&nbsp; &nbsp;RobotC</option>
+		
+			<option value="91">&nbsp; &nbsp;&nbsp; &nbsp;Java</option>
+		
+			<option value="9">&nbsp; &nbsp;sonstige Software und Software-Probleme</option>
+		
+			<option value="87">Dies &amp; Das</option>
+		
+			<option value="63">&nbsp; &nbsp;Tools</option>
+		
+			<option value="38">&nbsp; &nbsp;Betriebssysteme</option>
+		
+			<option value="6">&nbsp; &nbsp;Unterricht &amp; AG</option>
+		
+			<option value="66">&nbsp; &nbsp;Off Topic</option>
+		
+			<option value="65">&nbsp; &nbsp;Mediadaten</option>
+		
+			<option value="88">&nbsp; &nbsp;Impressum</option>
+		
+
+		</select>&nbsp;<input class="btnlite" value="Los" type="submit"></td>
+	</tr>
+	</tbody></table>
+
+	</form>
+</td>
+</tr>
+</tbody></table>
+
+
+
+<div id="wrapfooter">
+<a target="_blank" href="http://www.mindstormsforum.de/impressum.php"><b>Impressum</b> </a>
+
+        
+        <span class="copyright">
+
+        Powered by <a href="http://www.phpbb.com/">phpBB</a> © 2000, 2002, 2005, 2007 phpBB Group.
+        <br>Designed by <a href="http://www.stsoftware.biz/index.html">ST Software</a> for <a href="http://ptf.com/" title="PTF">PTF</a>.
+        <br>Deutsche Übersetzung durch <a href="http://www.phpbb.de/">phpBB.de</a></span>
+
+        </div>
+
+        </td>
+        <td class="row-right"><img src="Lego%20Mindstorms%20NXT%20und%20RCX%20Forum%20-%20Thema%20anzeigen%20-%20GPS%20f%C3%BCr%20NXT%20%28NXC%20version%29-Dateien/spacer.gif" alt="" height="1" width="4"></td>
+</tr>
+<tr>
+    <td colspan="3" class="row-bottom"><div><div></div></div></td>
+</tr>
+</tbody></table>
+
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27308506-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body></html>

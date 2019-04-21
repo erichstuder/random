@@ -1,0 +1,191 @@
+#include "robotSensors.nxc"
+
+task light(){
+	while(true){
+		cameraLightOn();
+		Wait(500);
+		cameraLightOff();
+		Wait(500);
+	}
+}
+
+task cam(){
+	int width, height, brightestX, brightestY, intensity;
+	while(true){
+		if(cameraRead(0) == SUCCESS){
+			pictureAccuBrightestPoint(0, width, height, brightestX, brightestY, intensity);
+		}
+		pictureAccuShow(0);
+	}
+}
+
+
+
+task main(void){
+
+//////
+	CommBTConnectionType args;
+	args.Action = true;
+	args.Name = "HTC ONE S";
+	args.ConnectionSlot = 1;
+	int cnt=0;
+	/*while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}*/
+	SysCommBTConnection (args)
+	
+
+	cnt=0;
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}
+	Wait(3000);
+//////
+	
+	cameraStart(BACK);
+	Wait(1000);
+	StartTask(light);
+	StartTask(cam);
+	//Precedes(light,cam);
+	//return;
+	//while(true);
+	
+	
+	
+	
+	
+//	//SetSensorUltrasonic(IN_1);
+//	SetSensorType(IN_1,SENSOR_TYPE_LIGHT_ACTIVE );
+//	int width, height, brightestX, brightestY, result, intensity;
+//	int basePwr = 20;
+//	int p = 10;
+//	int pwrA, pwrB;
+//	bool back=true;
+//	while(true){
+//		//NumOut(0,LCD_LINE1,1);
+//		
+//		//Wait(1000);
+//		//ClearScreen();
+//		//NumOut(0,LCD_LINE1,2);
+////		if(back == true){
+////			cameraStart(FRONT);
+////			back = false;
+////		}else{
+////			cameraStart(FRONT);
+////			back = true;
+////		}
+//
+//        cameraLightOn();
+//		//Wait(500);
+//		//cameraLightStop();
+//
+//		
+//		if(cameraRead(0) == SUCCESS){
+//			result = pictureAccuBrightestPoint(0, width, height, brightestX, brightestY, intensity);
+//		}
+//		//TextOut(0,LCD_LINE2,"   ");
+//		//NumOut(0,LCD_LINE2,intensity);
+//		pictureAccuShow(0);
+//		NumOut(0,LCD_LINE2,22);
+//		//Wait(1000);
+//		//NumOut(0,LCD_LINE2,44);
+//		//cameraLightStop();
+//		//NumOut(0,LCD_LINE1,3);
+//		//cameraStop();
+//		
+//		//NumOut(0,LCD_LINE1,width);
+//		//NumOut(0,LCD_LINE2,height);
+//		//NumOut(0,LCD_LINE3,brightestX);
+//		//NumOut(0,LCD_LINE4,brightestY);
+//		//NumOut(0,LCD_LINE5,result);
+//		
+//		int diff = brightestX - width/2;
+//		pwrA = 0;
+//		pwrB = 0;
+//		if(diff>0){
+//			pwrB = diff / p;
+//			//pwrA = 0;
+//		}else{
+//			pwrA = -diff / p;
+//			//pwrB = 0;
+//		}
+//		
+//		pwrA += basePwr;
+//		pwrB += basePwr;
+//		
+//		if(pwrA > 100) pwrA = 100;
+//		if(pwrA < 0) pwrA = 0;
+//		if(pwrB > 100) pwrB = 100;
+//		if(pwrB < 0) pwrB = 0;
+//		
+//		//pwrA = pwrB = 20;
+//		//NumOut(0,LCD_LINE6,Sensor(IN_1));
+//		if(Sensor(IN_1) < 200){
+//			pwrA = 0;
+//			pwrB = 0;
+//		}
+//
+//		OnFwd(OUT_A, pwrA);
+//     	OnFwd(OUT_B, pwrB);
+//		
+//		//TextOut(0,LCD_LINE1,"durch");	
+//    	//Wait(1000);
+//	}
+
+	
+}
+
+
+//	byte buf[];
+//	byte buf2[];
+//	ArrayInit(buf2, 0, 64);
+//	while(true){
+//		ArrayInit(buf, 0, 128);
+//		buf[0] = 0xEE;
+//		buf[1] = 0x00;
+//		for(int i=2; i<128; i++){
+//			buf[i] = i;
+//		}
+//		//while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+//		SetBTInputBuffer(0, 64, buf);
+//		SetBTInputBufferInPtr(0);
+//		Wait(1000);
+//		//ArrayInit(buf2, 0, 128);
+//		
+//		while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+//    	GetBTInputBuffer(0,64,buf2);
+//		
+//		ClearScreen();
+//		Wait(100);
+//		NumOut(0,LCD_LINE1,buf2[56]);
+//		NumOut(0,LCD_LINE2,buf2[57]);
+//		NumOut(0,LCD_LINE3,buf2[58]);
+//		NumOut(0,LCD_LINE4,buf2[59]);
+//		NumOut(0,LCD_LINE5,buf2[60]);
+//		NumOut(0,LCD_LINE6,buf2[61]);
+//		NumOut(0,LCD_LINE7,buf2[62]);
+//		NumOut(0,LCD_LINE8,buf2[63]);
+//
+//
+//		NumOut(20,LCD_LINE1,buf2[0]);
+//		NumOut(20,LCD_LINE2,buf2[1]);
+//		NumOut(20,LCD_LINE3,buf2[2]);
+//		NumOut(20,LCD_LINE4,buf2[3]);
+//		NumOut(20,LCD_LINE5,buf2[4]);
+//		NumOut(20,LCD_LINE6,buf2[5]);
+//		NumOut(20,LCD_LINE7,buf2[6]);
+//		NumOut(20,LCD_LINE8,buf2[7]);
+//
+//        NumOut(40,LCD_LINE1,buf2[8]);
+//		NumOut(40,LCD_LINE2,buf2[9]);
+//		NumOut(40,LCD_LINE3,buf2[10]);
+//		NumOut(40,LCD_LINE4,buf2[11]);
+//		NumOut(40,LCD_LINE5,buf2[12]);
+//		NumOut(40,LCD_LINE6,buf2[13]);
+//		NumOut(40,LCD_LINE7,buf2[14]);
+//		NumOut(40,LCD_LINE8,buf2[15]);
+//		Wait(1000);	
+//	}
+

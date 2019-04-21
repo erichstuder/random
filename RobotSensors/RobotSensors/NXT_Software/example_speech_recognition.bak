@@ -1,0 +1,54 @@
+/*
+\brief Example using speech recognition in the RobotSensors Api.
+\author Erich Studer
+\date July 2013
+*/
+
+#include "robotSensors.nxc"
+
+task main(){
+
+	CommBTConnectionType args;
+	args.Action = true;
+	args.Name = "HTC ONE S"; //the name of your smartphone, found in the bluetooth settings.// e.g. "HTC ONE S";
+	args.ConnectionSlot = 1;
+	int cnt=0;
+	SysCommBTConnection (args)
+	
+	cnt=0;
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}
+	Wait(1000);
+
+	int status;
+	string word;
+	
+	status = speechRecognizerStart();
+	ClearScreen();
+	TextOut(0,LCD_LINE1,"start");
+	if(status != SUCCESS){
+		TextOut(0,LCD_LINE2,"error!!!");
+		NumOut(0,LCD_LINE3,status);
+		Wait(3000);
+	}else{
+	    TextOut(0,LCD_LINE2,"success");
+		while(true){
+			status = speechRecognizerRead(word);
+			if(status != ERROR){
+				ClearScreen();
+				TextOut(0,LCD_LINE1,word);
+				Wait(1000);
+				if(strcmp(word,"stop") == 0){//end the program with "stop"!!
+					break;
+				}
+			}else{
+				
+			}
+		}
+	}
+	
+	speechRecognizerStop();
+}
+

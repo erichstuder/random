@@ -1,0 +1,63 @@
+
+
+task main(){
+	unsigned long brightness, oldBrightness;
+	int power, oldPower, temp;
+	long angle;
+	unsigned long oldTick, tick, delta;
+	SetSensorType(IN_1, IN_TYPE_LIGHT_INACTIVE);
+  	SetSensorMode(IN_1, IN_MODE_RAW);
+  	
+  	angle = 0;
+  	oldTick = CurrentTick();
+  	delta = 0;
+  	oldPower = 0;
+	while(1){
+  		brightness = SensorRaw(IN_1);
+  		
+  		//tick = CurrentTick();
+  		
+  		
+		//delta = tick - oldTick;	
+  		
+  		//oldTick = tick;
+  		
+  		//if(brightness < 700 && brightness > 690) brightness = 695;
+  		
+  		//angle = angle + ((brightness-731) * delta);
+  		
+  		
+  		ClearScreen();
+		NumOut(0,LCD_LINE1,brightness);
+		//NumOut(0,LCD_LINE2,angle);
+		 
+  		//NumOut(0,LCD_LINE3,delta);
+  		//NumOut(0,LCD_LINE4,tick);
+  		//NumOut(0,LCD_LINE5,oldTick);
+		
+  		
+  		
+		//im mittel 696
+  		//schwarz 872
+  		//weiss 565
+  		
+  		//ClearScreen();
+  		//NumOut(0,LCD_LINE1,brightness);
+  		
+		  
+		power = 712 - brightness;
+  		
+  		//power = (oldBrightness - brightness)*50;
+  		//oldBrightness = brightness;
+  		
+  		power *= 2;
+		  //power = (temp-oldPower)/delta;
+  		//oldPower = temp*10;
+  		NumOut(0,LCD_LINE2,power);
+  		if(power > 100) power = 100;
+  		if(power < -100) power = -100;
+  	    OnFwd(OUT_A, power);
+  	    OnFwd(OUT_B, power);
+  		//Wait(7);
+	}
+}

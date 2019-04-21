@@ -1,0 +1,68 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="erichstuder.robotsensors"
+    android:versionCode="3"
+    android:versionName="1.2" >
+    
+
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <application
+        android:icon="@drawable/robot"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+       
+        
+        <activity
+            android:name="erichstuder.robotsensors.MainActivity"
+            android:label="@string/app_name"  
+
+            android:screenOrientation="landscape">
+          	<!-- configure this activity to use landscape orientation -->
+          	<!--  android:label="@string/title_activity_main" -->
+            
+
+        </activity>
+        
+        <activity
+            android:name="ImageProcessingActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="erichstuder.robotsensors.PlayAroundActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+        </activity>
+        
+		<activity
+            android:name="ControlledExtActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" 
+            android:configChanges="orientation|screenSize"> 
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.google.ads.AdActivity"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+      
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,42 @@
+task main(void){
+    //message soll starten mit NCB zur Erkennung von wem das Telegramm ist.
+    
+    //Es wäre schön, das Telegramm erst nach diesem Test zu löschen.
+    //Aber kann die mailbox exklusive reserviert werden???
+    //Was wenn das Telegramm für mich ist, es aber jemand anders schon gelöscht hat?
+    //=>dann würde ich ein falsches Telegramm löschen!!
+    
+    //einkommende Nachrichten sollen alle über Mailbox 0 reinkommen.
+    //Dies entspricht dem Standard: "LEGO MINDSTORMS NXT Bluetooth Developer Kit.pdf"
+    
+    
+    
+    string message = "0123456789";
+    string buf;
+    int cnt = 0;
+    
+    //ReceiveMessage(mailboxNr, false, message);
+    
+    //SendMessage(mailboxNr, message);
+    
+    BluetoothWrite(CONN_BT1, message);
+    
+    //Wait(1000);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    
+    //Wait(100);
+    cnt = 0;
+    while(ReceiveMessage(1, true, buf)!=NO_ERR){
+        cnt++;
+    }
+    
+    //Wait(1000);
+    //TextOut(0,0,buf);
+    //NumOut(0,0,buf[0]);
+    NumOut(0,0,cnt);
+    
+    
+    Wait(2000); 
+    
+}

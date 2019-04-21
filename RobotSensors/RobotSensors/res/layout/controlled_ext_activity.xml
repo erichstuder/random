@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <com.google.ads.AdView
+        xmlns:googleads="http://schemas.android.com/apk/lib/com.google.ads"
+        android:id="@+id/ad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        googleads:loadAdOnCreate="true"
+        googleads:adSize="BANNER"
+        googleads:adUnitId="a151c81d53f2ad1" />
+    
+    <FrameLayout
+	    android:id="@+id/dummyPreview"
+	    android:layout_width="1dp"
+	    android:layout_height="1dp" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+</LinearLayout>

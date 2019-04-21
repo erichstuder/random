@@ -1,0 +1,1310 @@
+/** 
+* \file	robotSensors.nxc
+*/
+
+
+/*
+\brief Api for RobotSensors.
+\author Erich Studer
+\version 1.1
+\date July 2013
+*/
+
+
+//\brief	Robot Sensors high level Api  
+//This is the high level Api of Robot Sensors.
+
+/**
+* \page connectToRobotSensors Connect to RobotSensors
+*
+* To establish a bluetooth connection between RobotSensors and your NXT follow this instruction.
+* This is only necessary at the first time.
+*
+* 1. Download and install the app on your smartphone.
+* 2. Start the app on your smarthphone. If bluetooth is not yet turned on you will be asked to do so.
+* 3. Go to bluetooth-settings on your smartphone an make it visible.
+* 4. Turn on your NXT.
+* 5. Turn on Bluetooth on your NXT.
+* 6. Search for Bluetooth devices.
+* 7. Choose your smartphone from the list of found devices.
+* 8. Connect to connection slot 1.
+* 9. Set passkey and press ok.
+* 10. Confirm on your smartphone with the same passkey.
+*/
+
+
+
+///////////
+//Modules//
+///////////
+/** \cond */
+#define CAMERA 0x00
+#define PICTURE_ACCU 0x01
+//#define READ_GYROSCOPE Sensor.TYPE_GYROSCOPE //0x04
+#define GYROSCOPE 0x04
+#define ROBOT_SENSORS 0x05 //Main-Modul
+//#define LIGHT 0x06
+#define MICROPHONE 0x07
+#define BRIGHTNESS 0x08
+#define TIME 0x09
+//since V 1.1
+#define ACCELEROMETER 0x0A
+#define MAGNETIC_FIELD 0x0B
+#define PRESSURE 0x0C
+#define PROXIMITY 0x0D
+//since V 1.2
+#define RELATIVE_HUMIDITY 0x0E
+#define AMBIENT_TEMPERATURE 0x0F
+#define SPEECH_RECOGNIZER 0x10
+
+/** \endcond */
+
+////////////
+//Commands//
+////////////
+//enum wird nicht verwendet, weil Schlüsselwörter (start, stop, ...) auch wenn sie gross geschrieben sind, einen Fehler verursachen. 
+/** \cond */
+#define READ 0x00
+#define START_READ_FAST 0x01
+#define FAST_VALUE 0x02
+#define SHOW 0x03
+#define FILTER 0x04
+#define START 0x05
+#define BRIGHTEST_POINT 0x06
+#define STOP 0x07
+#define LIGHT_ON 0x08
+#define LIGHT_OFF 0x09
+#define NOISE_LEVEL 0x0A
+#define MEAN_COLOR 0x0B
+#define DARKEST_POINT 0x0C
+#define CUT 0x0D
+#define COPY 0x0E
+#define SUBTRACT 0x0F
+/** \endcond */
+
+/////////////
+//Constants//
+/////////////
+/** 
+* \defgroup Direction
+* \{
+*/
+#define FRONT 0x00
+#define BACK 0x01
+/**
+* \}
+*/
+
+
+/** 
+* \defgroup Status
+* \{
+*/
+#define SUCCESS 0x00
+#define ERROR 0x01
+/**
+* \}
+*/
+
+/** 
+* \defgroup Mode
+* \{
+*/
+#define NORMAL 0x00
+#define HIGH_PASSED 0x01
+#define LOW_PASSED 0x02
+/**
+* \}
+*/
+
+/** 
+* \defgroup Day_of_Week Day of Week
+* \{
+*/
+#define SUNDAY    1
+#define MONDAY    2
+#define TUESDAY   3
+#define WEDNESDAY 4
+#define THURSDAY  5
+#define FRIDAY    6
+#define SATURDAY  7
+/**
+* \}
+*/
+
+/** 
+* \defgroup Month
+* \{
+*/
+#define JANUARY    0//starts with 0!!!
+#define FEBRUARY   1
+#define MARCH      2
+#define APRIL      3
+#define MAY        4
+#define JUNE       5
+#define JULY       6
+#define AUGUST     7
+#define SEPTEMBER  8
+#define OCTOBER    9
+#define NOVEMBER   10
+#define DECEMBER   11
+#define UNDECIMBER 12 
+/**
+* \}
+*/
+
+
+//////////
+//Intern//
+//////////
+
+/** \cond */
+
+#define USABLE_SIZE_OF_BT_BUF 64 //Eigentlich ist der Bluetooth Buffer 128 Byte.
+//Es sind aber nur die ersten 64 Byte verwendbar. Dies Einschränkung besteht aus
+//Kompatibilitätsgründen zu USB, der nur einen Buffer von 64 Byte hat.
+
+const byte ROBOT_SENSORS_ID_1 = 0xEE;
+const byte ROBOT_SENSORS_ID_2 = 0x00;
+
+//Index of the different Bytes in the Messages
+#define ROBOT_SENSORS_ID_1_INDEX	0
+#define ROBOT_SENSORS_ID_2_INDEX	1
+#define	MODUL_ID_INDEX				2
+#define CMD_ID_INDEX				3
+#define STATUS_ID_INDEX				4
+
+/** \endcond */
+
+/**
+* \private
+* \brief	Clears the bluetooth input buffer
+*/
+void clearBTInputBuffer(){
+	byte zeroPattern[];
+	ArrayInit(zeroPattern, 0, USABLE_SIZE_OF_BT_BUF);
+    SetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, zeroPattern);
+	SetBTInputBufferInPtr(0);	
+}
+
+/**
+* \private
+* \brief	Checks if the message is marked as Robot Sensors.
+*
+* \param	buf	The message to check.
+*
+* \return	True if it is a Robot Sensors message else false.
+*/
+bool isRobotSensorsMessage(unsigned byte buf[]){
+	if(ArrayLen(buf)<2){
+		return false;
+	}else{
+		return ((buf[ROBOT_SENSORS_ID_1_INDEX]==ROBOT_SENSORS_ID_1) && (buf[ROBOT_SENSORS_ID_2_INDEX]==ROBOT_SENSORS_ID_2));
+	}
+}
+
+/**
+* \private
+* \brief	Sends a Cmd and waits for the answer.
+*
+* \param	modul	Modul ID
+* \param	cmd		Command ID
+* \param 	data	Additional data and holds the answer after the call.
+*
+* \return	\ref Status
+*/
+void rsCmd(byte modul, byte cmd, byte &data[]){
+
+	byte message[];
+	int len = ArrayLen(data) + 4;
+	
+	ArrayBuild(message, ROBOT_SENSORS_ID_1, ROBOT_SENSORS_ID_2, modul, cmd, data);
+
+	//Inbuffer löschen sofern sich noch eine alte antwort darin befindet
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, data);
+    if(isRobotSensorsMessage(data) && data[MODUL_ID_INDEX] == modul && data[CMD_ID_INDEX] == cmd){
+		clearBTInputBuffer();	
+	}
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, data);
+    }while(!(isRobotSensorsMessage(data) && data[MODUL_ID_INDEX] == modul && data[CMD_ID_INDEX] == cmd));			
+}
+
+
+/**
+* \private
+* \brief	Starts the reading of values in a faster way.
+*
+* After this function call the values are sent as fast as possible.
+*
+* \return	\ref Status
+*/
+int gyroscopeStartReadFast(){
+	byte buf[];
+	byte message[4];
+
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+    message[MODUL_ID_INDEX] = GYROSCOPE;
+    message[CMD_ID_INDEX] = START_READ_FAST;
+    
+    //Inbuffer löschen sofern sich noch eine alte antwort darin befindet
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == START_READ_FAST){
+		clearBTInputBuffer();	
+	}
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == START_READ_FAST));
+
+    return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \private
+* \brief	Stops the reading of values in a faster way.
+*
+* \see gyroscopeStartReadFast
+* \todo implement
+*
+* \return	\ref Status
+*/
+int gyroscopeStopReadFast(){
+     //TODO
+     return ERROR;
+}
+
+/**
+* \private
+* \brief	Reads the values in a faster way.
+*
+* \ref gyroscopeStartReadFast must have been called before once.
+*
+* For axis definition see http://developer.android.com/reference/android/hardware/SensorEvent.html. 
+*
+* \param	wX			Returns the rate of rotation around the x axis [deg/s].
+* \param	wY          Returns the rate of rotation around the y axis [deg/s].
+* \param	wZ			Returns the rate of rotation around the z axis [deg/s].
+* \param	timestampMs	Returns the timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int gyroscopeReadFast(int &wX, int &wY, int &wZ, unsigned long &timestampMs){
+    byte buf[];
+    
+	do{//TODO evtl. sollte dieser Bereich hier nicht blocken
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == FAST_VALUE));
+    clearBTInputBuffer();
+    
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	wX = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+    	wY = buf[STATUS_ID_INDEX+3] + (buf[STATUS_ID_INDEX+4]<<8);
+    	wZ = buf[STATUS_ID_INDEX+5] + (buf[STATUS_ID_INDEX+6]<<8);
+    	timestampMs =  buf[STATUS_ID_INDEX+7] + (buf[STATUS_ID_INDEX+8]<<8) + (buf[STATUS_ID_INDEX+9]<<16) + (buf[STATUS_ID_INDEX+10]<<24);
+	}else{
+		wX = 0;
+		wY = 0;
+		wZ = 0;
+		timestampMs = 0;
+	}
+
+    return status;
+}
+
+
+/**
+* \brief	Read the values of the gyroscope.
+*
+* For axis definition see http://developer.android.com/reference/android/hardware/SensorEvent.html.
+*
+* \param	wX			Rate of rotation around the x axis [deg/s].
+* \param	wY          Rate of rotation around the y axis [deg/s].
+* \param	wZ			Rate of rotation around the z axis [deg/s].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int gyroscopeRead(int &wX, int &wY, int &wZ, unsigned long &timestampMs){
+	byte buf[];
+	byte message[4];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+    message[MODUL_ID_INDEX] = GYROSCOPE;
+    message[CMD_ID_INDEX] = READ;
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == READ){
+		clearBTInputBuffer();	
+	}
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == GYROSCOPE && buf[CMD_ID_INDEX] == READ));
+
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	wX = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+    	wY = buf[STATUS_ID_INDEX+3] + (buf[STATUS_ID_INDEX+4]<<8);
+    	wZ = buf[STATUS_ID_INDEX+5] + (buf[STATUS_ID_INDEX+6]<<8);
+    	timestampMs =  buf[STATUS_ID_INDEX+7] + (buf[STATUS_ID_INDEX+8]<<8) + (buf[STATUS_ID_INDEX+9]<<16) + (buf[STATUS_ID_INDEX+10]<<24);
+	}else{
+		wX = 0;
+		wY = 0;
+		wZ = 0;
+		timestampMs = 0;
+	}
+	
+	return status;
+}
+
+
+/**
+* \brief	Stops the camera.
+*
+* \return	\ref Status
+*/
+int cameraStop(){
+	byte buf[];
+	byte message[4];
+
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+    message[MODUL_ID_INDEX] = CAMERA;
+    message[CMD_ID_INDEX] = STOP;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == STOP){
+		clearBTInputBuffer();	
+	}
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == STOP));
+
+    return buf[STATUS_ID_INDEX];
+    
+}
+
+/**
+* \brief	Starts the camera.
+*
+* Before you can use the camera, you have to start it.
+*
+* \param	direction \ref Direction
+*
+* \return	\ref Status
+*/
+int cameraStart(unsigned byte direction){
+	byte buf[];
+	byte message[5];
+
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+    message[MODUL_ID_INDEX] = CAMERA;
+    message[CMD_ID_INDEX] = START;
+    message[CMD_ID_INDEX+1] = direction;
+    
+    //cameraStop(); //stop a probably running cam;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == START){
+		clearBTInputBuffer();	
+	}
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == START));
+
+    return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \brief	Takes a picture from the camera.
+*
+* \ref cameraStart must have been called before once.
+*
+* \param	accuIndex   The index of the accu to store the picture in.
+* \param	width		Returns the width of the taken picture.
+* \param	height      Returns the height of the taken picture.
+*
+* \return	\ref Status
+*/
+int cameraRead(unsigned byte accuIndex, unsigned int &width, unsigned int &height){
+	byte buf[];
+	byte message[5];
+    
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2; 
+    message[MODUL_ID_INDEX] = CAMERA;
+    message[CMD_ID_INDEX] = READ;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == READ){
+		clearBTInputBuffer();	
+	}
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == READ));
+
+	byte status = buf[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		width  = buf[STATUS_ID_INDEX  ] + (buf[STATUS_ID_INDEX+1]<<8);
+    	height = buf[STATUS_ID_INDEX+2] + (buf[STATUS_ID_INDEX+3]<<8); 
+	}else{
+		width = 0;
+		height = 0;
+	}
+	return status;
+
+}
+
+/**
+* \brief	Displays a picture from the picture accu.
+*
+* \param	accuIndex   The index of the accu to be shown.
+*
+* \return	\ref Status
+*/
+int pictureAccuShow(unsigned byte accuIndex){
+	byte buf[];
+	byte message[5];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = SHOW;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == SHOW){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == SHOW));
+    
+    return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \brief	Finds the brightest point of an image in the picture accu.
+*
+* \param	accuIndex   The index of the accu to store the picture in.
+* \param	width		Returns the width of the picture.
+* \param	height      Returns the height of the picture.
+* \param	brightestX	Returns the x coordinate of the brightest point. range 0..width 
+* \param	brightestY  Returns the y coordinate of the brightest point. range 0..height
+* \param	intensity   Returns the intensity of the brightest point. range 0..255
+*
+* \return	\ref Status
+*/
+int pictureAccuBrightestPoint(byte accuIndex, unsigned int &width, unsigned int &height, unsigned int &brightestX, unsigned int &brightestY, unsigned int &intensity){
+    byte buf[];
+	byte message[5];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = BRIGHTEST_POINT;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    NumOut(0,LCD_LINE1,1);
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+	
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == BRIGHTEST_POINT){
+		clearBTInputBuffer();	
+	}
+    NumOut(0,LCD_LINE1,2);
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    NumOut(0,LCD_LINE1,3);
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+	
+	NumOut(0,LCD_LINE1,4); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == BRIGHTEST_POINT));
+    
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	width  =     buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+    	height =     buf[STATUS_ID_INDEX+3] + (buf[STATUS_ID_INDEX+4]<<8);
+    	brightestX = buf[STATUS_ID_INDEX+5] + (buf[STATUS_ID_INDEX+6]<<8);
+    	brightestY = buf[STATUS_ID_INDEX+7] + (buf[STATUS_ID_INDEX+8]<<8);
+    	intensity =  buf[STATUS_ID_INDEX+9];
+	}else{
+		width = 0;
+		height = 0;
+		brightestX = 0;
+		brightestY = 0;
+		intensity = 0;
+	}
+	NumOut(0,LCD_LINE1,5);
+	return status;
+}
+
+/**
+* \brief	Finds the darkest point of an image in the picture accu.
+*
+* \param	accuIndex   The index of the accu to store the picture in.
+* \param	width		Returns the width of the picture.
+* \param	height      Returns the height of the picture.
+* \param	darkestX	Returns the x coordinate of the darkest point. range 0..width 
+* \param	darkestY  	Returns the y coordinate of the darkest point. range 0..height
+* \param	intensity   Returns the intensity of the darkest point. range 0..255
+*
+* \return	\ref Status
+*/
+int pictureAccuDarkestPoint(byte accuIndex, unsigned int &width, unsigned int &height, unsigned int &darkestX, unsigned int &darkestY, unsigned int &intensity){
+    byte buf[];
+	byte message[5];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = DARKEST_POINT;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == DARKEST_POINT){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == DARKEST_POINT));
+    
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	int i = STATUS_ID_INDEX+1;
+    	width  =     buf[i  ] + (buf[i+1]<<8);
+    	height =     buf[i+2] + (buf[i+3]<<8);
+    	darkestX = buf[i+4] + (buf[i+5]<<8);
+    	darkestY = buf[i+6] + (buf[i+7]<<8);
+    	intensity =  buf[i+8];
+	}else{
+		width = 0;
+		height = 0;
+		darkestX = 0;
+		darkestY = 0;
+		intensity = 0;
+	}
+	
+	return status;
+}
+
+/**
+* \brief	Calculates the mean color of an image in the picture accu.
+*
+* \param	accuIndex   The index of the accu to store the picture in.
+* \param	r			Returns the mean red value. range 0..255
+* \param	g      		Returns the mean green value. range 0..255
+* \param	b			Returns the mean blue value. range 0..255
+*
+* \return	\ref Status
+*/
+int pictureAccuMeanColor(byte accuIndex, unsigned byte &r, unsigned byte &g, unsigned byte &b){
+    byte buf[];
+	byte message[5];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = MEAN_COLOR;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == MEAN_COLOR){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == MEAN_COLOR));
+    
+    int status = buf[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	r = buf[STATUS_ID_INDEX+1];
+		g = buf[STATUS_ID_INDEX+2];
+		b = buf[STATUS_ID_INDEX+3];
+	}else{
+		r = 0;
+		g = 0;
+		b = 0;
+	}
+	
+	return status;
+}
+
+/**
+* \brief	Cuts off some part of an image in the picture accu.
+*
+* \param	accuIndex   The index of the accu to store the picture in.
+* \param	left		Number of Pixels to cut off from the left.
+* \param	right      	Number of Pixels to cut off from the right.
+* \param	top			Number of Pixels to cut off from the top.
+* \param	bottom		Number of Pixels to cut off from the bottom.
+*
+* \return	\ref Status
+*/
+int pictureAccuCut(byte accuIndex, unsigned int left, unsigned int right, unsigned int top, unsigned int bottom){
+    byte buf[];
+	byte message[13];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = CUT;
+    message[CMD_ID_INDEX+1] = accuIndex;
+    message[CMD_ID_INDEX+2] = left;
+    message[CMD_ID_INDEX+3] = left>>8;
+    message[CMD_ID_INDEX+4] = right; 
+    message[CMD_ID_INDEX+5] = right>>8;
+    message[CMD_ID_INDEX+6] = top;
+    message[CMD_ID_INDEX+7] = top>>8;
+    message[CMD_ID_INDEX+8] = bottom;
+    message[CMD_ID_INDEX+9] = bottom>>8;
+
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == CUT){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == CUT));
+
+	return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \brief	Copies a picture from one accu place to another.
+*
+* \param	sourceAccuIndex
+* \param	targetAccuIndex
+*
+* \return	\ref Status
+*/
+int pictureAccuCopy(byte sourceAccuIndex, byte targetAccuIndex){
+	byte buf[];
+	byte message[6];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = COPY;
+    message[CMD_ID_INDEX+1] = sourceAccuIndex;
+	message[CMD_ID_INDEX+2] = targetAccuIndex;
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == COPY){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == COPY));
+
+	return buf[STATUS_ID_INDEX];
+		
+}
+
+/**
+* \brief	Subtracts the picture at accuIndexB from the one at accuIndexA.
+*
+* The result is stored at accuIndexA in picture accu.
+* r = rA - rB
+* g = gA - gB
+* b = bA - bB
+*
+* \param	accuIndexA
+* \param	accuIndexB
+*
+* \return	\ref Status
+*/
+int pictureAccuSubtract(byte accuIndexA, byte accuIndexB){
+	byte buf[];
+	byte message[6];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = PICTURE_ACCU;
+    message[CMD_ID_INDEX] = SUBTRACT;
+    message[CMD_ID_INDEX+1] = accuIndexA;
+	message[CMD_ID_INDEX+2] = accuIndexB;
+	
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == SUBTRACT){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == PICTURE_ACCU && buf[CMD_ID_INDEX] == SUBTRACT));
+
+    return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \brief	Turns on the camera light.
+*
+* \ref cameraStart must have been called before once.
+*
+* \return	\ref Status
+*/
+int cameraLightOn(){
+	byte buf[];
+	byte message[4];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = CAMERA;
+    message[CMD_ID_INDEX] = LIGHT_ON;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == LIGHT_ON){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == LIGHT_ON));
+    
+    return buf[STATUS_ID_INDEX];
+}
+
+/**
+* \brief	Turns off the camera light.
+*
+* \ref cameraStart must have been called before once.
+*
+* \return	\ref Status
+*/
+int cameraLightOff(){
+	byte buf[];
+	byte message[4];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = CAMERA;
+    message[CMD_ID_INDEX] = LIGHT_OFF;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == LIGHT_OFF){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == CAMERA && buf[CMD_ID_INDEX] == LIGHT_OFF));
+    
+    return buf[STATUS_ID_INDEX];	
+}
+
+/**
+* \brief	Returns the surrounding noise level.
+*
+* \param	noiseLevel	Returns the noise level. It's an absolut value and NOT decibel! 
+*
+* \return	\ref Status
+*/
+int microphoneNoiseLevel(unsigned int &noiseLevel){
+	byte buf[];
+	byte message[4];
+	
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2;
+	message[MODUL_ID_INDEX] = MICROPHONE;
+    message[CMD_ID_INDEX] = NOISE_LEVEL;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == MICROPHONE && buf[CMD_ID_INDEX] == NOISE_LEVEL){
+		clearBTInputBuffer();	
+	}
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR); 
+    do{
+    	GetBTInputBuffer(0,USABLE_SIZE_OF_BT_BUF,buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == MICROPHONE && buf[CMD_ID_INDEX] == NOISE_LEVEL));
+    
+    byte status = buf[STATUS_ID_INDEX];
+    
+    if(status != ERROR){
+    	noiseLevel = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+	}else{
+		noiseLevel = 0;
+	}
+    
+    return status;
+}
+
+/**
+* \brief	Reads the surrounding brightness.
+*
+* \param	brightness	Returns the brightness value.
+* \param	timestamp 	Returns the timestamp of the brightness value in milli seconds. 
+*
+* \return	\ref Status
+*/
+int brightnessRead(unsigned int &brightness, unsigned long &timestampMs){
+	byte buf[];
+	byte message[4];
+    
+	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2; 
+    message[MODUL_ID_INDEX] = BRIGHTNESS;
+    message[CMD_ID_INDEX] = READ;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == BRIGHTNESS && buf[CMD_ID_INDEX] == READ){
+		clearBTInputBuffer();	
+	}
+
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    BluetoothWrite(CONN_BT1, message);
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    do{
+    	GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == BRIGHTNESS && buf[CMD_ID_INDEX] == READ));
+    
+    byte status = buf[STATUS_ID_INDEX]; 
+    
+    if(status == SUCCESS){
+    	brightness  = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+    	timestampMs = buf[STATUS_ID_INDEX+3] + (buf[STATUS_ID_INDEX+4]<<8) + (buf[STATUS_ID_INDEX+5]<<16) + (buf[STATUS_ID_INDEX+6]<<24);
+	}else{
+		brightness = 0;
+		timestampMs = 0;
+	}
+	return status;
+}
+
+/**
+* \brief	Reads the actual time.
+*
+* \param	year		Returns the year.
+* \param	month       Returns the \ref Month.
+* \param	day         Returns	the day. range 1..31
+* \param	dayOfWeek	Returns the \ref Day_of_Week.
+* \param	hour        Returns the hour. range 0..23
+* \param	minute      Returns the minue. range 0..59
+* \param	second      Returns the second. range 0..59
+* \param	millis      Returns the milli seconds. range 0..999
+*
+* \return	\ref Status
+*/
+int timeRead(int &year, unsigned byte &month, unsigned byte &day, unsigned byte &dayOfWeek, unsigned byte &hour, unsigned byte &minute, unsigned byte &second, unsigned int &millis){
+//	byte buf[];
+//	byte message[4];
+//
+//	message[ROBOT_SENSORS_ID_1_INDEX] = ROBOT_SENSORS_ID_1;
+//	message[ROBOT_SENSORS_ID_2_INDEX] = ROBOT_SENSORS_ID_2; 
+//    message[MODUL_ID_INDEX] = TIME;
+//    message[CMD_ID_INDEX] = READ;
+//    
+//    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+//    GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+//    if(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == TIME && buf[CMD_ID_INDEX] == READ){
+//		clearBTInputBuffer();	
+//	}
+//
+//    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+//    BluetoothWrite(CONN_BT1, message);
+//    
+//    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+//    do{
+//    	GetBTInputBuffer(0, USABLE_SIZE_OF_BT_BUF, buf);
+//    }while(!(isRobotSensorsMessage(buf) && buf[MODUL_ID_INDEX] == TIME && buf[CMD_ID_INDEX] == READ));
+//
+//    byte status = buf[STATUS_ID_INDEX]; 
+//    
+//    if(status == SUCCESS){
+//    	year      = buf[STATUS_ID_INDEX+1] + (buf[STATUS_ID_INDEX+2]<<8);
+//    	month     = buf[STATUS_ID_INDEX+3];
+//		day       = buf[STATUS_ID_INDEX+4];
+//		dayOfWeek = buf[STATUS_ID_INDEX+5];
+//		hour      = buf[STATUS_ID_INDEX+6];
+//		minute    = buf[STATUS_ID_INDEX+7];
+//		second    = buf[STATUS_ID_INDEX+8];
+//		millis    = buf[STATUS_ID_INDEX+9] + (buf[STATUS_ID_INDEX+10]<<8); 
+//	}else{
+//		year      = 0;
+//    	month     = 0;
+//		day       = 0;
+//		dayOfWeek = 0;
+//		hour      = 0;
+//		minute    = 0;
+//		second    = 0;
+//		millis    = 0; 
+//	}
+//	return status;
+		
+	byte data[0];//no aditional data
+    rsCmd(TIME, READ, data);
+    
+    byte status = data[STATUS_ID_INDEX];
+    
+    if(status == SUCCESS){
+    	year      = data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+    	month     = data[STATUS_ID_INDEX+3];
+		day       = data[STATUS_ID_INDEX+4];
+		dayOfWeek = data[STATUS_ID_INDEX+5];
+		hour      = data[STATUS_ID_INDEX+6];
+		minute    = data[STATUS_ID_INDEX+7];
+		second    = data[STATUS_ID_INDEX+8];
+		millis    = data[STATUS_ID_INDEX+9] + (data[STATUS_ID_INDEX+10]<<8); 
+	}else{
+		year      = 0;
+    	month     = 0;
+		day       = 0;
+		dayOfWeek = 0;
+		hour      = 0;
+		minute    = 0;
+		second    = 0;
+		millis    = 0; 
+	}
+	return status;	
+}
+
+//since V1.1
+
+
+/**
+* \brief	Read the values of the accelerometer.
+*
+* For axis definition see http://developer.android.com/reference/android/hardware/SensorEvent.html.
+*
+* \param	mode		The following \ref Mode "modes" are supported.
+*						- \ref NORMAL: raw values
+*						- \ref HIGH_PASSED: Values are high-pass filtered; gravity is not visible.
+*						- \ref LOW_PASSED: Values are low-pass filtered; only gravity is visible. 
+* \param	aX			Rate of acceleration along x axis [cm/s^2].
+* \param	aY          Rate of acceleration along y axis [cm/s^2].
+* \param	aZ			Rate of acceleration along z axis [cm/s^2].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int accelerometerRead(unsigned byte mode, int &aX, int &aY, int &aZ, unsigned long &timestampMs){
+	byte data[1];
+	data[0] = mode;
+	
+	rsCmd(ACCELEROMETER, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		aX			= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		aY			= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8);
+		aZ			= data[STATUS_ID_INDEX+5] + (data[STATUS_ID_INDEX+6]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+7] + (data[STATUS_ID_INDEX+8]<<8) + (data[STATUS_ID_INDEX+9]<<16) + (data[STATUS_ID_INDEX+10]<<24);	
+	}else{
+		aX = 0;
+		aY = 0;
+		aZ = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+/**
+* \brief	Read the values of the magnet field sensor.
+*
+* For axis definition see http://developer.android.com/reference/android/hardware/SensorEvent.html.
+*
+* \param	bX			Rate of magnetic field along x axis [uT * 100].
+* \param	bY			Rate of magnetic field along y axis [uT * 100].
+* \param	bZ			Rate of magnetic field along z axis [uT * 100].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int magneticFieldRead(int &bX, int &bY, int &bZ, unsigned long &timestampMs){
+	byte data[0];//no additional data
+	
+	rsCmd(MAGNETIC_FIELD, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		bX			= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		bY			= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8);
+		bZ			= data[STATUS_ID_INDEX+5] + (data[STATUS_ID_INDEX+6]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+7] + (data[STATUS_ID_INDEX+8]<<8) + (data[STATUS_ID_INDEX+9]<<16) + (data[STATUS_ID_INDEX+10]<<24);	
+	}else{
+		bX = 0;
+		bY = 0;
+		bZ = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+
+/**
+* \brief	Read the value of the pressure sensor.
+*
+* \param	pressure	Rate of ambient pressure [hPa].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int pressureRead(unsigned int &pressure, unsigned long &timestampMs){
+	byte data[0];//no additional data
+	
+	rsCmd(PRESSURE, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		pressure	= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8) + (data[STATUS_ID_INDEX+5]<<16) + (data[STATUS_ID_INDEX+6]<<24);	
+	}else{
+		pressure = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+
+/**
+* \private  Do NOT use!!!
+* \brief	Read the value of the proximity sensor.
+*
+* \param	distance	Rate of proximity sensor [mm].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int proximityRead(unsigned int &distance, unsigned long &timestampMs){
+	byte data[0];//no additional data
+	
+	rsCmd(PROXIMITY, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		distance	= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8) + (data[STATUS_ID_INDEX+5]<<16) + (data[STATUS_ID_INDEX+6]<<24);	
+	}else{
+		distance = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+
+/**
+* \brief	Read the value of the humidity sensor.
+*
+* \param	humidity	Value of relative humidity [%rH * 100].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int relativeHumidityRead(unsigned int &humidity, unsigned long &timestampMs){
+	byte data[0];//no additional data
+	
+	rsCmd(RELATIVE_HUMIDITY, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		humidity	= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8) + (data[STATUS_ID_INDEX+5]<<16) + (data[STATUS_ID_INDEX+6]<<24);	
+	}else{
+		humidity = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+
+/**
+* \brief	Read the value of the ambient temperature sensor.
+*
+* \param	temperature	Value of temperatur [Celsius * 100].
+* \param	timestampMs	Timestamp of the values in milli seconds.
+*
+* \return	\ref Status
+*/
+int ambientTemperatureRead(int &temperature, unsigned long &timestampMs){
+	byte data[0];//no additional data
+	
+	rsCmd(RELATIVE_HUMIDITY, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];
+	
+	if(status == SUCCESS){
+		temperature	= data[STATUS_ID_INDEX+1] + (data[STATUS_ID_INDEX+2]<<8);
+		timestampMs	= data[STATUS_ID_INDEX+3] + (data[STATUS_ID_INDEX+4]<<8) + (data[STATUS_ID_INDEX+5]<<16) + (data[STATUS_ID_INDEX+6]<<24);	
+	}else{
+		temperature = 0;
+		timestampMs = 0;
+	}
+	return status; 
+}
+
+
+/**
+* \brief	Start the speech recognizer.
+*
+* \return	\ref Status
+*/
+int speechRecognizerStart(){
+	byte data[0];//no additional data
+	
+	rsCmd(SPEECH_RECOGNIZER, START, data);
+	
+	return data[STATUS_ID_INDEX]; 
+}
+
+
+/**
+* \brief	Stop the speech recognizer.
+*
+* \return	\ref Status
+*/
+int speechRecognizerStop(){
+	byte data[0];//no additional data
+	
+	rsCmd(SPEECH_RECOGNIZER, STOP, data);
+	
+	return data[STATUS_ID_INDEX]; 
+}
+
+
+/**
+* \brief	Read one word of the speech recognizer.
+*
+* \ref speechRecognizerStart must have been called before once.
+*
+* \return	\ref Status
+*/
+int speechRecognizerRead(string & word){
+	byte data[0];//no additional data
+	
+	rsCmd(SPEECH_RECOGNIZER, READ, data);
+	
+	byte status = data[STATUS_ID_INDEX];//siehe auch zuweisung weiter unten!                           
+	
+	if(status != ERROR){
+		int i = STATUS_ID_INDEX+1;
+		do{
+			if(data[i] == 0){
+				break;//ende des strings gefunden
+			}else{
+			    i++;
+			}
+		}while(i < ArrayLen(data));
+		
+		if(i < ArrayLen(data)){
+			int temp = i-(STATUS_ID_INDEX+1)+2;
+			//ClearScreen(); TextOut(0,LCD_LINE2,"in"); Wait(2000);
+			ArraySubset(word, data, STATUS_ID_INDEX+1, temp);
+			//ClearScreen(); TextOut(0,LCD_LINE2,"out"); Wait(2000);	
+		}else{
+			ClearScreen();
+			TextOut(0,LCD_LINE8,"errror");
+			status = ERROR;
+		}	
+	}
+	return status; 
+}
+
+
+
+
+
+

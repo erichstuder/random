@@ -1,0 +1,131 @@
+#include "robotSensors.nxc"
+
+void microphoneTest(){
+	unsigned int noiseLevel;
+	microphoneNoiseLevel(noiseLevel);
+	TextOut(0,LCD_LINE1,"          ");
+	NumOut(0,LCD_LINE1,noiseLevel);
+}
+
+void brightnessTest(){
+	unsigned int brightness;
+	long timestamp;
+	
+	brightnessRead(brightness, timestamp);
+	TextOut(0,LCD_LINE1,"          ");
+	TextOut(0,LCD_LINE2,"          ");
+	NumOut(0,LCD_LINE1,brightness);
+	NumOut(0,LCD_LINE2,timestamp);
+}
+
+void timeTest(){
+	int year;
+	unsigned byte month, dayOfWeek, day, hour, minute, second;
+	unsigned int millis;
+	timeRead(year, month, day, dayOfWeek, hour, minute, second, millis);
+	ClearScreen();
+	NumOut(0,LCD_LINE1,year);
+	NumOut(0,LCD_LINE2,month+1);
+	NumOut(0,LCD_LINE3,day);
+	
+	string text;
+	switch(dayOfWeek){
+		case(SUNDAY):    text = "SUNDAY";    break;
+		case(MONDAY):    text = "MONDAY";    break;
+		case(TUESDAY):   text = "TUESDAY";   break;
+		case(WEDNESDAY): text = "WEDNESDAY"; break;
+		case(THURSDAY):  text = "THURSDAY";  break;
+		case(FRIDAY):    text = "FRIDAY)";   break;
+		case(SATURDAY):  text = "SATURDAY";  break;	
+	}
+	TextOut(0,LCD_LINE4,text);
+	
+	NumOut(0,LCD_LINE5,hour);
+	NumOut(0,LCD_LINE6,minute);
+	NumOut(0,LCD_LINE7,second);
+	NumOut(0,LCD_LINE8,millis);	
+}
+
+void darkestPointTest(){
+	unsigned int width, height, darkestX, darkestY, intensity;
+	int pwrB, pwrA;
+	cameraStart(BACK);
+	//cameraLightOn();
+	cameraRead(0); 
+	pictureAccuDarkestPoint(0, width, height, darkestX, darkestY, intensity);
+	pictureAccuShow(0);
+	if(darkestX > width/2){
+		TextOut(0,LCD_LINE1,"links ");
+		pwrA = 10;
+		pwrB = 0;	
+	}else{
+		TextOut(0,LCD_LINE1,"rechts");
+		pwrA = 0;
+		pwrB = 10;
+	}
+	
+	pwrA += 8;
+	pwrB += 8;
+	OnFwd(OUT_A, pwrB);
+    OnFwd(OUT_B, pwrA);
+	
+}
+
+void meanColorTest(){
+	int redBall[] ={110,60,45};
+	int blueBall[]={30,45,120};
+	unsigned byte r,g,b;
+	cameraStart(BACK);
+	cameraLightOn();
+	cameraRead(0);
+	pictureAccuMeanColor(0,r,g,b);
+	ClearScreen();
+	NumOut(0,LCD_LINE1,r);
+	NumOut(0,LCD_LINE2,g);
+	NumOut(0,LCD_LINE3,b);
+	
+	int dr = (redBall[0]-r)*(redBall[0]-r)  + (redBall[1]-g)*(redBall[1]-g)  + (redBall[2]-b)*(redBall[2]-b);
+	int db = (blueBall[0]-r)*(blueBall[0]-r) + (blueBall[1]-g)*(blueBall[1]-g) + (blueBall[2]-b)*(blueBall[2]-b);
+	
+	if(dr < db){
+		TextOut(0,LCD_LINE4,"Red");
+	}else{
+		TextOut(0,LCD_LINE4,"Blue");	
+	}	
+}
+
+
+
+
+task main(){
+//////
+	CommBTConnectionType args;
+	args.Action = true;
+	args.Name = "HTC ONE S";
+	args.ConnectionSlot = 1;
+	int cnt=0;
+	/*while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}*/
+	SysCommBTConnection (args)
+	
+
+	cnt=0;
+	while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+		NumOut(0,LCD_LINE1,cnt);
+		cnt++;
+	}
+	Wait(3000);
+//////
+
+	ClearScreen();
+	while(true){
+		//brightnessTest();
+		//microphoneTest();
+		//timeTest();
+		//meanColorTest();
+		darkestPointTest();	
+	}
+
+}

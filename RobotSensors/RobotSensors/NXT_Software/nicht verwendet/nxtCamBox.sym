@@ -1,0 +1,1017 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__read_acceleration_7qG2_aY_7qG2_000	10	1	0	4	3
+1	__read_acceleration_7qG2_aX_7qG2_000	10	1	4	4	3
+2	__signed_stack_001read_acceleration	6	1	8	4	10
+3	__read_acceleration_7qG2_aZ_7qG2_000	10	1	12	4	3
+4	__strtol_7qG2_result_7qG2_000_inline_read_acceleration	6	1	16	4	2
+5	__strtod_7qG2_result_7qG2_000_inline_read_acceleration	10	1	20	4	6
+6	__read_acceleration_7qG2_timestampMs_7qG2_000	5	1	24	4	3
+7	__D0strtol_inline_read_acceleration	6	1	28	4	2
+8	__D0strtol_inline_main	6	1	32	4	3
+9	__DF0strtod_inline_read_acceleration	10	1	36	4	6
+10	__signed_stack_001main	6	1	40	4	40
+11	__unsigned_stack_001main	5	1	44	4	6
+12	__signed_stack_003main	6	1	48	4	2
+13	__signed_stack_002main	6	1	52	4	30
+14	__main_7qG2_timestampOld_7qG2_000	6	1	56	4	3
+15	__main_7qG2_cnt_7qG2_000	6	1	60	4	5
+16	__constVal2147483647	6	0	64	4	1
+17	__main_7qG2_mean_7qG2_000	6	1	68	4	4
+18	__Wait_7qG2_ms_7qG2_000_inline_main	5	1	72	4	2
+19	__strtol_7qG2_result_7qG2_000_inline_main	6	1	76	4	2
+20	__strtod_7qG2_result_7qG2_000_inline_main	10	1	80	4	6
+21	__main_7qG2_wZ_7qG2_000	10	1	84	4	5
+22	__main_7qG2_wY_7qG2_000	10	1	88	4	5
+23	__main_7qG2_wX_7qG2_000	10	1	92	4	5
+24	__main_7qG2_timestampMs_7qG2_000	6	1	96	4	6
+25	__main_7qG2_shortest_7qG2_000	6	1	100	4	4
+26	__main_7qG2_longest_7qG2_000	6	1	104	4	5
+27	__main_7qG2_tick_7qG2_000	6	1	108	4	14
+28	__DF0strtod_inline_main	10	1	112	4	6
+29	__MRMutex	9	0	116	4	2
+30	__DU0main	5	1	120	4	2
+31	__D0main	6	1	124	4	50
+32	__PointOutMutex	9	0	128	4	2
+33	__D0getBrightestPoint	6	1	132	4	4
+34	__CBTCSMutex	9	0	136	4	6
+35	__DU0read_acceleration	5	1	140	4	2
+36	__CBTWMutex	9	0	144	4	2
+37	__TextOutMutex	9	0	148	4	30
+38	__DF0main	10	1	152	4	12
+39	__D0read_acceleration	6	1	156	4	18
+40	__read_acceleration_7qG2_len_7qG2_000	3	1	160	2	2
+41	__strtol_7qG2_offsetpast_7qG2_000_inline_read_acceleration	4	1	162	2	2
+42	__strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration	4	1	164	2	6
+43	__main_7qG2_len_7qG2_002	3	1	166	2	2
+44	__strtol_7qG2_offsetpast_7qG2_000_inline_main	4	1	168	2	2
+45	__strtod_7qG2_offsetpast_7qG2_000_inline_main	4	1	170	2	6
+46	__constVal1157	4	0	172	2	1
+47	__constVal200	4	0	174	2	2
+48	__constVal1	2	0	176	1	8
+49	____initialize_global_data_return	1	1	177	1	3
+50	__constVal0	2	1	178	1	2
+51	__constVal58	2	0	179	1	2
+52	__constVal2	2	0	180	1	1
+53	__constVal5	2	0	181	1	1
+54	mailbox	1	0	182	1	2
+55	__zfmain	1	1	183	1	17
+56	__PFTmp	1	1	184	1	1
+57	__zfread_acceleration	1	1	185	1	9
+58	__ArrHelper__main_98_0	1	1	186	1	4
+59	__read_acceleration_return	1	1	187	1	4
+60	__TextOutArgs	8	0	4	16	90
+61	__TextOutArgs.Result	2	1	188	1	90
+62	__TextOutArgs.Location	8	0	2	4	90
+63	__TextOutArgs.Location.X	4	1	192	2	90
+64	__TextOutArgs.Location.Y	4	1	194	2	90
+65	__TextOutArgs.Text	7	0	196	4	90
+66	__TextOutArgs.Text.Text_type	1	0	0	1	0
+67	__TextOutArgs.Options	5	1	200	4	90
+68	__PointOutArgs	8	0	3	12	4
+69	__PointOutArgs.Result	2	1	204	1	4
+70	__PointOutArgs.Location	8	0	2	4	4
+71	__PointOutArgs.Location.X	4	1	208	2	4
+72	__PointOutArgs.Location.Y	4	1	210	2	4
+73	__PointOutArgs.Options	5	1	212	4	4
+74	__IOMRArgs	8	0	5	16	5
+75	__IOMRArgs.Result	2	1	216	1	5
+76	__IOMRArgs.ModuleName	7	0	218	4	5
+77	__IOMRArgs.ModuleName.ModuleName_type	1	0	0	1	0
+78	__IOMRArgs.Offset	3	1	220	2	5
+79	__IOMRArgs.Count	3	1	222	2	5
+80	__IOMRArgs.Buffer	7	0	224	4	5
+81	__IOMRArgs.Buffer.Buffer_type	1	0	0	1	0
+82	__CBTCSArgs	8	0	2	4	9
+83	__CBTCSArgs.Result	2	1	228	1	9
+84	__CBTCSArgs.Connection	1	1	229	1	9
+85	__CBTWArgs	8	0	3	8	4
+86	__CBTWArgs.Result	2	1	232	1	4
+87	__CBTWArgs.Connection	1	1	233	1	4
+88	__CBTWArgs.Buffer	7	0	234	4	4
+89	__CBTWArgs.Buffer.Buffer_type	1	0	0	1	0
+90	__MRArgs	8	0	4	8	5
+91	__MRArgs.Result	2	1	236	1	5
+92	__MRArgs.QueueID	1	1	237	1	5
+93	__MRArgs.Remove	1	1	238	1	5
+94	__MRArgs.Message	7	0	240	4	5
+95	__MRArgs.Message.Message_type	1	0	0	1	0
+96	__strtod_7qG2_str_7qG2_000_inline_main	7	0	242	4	9
+97	__strtod_7qG2_str_7qG2_000_inline_main.__strtod_7qG2_str_7qG2_000_inline_main_type	1	0	0	1	0
+98	__strbufmain	7	0	244	4	9
+99	__strbufmain.__strbufmain_type	1	0	0	1	0
+100	__strbufread_acceleration	7	0	246	4	8
+101	__strbufread_acceleration.__strbufread_acceleration_type	1	0	0	1	0
+102	__strtol_7qG2_endptr_7qG2_000_inline_main	7	0	248	4	3
+103	__strtol_7qG2_endptr_7qG2_000_inline_main.__strtol_7qG2_endptr_7qG2_000_inline_main_type	1	0	0	1	0
+104	__strtol_7qG2_str_7qG2_000_inline_main	7	0	250	4	3
+105	__strtol_7qG2_str_7qG2_000_inline_main.__strtol_7qG2_str_7qG2_000_inline_main_type	1	0	0	1	0
+106	__strtod_7qG2_endptr_7qG2_000_inline_main	7	0	252	4	9
+107	__strtod_7qG2_endptr_7qG2_000_inline_main.__strtod_7qG2_endptr_7qG2_000_inline_main_type	1	0	0	1	0
+108	__main_7qG2_buf_7qG2_000	7	0	254	4	19
+109	__main_7qG2_buf_7qG2_000.__main_7qG2_buf_7qG2_000_type	1	0	0	1	0
+110	__strtol_7qG2_str_7qG2_000_inline_read_acceleration	7	0	256	4	3
+111	__strtol_7qG2_str_7qG2_000_inline_read_acceleration.__strtol_7qG2_str_7qG2_000_inline_read_acceleration_type	1	0	0	1	0
+112	__strtol_7qG2_endptr_7qG2_000_inline_read_acceleration	7	0	258	4	3
+113	__strtol_7qG2_endptr_7qG2_000_inline_read_acceleration.__strtol_7qG2_endptr_7qG2_000_inline_read_acceleration_type	1	0	0	1	0
+114	__constStr0015	7	0	260	4	1
+115	__constStr0015.__constStr0015_type	1	1	0	1	0
+116	__strtod_7qG2_endptr_7qG2_000_inline_read_acceleration	7	0	262	4	9
+117	__strtod_7qG2_endptr_7qG2_000_inline_read_acceleration.__strtod_7qG2_endptr_7qG2_000_inline_read_acceleration_type	1	0	0	1	0
+118	__read_acceleration_7qG2_message_7qG2_000	7	0	264	4	6
+119	__read_acceleration_7qG2_message_7qG2_000.__read_acceleration_7qG2_message_7qG2_000_type	1	0	0	1	0
+120	__constStr0016	7	0	266	4	1
+121	__constStr0016.__constStr0016_type	1	1	0	1	0
+122	__strtod_7qG2_str_7qG2_000_inline_read_acceleration	7	0	268	4	9
+123	__strtod_7qG2_str_7qG2_000_inline_read_acceleration.__strtod_7qG2_str_7qG2_000_inline_read_acceleration_type	1	0	0	1	0
+124	__read_acceleration_7qG2_buf_7qG2_000	7	0	270	4	16
+125	__read_acceleration_7qG2_buf_7qG2_000.__read_acceleration_7qG2_buf_7qG2_000_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	216	0	#line 216 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	217	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	216	2	#line 216 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	217	2	#line 217 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	218	2		strcat __strbufmain, __constStr0015
+0	217	6	#line 217 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	258	6	#line 258 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	259	6		gettick __main_7qG2_tick_7qG2_000
+0	258	8	#line 258 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	258	8	#line 258 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	258	8	#line 258 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	260	8	#line 260 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	261	8		mov __read_acceleration_7qG2_aX_7qG2_000, __main_7qG2_wX_7qG2_000
+0	260	10	#line 260 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	261	10		mov __read_acceleration_7qG2_aY_7qG2_000, __main_7qG2_wY_7qG2_000
+0	260	12	#line 260 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	261	12		mov __read_acceleration_7qG2_aZ_7qG2_000, __main_7qG2_wZ_7qG2_000
+0	260	14	#line 260 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	261	14		mov __read_acceleration_7qG2_timestampMs_7qG2_000, __main_7qG2_timestampMs_7qG2_000
+0	262	16	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	16		subcall read_acceleration, __read_acceleration_return
+0	262	18	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	18		mov __main_7qG2_wX_7qG2_000, __read_acceleration_7qG2_aX_7qG2_000
+0	262	20	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	20		mov __main_7qG2_wY_7qG2_000, __read_acceleration_7qG2_aY_7qG2_000
+0	262	22	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	22		mov __main_7qG2_wZ_7qG2_000, __read_acceleration_7qG2_aZ_7qG2_000
+0	262	24	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	24		mov __main_7qG2_timestampMs_7qG2_000, __read_acceleration_7qG2_timestampMs_7qG2_000
+0	262	26	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	262	26	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	26		gettick __unsigned_stack_001main
+0	262	28	#line 262 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	28	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	28	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	264	28		sub __main_7qG2_tick_7qG2_000, __unsigned_stack_001main, __main_7qG2_tick_7qG2_000
+0	263	32	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	32	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	32	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	32	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	264	32		set __signed_stack_001main, 0
+0	263	35	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	35	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	264	35		set __signed_stack_002main, 16
+0	263	38	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	263	38	#line 263 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	264	38		mov __D0main, __main_7qG2_tick_7qG2_000
+0	265	40	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	40		acquire __TextOutMutex
+0	265	41	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	41		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	265	43	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	43		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	265	45	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	45		set __TextOutArgs.Options, 0
+0	265	48	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	48		numtostr __TextOutArgs.Text, __D0main
+0	265	51	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	51		syscall 13, __TextOutArgs
+0	265	54	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	54		mov __D0main, __TextOutArgs.Result
+0	265	56	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	56		release __TextOutMutex
+0	265	57	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	265	57	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	57		set __signed_stack_001main, 0
+0	265	60	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	265	60	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	60		set __signed_stack_002main, 48
+0	265	63	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	265	63	#line 265 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	63		mov __DF0main, __main_7qG2_wX_7qG2_000
+0	266	65	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	65		acquire __TextOutMutex
+0	266	66	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	66		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	266	68	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	68		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	266	70	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	70		set __TextOutArgs.Options, 0
+0	266	73	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	73		numtostr __TextOutArgs.Text, __DF0main
+0	266	76	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	76		syscall 13, __TextOutArgs
+0	266	79	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	79		mov __D0main, __TextOutArgs.Result
+0	266	81	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	81		release __TextOutMutex
+0	266	82	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	82	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	82		set __signed_stack_001main, 0
+0	266	85	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	85	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	85		set __signed_stack_002main, 40
+0	266	88	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	266	88	#line 266 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	88		mov __DF0main, __main_7qG2_wY_7qG2_000
+0	267	90	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	90		acquire __TextOutMutex
+0	267	91	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	91		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	267	93	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	93		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	267	95	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	95		set __TextOutArgs.Options, 0
+0	267	98	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	98		numtostr __TextOutArgs.Text, __DF0main
+0	267	101	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	101		syscall 13, __TextOutArgs
+0	267	104	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	104		mov __D0main, __TextOutArgs.Result
+0	267	106	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	106		release __TextOutMutex
+0	267	107	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	107	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	107		set __signed_stack_001main, 0
+0	267	110	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	110	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	110		set __signed_stack_002main, 32
+0	267	113	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	267	113	#line 267 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	113		mov __DF0main, __main_7qG2_wZ_7qG2_000
+0	268	115	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	115		acquire __TextOutMutex
+0	268	116	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	116		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	268	118	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	118		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	268	120	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	120		set __TextOutArgs.Options, 0
+0	268	123	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	123		numtostr __TextOutArgs.Text, __DF0main
+0	268	126	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	126		syscall 13, __TextOutArgs
+0	268	129	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	129		mov __D0main, __TextOutArgs.Result
+0	268	131	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	131		release __TextOutMutex
+0	268	132	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	132	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	132		set __signed_stack_001main, 0
+0	268	135	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	135	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	135		set __signed_stack_002main, 24
+0	268	138	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	268	138	#line 268 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	269	138		mov __D0main, __main_7qG2_timestampMs_7qG2_000
+0	278	140	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	140		acquire __TextOutMutex
+0	278	141	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	141		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	278	143	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	143		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	278	145	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	145		set __TextOutArgs.Options, 0
+0	278	148	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	148		numtostr __TextOutArgs.Text, __D0main
+0	278	151	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	151		syscall 13, __TextOutArgs
+0	278	154	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	154		mov __D0main, __TextOutArgs.Result
+0	278	156	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	156		release __TextOutMutex
+0	278	157	#line 278 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	279	157	#line 279 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	280	157		set __main_7qG2_longest_7qG2_000, 0
+0	279	160	#line 279 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	280	160	#line 280 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	281	160		mov __main_7qG2_shortest_7qG2_000, __constVal2147483647
+0	280	162	#line 280 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	281	162	#line 281 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	282	162		set __main_7qG2_cnt_7qG2_000, 0
+0	281	165	#line 281 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	285	165	#line 285 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	286	165		set __main_7qG2_timestampOld_7qG2_000, 0
+0	285	168	#line 285 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	287	168	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	288	168		set __main_7qG2_mean_7qG2_000, 0
+0	287	171	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	287	171	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	288	171		gettick __main_7qG2_tick_7qG2_000
+0	287	173	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	287	173	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	287	173	#line 287 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	288	173	#line 288 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	289	173		set __D0main, 1
+0	290	176	#line 290 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	291	176		tst 5, __zfmain, __D0main
+0	290	179	#line 290 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	291	179		brtst 4, __NXC_Label_770, __zfmain
+0	290	182	#line 290 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	291	182		arrinit __main_7qG2_buf_7qG2_000, __constVal0, __constVal58
+0	290	186	#line 290 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	290	186	#line 290 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	296	186	#line 296 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	297	186	#pragma macro 5
+0	297	186		acquire __CBTCSMutex
+0	297	187		mov __CBTCSArgs.Connection, __constVal1
+0	297	189		syscall 28, __CBTCSArgs
+0	297	192		mov __D0main, __CBTCSArgs.Result
+0	297	194		release __CBTCSMutex
+0	6029	195	#line 6029 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	296	195	#line 296 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	297	195		mov __signed_stack_001main, __D0main
+0	296	197	#line 296 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	297	197		set __D0main, 0
+0	296	200	#line 296 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	297	200		cmp 5, __zfmain, __signed_stack_001main, __D0main
+0	296	204	#line 296 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	297	204		mov __D0main, __zfmain
+0	298	206	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	299	206		brtst 4, __NXC_Label_774, __zfmain
+0	298	209	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	298	209	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	299	209		jmp __NXC_Label_773
+0	298	211	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	298	211	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	299	211	#pragma macro 20
+0	299	211		mov __IOMRArgs.ModuleName, __constStr0016
+0	299	213		mov __IOMRArgs.Offset, __constVal1157
+0	299	215		mov __IOMRArgs.Count, __constVal58
+0	299	217		syscall 32, __IOMRArgs
+0	299	220		mov __main_7qG2_buf_7qG2_000, __IOMRArgs.Buffer
+0	6048	222	#line 6048 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	298	222	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	298	222	#line 298 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	311	222	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	222		set __signed_stack_001main, 0
+0	311	225	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	311	225	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	225		index __ArrHelper__main_98_0, __main_7qG2_buf_7qG2_000, __signed_stack_001main
+0	311	229	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	229		mov __unsigned_stack_001main, __ArrHelper__main_98_0
+0	311	231	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	311	231	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	231		set __D0main, 128
+0	311	234	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	234		cmp 4, __zfmain, __unsigned_stack_001main, __D0main
+0	311	238	#line 311 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	312	238		mov __D0main, __zfmain
+0	313	240	#line 313 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	240		brtst 4, __NXC_Label_781, __zfmain
+0	313	243	#line 313 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	243		arrsize __main_7qG2_len_7qG2_002, __main_7qG2_buf_7qG2_000
+0	313	246	#line 313 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	246	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	246		set __signed_stack_001main, 0
+0	314	249	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	249	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	249		set __signed_stack_002main, 56
+0	314	252	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	252	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	252		set __signed_stack_003main, 4
+0	314	255	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	314	255	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	255		index __ArrHelper__main_98_0, __main_7qG2_buf_7qG2_000, __signed_stack_003main
+0	314	259	#line 314 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	259		mov __DU0main, __ArrHelper__main_98_0
+0	315	261	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	261		acquire __TextOutMutex
+0	315	262	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	262		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	315	264	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	264		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	315	266	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	266		set __TextOutArgs.Options, 0
+0	315	269	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	269		numtostr __TextOutArgs.Text, __DU0main
+0	315	272	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	272		syscall 13, __TextOutArgs
+0	315	275	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	275		mov __D0main, __TextOutArgs.Result
+0	315	277	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	277		release __TextOutMutex
+0	315	278	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	278	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	278		arrsubset __main_7qG2_buf_7qG2_000, __main_7qG2_buf_7qG2_000, __constVal5, __main_7qG2_len_7qG2_002
+0	315	283	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	315	283	#line 315 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	316	283	#line 316 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	317	283		strcat __strbufmain, __main_7qG2_buf_7qG2_000
+0	316	287	#line 316 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	317	287		mov __strtod_7qG2_str_7qG2_000_inline_main, __strbufmain
+0	316	289	#line 316 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	317	289		mov __strtod_7qG2_endptr_7qG2_000_inline_main, __main_7qG2_buf_7qG2_000
+0	18195	291	#line 18195 "NXCDefs.h"
+0	18196	291		strtonum __strtod_7qG2_result_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, 65535, 65535
+0	18197	297		strsubset __strtod_7qG2_endptr_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, 65535
+0	18198	302	#line 18198 "NXCDefs.h"
+0	18199	302	#line 18199 "NXCDefs.h"
+0	18200	302		mov __DF0strtod_inline_main, __strtod_7qG2_result_7qG2_000_inline_main
+0	18199	304	#line 18199 "NXCDefs.h"
+0	18199	304	#line 18199 "NXCDefs.h"
+0	317	304	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	304		mov __main_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_main
+0	317	306	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	306		mov __main_7qG2_wX_7qG2_000, __DF0strtod_inline_main
+0	317	308	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	317	308	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	317	308	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	308		strcat __strbufmain, __main_7qG2_buf_7qG2_000
+0	317	312	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	312		mov __strtod_7qG2_str_7qG2_000_inline_main, __strbufmain
+0	317	314	#line 317 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	314		mov __strtod_7qG2_endptr_7qG2_000_inline_main, __main_7qG2_buf_7qG2_000
+0	18195	316	#line 18195 "NXCDefs.h"
+0	18196	316		strtonum __strtod_7qG2_result_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, 65535, 65535
+0	18197	322		strsubset __strtod_7qG2_endptr_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, 65535
+0	18198	327	#line 18198 "NXCDefs.h"
+0	18199	327	#line 18199 "NXCDefs.h"
+0	18200	327		mov __DF0strtod_inline_main, __strtod_7qG2_result_7qG2_000_inline_main
+0	18199	329	#line 18199 "NXCDefs.h"
+0	18199	329	#line 18199 "NXCDefs.h"
+0	318	329	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	329		mov __main_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_main
+0	318	331	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	331		mov __main_7qG2_wY_7qG2_000, __DF0strtod_inline_main
+0	318	333	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	333	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	318	333	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	333		strcat __strbufmain, __main_7qG2_buf_7qG2_000
+0	318	337	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	337		mov __strtod_7qG2_str_7qG2_000_inline_main, __strbufmain
+0	318	339	#line 318 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	339		mov __strtod_7qG2_endptr_7qG2_000_inline_main, __main_7qG2_buf_7qG2_000
+0	18195	341	#line 18195 "NXCDefs.h"
+0	18196	341		strtonum __strtod_7qG2_result_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, 65535, 65535
+0	18197	347		strsubset __strtod_7qG2_endptr_7qG2_000_inline_main, __strtod_7qG2_str_7qG2_000_inline_main, __strtod_7qG2_offsetpast_7qG2_000_inline_main, 65535
+0	18198	352	#line 18198 "NXCDefs.h"
+0	18199	352	#line 18199 "NXCDefs.h"
+0	18200	352		mov __DF0strtod_inline_main, __strtod_7qG2_result_7qG2_000_inline_main
+0	18199	354	#line 18199 "NXCDefs.h"
+0	18199	354	#line 18199 "NXCDefs.h"
+0	319	354	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	320	354		mov __main_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_main
+0	319	356	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	320	356		mov __main_7qG2_wZ_7qG2_000, __DF0strtod_inline_main
+0	319	358	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	358	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	319	358	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	320	358		strcat __strbufmain, __main_7qG2_buf_7qG2_000
+0	319	362	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	320	362		mov __strtol_7qG2_str_7qG2_000_inline_main, __strbufmain
+0	319	364	#line 319 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	320	364		mov __strtol_7qG2_endptr_7qG2_000_inline_main, __main_7qG2_buf_7qG2_000
+0	321	366	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	18232	366	#line 18232 "NXCDefs.h"
+0	18233	366		strtonum __strtol_7qG2_result_7qG2_000_inline_main, __strtol_7qG2_offsetpast_7qG2_000_inline_main, __strtol_7qG2_str_7qG2_000_inline_main, 65535, 65535
+0	18234	372		strsubset __strtol_7qG2_endptr_7qG2_000_inline_main, __strtol_7qG2_str_7qG2_000_inline_main, __strtol_7qG2_offsetpast_7qG2_000_inline_main, 65535
+0	18235	377	#line 18235 "NXCDefs.h"
+0	18236	377	#line 18236 "NXCDefs.h"
+0	18237	377		mov __D0strtol_inline_main, __strtol_7qG2_result_7qG2_000_inline_main
+0	18236	379	#line 18236 "NXCDefs.h"
+0	18236	379	#line 18236 "NXCDefs.h"
+0	321	379	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	379		mov __main_7qG2_buf_7qG2_000, __strtol_7qG2_endptr_7qG2_000_inline_main
+0	321	381	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	381		mov __main_7qG2_timestampMs_7qG2_000, __D0strtol_inline_main
+0	321	383	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	321	383	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	321	383	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	383		mov __signed_stack_001main, __D0strtol_inline_main
+0	321	385	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	321	385	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	385		mov __D0main, __main_7qG2_timestampOld_7qG2_000
+0	321	387	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	387		cmp 4, __zfmain, __signed_stack_001main, __D0main
+0	321	391	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	391		mov __D0main, __zfmain
+0	321	393	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	393		brtst 4, __NXC_Label_802, __zfmain
+0	321	396	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	396		jmp __NXC_Label_769
+0	321	398	#line 321 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	322	398	#line 322 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	6069	398	#line 6069 "NXCDefs.h"
+0	6070	398	#pragma macro 6
+0	6070	398		acquire __PointOutMutex
+0	6070	399		mov __PointOutArgs.Location.X, __constVal200
+0	6070	401		mov __PointOutArgs.Location.Y, __constVal200
+0	6070	403		mov __PointOutArgs.Options, __constVal1
+0	6070	405		syscall 14, __PointOutArgs
+0	6070	408		release __PointOutMutex
+0	6298	409	#line 6298 "NXCDefs.h"
+0	6069	409	#line 6069 "NXCDefs.h"
+0	323	409	#line 323 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	325	409	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	409		mov __main_7qG2_timestampOld_7qG2_000, __main_7qG2_timestampMs_7qG2_000
+0	325	411	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	325	411	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	325	411	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	411		set __signed_stack_001main, 0
+0	325	414	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	325	414	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	414		set __signed_stack_002main, 48
+0	325	417	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	325	417	#line 325 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	417		mov __DF0main, __main_7qG2_wX_7qG2_000
+0	326	419	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	419		acquire __TextOutMutex
+0	326	420	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	420		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	326	422	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	422		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	326	424	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	424		set __TextOutArgs.Options, 0
+0	326	427	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	427		numtostr __TextOutArgs.Text, __DF0main
+0	326	430	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	430		syscall 13, __TextOutArgs
+0	326	433	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	433		mov __D0main, __TextOutArgs.Result
+0	326	435	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	435		release __TextOutMutex
+0	326	436	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	436	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	436		set __signed_stack_001main, 0
+0	326	439	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	439	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	439		set __signed_stack_002main, 40
+0	326	442	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	326	442	#line 326 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	442		mov __DF0main, __main_7qG2_wY_7qG2_000
+0	327	444	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	444		acquire __TextOutMutex
+0	327	445	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	445		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	327	447	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	447		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	327	449	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	449		set __TextOutArgs.Options, 0
+0	327	452	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	452		numtostr __TextOutArgs.Text, __DF0main
+0	327	455	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	455		syscall 13, __TextOutArgs
+0	327	458	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	458		mov __D0main, __TextOutArgs.Result
+0	327	460	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	460		release __TextOutMutex
+0	327	461	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	461	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	461		set __signed_stack_001main, 0
+0	327	464	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	464	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	464		set __signed_stack_002main, 32
+0	327	467	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	327	467	#line 327 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	467		mov __DF0main, __main_7qG2_wZ_7qG2_000
+0	328	469	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	469		acquire __TextOutMutex
+0	328	470	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	470		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	328	472	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	472		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	328	474	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	474		set __TextOutArgs.Options, 0
+0	328	477	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	477		numtostr __TextOutArgs.Text, __DF0main
+0	328	480	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	480		syscall 13, __TextOutArgs
+0	328	483	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	483		mov __D0main, __TextOutArgs.Result
+0	328	485	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	485		release __TextOutMutex
+0	328	486	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	486	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	486		set __signed_stack_001main, 0
+0	328	489	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	489	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	489		set __signed_stack_002main, 24
+0	328	492	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	328	492	#line 328 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	329	492		mov __D0main, __main_7qG2_timestampMs_7qG2_000
+0	330	494	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	494		acquire __TextOutMutex
+0	330	495	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	495		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	330	497	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	497		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	330	499	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	499		set __TextOutArgs.Options, 0
+0	330	502	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	502		numtostr __TextOutArgs.Text, __D0main
+0	330	505	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	505		syscall 13, __TextOutArgs
+0	330	508	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	508		mov __D0main, __TextOutArgs.Result
+0	330	510	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	510		release __TextOutMutex
+0	330	511	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	330	511	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	511		gettick __unsigned_stack_001main
+0	330	513	#line 330 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	513	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	513	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	332	513		sub __main_7qG2_tick_7qG2_000, __unsigned_stack_001main, __main_7qG2_tick_7qG2_000
+0	331	517	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	517	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	517	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	517	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	332	517		set __signed_stack_001main, 0
+0	331	520	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	520	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	332	520		set __signed_stack_002main, 16
+0	331	523	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	331	523	#line 331 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	332	523		mov __D0main, __main_7qG2_tick_7qG2_000
+0	334	525	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	525		acquire __TextOutMutex
+0	334	526	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	526		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	334	528	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	528		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	334	530	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	530		set __TextOutArgs.Options, 0
+0	334	533	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	533		numtostr __TextOutArgs.Text, __D0main
+0	334	536	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	536		syscall 13, __TextOutArgs
+0	334	539	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	539		mov __D0main, __TextOutArgs.Result
+0	334	541	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	541		release __TextOutMutex
+0	334	542	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	334	542	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	542		mov __signed_stack_001main, __main_7qG2_tick_7qG2_000
+0	334	544	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	334	544	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	544		mov __D0main, __main_7qG2_longest_7qG2_000
+0	334	546	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	546		cmp 1, __zfmain, __signed_stack_001main, __D0main
+0	334	550	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	550		mov __D0main, __zfmain
+0	334	552	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	552		brtst 4, __NXC_Label_839, __zfmain
+0	334	555	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	555		mov __main_7qG2_longest_7qG2_000, __main_7qG2_tick_7qG2_000
+0	334	557	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	334	557	#line 334 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	557	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	557	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	557		mov __signed_stack_001main, __main_7qG2_tick_7qG2_000
+0	335	559	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	559	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	559		mov __D0main, __main_7qG2_shortest_7qG2_000
+0	335	561	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	561		cmp 0, __zfmain, __signed_stack_001main, __D0main
+0	335	565	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	565		mov __D0main, __zfmain
+0	335	567	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	567		brtst 4, __NXC_Label_844, __zfmain
+0	335	570	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	570		mov __main_7qG2_shortest_7qG2_000, __main_7qG2_tick_7qG2_000
+0	335	572	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	572	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	572	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	572		set __main_7qG2_longest_7qG2_000, 0
+0	335	575	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	335	575	#line 335 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	575	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	575	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	575		set __signed_stack_001main, 0
+0	336	578	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	578	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	578		set __signed_stack_002main, 8
+0	336	581	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	336	581	#line 336 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	581		mov __D0main, __main_7qG2_longest_7qG2_000
+0	337	583	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	583		acquire __TextOutMutex
+0	337	584	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	584		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	337	586	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	586		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	337	588	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	588		set __TextOutArgs.Options, 0
+0	337	591	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	591		numtostr __TextOutArgs.Text, __D0main
+0	337	594	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	594		syscall 13, __TextOutArgs
+0	337	597	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	597		mov __D0main, __TextOutArgs.Result
+0	337	599	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	599		release __TextOutMutex
+0	337	600	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	600	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	600		set __signed_stack_001main, 0
+0	337	603	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	603	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	603		set __signed_stack_002main, 0
+0	337	606	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	337	606	#line 337 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	606		mov __D0main, __main_7qG2_shortest_7qG2_000
+0	338	608	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	608		acquire __TextOutMutex
+0	338	609	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	609		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	338	611	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	611		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	338	613	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	613		set __TextOutArgs.Options, 0
+0	338	616	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	616		numtostr __TextOutArgs.Text, __D0main
+0	338	619	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	619		syscall 13, __TextOutArgs
+0	338	622	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	622		mov __D0main, __TextOutArgs.Result
+0	338	624	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	624		release __TextOutMutex
+0	338	625	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	625	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	625		set __signed_stack_001main, 50
+0	338	628	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	628	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	628		set __signed_stack_002main, 0
+0	338	631	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	338	631	#line 338 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	339	631		mov __D0main, __main_7qG2_cnt_7qG2_000
+0	339	633	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	633		acquire __TextOutMutex
+0	339	634	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	634		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	339	636	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	636		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	339	638	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	638		set __TextOutArgs.Options, 0
+0	339	641	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	641		numtostr __TextOutArgs.Text, __D0main
+0	339	644	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	644		syscall 13, __TextOutArgs
+0	339	647	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	647		mov __D0main, __TextOutArgs.Result
+0	339	649	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	649		release __TextOutMutex
+0	339	650	#line 339 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	650	#line 340 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	650		add __main_7qG2_cnt_7qG2_000, __main_7qG2_cnt_7qG2_000, __constVal1
+0	340	654	#line 340 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	654	#line 340 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	340	654	#line 340 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	654	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	654	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	342	654		add __main_7qG2_mean_7qG2_000, __main_7qG2_mean_7qG2_000, __main_7qG2_tick_7qG2_000
+0	341	658	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	658	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	658	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	342	658		set __signed_stack_001main, 50
+0	341	661	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	661	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	342	661		set __signed_stack_002main, 8
+0	341	664	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	664	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	664	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	664	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	341	664	#line 341 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	342	664		div __D0main, __main_7qG2_mean_7qG2_000, __main_7qG2_cnt_7qG2_000
+0	344	668	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	668		acquire __TextOutMutex
+0	344	669	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	669		mov __TextOutArgs.Location.X, __signed_stack_001main
+0	344	671	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	671		mov __TextOutArgs.Location.Y, __signed_stack_002main
+0	344	673	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	673		set __TextOutArgs.Options, 0
+0	344	676	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	676		numtostr __TextOutArgs.Text, __D0main
+0	344	679	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	679		syscall 13, __TextOutArgs
+0	344	682	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	682		mov __D0main, __TextOutArgs.Result
+0	344	684	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	684		release __TextOutMutex
+0	344	685	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	344	685	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	345	685		gettick __main_7qG2_tick_7qG2_000
+0	344	687	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	344	687	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	344	687	#line 344 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	350	687	#line 350 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	350	687	#line 350 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	351	687		jmp __NXC_Label_769
+0	350	689	#line 350 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	350	689	#line 350 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	351	689		set __Wait_7qG2_ms_7qG2_000_inline_main, 2000
+0	350	692	#line 350 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	7921	692	#line 7921 "NXCDefs.h"
+0	7922	692		wait2 NA, __Wait_7qG2_ms_7qG2_000_inline_main
+0	7921	695	#line 7921 "NXCDefs.h"
+0	352	695	#line 352 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+0	353	695		exit -1, -1
+1	72	0	#line 72 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	73	0		arrinit __read_acceleration_7qG2_message_7qG2_000, __constVal0, __constVal2
+1	78	4	#line 78 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	79	4		set __signed_stack_001read_acceleration, 0
+1	78	7	#line 78 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	79	7	#line 79 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	80	7		set __D0read_acceleration, 1
+1	79	10	#line 79 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	80	10		replace __read_acceleration_7qG2_message_7qG2_000, __read_acceleration_7qG2_message_7qG2_000, __signed_stack_001read_acceleration, __D0read_acceleration
+1	79	15	#line 79 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	79	15	#line 79 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	80	15		set __signed_stack_001read_acceleration, 1
+1	79	18	#line 79 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	83	18	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	18		mov __DU0read_acceleration, mailbox
+1	83	20	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	20		replace __read_acceleration_7qG2_message_7qG2_000, __read_acceleration_7qG2_message_7qG2_000, __signed_stack_001read_acceleration, __DU0read_acceleration
+1	83	25	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	83	25	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	25	#pragma macro 5
+1	84	25		acquire __CBTCSMutex
+1	84	26		mov __CBTCSArgs.Connection, __constVal1
+1	84	28		syscall 28, __CBTCSArgs
+1	84	31		mov __D0read_acceleration, __CBTCSArgs.Result
+1	84	33		release __CBTCSMutex
+1	4779	34	#line 4779 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	83	34	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	34		mov __signed_stack_001read_acceleration, __D0read_acceleration
+1	83	36	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	36		set __D0read_acceleration, 0
+1	83	39	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	39		cmp 5, __zfread_acceleration, __signed_stack_001read_acceleration, __D0read_acceleration
+1	83	43	#line 83 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	84	43		mov __D0read_acceleration, __zfread_acceleration
+1	89	45	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	90	45		brtst 4, __NXC_Label_612, __zfread_acceleration
+1	89	48	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	89	48	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	90	48		jmp __NXC_Label_611
+1	89	50	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	89	50	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	90	50	#pragma macro 6
+1	90	50		acquire __CBTWMutex
+1	90	51		mov __CBTWArgs.Connection, __constVal1
+1	90	53		mov __CBTWArgs.Buffer, __read_acceleration_7qG2_message_7qG2_000
+1	90	55		syscall 29, __CBTWArgs
+1	90	58		mov __D0read_acceleration, __CBTWArgs.Result
+1	90	60		release __CBTWMutex
+1	4798	61	#line 4798 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	89	61	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	89	61	#line 89 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	97	61	#line 97 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	98	61	#pragma macro 5
+1	98	61		acquire __CBTCSMutex
+1	98	62		mov __CBTCSArgs.Connection, __constVal1
+1	98	64		syscall 28, __CBTCSArgs
+1	98	67		mov __D0read_acceleration, __CBTCSArgs.Result
+1	98	69		release __CBTCSMutex
+1	4803	70	#line 4803 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	97	70	#line 97 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	98	70		mov __signed_stack_001read_acceleration, __D0read_acceleration
+1	97	72	#line 97 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	98	72		set __D0read_acceleration, 0
+1	97	75	#line 97 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	98	75		cmp 5, __zfread_acceleration, __signed_stack_001read_acceleration, __D0read_acceleration
+1	97	79	#line 97 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	98	79		mov __D0read_acceleration, __zfread_acceleration
+1	102	81	#line 102 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	103	81		brtst 4, __NXC_Label_616, __zfread_acceleration
+1	102	84	#line 102 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	102	84	#line 102 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	103	84		jmp __NXC_Label_615
+1	102	86	#line 102 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	105	86	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	86		subret __read_acceleration_return
+1	105	88	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	105	88	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	88	#pragma macro 7
+1	106	88		acquire __MRMutex
+1	106	89		mov __MRArgs.QueueID, mailbox
+1	106	91		mov __MRArgs.Remove, __constVal1
+1	106	93		syscall 27, __MRArgs
+1	106	96		mov __read_acceleration_7qG2_buf_7qG2_000, __MRArgs.Message
+1	106	98		mov __D0read_acceleration, __MRArgs.Result
+1	106	100		release __MRMutex
+1	4826	101	#line 4826 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	105	101	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	101		mov __signed_stack_001read_acceleration, __D0read_acceleration
+1	105	103	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	103		set __D0read_acceleration, 0
+1	105	106	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	106		cmp 5, __zfread_acceleration, __signed_stack_001read_acceleration, __D0read_acceleration
+1	105	110	#line 105 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	106	110		mov __D0read_acceleration, __zfread_acceleration
+1	109	112	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	110	112		brtst 4, __NXC_Label_620, __zfread_acceleration
+1	109	115	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	109	115	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	110	115		jmp __NXC_Label_619
+1	109	117	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	109	117	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	110	117		arrsize __read_acceleration_7qG2_len_7qG2_000, __read_acceleration_7qG2_buf_7qG2_000
+1	109	120	#line 109 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	111	120	#line 111 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	112	120		arrsubset __read_acceleration_7qG2_buf_7qG2_000, __read_acceleration_7qG2_buf_7qG2_000, __constVal1, __read_acceleration_7qG2_len_7qG2_000
+1	111	125	#line 111 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	111	125	#line 111 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	112	125	#line 112 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	113	125		strcat __strbufread_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	112	129	#line 112 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	113	129		mov __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strbufread_acceleration
+1	112	131	#line 112 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	113	131		mov __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	18195	133	#line 18195 "NXCDefs.h"
+1	18196	133		strtonum __strtod_7qG2_result_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, 65535, 65535
+1	18197	139		strsubset __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, 65535
+1	18198	144	#line 18198 "NXCDefs.h"
+1	18199	144	#line 18199 "NXCDefs.h"
+1	18200	144		mov __DF0strtod_inline_read_acceleration, __strtod_7qG2_result_7qG2_000_inline_read_acceleration
+1	18199	146	#line 18199 "NXCDefs.h"
+1	18199	146	#line 18199 "NXCDefs.h"
+1	113	146	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	146		mov __read_acceleration_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration
+1	113	148	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	148		mov __read_acceleration_7qG2_aX_7qG2_000, __DF0strtod_inline_read_acceleration
+1	113	150	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	113	150	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	113	150	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	150		strcat __strbufread_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	113	154	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	154		mov __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strbufread_acceleration
+1	113	156	#line 113 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	156		mov __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	18195	158	#line 18195 "NXCDefs.h"
+1	18196	158		strtonum __strtod_7qG2_result_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, 65535, 65535
+1	18197	164		strsubset __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, 65535
+1	18198	169	#line 18198 "NXCDefs.h"
+1	18199	169	#line 18199 "NXCDefs.h"
+1	18200	169		mov __DF0strtod_inline_read_acceleration, __strtod_7qG2_result_7qG2_000_inline_read_acceleration
+1	18199	171	#line 18199 "NXCDefs.h"
+1	18199	171	#line 18199 "NXCDefs.h"
+1	114	171	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	171		mov __read_acceleration_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration
+1	114	173	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	173		mov __read_acceleration_7qG2_aY_7qG2_000, __DF0strtod_inline_read_acceleration
+1	114	175	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	175	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	114	175	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	175		strcat __strbufread_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	114	179	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	179		mov __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strbufread_acceleration
+1	114	181	#line 114 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	181		mov __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	18195	183	#line 18195 "NXCDefs.h"
+1	18196	183		strtonum __strtod_7qG2_result_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, 65535, 65535
+1	18197	189		strsubset __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration, __strtod_7qG2_str_7qG2_000_inline_read_acceleration, __strtod_7qG2_offsetpast_7qG2_000_inline_read_acceleration, 65535
+1	18198	194	#line 18198 "NXCDefs.h"
+1	18199	194	#line 18199 "NXCDefs.h"
+1	18200	194		mov __DF0strtod_inline_read_acceleration, __strtod_7qG2_result_7qG2_000_inline_read_acceleration
+1	18199	196	#line 18199 "NXCDefs.h"
+1	18199	196	#line 18199 "NXCDefs.h"
+1	115	196	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	116	196		mov __read_acceleration_7qG2_buf_7qG2_000, __strtod_7qG2_endptr_7qG2_000_inline_read_acceleration
+1	115	198	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	116	198		mov __read_acceleration_7qG2_aZ_7qG2_000, __DF0strtod_inline_read_acceleration
+1	115	200	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	200	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	115	200	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	116	200		strcat __strbufread_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	115	204	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	116	204		mov __strtol_7qG2_str_7qG2_000_inline_read_acceleration, __strbufread_acceleration
+1	115	206	#line 115 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	116	206		mov __strtol_7qG2_endptr_7qG2_000_inline_read_acceleration, __read_acceleration_7qG2_buf_7qG2_000
+1	126	208	#line 126 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	18232	208	#line 18232 "NXCDefs.h"
+1	18233	208		strtonum __strtol_7qG2_result_7qG2_000_inline_read_acceleration, __strtol_7qG2_offsetpast_7qG2_000_inline_read_acceleration, __strtol_7qG2_str_7qG2_000_inline_read_acceleration, 65535, 65535
+1	18234	214		strsubset __strtol_7qG2_endptr_7qG2_000_inline_read_acceleration, __strtol_7qG2_str_7qG2_000_inline_read_acceleration, __strtol_7qG2_offsetpast_7qG2_000_inline_read_acceleration, 65535
+1	18235	219	#line 18235 "NXCDefs.h"
+1	18236	219	#line 18236 "NXCDefs.h"
+1	18237	219		mov __D0strtol_inline_read_acceleration, __strtol_7qG2_result_7qG2_000_inline_read_acceleration
+1	18236	221	#line 18236 "NXCDefs.h"
+1	18236	221	#line 18236 "NXCDefs.h"
+1	126	221	#line 126 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	127	221		mov __read_acceleration_7qG2_buf_7qG2_000, __strtol_7qG2_endptr_7qG2_000_inline_read_acceleration
+1	126	223	#line 126 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	127	223		mov __read_acceleration_7qG2_timestampMs_7qG2_000, __D0strtol_inline_read_acceleration
+1	126	225	#line 126 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	126	225	#line 126 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	128	225	#line 128 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+1	129	225		subret __read_acceleration_return
+2	356	0	#line 356 "C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc"
+2	357	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc
+1	read_acceleration	698	C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc
+2	__initialize_global_data	925	C:\Users\erich\MyData\app_sache\workspace\Robot Sensors\NXT_Software\nxtCamBox.nxc

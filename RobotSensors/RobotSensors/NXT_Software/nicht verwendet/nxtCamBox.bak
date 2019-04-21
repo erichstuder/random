@@ -1,0 +1,354 @@
+
+//SysCommBTConnection zum verbinden   !!!
+//SysCommExecuteFunction()
+
+byte mailbox = 1; //default Value;
+
+//all possible commands
+#define GET_BRIGHTEST_POINT_CMD 0
+unsigned long old;
+
+int getBrightestPoint(int &x, int &y, int &width, int &height){
+    byte message[3];
+    byte buf[];
+    
+    message[0] = GET_BRIGHTEST_POINT_CMD;   //the command
+    message[1] = 1; //of witch block (because there could be more than one!!) 0 = default, 1 = first Block; 2 = second Block...
+    message[2] = mailbox; //the mailbox to put the Answer in.
+    
+    /*while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+         TextOut(0,LCD_LINE6,"    ");
+         NumOut(0,LCD_LINE6,BluetoothStatus(CONN_BT1));
+    }*/
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    
+    TextOut(0,LCD_LINE7,"1");
+    BluetoothWrite(CONN_BT1, message);
+    //Wait(100);
+    TextOut(0,LCD_LINE7,"2");
+    
+    //while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    //buf[1] =  x;
+    //buf[2] =  y;
+    
+    while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+    
+    /*while(BluetoothStatus(CONN_BT1)!=NO_ERR){
+         TextOut(0,LCD_LINE8,"    ");
+         NumOut(0,LCD_LINE8,BluetoothStatus(CONN_BT1));
+    }*/
+    
+    TextOut(0,LCD_LINE7,"3");
+    while(ReceiveMessage(mailbox, true, buf)!=NO_ERR);
+    //Wait(100);
+    TextOut(0,LCD_LINE7,"4");
+
+
+    
+    if(buf[0] == GET_BRIGHTEST_POINT_CMD){
+        x = buf[1] +(buf[2]<<8);
+        y = buf[3] +(buf[4]<<8);
+        width  = buf[5] +(buf[6]<<8);
+        height = buf[7] +(buf[8]<<8);
+        return NO_ERR;
+    }else if(buf[0]==0x88){
+        TextOut(0,LCD_LINE8,"cam is away");
+        return NO_ERR;
+    }else if(buf[0]==0x99){
+        TextOut(0,LCD_LINE8,"cam is back");
+        return NO_ERR;
+    }else{
+        x = 0;
+        y = 0;
+        width=0;
+        height=0;
+        return 0;//was ist error ERROR??;
+    }
+}
+
+
+void read_acceleration(float &aX, float &aY, float &aZ, unsigned long &timestampMs){
+     byte message[2];
+     byte buf[];
+     //byte temp[];
+     //int first;
+     //int last;
+
+     //int tick = CurrentTick();
+     message[0] = 0x01;   //the command
+     message[1] = mailbox; //the mailbox to put the Answer in.
+
+     //int i;
+     //for(int i=0; i<16; i++){
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+     
+
+
+     
+     //TextOut(0,LCD_LINE8,"1");
+     BluetoothWrite(CONN_BT1, message);
+     //TextOut(0,LCD_LINE8,"2");
+     //}
+     //tick = CurrentTick()-tick;
+     //NumOut(0,LCD_LINE8,tick);
+     //do{
+        //ClearScreen();
+        //NumOut(0,LCD_LINE8,1);
+        while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+        //NumOut(0,LCD_LINE8,2);
+        //TextOut(0,LCD_LINE8,"3");
+        
+        ////////////////////////////////////////
+        return;////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////
+        
+        while(ReceiveMessage(mailbox, true, buf)!=NO_ERR);
+        //TextOut(0,LCD_LINE8,"4");
+        //NumOut(0,LCD_LINE8,3);
+        //NumOut(0,LCD_LINE1,buf[0]); //command
+        unsigned int len = ArrayLen(buf);
+
+        ArraySubset(buf, buf, 1, len);
+        aX = strtod(buf,buf);
+        aY = strtod(buf,buf);
+        aZ = strtod(buf,buf);
+        timestampMs = strtol(buf,buf);
+        
+        //while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+        //Wait(1000);
+     //}while(timestampMs == old);
+     //old = timestampMs;
+     //NumOut(0,LCD_LINE8,4);
+     //ClearScreen();
+     //TextOut(0,LCD_LINE6,buf);
+
+     //NumOut(0,LCD_LINE6,sqrt(aX*aX+aY*aY+aZ*aZ));
+}
+
+void show_picture(){
+     byte message[1];
+
+
+     message[0] = 0x11;   //the command
+
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+
+     TextOut(0,LCD_LINE8,"1");
+     BluetoothWrite(CONN_BT1, message);
+     TextOut(0,LCD_LINE8,"2");
+}
+
+void take_picture(){
+     byte message[2];
+
+
+     message[0] = 0x10;   //the command
+     message[1] = 0x01;   //back camera
+
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+
+     TextOut(0,LCD_LINE8,"1");
+     BluetoothWrite(CONN_BT1, message);
+     TextOut(0,LCD_LINE8,"2");
+}
+
+void filter_picture(){
+     byte message[1];
+
+
+     message[0] = 0x12;   //the command
+
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+
+     TextOut(0,LCD_LINE8,"1");
+     BluetoothWrite(CONN_BT1, message);
+     TextOut(0,LCD_LINE8,"2");
+}
+
+void read_gyroscope(float &wX, float &wY, float &wZ, unsigned long &timestampMs){
+     byte message[2];
+     byte buf[];
+
+     message[0] = 0x04;   //the command
+     message[1] = mailbox; //the mailbox to put the Answer in.
+     
+
+
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+     //int tick = CurrentTick();
+     //TextOut(0,LCD_LINE8,"1");
+     BluetoothWrite(CONN_BT1, message);
+     //TextOut(0,LCD_LINE8,"2");
+
+     while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+
+     //TextOut(0,LCD_LINE8,"3");
+     while(ReceiveMessage(mailbox, true, buf)!=NO_ERR);
+     //TextOut(0,LCD_LINE8,"4");
+     
+     //tick = CurrentTick()-tick;
+     ClearScreen();
+     //NumOut(0,LCD_LINE7,tick);
+
+     NumOut(0,LCD_LINE1,buf[0]); //command
+     
+     unsigned int len = ArrayLen(buf);
+     ArraySubset(buf, buf, 1, len);
+     wX = strtod(buf,buf);
+     wY = strtod(buf,buf);
+     wZ = strtod(buf,buf);
+     timestampMs = strtol(buf,buf);
+}
+
+task main(void){   //main task vor Testing
+    //message soll starten mit NCB zur Erkennung von wem das Telegramm ist.
+    
+    //Es wäre schön, das Telegramm erst nach diesem Test zu löschen.
+    //Aber kann die mailbox exklusive reserviert werden???
+    //Was wenn das Telegramm für mich ist, es aber jemand anders schon gelöscht hat?
+    //=>dann würde ich ein falsches Telegramm löschen!!
+    
+    //einkommende Nachrichten sollen alle über Mailbox 0 reinkommen.
+    //Dies entspricht dem Standard: "LEGO MINDSTORMS NXT Bluetooth Developer Kit.pdf"
+    
+    
+    
+    string message = "0123456789";
+    string buf;
+    int x,y,width,height;
+    float aX,aY,aZ,wX,wY,wZ;
+    long timestampMs;
+    long tick;
+
+    //ReceiveMessage(mailboxNr, false, message);
+    
+    //SendMessage(mailboxNr, message);
+    
+    //BluetoothWrite(CONN_BT1, message);
+    
+    //while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+
+    //while(ReceiveMessage(1, true, buf)!=NO_ERR);
+    
+/*    while(1){
+        getBrightestPoint(x,y,width,height);
+        Wait(500);
+        
+        //ClearScreen();
+        TextOut(0, LCD_LINE1, "    ");
+        TextOut(0, LCD_LINE2, "    ");
+        NumOut(0, LCD_LINE1, x);
+        NumOut(0, LCD_LINE2, y);
+        
+        if(x<width/2)
+            TextOut(0,LCD_LINE4,"links ");
+        else
+            TextOut(0,LCD_LINE4,"rechts");
+    } */
+    
+    /*take_picture();
+    while(true){
+      //readAccelerationSensor(aX, aY, aZ, timestamp);
+      filter_picture();
+      show_picture();
+      Wait(100);
+    }*/
+    //int wXold = 0;
+
+      tick = CurrentTick();
+
+      read_acceleration(wX,wY,wZ,timestampMs);
+      //read_gyroscope(wX,wY,wZ,timestampMs);
+      tick = CurrentTick() - tick;
+      NumOut(0,LCD_LINE6,tick);
+      
+      NumOut(0,LCD_LINE2,wX);
+      NumOut(0,LCD_LINE3,wY);
+      NumOut(0,LCD_LINE4,wZ);
+      NumOut(0,LCD_LINE5,timestampMs);
+
+      //Wait(1000);
+      
+      //if(wX != wXold){
+
+      //wXold = wX;
+
+      //}
+      //Wait(2000);
+      long longest=0;
+      long shortest=LONG_MAX;
+      long cnt =0;
+      long timestampOld=0;
+      //MessageReadType args;
+      //byte buffer[];
+      //byte clearbuffer[];
+      long mean=0;
+    //#define SIZE_OF_BTBUF 128!!!! aber mehr als 64(NXC) oder 58(Internet) je nach Quellekann nicht auf einmal gelesen werden (siehe c_cmd.c)!!!
+    while(true){
+        //ArrayInit(clearbuffer, 0, 58);
+        ArrayInit(buf, 0, 58);
+
+        //Wait(20);
+        //while(BluetoothStatus(CONN_BT1)==STAT_MSG_EMPTY_MAILBOX);
+        //cCmdMessageGetSize(mailbox);
+
+        while(BluetoothStatus(CONN_BT1)!=NO_ERR);
+        //while(ReceiveMessage(mailbox, true, buf)!=NO_ERR);
+        GetBTInputBuffer(0,58,buf);
+        //SetBTInputBuffer(0,58,clearbuffer);
+        //SetBTInputBufferInPtr(0);
+
+        /*args.QueueID = mailbox;
+        args.Remove = true;
+        do{SysMessageRead(args);}while(args.Result!=NO_ERR);*/
+        
+        /*ClearScreen();
+        if(buf[2]!=0){
+            NumOut(0,LCD_LINE1,buf[2]); //command
+        }*/
+        
+        if(buf[0] == 0x80){
+
+        unsigned int len = ArrayLen(buf);
+        NumOut(0,LCD_LINE1,buf[4]);
+        ArraySubset(buf, buf, 5, len);
+        wX = strtod(buf,buf);
+        wY = strtod(buf,buf);
+        wZ = strtod(buf,buf);
+        timestampMs = strtol(buf,buf);
+        
+        if(timestampMs == timestampOld){continue;}
+        ClearScreen();
+        timestampOld = timestampMs;
+
+        NumOut(0,LCD_LINE2,wX);
+        NumOut(0,LCD_LINE3,wY);
+        NumOut(0,LCD_LINE4,wZ);
+        NumOut(0,LCD_LINE5,timestampMs);
+
+        tick = CurrentTick() - tick;
+        NumOut(0,LCD_LINE6,tick);
+
+        
+        if(tick > longest) {longest  = tick;}
+        if(tick < shortest){shortest = tick; longest=0;}
+        NumOut(0,LCD_LINE7,longest);
+        NumOut(0,LCD_LINE8,shortest);
+        NumOut(50,LCD_LINE8,cnt);
+        cnt++;
+        mean = (mean*100+tick)/101;
+        NumOut(50,LCD_LINE7,mean);
+
+        //Wait(1000);
+        tick = CurrentTick();
+        }
+        
+    }
+
+    //TextOut(0,0,buf);
+    Wait(2000); 
+    
+}
+
+

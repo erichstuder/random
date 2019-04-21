@@ -1,0 +1,150 @@
+\begin{theindex}
+
+  \item {accelerometer\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{15}
+  \item {ambient\discretionary {-}{}{}Temperature\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{15}
+
+  \indexspace
+
+  \item {brightness\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{15}
+
+  \indexspace
+
+  \item {camera\discretionary {-}{}{}Light\discretionary {-}{}{}Off}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{15}
+  \item {camera\discretionary {-}{}{}Light\discretionary {-}{}{}On}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{16}
+  \item {camera\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{16}
+  \item {camera\discretionary {-}{}{}Start}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{16}
+  \item {camera\discretionary {-}{}{}Stop}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{16}
+
+  \indexspace
+
+  \item {Day of Week}, \hyperpage{10}
+  \item {Direction}, \hyperpage{7}
+
+  \indexspace
+
+  \item {gyroscope\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{16}
+
+  \indexspace
+
+  \item {magnetic\discretionary {-}{}{}Field\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{17}
+  \item {microphone\discretionary {-}{}{}Noise\discretionary {-}{}{}Level}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{17}
+  \item {Mode}, \hyperpage{9}
+  \item {Month}, \hyperpage{11}
+
+  \indexspace
+
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Brightest\discretionary {-}{}{}Point}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{17}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Copy}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{18}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Cut}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{18}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Darkest\discretionary {-}{}{}Point}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{18}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Mean\discretionary {-}{}{}Color}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{18}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Show}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{20}
+  \item {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Subtract}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{20}
+  \item {pressure\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{20}
+
+  \indexspace
+
+  \item {relative\discretionary {-}{}{}Humidity\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{20}
+  \item {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{13}
+    \subitem {accelerometer\discretionary {-}{}{}Read}, \hyperpage{15}
+    \subitem {ambient\discretionary {-}{}{}Temperature\discretionary {-}{}{}Read}, 
+		\hyperpage{15}
+    \subitem {brightness\discretionary {-}{}{}Read}, \hyperpage{15}
+    \subitem {camera\discretionary {-}{}{}Light\discretionary {-}{}{}Off}, 
+		\hyperpage{15}
+    \subitem {camera\discretionary {-}{}{}Light\discretionary {-}{}{}On}, 
+		\hyperpage{16}
+    \subitem {camera\discretionary {-}{}{}Read}, \hyperpage{16}
+    \subitem {camera\discretionary {-}{}{}Start}, \hyperpage{16}
+    \subitem {camera\discretionary {-}{}{}Stop}, \hyperpage{16}
+    \subitem {gyroscope\discretionary {-}{}{}Read}, \hyperpage{16}
+    \subitem {magnetic\discretionary {-}{}{}Field\discretionary {-}{}{}Read}, 
+		\hyperpage{17}
+    \subitem {microphone\discretionary {-}{}{}Noise\discretionary {-}{}{}Level}, 
+		\hyperpage{17}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Brightest\discretionary {-}{}{}Point}, 
+		\hyperpage{17}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Copy}, 
+		\hyperpage{18}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Cut}, 
+		\hyperpage{18}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Darkest\discretionary {-}{}{}Point}, 
+		\hyperpage{18}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Mean\discretionary {-}{}{}Color}, 
+		\hyperpage{18}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Show}, 
+		\hyperpage{20}
+    \subitem {picture\discretionary {-}{}{}Accu\discretionary {-}{}{}Subtract}, 
+		\hyperpage{20}
+    \subitem {pressure\discretionary {-}{}{}Read}, \hyperpage{20}
+    \subitem {relative\discretionary {-}{}{}Humidity\discretionary {-}{}{}Read}, 
+		\hyperpage{20}
+    \subitem {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Read}, 
+		\hyperpage{21}
+    \subitem {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Start}, 
+		\hyperpage{21}
+    \subitem {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Stop}, 
+		\hyperpage{21}
+    \subitem {time\discretionary {-}{}{}Read}, \hyperpage{21}
+
+  \indexspace
+
+  \item {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{21}
+  \item {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Start}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{21}
+  \item {speech\discretionary {-}{}{}Recognizer\discretionary {-}{}{}Stop}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{21}
+  \item {Status}, \hyperpage{8}
+
+  \indexspace
+
+  \item {time\discretionary {-}{}{}Read}
+    \subitem {robot\discretionary {-}{}{}Sensors.\discretionary {-}{}{}nxc}, 
+		\hyperpage{21}
+
+\end{theindex}

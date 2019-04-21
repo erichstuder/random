@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project> 
+  <target name="Copy the Shit">
+      
+    <delete file="./assets/refman.pdf"/>  
+    <delete file="./assets/robotSensors.nxc"/>  
+    <delete file="./assets/example.nxc"/>  
+    <delete file="./assets/example_speech_recognition.nxc"/>  
+    
+  	<copy file="./NXT_Software/Doxygen/latex/refman.pdf" tofile="./assets/refman.pdf"/>
+  	<copy file="./NXT_Software/robotSensors.nxc" tofile="./assets/robotSensors.nxc"/>
+  	<copy file="./NXT_Software/example.nxc" tofile="./assets/example.nxc"/>
+  	<copy file="./NXT_Software/example_speech_recognition.nxc" tofile="./assets/example_speech_recognition.nxc"/>
+  	
+  </target>
+</project>
