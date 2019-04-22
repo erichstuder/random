@@ -1,8 +1,8 @@
-# Created by Octave 5.1.0, Sat Apr 13 09:37:16 2019 GMT <unknown@DESKTOP-H7EGRD1>
+# Created by Octave 5.1.0, Mon Apr 22 07:43:15 2019 GMT <unknown@DESKTOP-H7EGRD1>
 # name: doneMp3
 # type: cell
 # rows: 1
-# columns: 95
+# columns: 98
 # name: <cell-element>
 # type: sq_string
 # elements: 1
@@ -760,6 +760,30 @@ http://podcast-mp3.dradio.de/podcast/2019/04/12/forschung_aktuell_12042019_kompl
 # elements: 1
 # length: 123
 http://podcast-mp3.dradio.de/podcast/2019/04/11/forschung_aktuell_11042019_komplette_sendung_dlf_20190411_1635_ebf480b4.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/04/18/forschung_aktuell_18042019_komplette_sendung_dlf_20190418_1635_6b00bc04.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/04/17/forschung_aktuell_17042019_komplette_sendung_dlf_20190417_1635_c3f1320b.mp3
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 123
+http://podcast-mp3.dradio.de/podcast/2019/04/16/forschung_aktuell_16042019_komplette_sendung_dlf_20190416_1635_abbb4f74.mp3
 
 
 
