@@ -1,5 +1,4 @@
 #include "cmd.ulp"
-//#include "linePolygon.ulp"
 
 int n;
 string cmd;
@@ -8,6 +7,7 @@ cmdInit();
 
 cmdAdd("grid mm");
 cmdAdd("layer 1");
+cmdAdd("set wire_bend 2;");
 cmdAdd("set width 0.1");
 
 cmdAdd("circle (0 0) (60 0)"); //aussendurchmesser
