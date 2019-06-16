@@ -7,6 +7,11 @@ cmd += "circle (0 0) (60 0);\n"; //aussendurchmesser
 cmd += "circle (0 0) (18.5 0);\n"; //nutzbarer innendurchmesser
 cmd += "circle (0 0) (7.5 0);\n"; //loch in der mitte
 
+//cmd += "rect R10 (-5 -5) (5 5);\n";
+//cmd += "polygon 0.1 (5 5) (-5 5) (-5 -5) (5 -5) (5 5);\n";
+//cmd += "polygon none (-5.000000 7.694209) (5.000000 7.694209) (8.090170 -1.816356) (0.000000 -7.694209) (-8.090170 -1.816356) (-5.000000 7.694209);\n";
+cmd += "LINE 1 (5 5) (-5 -5);\n"; 
+
 //output("sample"){
 //	printf(cmd);
 //}
