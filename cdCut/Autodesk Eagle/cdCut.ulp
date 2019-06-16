@@ -1,0 +1,14 @@
+string cmd = "";
+cmd += "grid mm;\n";
+cmd += "layer 1;\n";
+cmd += "set width 0.1;\n";
+
+cmd += "circle (0 0) (120 0);\n"; //aussendurchmesser
+cmd += "circle (0 0) (37 0);\n"; //nutzbarer innendurchmesser
+cmd += "circle (0 0) (15 0);\n"; //och in der mitte
+
+//output("sample"){
+//	printf(cmd);
+//}
+
+exit(cmd);
