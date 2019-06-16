@@ -1,0 +1,31 @@
+//"private" members
+string _cmds;
+
+
+void cmdInit(void){
+	_cmds = "";
+}
+
+void cmdAdd(string cmd){
+	_cmds += cmd + ";\n";
+}
+
+string cmdGet(void){
+	return _cmds;
+}
+
+/*void cmdLinePolygon(real* dotX[], real* dotY[], int nrOfPoints){
+//void cmdLinePolygon(dotX[], int nrOfPoints){
+	string cmd;
+	for(int n=1; n<nrOfPoints-1; n++){
+		cmd = "line ";
+		sprintf(cmd, " %f %f", dotX[n], dotY[n]);
+	
+		cmdAdd("line (5 5) (-5 -5)");
+
+		string str;
+		output("sample"){
+			printf(cmd);
+		}
+	}
+*/
