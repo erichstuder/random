@@ -1,3 +1,11 @@
+/*
+- Open Eagle
+- Add path unter Optionen=>Verzeichnisse=>User-Language-Programme
+- Open an empty board
+- type "run cdCut" in cmd-line
+*/
+
+
 #include "cmd.ulp"
 
 int n;
