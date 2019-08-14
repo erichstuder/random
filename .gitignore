@@ -1,1 +1,6 @@
 *.mp3
+
+# Altera_Cyclone_II_FPGA_Starter_Board
+Altera_Cyclone_II_FPGA_Starter_Board/clock/sourceCode/db
+Altera_Cyclone_II_FPGA_Starter_Board/clock/sourceCode/clock.qws
+
