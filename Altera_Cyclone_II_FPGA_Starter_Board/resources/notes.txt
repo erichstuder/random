@@ -2,5 +2,7 @@
 https://www.intel.de/content/www/de/de/programmable/products/boards_and_kits/dev-kits/altera/cyc2-2c20n-kit.html?wapkw=cyclone+ii+fpga+starter+development
 https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_cii_starter_board_rm.pdf
 https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/ug/ug_cii_starter_board.pdf
+https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/ug/ug_low_level.pdf
+https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/qts/qts_qii52013.pdf
 
 The driver for the board is located in the quartus installation path.
