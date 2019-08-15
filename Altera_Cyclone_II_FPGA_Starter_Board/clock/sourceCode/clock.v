@@ -105,7 +105,7 @@ module clock(
 );
 
 	//Dummy implementation for unused input ports, that can't be commented out
-	assign LEDG[0] = (~KEY[3:1]) || 0;
+	assign LEDG[0] = (~KEY[3:0]) || 0;
 	
 	//All unused output ports set to defined state
 	//This is mainly done to prevent "... has no driver" warning
@@ -113,6 +113,6 @@ module clock(
 
 	wire [5:0] minutes, hours;
 	//wire hours;
-	TimeOfDay timeOfDay(!KEY[0], CLOCK_50, minutes, hours);
+	TimeOfDay timeOfDay(!KEY[0], CLOCK_50, !KEY[2], !KEY[3], minutes, hours);
 	TimeTo7Seg timeTo7Seg(minutes, hours, HEX0, HEX1, HEX2, HEX3);
 endmodule

@@ -1,8 +1,10 @@
-module TimeOfDay(input reset, clk_50MHz, output reg unsigned [5:0] minutes, hours);
+module TimeOfDay(input reset, clk_50MHz, incrementMinutes, incrementHours, output reg unsigned [5:0] minutes, hours);
 	integer counter;
 	integer microSeconds;
 	integer milliSeconds;
 	integer seconds;
+	reg incrementMinutesOld;
+	reg incrementHoursOld;
 	
 	always@(posedge clk_50MHz or posedge reset)
 	begin
@@ -17,6 +19,18 @@ module TimeOfDay(input reset, clk_50MHz, output reg unsigned [5:0] minutes, hour
 		end
 		else
 		begin
+			if(incrementMinutes && !incrementMinutesOld)
+			begin
+				minutes = minutes + 1'b1;
+			end
+			incrementMinutesOld = incrementMinutes;
+			
+			if(incrementHours && !incrementHoursOld)
+			begin
+				hours = hours + 1'b1;
+			end
+			incrementHoursOld = incrementHours;
+			
 			counter = counter + 1;
 			
 			if(counter >= 50)
@@ -57,4 +71,7 @@ module TimeOfDay(input reset, clk_50MHz, output reg unsigned [5:0] minutes, hour
 			end
 		end
 	end
+	
+
+
 endmodule
