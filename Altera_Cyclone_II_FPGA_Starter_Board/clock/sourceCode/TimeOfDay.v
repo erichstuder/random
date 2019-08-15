@@ -1,4 +1,4 @@
-module TimeOfDay(input wire reset, input wire clk_50MHz, output integer minutes, output integer hours);
+module TimeOfDay(input reset, clk_50MHz, output reg unsigned [5:0] minutes, hours);
 	integer counter;
 	integer microSeconds;
 	integer milliSeconds;
@@ -37,16 +37,16 @@ module TimeOfDay(input wire reset, input wire clk_50MHz, output integer minutes,
 				milliSeconds = 0;
 			end
 			
-			if(seconds >=60)
+			if(seconds >= 60)
 			begin
-				minutes = minutes + 1;
+				minutes = minutes + 1'b1;
 				seconds = 0;
 			end
 			
 			//TODO: prevent glitch
 			if(minutes >= 60)
 			begin
-				hours = hours + 1;
+				hours = hours + 1'b1;
 				minutes = 0;
 			end
 			

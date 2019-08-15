@@ -19,8 +19,8 @@ module clock(
 	//7-SEG Dispaly
 	output [6:0] HEX0, //Seven Segment Digit 0
 	output [6:0] HEX1, //Seven Segment Digit 1
-	//output [6:0] HEX2, //Seven Segment Digit 2
-	//output [6:0] HEX3, //Seven Segment Digit 3
+	output [6:0] HEX2, //Seven Segment Digit 2
+	output [6:0] HEX3, //Seven Segment Digit 3
 	
 	//LED
 	output [7:0] LEDG //LED Green[7:0]
@@ -111,5 +111,8 @@ module clock(
 	//This is mainly done to prevent "... has no driver" warning
 	assign LEDG[7:1] = {7{1'bz}};
 
-	TimeOfDay u0(!KEY[0], CLOCK_50, HEX0, HEX1);
+	wire [5:0] minutes, hours;
+	//wire hours;
+	TimeOfDay timeOfDay(!KEY[0], CLOCK_50, minutes, hours);
+	TimeTo7Seg timeTo7Seg(minutes, hours, HEX0, HEX1, HEX2, HEX3);
 endmodule
