@@ -37,13 +37,10 @@ module TimeOfDay(input wire reset, input wire clk_50MHz, output integer minutes,
 				milliSeconds = 0;
 			end
 			
-			//TODO: rely on seconds
-			//if(seconds >=60)
-			if(milliSeconds >=60)
+			if(seconds >=60)
 			begin
 				minutes = minutes + 1;
-				//seconds = 0;//TODO: undo
-				milliSeconds = 0;
+				seconds = 0;
 			end
 			
 			//TODO: prevent glitch
