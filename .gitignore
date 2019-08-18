@@ -8,6 +8,7 @@ Altera_Cyclone_II_FPGA_Starter_Board/clock/sourceCode/clock.qws
 
 #AI
 ai/*.png
+ai/images
 ai/.idea
 ai/venv
 
