@@ -109,10 +109,23 @@ module clock(
 	
 	//All unused output ports set to defined state
 	//This is mainly done to prevent "... has no driver" warning
-	assign LEDG[7:1] = {7{1'bz}};
+	assign LEDG[7:3] = {5{1'bz}};
 
 	wire [5:0] minutes, hours;
 	//wire hours;
 	TimeOfDay timeOfDay(!KEY[0], CLOCK_50, !KEY[2], !KEY[3], minutes, hours);
 	TimeTo7Seg timeTo7Seg(minutes, hours, HEX0, HEX1, HEX2, HEX3);
+	
+	
+	UartTxStartBit#(
+	.ClockFrequency(50000000),
+	.BaudRate(1))
+	uartTxStartBit(
+		.reset(!KEY[0]),
+		.clock(CLOCK_50),
+		.startTransmition(!KEY[1]),
+		.done(LEDG[1]),
+		.tx(LEDG[2])
+	);
+
 endmodule
