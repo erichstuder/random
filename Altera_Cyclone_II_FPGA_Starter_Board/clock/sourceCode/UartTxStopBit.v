@@ -1,4 +1,4 @@
-module UartTxStartBit
+module UartTxStopBit
 	#(parameter ClockFrequency = 1000000,
 	  parameter BaudRate = 9600)
 	(input reset,
@@ -15,7 +15,7 @@ module UartTxStartBit
 		.reset(reset),
 		.clock(clock),
 		.startTransmition(startTransmission),
-		.bitValue(0),
+		.bitValue(1),
 		.done(done),
 		.tx(tx)
 	);

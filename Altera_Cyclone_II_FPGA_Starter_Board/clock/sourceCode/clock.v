@@ -14,7 +14,7 @@ module clock(
 	input [3:0] KEY, //Pushbutton[3:0]
 	
 	//DPDT Switch (DPDT: Double Pole Double Throw)
-	//input [9:0] SW, //Toggle Switch[9:0]
+	input [9:0] SW, //Toggle Switch[9:0]
 	
 	//7-SEG Dispaly
 	output [6:0] HEX0, //Seven Segment Digit 0
@@ -117,13 +117,15 @@ module clock(
 	TimeTo7Seg timeTo7Seg(minutes, hours, HEX0, HEX1, HEX2, HEX3);
 	
 	
-	UartTxStartBit#(
+	UartTx#(
 	.ClockFrequency(50000000),
-	.BaudRate(1))
+	.BaudRate(1),
+	.NrOfDataBits(8))
 	uartTxStartBit(
 		.reset(!KEY[0]),
 		.clock(CLOCK_50),
 		.startTransmition(!KEY[1]),
+		.dataBits(SW[7:0]),
 		.done(LEDG[1]),
 		.tx(LEDG[2])
 	);
