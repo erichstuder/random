@@ -11,10 +11,10 @@ module UartTxStartBit
 	.ClockFrequency(ClockFrequency),
 	.BaudRate(BaudRate),
 	.BitLength(1))
-	uartTxStartBit(
+	uartTxBit(
 		.reset(reset),
 		.clock(clock),
-		.startTransmition(startTransmission),
+		.startTransmission(startTransmission),
 		.bitValue(0),
 		.done(done),
 		.tx(tx)

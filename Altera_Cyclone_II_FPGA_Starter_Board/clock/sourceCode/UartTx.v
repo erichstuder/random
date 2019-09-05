@@ -4,22 +4,26 @@ module UartTx
 	  parameter NrOfDataBits = 8)
 	(input reset,
      input clock,
-	 input startTransmition,
-	 input dataBits[NrOfDataBits-1 : 0],
-	 output done,
-     output tx);
+	 input startTransmission,
+	 input [NrOfDataBits-1 : 0] dataBits,
+	 output reg done,
+     output reg tx);
 	
-	parameter TxStartBit=0, TxDataBits=1, TxStopBit=2;
+	parameter TxStartBit=2'b00, TxDataBits=2'b01, TxStopBit=2'b10;
 	
-	reg state;
+	reg [1:0] state;
 	
 	reg startTransmission_startBit;
 	reg startTransmission_dataBits;
 	reg startTransmission_stopBit;
 	
-	reg done_startBit;
-	reg done_dataBits;
-	reg done_stopBit;
+	wire done_startBit;
+	wire done_dataBits;
+	wire done_stopBit;
+	
+	wire tx_startBit;
+	wire tx_dataBits;
+	wire tx_stopBit;
 	
 	UartTxStartBit#(
 	.ClockFrequency(ClockFrequency),
@@ -27,9 +31,9 @@ module UartTx
 	uartTxStartBit(
 		.reset(reset),
 		.clock(clock),
-		.startTransmition(startTransmission_startBit),
+		.startTransmission(startTransmission_startBit),
 		.done(done_startBit),
-		.tx(tx)
+		.tx(tx_startBit)
 	);
 	
 	UartTxDataBits#(
@@ -39,10 +43,10 @@ module UartTx
 	uartTxDataBits(
 		.reset(reset),
 		.clock(clock),
-		.startTransmition(startTransmission_dataBits),
+		.startTransmission(startTransmission_dataBits),
 		.dataBits(dataBits),
 		.done(done_dataBits),
-		.tx(tx)
+		.tx(tx_dataBits)
 	);
 	
 	UartTxStopBit#(
@@ -51,9 +55,9 @@ module UartTx
 	uartTxStopBit(
 		.reset(reset),
 		.clock(clock),
-		.startTransmition(startTransmission_stopBit),
+		.startTransmission(startTransmission_stopBit),
 		.done(done_stopBit),
-		.tx(tx)
+		.tx(tx_stopBit)
 	);
 	
 	always@(posedge clock or posedge reset)
@@ -70,7 +74,7 @@ module UartTx
 			case(state)
 				TxStartBit:
 				begin
-					if(startTransmition)
+					if(startTransmission)
 					begin
 						done = 0;
 						startTransmission_startBit = 1;
@@ -84,6 +88,7 @@ module UartTx
 						startTransmission_dataBits = 1;
 						state = TxDataBits;
 					end
+					tx = tx_startBit;
 				end	
 				TxDataBits:
 				begin
@@ -93,6 +98,7 @@ module UartTx
 						startTransmission_stopBit = 1;
 						state = TxStopBit;
 					end
+					tx = tx_dataBits;
 				end
 				TxStopBit:
 				begin
@@ -102,6 +108,7 @@ module UartTx
 						done = 1;
 						state = TxStartBit;
 					end
+					tx = tx_stopBit;
 				end
 			endcase
 		end

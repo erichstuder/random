@@ -4,14 +4,14 @@ module UartTxBit
 	  parameter BitLength = 1)
 	(input reset,
      input clock,
-	 input startTransmition,
+	 input startTransmission,
 	 input bitValue,
 	 output reg done,
      output reg tx);
 	
 	integer counter;
-	parameter ready=0, transmitting=1;
-	reg state;
+	parameter ready=1'b0, transmitting=1'b1;
+	reg [1:0] state;
 	
 	always@(posedge clock or posedge reset)
 	begin
@@ -26,7 +26,7 @@ module UartTxBit
 		begin
 			case(state)
 				ready:
-					if(startTransmition)
+					if(startTransmission)
 					begin
 						state = transmitting;
 					end

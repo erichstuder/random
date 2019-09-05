@@ -1,4 +1,4 @@
-module UartTxDatatBits
+module UartTxDataBits
 	#(parameter ClockFrequency = 1000000,
 	  parameter BaudRate = 9600,
 	  parameter NrOfDataBits = 8)
@@ -15,10 +15,10 @@ module UartTxDatatBits
 	.ClockFrequency(ClockFrequency),
 	.BaudRate(BaudRate),
 	.BitLength(1))
-	uartTxStartBit(
+	uartTxBit(
 		.reset(reset),
 		.clock(clock),
-		.startTransmition(startTransmission),
+		.startTransmission(startTransmission),
 		.bitValue(dataBits[bitIndex]),
 		.done(done),
 		.tx(tx)
@@ -42,5 +42,4 @@ module UartTxDatatBits
 			end;
 		end
 	end
-	
 endmodule

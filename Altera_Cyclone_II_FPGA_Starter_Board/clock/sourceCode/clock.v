@@ -121,10 +121,10 @@ module clock(
 	.ClockFrequency(50000000),
 	.BaudRate(1),
 	.NrOfDataBits(8))
-	uartTxStartBit(
+	uartTx(
 		.reset(!KEY[0]),
 		.clock(CLOCK_50),
-		.startTransmition(!KEY[1]),
+		.startTransmission(!KEY[1]),
 		.dataBits(SW[7:0]),
 		.done(LEDG[1]),
 		.tx(LEDG[2])
