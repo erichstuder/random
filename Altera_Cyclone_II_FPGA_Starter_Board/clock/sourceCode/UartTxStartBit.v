@@ -15,7 +15,7 @@ module UartTxStartBit
 		.reset(reset),
 		.clock(clock),
 		.startTransmission(startTransmission),
-		.bitValue(0),
+		.bitValue(1'b0),
 		.done(done),
 		.tx(tx)
 	);

@@ -105,7 +105,8 @@ module clock(
 );
 
 	//Dummy implementation for unused input ports, that can't be commented out
-	assign LEDG[0] = (~KEY[3:0]) || 0;
+	assign LEDG[0] = (~KEY[3:0]) || (~SW[9:8]) || 0;
+	
 	
 	//All unused output ports set to defined state
 	//This is mainly done to prevent "... has no driver" warning

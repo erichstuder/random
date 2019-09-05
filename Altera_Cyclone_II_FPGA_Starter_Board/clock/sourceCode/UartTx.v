@@ -9,7 +9,7 @@ module UartTx
 	 output reg done,
      output reg tx);
 	
-	parameter TxStartBit=2'b00, TxDataBits=2'b01, TxStopBit=2'b10;
+	localparam TxStartBit=2'b00, TxDataBits=2'b01, TxStopBit=2'b10;
 	
 	reg [1:0] state;
 	

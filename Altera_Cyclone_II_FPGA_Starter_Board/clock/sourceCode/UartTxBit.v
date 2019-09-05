@@ -10,7 +10,7 @@ module UartTxBit
      output reg tx);
 	
 	integer counter;
-	parameter ready=1'b0, transmitting=1'b1;
+	localparam ready=1'b0, transmitting=1'b1;
 	reg [1:0] state;
 	
 	always@(posedge clock or posedge reset)
