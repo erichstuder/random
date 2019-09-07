@@ -5,9 +5,9 @@ module clock(
 	//Just uncomment to use a specific input port.
 
 	//Clock Input	 
-	//input [1:0] CLOCK_24, //24 MHz
+	input [1:0] CLOCK_24, //24 MHz
 	//input [1:0] CLOCK_27, //27 MHz
-	input CLOCK_50, //50 MHz
+	//input CLOCK_50, //50 MHz
 	//input EXT_CLOCK, //External Clock
 	
 	//Push Button
@@ -103,28 +103,29 @@ module clock(
 	//inout [35:0] GPIO_0, //GPIO Connection 0
 	//inout [35:0] GPIO_1 //GPIO Connection 1
 );
-
-	//Dummy implementation for unused input ports, that can't be commented out
-	assign LEDG[0] = (~KEY[3:0]) || (~SW[9:8]) || 0;
 	
+	//Dummy implementation for unused input ports, that can't be commented out
+	//Note: LEDs are high-active
+	assign LEDG[0] = (~KEY[3:0]) || SW[9:8] || 0;
+	assign LEDG[7] = CLOCK_24[1] || 0;
 	
 	//All unused output ports set to defined state
 	//This is mainly done to prevent "... has no driver" warning
-	assign LEDG[7:3] = {5{1'bz}};
-
+	assign LEDG[6:3] = {4{1'bz}};
+	
+	
 	wire [5:0] minutes, hours;
-	//wire hours;
-	TimeOfDay timeOfDay(!KEY[0], CLOCK_50, !KEY[2], !KEY[3], minutes, hours);
+	TimeOfDay timeOfDay(!KEY[0], CLOCK_24[0], !KEY[2], !KEY[3], minutes, hours);
 	TimeTo7Seg timeTo7Seg(minutes, hours, HEX0, HEX1, HEX2, HEX3);
 	
 	
 	UartTx#(
-	.ClockFrequency(50000000),
-	.BaudRate(1),
+	.ClockFrequency(24_000_000),
+	.BaudRate(2),
 	.NrOfDataBits(8))
 	uartTx(
 		.reset(!KEY[0]),
-		.clock(CLOCK_50),
+		.clock(CLOCK_24[0]),
 		.startTransmission(!KEY[1]),
 		.dataBits(SW[7:0]),
 		.done(LEDG[1]),

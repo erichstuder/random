@@ -10,7 +10,7 @@ module UartTxBit
      output reg tx);
 	
 	integer counter;
-	localparam ready=1'b0, transmitting=1'b1;
+	localparam Ready=1'b0, Transmitting=1'b1;
 	reg [1:0] state;
 	
 	always@(posedge clock or posedge reset)
@@ -20,17 +20,17 @@ module UartTxBit
 			done = 1;
 			tx = 1;
 			counter = 0;
-			state = ready;
+			state = Ready;
 		end
 		else //clock
 		begin
 			case(state)
-				ready:
+				Ready:
 					if(startTransmission)
 					begin
-						state = transmitting;
+						state = Transmitting;
 					end
-				transmitting:
+				Transmitting:
 					if(counter < (BitLength*ClockFrequency/BaudRate))
 					begin
 						done = 0;
@@ -42,7 +42,7 @@ module UartTxBit
 						done = 1;
 						tx = 1;
 						counter = 0;
-						state = ready;
+						state = Ready;
 					end
 			endcase
 		end

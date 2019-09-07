@@ -68,6 +68,7 @@ module UartTx
 			startTransmission_dataBits = 0;
 			startTransmission_stopBit = 0;
 			state = TxStartBit;
+			done = 0;
 		end
 		else
 		begin
@@ -112,5 +113,46 @@ module UartTx
 				end
 			endcase
 		end
+	end
+endmodule
+
+
+module UartTx_TestBench;	
+	reg reset;
+	reg clock;
+	reg startTransmission;
+	reg [7:0] dataBits;
+	wire done;
+	wire tx;
+	
+	
+	UartTx#(
+	.ClockFrequency(24_000_000),
+	.BaudRate(2_400_000),
+	.NrOfDataBits(8))
+	uartTx(
+		.reset(reset),
+		.clock(clock),
+		.startTransmission(startTransmission),
+		.dataBits(dataBits),
+		.done(done),
+		.tx(tx)
+	);
+
+	initial
+	begin
+		clock = 1'b0;
+		forever #20833 clock = ~clock;
+	end
+	
+	initial
+	begin
+		reset = 1'b1;
+		startTransmission = 1'b1;
+		dataBits = 8'b10111010;
+		#10;
+		reset = 1'b0;
+		repeat(24_000) @(posedge clock);
+		$finish;
 	end
 endmodule
