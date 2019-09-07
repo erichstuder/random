@@ -121,14 +121,14 @@ module clock(
 	
 	UartTx#(
 	.ClockFrequency(24_000_000),
-	.BaudRate(2),
+	.BaudRate(9600),
 	.NrOfDataBits(8))
 	uartTx(
 		.reset(!KEY[0]),
 		.clock(CLOCK_24[0]),
 		.startTransmission(!KEY[1]),
 		.dataBits(SW[7:0]),
-		.done(LEDG[1]),
+		.ready(LEDG[1]),
 		.tx(LEDG[2])
 	);
 

@@ -6,112 +6,70 @@ module UartTx
      input clock,
 	 input startTransmission,
 	 input [NrOfDataBits-1 : 0] dataBits,
-	 output reg done,
+	 output reg ready,
      output reg tx);
 	
-	localparam TxStartBit=2'b00, TxDataBits=2'b01, TxStopBit=2'b10;
+	localparam TxStartBit=2'b01, TxDataBits=2'b10, TxStopBit=2'b11;
 	
+	integer txClockCounter;
+	integer bitCounter;
 	reg [1:0] state;
-	
-	reg startTransmission_startBit;
-	reg startTransmission_dataBits;
-	reg startTransmission_stopBit;
-	
-	wire done_startBit;
-	wire done_dataBits;
-	wire done_stopBit;
-	
-	wire tx_startBit;
-	wire tx_dataBits;
-	wire tx_stopBit;
-	
-	UartTxStartBit#(
-	.ClockFrequency(ClockFrequency),
-	.BaudRate(BaudRate))
-	uartTxStartBit(
-		.reset(reset),
-		.clock(clock),
-		.startTransmission(startTransmission_startBit),
-		.done(done_startBit),
-		.tx(tx_startBit)
-	);
-	
-	UartTxDataBits#(
-	.ClockFrequency(ClockFrequency),
-	.BaudRate(BaudRate),
-	.NrOfDataBits(NrOfDataBits))
-	uartTxDataBits(
-		.reset(reset),
-		.clock(clock),
-		.startTransmission(startTransmission_dataBits),
-		.dataBits(dataBits),
-		.done(done_dataBits),
-		.tx(tx_dataBits)
-	);
-	
-	UartTxStopBit#(
-	.ClockFrequency(ClockFrequency),
-	.BaudRate(BaudRate))
-	uartTxStopBit(
-		.reset(reset),
-		.clock(clock),
-		.startTransmission(startTransmission_stopBit),
-		.done(done_stopBit),
-		.tx(tx_stopBit)
-	);
+	reg startTransmissionSyncronized;
 	
 	always@(posedge clock or posedge reset)
 	begin
 		if(reset)
 		begin
-			startTransmission_startBit = 0;
-			startTransmission_dataBits = 0;
-			startTransmission_stopBit = 0;
+			txClockCounter = 0;
+			bitCounter = 0;
 			state = TxStartBit;
-			done = 0;
+			startTransmissionSyncronized = 0;
+			ready = 1;
+			tx = 1;
 		end
 		else
 		begin
-			case(state)
+			if(startTransmission)
+			begin
+				startTransmissionSyncronized = 1;
+			end
+			
+			if(txClockCounter < (ClockFrequency/(BaudRate)-1))
+			begin
+				txClockCounter = txClockCounter + 1;
+			end
+			else
+			begin
+				txClockCounter = 0;
+				case(state)
 				TxStartBit:
 				begin
-					if(startTransmission)
+					if(startTransmissionSyncronized)
 					begin
-						done = 0;
-						startTransmission_startBit = 1;
-					end
-					else
-					begin
-						startTransmission_startBit = 0;
-					end
-					if(done_startBit)
-					begin
-						startTransmission_dataBits = 1;
+						startTransmissionSyncronized = 0;
+						ready = 0;
+						tx = 0;
+						bitCounter = 0;
 						state = TxDataBits;
 					end
-					tx = tx_startBit;
 				end	
 				TxDataBits:
 				begin
-					startTransmission_dataBits = 0;
-					if(done_dataBits)
+					tx = dataBits[bitCounter];
+					bitCounter = bitCounter + 1;
+					if(bitCounter >= NrOfDataBits)
 					begin
-						startTransmission_stopBit = 1;
 						state = TxStopBit;
 					end
-					tx = tx_dataBits;
 				end
 				TxStopBit:
 				begin
-					startTransmission_stopBit = 0;
-					if(done_stopBit)
-					begin
-						done = 1;
-						state = TxStartBit;
-					end
-					tx = tx_stopBit;
+					tx = 1;
+					ready = 1;
+					state = TxStartBit;
 				end
 			endcase
+			end
 		end
 	end
 endmodule
@@ -122,7 +80,7 @@ module UartTx_TestBench;
 	reg clock;
 	reg startTransmission;
 	reg [7:0] dataBits;
-	wire done;
+	wire ready;
 	wire tx;
 	
 	
@@ -135,7 +93,7 @@ module UartTx_TestBench;
 		.clock(clock),
 		.startTransmission(startTransmission),
 		.dataBits(dataBits),
-		.done(done),
+		.ready(ready),
 		.tx(tx)
 	);
 
