@@ -103,15 +103,23 @@ module clock(
 	//inout [35:0] GPIO_0, //GPIO Connection 0
 	//inout [35:0] GPIO_1 //GPIO Connection 1
 );
+	`define Debug
 	
 	//Dummy implementation for unused input ports, that can't be commented out
 	//Note: LEDs are high-active
 	assign LEDG[0] = (~KEY[3:0]) || SW[9:8] || 0;
 	assign LEDG[7] = CLOCK_24[1] || 0;
 	
+	`ifdef Debug
+		assign LEDG[6] = CLOCK_24[0];
+	`else
+		assign LEDG[6] = 0;
+	`endif
+	//für debugging temporary signale aus den modulen erzeugen (evtl. struct)
+
 	//All unused output ports set to defined state
 	//This is mainly done to prevent "... has no driver" warning
-	assign LEDG[6:3] = {4{1'bz}};
+	assign LEDG[5:3] = {3{1'bz}};
 	
 	
 	wire [5:0] minutes, hours;
