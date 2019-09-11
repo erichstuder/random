@@ -1,13 +1,18 @@
-module I2cMaster_Start;
+//class I2cMaster_Utility;
+//module I2cMaster_Start;
+	//#(parameter Delay_ms = 1,
+	//  parameter ClockStretchTimeout = 10);
+	  
 	task I2cMaster_Start
-		#(parameter Delay_ms = 1
-		  parameter ClockStretchTimeout = 10)
-		(input start,
+		(inout sda,
+		 output scl);
+		/*(input start,
 		 inout sda,
 		 output scl,
 		 output ready,
 		 output clockStretchTimeoutReached
-		 output arbitrationLost);
+		 output arbitrationLost);*/
+		
 
 		localparam
 			Idle=2'b00,
@@ -26,8 +31,8 @@ module I2cMaster_Start;
 		case(state)
 		Idle:
 		begin
-			if(start)
-			begin
+			//if(start)
+			//begin
 				if(started)
 				begin
 					state = Restart;
@@ -36,7 +41,7 @@ module I2cMaster_Start;
 				begin
 					state = Start;
 				end
-			end
+			//end
 		end
 		Restart:
 		begin	
@@ -53,12 +58,13 @@ module I2cMaster_Start;
 		begin
 			state = Idle;
 		end
+		endcase
 	endtask
 	
-	task DoRestart
-		localparam 
-		
-		
-	endtask
+//	task DoRestart
+//		localparam 
+//		
+//		
+//	endtask
 	
-endmodule
+//endmodule

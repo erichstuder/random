@@ -38,8 +38,8 @@ module I2cMaster
 	begin
 		if(reset)
 		begin
-			sda = z;
-			scl = z;
+			sda = 1'bz;
+			scl = 1'bz;
 			ready = 1;
 			clockStretchTimeoutReached = 0;
 			state = Idle;
@@ -54,9 +54,10 @@ module I2cMaster
 		end
 		Start:
 		begin
-			sda = 0;
-			delayCounter++;
-			state = AddressForWrite;
+			//sda = 0;
+			//delayCounter++;
+			//state = AddressForWrite;
+			I2cMaster_Start(sda, scl);
 		end
 		AddressForWrite:
 		begin
@@ -82,6 +83,7 @@ module I2cMaster
 		begin
 			state = Idle;
 		end
+		endcase
 	end
 
 endmodule
