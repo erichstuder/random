@@ -22,28 +22,31 @@ module I2cMaster
 	localparam ClockStretchTimeoutCount = ClockStretchTimeout*(ClockFrequency/Timeout1msCount);
 
 	localparam
-		Idle            = 3'b000,
-		Start           = 3'b001,
-		AddressForWrite = 3'b010,
-		SendData        = 3'b011,
-		Restart         = 3'b100,
-		AddressForRead  = 3'b101,
-		ReadData        = 3'b110,
-		Stop            = 3'b111;
+		Idle            = 4'b0000,
+		Start           = 4'b0001,
+		Start_1			= 4'b0010,
+		AddressForWrite = 4'b0011,
+		SendData        = 4'b0100,
+		Restart         = 4'b0101,
+		AddressForRead  = 4'b0110,
+		ReadData        = 4'b0111,
+		Stop            = 4'b1000;
 	
 	reg started;
 	reg startSynchronized;
 	integer i2cClockCounter;
 	//integer counter;
 	integer clockStretchTimeoutCounter;
-	reg[2:0] state;
+	reg[3:0] state;
 
 	always@(posedge clock or posedge reset)
 	begin
 		if(reset)
 		begin
-			sda = 1'bz;
-			scl = 1'bz;
+			SendByte(1, sda, scl, ready, clockStretchTimeoutReached);
+		
+			SetSda(sda);
+			SetScl(scl);
 			ready = 1;
 			//arbitrationLost = 0;
 			clockStretchTimeoutReached = 0;
@@ -52,8 +55,6 @@ module I2cMaster
 			startSynchronized = 0;
 			i2cClockCounter = 0;
 			state = Idle;
-			
-			I2cMaster_SendByte(1, , , ,);
 		end
 		else
 		begin
@@ -72,13 +73,13 @@ module I2cMaster
 				case(state)
 				Idle:
 				begin
-					sda = 1'bz;
-					scl = 1'bz;
+					SetSda(sda);
+					SetScl(scl);
 					ready = 1;
 					if(startSynchronized)
 					begin
 						startSynchronized = 0;
-						arbitrationLost = 0;
+						//arbitrationLost = 0;
 						clockStretchTimeoutReached = 0;
 						state = Start;
 					end
@@ -87,21 +88,21 @@ module I2cMaster
 				begin
 					if(!sda)
 					begin
-						arbitrationLost = 1;
+						//arbitrationLost = 1;
 						state = Idle;
 					end
 					else
 					begin
-						sda = 0;
-						state = Start_1
+						ClearSda(sda);
+						state = Start_1;
 					end
 				end
 				Start_1:
 				begin
-					scl = 0
+					ClearScl(scl);
 					started = 1;
 					//counter = 6;
-					state = AddressForWrite
+					state = AddressForWrite;
 				end
 				AddressForWrite:
 				begin
@@ -128,39 +129,37 @@ module I2cMaster
 					state = Idle;
 				end
 				endcase
+			end
 		end
-		
 	end
 	
 	
-	task I2cMaster_SendByte
+	task SendByte
 		(input reset,
-		 inout sda,
-		 inout scl,
+		 inout sda = 0,
+		 inout scl = 0,
 		 output ready,
-		 output clockStretchTimeoutReached
+		 output clockStretchTimeoutReached 
 		 //output arbitrationLost
 		 );
 		
-
 		localparam
-			SendByte = 2'b00;
-			SetScl   = 2'b01;
-			ClearScl = 2'b10;
+			OutputSda = 2'b00,
+			SclHigh   = 2'b01,
+			SclLow    = 2'b10;
 		
 		reg[1:0] state;
-		
 		
 		integer clockStretchTimeoutCounter;
 		integer counter;
 
 		if(reset)
 		begin
-			sda = 1'bz;
-			scl = 1'bz;
+			SetSda(sda);
+			SetScl(scl);
 			ready = 1;
 			clockStretchTimeoutReached = 0;
-			arbitrationLost = 0;
+			//arbitrationLost = 0;
 			counter = 7;
 			state = OutputSda;
 		end
@@ -172,22 +171,24 @@ module I2cMaster
 			ready = 0;
 			if(address[counter] == 0)
 			begin
-				sda = 0;
+				ClearSda(sda);
 			end
 			else
 			begin
-				sda = 1'bz;
+				SetSda(sda);
 			end
 			clockStretchTimeoutCounter = 0;
-			state = SetScl;
+			state = SclHigh;
 		end
-		SetScl:
+		SclHigh:
 		begin
-			scl = 1'bz;
+			SetScl(scl);
 			if(scl)
 			begin
-				state = ClearScl;
+				state = SclLow;
+			end
 			else
+			begin
 				clockStretchTimeoutCounter++;
 				if(clockStretchTimeoutCounter >= ClockStretchTimeoutCount)
 				begin
@@ -197,7 +198,7 @@ module I2cMaster
 				end
 			end
 		end
-		ClearScl:
+		SclLow:
 		begin
 			scl = 0;
 			if(counter <= 0)
@@ -212,6 +213,26 @@ module I2cMaster
 			end
 		end
 		endcase
+	endtask
+	
+	
+	task SetSda(inout sda);
+		assign sda = 1'bz;
+	endtask
+	
+	
+	task ClearSda(inout sda);
+		assign sda = 0;
+	endtask
+	
+	
+	task SetScl(inout scl);
+		assign scl = 1'bz;
+	endtask
+	
+	
+	task ClearScl(inout scl);
+		assign scl = 0;
 	endtask
 
 endmodule
