@@ -23,7 +23,7 @@ module clock(
 	output [6:0] HEX3, //Seven Segment Digit 3
 	
 	//LED
-	output [7:0] LEDG //LED Green[7:0]
+	output [7:0] LEDG, //LED Green[7:0]
 	//output [9:0] LEDR, //LED Red[9:0]
 	
 	//UART
@@ -77,8 +77,8 @@ module clock(
 	//output TDO, //FPGA -> CPLD (data out)
 	
 	//I2C
-	//inout I2C_SDAT, //I2C Data
-	//output I2C_SCLK, //I2C Clock
+	inout I2C_SDAT, //I2C Data
+	output I2C_SCLK //I2C Clock
 	
 	//PS2
 	//input PS2_DAT, //PS2 Data
@@ -138,6 +138,33 @@ module clock(
 		.dataBits(SW[7:0]),
 		.ready(LEDG[1]),
 		.tx(LEDG[2])
+	);
+	
+	localparam MaxBytesToSend = 2;
+	localparam MaxBytesToRead = 2;
+	wire [$clog2(MaxBytesToRead):0][7:0] bytesToRead;
+	reg ready;
+	reg clockStretchTimeoutReached;
+	
+	I2cMaster#(
+	.ClockFrequency(24_000_000),
+	.ClockStretchTimeout(10),
+	.MaxBytesToSend(16),
+	.MaxBytesToRead(16))
+	i2cMaster(
+		.reset(!KEY[0]),
+		.clock(CLOCK_24[0]),
+		.start(!KEY[1]),
+		.address(7'b0101010),
+		.nrOfBytesToSend(MaxBytesToSend),
+        .bytesToSend({8'b00110011, 8'b00011100}),
+		.nrOfBytesToRead(MaxBytesToRead),
+		.bytesToRead(bytesToRead),
+		.sda(I2C_SDAT),
+		.scl(I2C_SCLK),
+		.ready(ready),
+	 //output arbitrationLost,
+		.clockStretchTimeoutReached(clockStretchTimeoutReached)
 	);
 
 endmodule

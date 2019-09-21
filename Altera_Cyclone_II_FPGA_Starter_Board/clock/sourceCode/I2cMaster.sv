@@ -7,15 +7,15 @@ module I2cMaster
 	 input clock,
 	 input start,
 	 input [6:0] address,
-	 input [MaxBytesToSend-1:0] nrOfBytesToSend,
-     input [MaxBytesToSend-1:0][7:0] bytesToSend,
-	 input [MaxBytesToRead-1:0] nrOfBytesToRead,
+	 input [$clog2(MaxBytesToSend):0] nrOfBytesToSend,
+	 input [MaxBytesToSend-1:0][7:0] bytesToSend,
+	 input [$clog2(MaxBytesToRead):0] nrOfBytesToRead,
 	 output [MaxBytesToRead-1:0][7:0] bytesToRead,
 	 inout sda,
 	 inout scl,
-	 output ready,
+	 output reg ready,
 	 //output arbitrationLost,
-	 output clockStretchTimeoutReached);
+	 output reg clockStretchTimeoutReached);
 
 	//All delays are made 1ms. This makes it slower but also simpler.
 	localparam Timeout1msCount = ClockFrequency/1000;
@@ -32,12 +32,17 @@ module I2cMaster
 		ReadData        = 4'b0111,
 		Stop            = 4'b1000;
 	
-	reg started;
+	//reg started;
 	reg startSynchronized;
 	integer i2cClockCounter;
 	//integer counter;
 	integer clockStretchTimeoutCounter;
 	reg[3:0] state;
+  reg sdaReg;
+  reg sclReg;
+
+  assign sda = sdaReg;
+  assign scl = sclReg;
 
 	always@(posedge clock or posedge reset)
 	begin
@@ -45,13 +50,13 @@ module I2cMaster
 		begin
 			SendByte(1, sda, scl, ready, clockStretchTimeoutReached);
 		
-			SetSda(sda);
-			SetScl(scl);
+			SetSda();
+			SetScl();
 			ready = 1;
 			//arbitrationLost = 0;
 			clockStretchTimeoutReached = 0;
 			
-			started = 0;
+			//started = 0;
 			startSynchronized = 0;
 			i2cClockCounter = 0;
 			state = Idle;
@@ -73,8 +78,8 @@ module I2cMaster
 				case(state)
 				Idle:
 				begin
-					SetSda(sda);
-					SetScl(scl);
+					SetSda();
+					SetScl();
 					ready = 1;
 					if(startSynchronized)
 					begin
@@ -93,20 +98,28 @@ module I2cMaster
 					end
 					else
 					begin
-						ClearSda(sda);
+						ClearSda();
 						state = Start_1;
 					end
 				end
 				Start_1:
 				begin
-					ClearScl(scl);
-					started = 1;
+					ClearScl();
+					//started = 1;
 					//counter = 6;
 					state = AddressForWrite;
 				end
 				AddressForWrite:
 				begin
-					
+					SendByte(reset, sda, scl, ready, clockStretchTimeoutReached);
+					if(clockStretchTimeoutReached)
+					begin
+					state = Idle;
+					end
+					else if(ready)
+					begin
+						state = SendData;
+					end
 				end
 				SendData:
 				begin
@@ -136,8 +149,8 @@ module I2cMaster
 	
 	task SendByte
 		(input reset,
-		 inout sda = 0,
-		 inout scl = 0,
+		 input sda,
+		 input scl,
 		 output ready,
 		 output clockStretchTimeoutReached 
 		 //output arbitrationLost
@@ -148,91 +161,93 @@ module I2cMaster
 			SclHigh   = 2'b01,
 			SclLow    = 2'b10;
 		
-		reg[1:0] state;
+		static reg[1:0] state = OutputSda;
 		
 		integer clockStretchTimeoutCounter;
-		integer counter;
+		static integer counter = 0;
 
 		if(reset)
 		begin
-			SetSda(sda);
-			SetScl(scl);
+			SetSda();
+			SetScl();
 			ready = 1;
 			clockStretchTimeoutReached = 0;
 			//arbitrationLost = 0;
-			counter = 7;
+			counter = 6;
 			state = OutputSda;
 		end
-
-		case(state)
-		OutputSda:
+		else
 		begin
-			clockStretchTimeoutReached = 0;
-			ready = 0;
-			if(address[counter] == 0)
+			case(state)
+			OutputSda:
 			begin
-				ClearSda(sda);
-			end
-			else
-			begin
-				SetSda(sda);
-			end
-			clockStretchTimeoutCounter = 0;
-			state = SclHigh;
-		end
-		SclHigh:
-		begin
-			SetScl(scl);
-			if(scl)
-			begin
-				state = SclLow;
-			end
-			else
-			begin
-				clockStretchTimeoutCounter++;
-				if(clockStretchTimeoutCounter >= ClockStretchTimeoutCount)
+				clockStretchTimeoutReached = 0;
+				ready = 0;
+				if(address[counter] == 0)
 				begin
-					clockStretchTimeoutReached = 1;
+					ClearSda();
+				end
+				else
+				begin
+					SetSda();
+				end
+				clockStretchTimeoutCounter = 0;
+				state = SclHigh;
+			end
+			SclHigh:
+			begin
+				SetScl();
+				if(scl)
+				begin
+					state = SclLow;
+				end
+				else
+				begin
+					clockStretchTimeoutCounter++;
+					if(clockStretchTimeoutCounter >= ClockStretchTimeoutCount)
+					begin
+						clockStretchTimeoutReached = 1;
+						ready = 1;
+						state = OutputSda;
+					end
+				end
+			end
+			SclLow:
+			begin
+				scl = 0;
+				if(counter <= 0)
+				begin
 					ready = 1;
+					state = OutputSda;//ReadAck;
+				end
+				else
+				begin
+					counter--;
 					state = OutputSda;
 				end
 			end
+			endcase
 		end
-		SclLow:
-		begin
-			scl = 0;
-			if(counter <= 0)
-			begin
-				ready = 1;
-				state = OutputSda;//ReadAck;
-			end
-			else
-			begin
-				counter--;
-				state = OutputSda;
-			end
-		end
-		endcase
 	endtask
 	
 	
-	task SetSda(inout sda);
-		assign sda = 1'bz;
+	task SetSda();
+		sdaReg = 1'bz;
 	endtask
 	
 	
-	task ClearSda(inout sda);
-		assign sda = 0;
+	task ClearSda();
+		sdaReg = 0;
 	endtask
 	
 	
-	task SetScl(inout scl);
-		assign scl = 1'bz;
+	task SetScl();
+		sclReg = 1'bz;
 	endtask
 	
 	
-	task ClearScl(inout scl);
-		assign scl = 0;
+	task ClearScl();
+		sclReg = 0;
 	endtask
 
 endmodule
