@@ -14,7 +14,7 @@ module I2cMaster_TestBench;
 	
 	I2cMaster#(
 	.ClockFrequency(24_000_000),
-	.ClockStretchTimeout(10),
+	.ClockStretchTimeout(1),
 	.MaxBytesToSend(MaxBytesToSend),
 	.MaxBytesToRead(MaxBytesToRead))
 	i2cMaster(
@@ -32,6 +32,9 @@ module I2cMaster_TestBench;
 	 //output arbitrationLost,
 		.clockStretchTimeoutReached(clockStretchTimeoutReached)
 	);
+	
+	pullup(sda);
+	pullup(scl);
 	
 	initial
 	begin

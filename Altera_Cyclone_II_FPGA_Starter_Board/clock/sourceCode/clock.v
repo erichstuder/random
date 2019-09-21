@@ -145,6 +145,7 @@ module clock(
 	wire [$clog2(MaxBytesToRead):0][7:0] bytesToRead;
 	reg ready;
 	reg clockStretchTimeoutReached;
+	reg noAcknowledge;
 	
 	I2cMaster#(
 	.ClockFrequency(24_000_000),
@@ -164,7 +165,8 @@ module clock(
 		.scl(I2C_SCLK),
 		.ready(ready),
 	 //output arbitrationLost,
-		.clockStretchTimeoutReached(clockStretchTimeoutReached)
+		.clockStretchTimeoutReached(clockStretchTimeoutReached),
+		.noAcknowledge(noAcknowledge)
 	);
 
 endmodule
