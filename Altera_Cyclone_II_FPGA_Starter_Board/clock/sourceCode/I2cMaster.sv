@@ -40,16 +40,20 @@ module I2cMaster#(
 	reg[3:0] state;
 	reg sdaReg;
 	reg sclReg;
-	reg readyLocal;
+	//reg readyLocal;
+	reg started = 0;
 
 	assign sda = sdaReg;
 	assign scl = sclReg;
 
 	always@(posedge clock or posedge reset)
 	begin
+		reg readyLocal;
+		static integer byteIndex = 0;
+	
 		if(reset)
 		begin
-			SendByte(1, sda, scl, ready, clockStretchTimeoutReached, noAcknowledge);
+			SendByte(1, 8'b0000_0000, sda, scl, ready, clockStretchTimeoutReached, noAcknowledge);
 		
 			SetSda();
 			SetScl();
@@ -92,7 +96,7 @@ module I2cMaster#(
 				end
 				Start:
 				begin
-					SendStart(reset, sda, scl, readyLocal);
+					SendStart(0, sda, scl, readyLocal);
 					if(readyLocal)
 					begin
 						state = AddressForWrite;
@@ -100,7 +104,7 @@ module I2cMaster#(
 				end
 				AddressForWrite:
 				begin
-					SendByte(0, sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					SendByte(0, {address, 1'b1}, sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
@@ -108,20 +112,51 @@ module I2cMaster#(
 					end
 					else if(readyLocal)
 					begin
+						byteIndex = nrOfBytesToSend-1;
 						state = SendData;
 					end
 				end
 				SendData:
 				begin
-					state = Restart;
+					SendByte(0, bytesToSend[byteIndex], sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					if(clockStretchTimeoutReached || noAcknowledge)
+					begin
+						ready = 1;
+						state = Idle;
+					end
+					else if(readyLocal)
+					begin
+						if(byteIndex > 0)
+						begin
+							byteIndex--;
+						end
+						else
+						begin
+							state = Restart;
+						end
+					end
 				end
 				Restart:
 				begin
-					state = AddressForRead;
+					SendStart(0, sda, scl, readyLocal);
+					if(readyLocal)
+					begin
+						state = AddressForRead;
+					end
 				end
 				AddressForRead:
 				begin
-					state = ReadData;
+					SendByte(0, {address, 1'b0}, sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					if(clockStretchTimeoutReached || noAcknowledge)
+					begin
+						ready = 1;
+						state = Idle;
+					end
+					else if(readyLocal)
+					begin
+						byteIndex = nrOfBytesToRead-1;
+						state = ReadData;
+					end
 				end
 				ReadData:
 				begin
@@ -144,19 +179,40 @@ module I2cMaster#(
 		output ready);
 		
 		localparam
-			SdaLow = 1'b0,
-			SclLow = 1'b1;
+			SdaHigh = 2'b00,
+			SclHigh = 2'b01, 
+			SdaLow  = 2'b10,
+			SclLow  = 2'b11;
 			
-		static reg state = SdaLow;
+		static reg [1:0] state = SdaHigh;
 		
 		if(reset)
 		begin
+			started = 0;
 			ready = 1;
 			state = SdaLow;
 		end
 		else
 		begin
 			case(state)
+			SdaHigh:
+			begin
+				ready = 0;
+				if(started)
+				begin
+					SetSda();
+					state = SclHigh; 
+				end
+				else
+				begin
+					state = SdaLow;
+				end
+			end
+			SclHigh:
+			begin
+				SetScl();
+				state = SdaLow;
+			end
 			SdaLow:
 			begin
 				/*if(!sda)
@@ -167,15 +223,15 @@ module I2cMaster#(
 				if(sda)
 				begin*/
 					ClearSda();
-					ready = 0;
 					state = SclLow;
 				//end
 			end
 			SclLow:
 			begin
 				ClearScl();
+				started = 1;
 				ready = 1;
-				state = SdaLow;
+				state = SdaHigh;
 			end
 			endcase
 		end
@@ -184,6 +240,7 @@ module I2cMaster#(
 	
 	task SendByte(
 		input reset,
+		input [7:0] byteToSend,
 		input sda,
 		input scl,
 		output ready,
@@ -201,6 +258,7 @@ module I2cMaster#(
 		reg dataBit;
 		integer clockStretchTimeoutCounter;
 		static integer counter = 0;
+		reg readyLocal;
 
 		if(reset)
 		begin
@@ -208,7 +266,7 @@ module I2cMaster#(
 			clockStretchTimeoutReached = 0;
 			noAcknowledge = 0;
 			//arbitrationLost = 0;
-			counter = 6;
+			counter = 7;
 			state = OutputSda;
 		end
 		else
@@ -219,7 +277,7 @@ module I2cMaster#(
 				clockStretchTimeoutReached = 0;
 				noAcknowledge = 0;
 				ready = 0;
-				if(address[counter] == 0)
+				if(byteToSend[counter] == 0)
 				begin
 					ClearSda();
 				end
@@ -242,6 +300,7 @@ module I2cMaster#(
 					clockStretchTimeoutCounter++;
 					if(clockStretchTimeoutCounter >= ClockStretchTimeoutCount)
 					begin
+						counter = 7;
 						clockStretchTimeoutReached = 1;
 						ready = 1;
 						state = OutputSda;
@@ -266,6 +325,7 @@ module I2cMaster#(
 				ReadBit(reset, sda, scl, readyLocal, dataBit, clockStretchTimeoutReached);
 				if(readyLocal)
 				begin
+					counter = 7;
 					ready = 1;
 					state = OutputSda;
 					if(dataBit)
@@ -292,7 +352,7 @@ module I2cMaster#(
 			SclHigh = 2'b01,
 			ReadSda = 2'b10;
 		
-		reg state;
+		static reg [1:0] state = SdaHigh;
 		integer clockStretchTimeoutCounter;
 		
 		if(reset)
@@ -334,6 +394,7 @@ module I2cMaster#(
 			begin
 				dataBit = sda;
 				ClearScl();
+				ready = 1;
 				state = SdaHigh;
 			end
 			endcase

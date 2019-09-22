@@ -7,8 +7,10 @@ module I2cMaster_TestBench;
 	reg clock;
 	reg start;
 	wire [1:0][7:0] bytesToRead;
+	//wire sda_local;
 	wire sda;
 	wire scl;
+	reg sda_local = 1'bz;
 	wire ready;
 	wire clockStretchTimeoutReached;
 	
@@ -33,6 +35,8 @@ module I2cMaster_TestBench;
 		.clockStretchTimeoutReached(clockStretchTimeoutReached)
 	);
 	
+	
+	assign sda = sda_local;
 	pullup(sda);
 	pullup(scl);
 	
@@ -48,7 +52,32 @@ module I2cMaster_TestBench;
 		start = 1'b1;
 		#100_000_000;
 		reset = 1'b0;
+		#100_000_000;
+		start = 1'b0;
 		repeat(24_000_000) @(posedge clock);
 		//$finish;
+	end
+	
+	always@(scl)
+	begin
+		static integer counter = 0;
+		
+		if(scl)
+		begin
+			if(counter > 8)
+			begin
+				counter = 1;
+				sda_local= 1'b0;
+			end
+			else
+			begin
+				counter++;
+				sda_local = 1'bz;
+			end
+		end
+		else
+		begin
+			sda_local = 1'bz;
+		end
 	end
 endmodule
