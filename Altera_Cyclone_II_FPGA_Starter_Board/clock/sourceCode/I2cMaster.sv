@@ -1,3 +1,4 @@
+`include "I2cMaster_SendStart.sv"
 `include "I2cMaster_Tasks.sv"
 
 module I2cMaster#(
@@ -58,7 +59,7 @@ module I2cMaster#(
 		if(reset)
 		begin
 			//SendByte(1, 8'b0000_0000, sda, scl, ready, clockStretchTimeoutReached, noAcknowledge);
-			ResetTasks();
+			SendStart_reset();
 			//sdaReg = 0;
 			SetSda(sdaReg);
 			SetScl(sclReg);

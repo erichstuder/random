@@ -1,54 +1,6 @@
 //Tasks are placed here for better information hidding.
 //e.g. no global signal access
 
-reg reset;
-
-task ResetTasks();
-	reg sda;
-	reg scl;
-	reg ready;
-
-	reset = 1'b1;
-	SendStart(sda, scl, ready);
-	reset = 1'b0;
-endtask
-
-
-task SendStart(
-	inout sda,
-	inout scl,
-	output ready);
-
-	localparam
-		SdaLow  = 1'b0,
-		SclLow  = 1'b1;
-
-	static reg state = SdaLow;
-	
-	if(reset)
-	begin
-		ready = 1;
-		state = SdaLow;
-	end
-	else
-	begin
-		case(state)
-		SdaLow:
-		begin
-			ClearSda(sda);
-			ready = 0;
-			state = SclLow;
-		end
-		SclLow:
-		begin
-			ClearScl(scl);
-			ready = 1;
-			state = SdaLow;
-		end
-		endcase
-	end
-endtask
-
 
 /*	task SendRestart(
 	//input reset,
