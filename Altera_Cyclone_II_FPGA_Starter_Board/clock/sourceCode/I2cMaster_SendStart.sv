@@ -2,34 +2,32 @@
 //e.g. no global signal access
 
 localparam
-	SdaLow  = 1'b0,
-	SclLow  = 1'b1;
+	SdaLow1  = 1'b0,
+	SclLow1  = 1'b1;
 		
-reg state;
-
+reg state1;
 
 task SendStart_reset();
-	state = SdaLow;
+	state1 = SdaLow1;
 endtask
-
 
 task SendStart(
 	inout sda,
 	inout scl,
 	output ready);
 
-	case(state)
-	SdaLow:
+	case(state1)
+	SdaLow1:
 	begin
 		ClearSda(sda);
 		ready = 0;
-		state = SclLow;
+		state1 = SclLow1;
 	end
-	SclLow:
+	SclLow1:
 	begin
 		ClearScl(scl);
 		ready = 1;
-		state = SdaLow;
+		state1 = SdaLow1;
 	end
 	endcase
 endtask
