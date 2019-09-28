@@ -3,7 +3,9 @@
 
 `include "I2cMaster_SendBit.sv"
 
-package I2cMaster_SendByte;	
+package I2cMaster_SendByte;
+	import I2cMaster_SendBit::*;
+	
 	localparam
 		OutputByte = 1'b0,
 		ReadAck	   = 1'b1;
@@ -11,12 +13,13 @@ package I2cMaster_SendByte;
 	static reg state;
 	integer bitIndex;
 
-	task SendByte_reset();
+	task sendByte_reset();
 		bitIndex = 7;
 		state = OutputByte;
+		sendBit_reset();
 	endtask
 
-	task SendByte(
+	task sendByte(
 		input [7:0] byteToSend,
 		inout sda,
 		inout scl,
@@ -33,7 +36,7 @@ package I2cMaster_SendByte;
 		OutputByte:
 		begin
 			ready = 0;
-			SendBit(0, scl, sda, byteToSend[bitIndex], readyLocal, clockStretchTimeoutReached); //TODO: clockTimeoutCount entfernen
+			sendBit(100, sda, scl, byteToSend[bitIndex], readyLocal, clockStretchTimeoutReached); //TODO: ClockStretchTimeoutCount entfernen
 			if(readyLocal)
 			begin
 				if(clockStretchTimeoutReached == 1)

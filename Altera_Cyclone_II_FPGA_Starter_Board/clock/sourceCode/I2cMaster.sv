@@ -64,6 +64,7 @@ module I2cMaster#(
 		begin
 			//SendByte(1, 8'b0000_0000, sda, scl, ready, clockStretchTimeoutReached, noAcknowledge);
 			SendStart_reset();
+			sendByte_reset();
 			//sdaReg = 0;
 			SetSda(sdaReg);
 			SetScl(sclReg);
@@ -114,7 +115,7 @@ module I2cMaster#(
 				end
 				AddressForWrite:
 				begin
-					SendByte({address, 1'b1}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					sendByte({address, 1'b1}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
