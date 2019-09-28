@@ -1,9 +1,11 @@
 `ifndef I2cMaster_SendByte
 	`define I2cMaster_SendByte
 	`include "I2cMaster_SendBit.sv"
+	`include "I2cMaster_ReadBit.sv"
 
 	package I2cMaster_SendByte;
 		import I2cMaster_SendBit::*;
+		import I2cMaster_ReadBit::*;
 		
 		localparam
 			OutputByte = 1'b0,
@@ -16,6 +18,7 @@
 			bitIndex = 7;
 			state = OutputByte;
 			sendBit_reset();
+			readBit_reset();
 		endtask
 
 		task sendByte(
@@ -35,7 +38,7 @@
 			OutputByte:
 			begin
 				ready = 0;
-				sendBit(100, sda, scl, byteToSend[bitIndex], readyLocal, clockStretchTimeoutReached); //TODO: ClockStretchTimeoutCount entfernen
+				sendBit(1000, byteToSend[bitIndex], sda, scl, readyLocal, clockStretchTimeoutReached); //TODO: maxClockStretchTimeoutCount von aussen vorgeben
 				if(readyLocal)
 				begin
 					if(clockStretchTimeoutReached == 1)
@@ -55,7 +58,7 @@
 			end
 			ReadAck:
 			begin
-				/*ReadBit(0, sda, scl, readyLocal, dataBit, clockStretchTimeoutReached);
+				readBit(1000, sda, scl, dataBit, readyLocal, clockStretchTimeoutReached); //TODO: maxClockStretchTimeoutCount von aussen vorgeben
 				if(readyLocal)
 				begin
 					bitIndex = 7;
@@ -65,9 +68,9 @@
 					begin
 						noAcknowledge = 1;
 					end
-				end*/
+				end
 			end
 			endcase
 		endtask
 	endpackage
-`endif //I2cMaster_SendByte
+`endif

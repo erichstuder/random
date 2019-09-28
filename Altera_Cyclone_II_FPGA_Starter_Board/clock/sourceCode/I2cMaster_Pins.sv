@@ -17,7 +17,7 @@
 			scl = 0;
 		endtask
 	endpackage
-`endif //I2cMaster_Pins
+`endif
 
 //TODO: cleanup
 /*	task SendRestart(

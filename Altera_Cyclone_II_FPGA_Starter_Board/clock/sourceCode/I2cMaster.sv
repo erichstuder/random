@@ -26,37 +26,36 @@ module I2cMaster#(
 	//output arbitrationLost,
 	output reg clockStretchTimeoutReached,
 	output reg noAcknowledge);
-	
-	//All delays are made 1ms. This makes it slower but also simpler.
-	localparam Timeout1msCount = ClockFrequency/1000;
-	localparam ClockStretchTimeoutCount = ClockStretchTimeout*(ClockFrequency/Timeout1msCount);
 
-	localparam
-		Idle            = 3'b000,
-		Start           = 3'b001,
-		AddressForWrite	= 3'b010,
-		SendData        = 3'b011,
-		Restart         = 3'b100,
-		AddressForRead  = 3'b101,
-		ReadData        = 3'b110,
-		Stop            = 3'b111;
-	
-	//reg started;
-	reg startSynchronized;
-	integer i2cClockCounter;
-	//integer counter;
-	integer clockStretchTimeoutCounter;
-	reg[2:0] state;
 	reg sdaReg;
 	reg sclReg;
-	//reg readyLocal;
-	reg started = 0;
 
 	assign sda = sdaReg;
 	assign scl = sclReg;
 
 	always@(posedge clock or posedge reset)
 	begin
+		//All delays are made 1ms. This makes it slower but also simpler.
+		localparam Timeout1msCount = ClockFrequency/1000;
+		localparam ClockStretchTimeoutCount = ClockStretchTimeout*(ClockFrequency/Timeout1msCount);
+
+		localparam
+			Idle            = 3'b000,
+			Start           = 3'b001,
+			AddressForWrite	= 3'b010,
+			SendData        = 3'b011,
+			Restart         = 3'b100,
+			AddressForRead  = 3'b101,
+			ReadData        = 3'b110,
+			Stop            = 3'b111;
+	
+		reg startSynchronized;
+		integer i2cClockCounter;
+		integer clockStretchTimeoutCounter;
+		reg[2:0] state;
+		static reg started = 0;
+	
+		//reg started;
 		reg readyLocal;
 		static integer byteIndex = 0;
 	
@@ -127,7 +126,7 @@ module I2cMaster#(
 				end
 				SendData:
 				begin
-					/*SendByte(0, bytesToSend[byteIndex], sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					sendByte(bytesToSend[byteIndex], sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
@@ -143,11 +142,11 @@ module I2cMaster#(
 						begin
 							state = Restart;
 						end
-					end*/
+					end
 				end
 				Restart:
 				begin
-					/*SendStart(0, sda, scl, readyLocal);
+					/*SendStart(0, sdaReg, sclReg, readyLocal);
 					if(readyLocal)
 					begin
 						state = AddressForRead;
@@ -155,7 +154,7 @@ module I2cMaster#(
 				end
 				AddressForRead:
 				begin
-					/*SendByte(0, {address, 1'b0}, sda, scl, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					/*SendByte(0, {address, 1'b0}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;

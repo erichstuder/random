@@ -1,45 +1,37 @@
-`ifndef I2cMaster_SendBit
-	`define I2cMaster_SendBit
+`ifndef I2cMaster_ReadBit
+	`define I2cMaster_ReadBit
 	`include "I2cMaster_Pins.sv"
 
-	package I2cMaster_SendBit;
+	package I2cMaster_ReadBit;
 		import I2cMaster_Pins::*;
 
 		localparam
-			OutputSda = 2'b00,
-			SclHigh   = 2'b01,
-			SclLow    = 2'b10;
+			SdaHigh = 2'b00,
+			SclHigh = 2'b01,
+			ReadSda = 2'b10;
 			
 		reg [1:0] state;
 
-		task sendBit_reset();
-			state = OutputSda;
+		task readBit_reset();
+			state = SdaHigh;
 		endtask
 
-		task sendBit(
+		task readBit(
 			input integer maxClockStretchTimeoutCount,
-			input bitToSend,
-			inout sda,
-			inout scl,
+			input sda,
+			input scl,
+			output dataBit,
 			output ready,
 			output clockStretchTimeoutReached);
 			
 			integer clockStretchTimeoutCounter;
-
+			
 			case(state)
-			OutputSda:
+			SdaHigh:
 			begin
-				clockStretchTimeoutReached = 0;
-				ready = 0;
-				if(bitToSend == 0)
-				begin
-					clearSda(sda);
-				end
-				else
-				begin
-					setSda(sda);
-				end
+				setSda(sda);
 				clockStretchTimeoutCounter = 0;
+				ready = 0;
 				state = SclHigh;
 			end
 			SclHigh:
@@ -47,7 +39,7 @@
 				setScl(scl);
 				if(scl !== 0)//TODO: macht diese prüfung so sinn?
 				begin
-					state = SclLow;
+					state = ReadSda;
 				end
 				else
 				begin
@@ -56,15 +48,16 @@
 					begin
 						clockStretchTimeoutReached = 1;
 						ready = 1;
-						state = OutputSda;
+						state = SdaHigh;
 					end
 				end
 			end
-			SclLow:
+			ReadSda:
 			begin
+				dataBit = sda;
 				clearScl(scl);
 				ready = 1;
-				state = OutputSda;
+				state = SdaHigh;
 			end
 			endcase
 		endtask
