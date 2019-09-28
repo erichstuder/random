@@ -18,8 +18,8 @@
 
 		task readBit(
 			input integer maxClockStretchTimeoutCount,
-			input sda,
-			input scl,
+			inout sda,
+			inout scl,
 			output dataBit,
 			output ready,
 			output clockStretchTimeoutReached);

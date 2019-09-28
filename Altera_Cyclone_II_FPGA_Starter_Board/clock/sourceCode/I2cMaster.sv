@@ -2,12 +2,14 @@
 `include "I2cMaster_SendStart.sv"
 `include "I2cMaster_SendByte.sv"
 `include "I2cMaster_SendRestart.sv"
+`include "I2cMaster_ReadByte.sv"
 
 import I2cMaster_Pins::setSda;
 import I2cMaster_Pins::setScl;
 import I2cMaster_SendStart::*;
 import I2cMaster_SendByte::*;
 import I2cMaster_SendRestart::*;
+import I2cMaster_ReadByte::*;
 
 module I2cMaster#(
 	parameter ClockFrequency = 1000000,
@@ -21,11 +23,11 @@ module I2cMaster#(
 	input [$clog2(MaxBytesToSend):0] nrOfBytesToSend,
 	input [MaxBytesToSend-1:0][7:0] bytesToSend,
 	input [$clog2(MaxBytesToRead):0] nrOfBytesToRead,
-	output [MaxBytesToRead-1:0][7:0] bytesToRead,
-	inout sda,
+	output reg [MaxBytesToRead-1:0][7:0] bytesToRead,
+	inout sda, //TODO: tryout to set it on reg
 	inout scl,
 	output reg ready,
-	//output arbitrationLost,
+	//output arbitrationLost, //TODO: implement?
 	output reg clockStretchTimeoutReached,
 	output reg noAcknowledge);
 
@@ -35,7 +37,6 @@ module I2cMaster#(
 	assign sda = sdaReg;
 	assign scl = sclReg;
 
-	//TODO: arbitration lost
 	always@(posedge clock or posedge reset)
 	begin
 		//All delays are made 1ms. This makes it slower but also simpler.
@@ -67,6 +68,7 @@ module I2cMaster#(
 			sendStart_reset();
 			sendByte_reset();
 			sendRestart_reset();
+			readByte_reset();
 			
 			setSda(sdaReg);
 			setScl(sclReg);
@@ -184,7 +186,26 @@ module I2cMaster#(
 				end
 				ReadData:
 				begin
-					state = Stop;
+					readByte(sdaReg, sclReg, bytesToRead[byteIndex], readyLocal, clockStretchTimeoutReached);
+					if(readyLocal)
+					begin
+						if(clockStretchTimeoutReached)
+						begin
+							ready = 1;
+							state = Idle;
+						end
+						else
+						begin
+							if(byteIndex > 0)
+							begin
+								byteIndex--;
+							end
+							else
+							begin
+								state = Stop;
+							end
+						end
+					end
 				end
 				Stop:
 				begin
