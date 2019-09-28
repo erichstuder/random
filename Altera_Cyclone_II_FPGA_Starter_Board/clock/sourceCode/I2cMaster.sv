@@ -3,6 +3,7 @@
 `include "I2cMaster_SendByte.sv"
 `include "I2cMaster_SendRestart.sv"
 `include "I2cMaster_ReadByte.sv"
+`include "I2cMaster_SendStop.sv"
 
 import I2cMaster_Pins::setSda;
 import I2cMaster_Pins::setScl;
@@ -10,6 +11,13 @@ import I2cMaster_SendStart::*;
 import I2cMaster_SendByte::*;
 import I2cMaster_SendRestart::*;
 import I2cMaster_ReadByte::*;
+import I2cMaster_SendStop::*;
+
+//TODO:
+//- use real enums in all files?
+//- eliminate quartus warnings
+//- eliminate simulation warnings
+//- make clock stretch timeout more clean
 
 module I2cMaster#(
 	parameter ClockFrequency = 1000000,
@@ -69,6 +77,7 @@ module I2cMaster#(
 			sendByte_reset();
 			sendRestart_reset();
 			readByte_reset();
+			sendStop_reset();
 			
 			setSda(sdaReg);
 			setScl(sclReg);
@@ -209,7 +218,12 @@ module I2cMaster#(
 				end
 				Stop:
 				begin
-					state = Idle;
+					sendStop(1000, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached);
+					if(readyLocal)
+					begin
+						ready = 1;
+						state = Idle;
+					end
 				end
 				endcase
 			end
