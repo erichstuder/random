@@ -1,8 +1,10 @@
+`include "I2cMaster_Pins.sv"
 `include "I2cMaster_SendStart.sv"
 `include "I2cMaster_SendByte.sv"
 
-`include "I2cMaster_Tasks.sv"
-
+import I2cMaster_Pins::setSda;
+import I2cMaster_Pins::setScl;
+import I2cMaster_SendStart::*;
 import I2cMaster_SendByte::*;
 
 module I2cMaster#(
@@ -25,8 +27,6 @@ module I2cMaster#(
 	output reg clockStretchTimeoutReached,
 	output reg noAcknowledge);
 	
-	
-
 	//All delays are made 1ms. This makes it slower but also simpler.
 	localparam Timeout1msCount = ClockFrequency/1000;
 	localparam ClockStretchTimeoutCount = ClockStretchTimeout*(ClockFrequency/Timeout1msCount);
@@ -46,7 +46,7 @@ module I2cMaster#(
 	integer i2cClockCounter;
 	//integer counter;
 	integer clockStretchTimeoutCounter;
-	reg[3:0] state;
+	reg[2:0] state;
 	reg sdaReg;
 	reg sclReg;
 	//reg readyLocal;
@@ -62,15 +62,13 @@ module I2cMaster#(
 	
 		if(reset)
 		begin
-			//SendByte(1, 8'b0000_0000, sda, scl, ready, clockStretchTimeoutReached, noAcknowledge);
-			SendStart_reset();
+			sendStart_reset();
 			sendByte_reset();
-			//sdaReg = 0;
-			SetSda(sdaReg);
-			SetScl(sclReg);
+			setSda(sdaReg);
+			setScl(sclReg);
 			ready = 1;
 			//arbitrationLost = 0;
-			clockStretchTimeoutReached = 0;
+			//clockStretchTimeoutReached = 0;
 			
 			//started = 0;
 			startSynchronized = 0;
@@ -94,8 +92,8 @@ module I2cMaster#(
 				case(state)
 				Idle:
 				begin
-					SetSda(sdaReg);
-					SetScl(sclReg);
+					setSda(sdaReg);
+					setScl(sclReg);
 					ready = 1;
 					if(startSynchronized)
 					begin
@@ -107,7 +105,7 @@ module I2cMaster#(
 				end
 				Start:
 				begin
-					SendStart(sdaReg, sclReg, readyLocal);
+					sendStart(sdaReg, sclReg, readyLocal);
 					if(readyLocal)
 					begin
 						state = AddressForWrite;

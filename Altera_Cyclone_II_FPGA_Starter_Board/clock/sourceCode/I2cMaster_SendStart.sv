@@ -1,33 +1,38 @@
-//Tasks are placed here for better information hidding.
-//e.g. no global signal access
+`ifndef I2cMaster_SendStart
+	`define I2cMaster_SendStart
+	package I2cMaster_SendStart;
+		import I2cMaster_Pins::clearSda;
+		import I2cMaster_Pins::clearScl;
 
-localparam
-	SdaLow1  = 1'b0,
-	SclLow1  = 1'b1;
-		
-reg state1;
+		localparam
+			SdaLow  = 1'b0,
+			SclLow  = 1'b1;
+				
+		reg state;
 
-task SendStart_reset();
-	state1 = SdaLow1;
-endtask
+		task sendStart_reset();
+			state = SdaLow;
+		endtask
 
-task SendStart(
-	inout sda,
-	inout scl,
-	output ready);
+		task sendStart(
+			inout sda,
+			inout scl,
+			output ready);
 
-	case(state1)
-	SdaLow1:
-	begin
-		ClearSda(sda);
-		ready = 0;
-		state1 = SclLow1;
-	end
-	SclLow1:
-	begin
-		ClearScl(scl);
-		ready = 1;
-		state1 = SdaLow1;
-	end
-	endcase
-endtask
+			case(state)
+			SdaLow:
+			begin
+				clearSda(sda);
+				ready = 0;
+				state = SclLow;
+			end
+			SclLow:
+			begin
+				clearScl(scl);
+				ready = 1;
+				state = SdaLow;
+			end
+			endcase
+		endtask
+	endpackage
+`endif //I2cMaster_SendStart

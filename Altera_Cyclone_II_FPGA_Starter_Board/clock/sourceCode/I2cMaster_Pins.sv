@@ -1,7 +1,25 @@
-//Tasks are placed here for better information hidding.
-//e.g. no global signal access
+`ifndef I2cMaster_Pins
+   `define I2cMaster_Pins
+	package I2cMaster_Pins;
+		task setSda(output sda);
+			sda = 1'bz;
+		endtask
 
+		task clearSda(output sda);
+			sda = 0;
+		endtask
 
+		task setScl(output scl);
+			scl = 1'bz;
+		endtask
+
+		task clearScl(output scl);
+			scl = 0;
+		endtask
+	endpackage
+`endif //I2cMaster_Pins
+
+//TODO: cleanup
 /*	task SendRestart(
 	//input reset,
 	inout sda,
@@ -58,23 +76,3 @@
 		endcase
 	end
 endtask*/	
-
-
-task SetSda(output sda);
-	sda = 1'bz;
-endtask
-
-
-task ClearSda(output sda);
-	sda = 0;
-endtask
-
-
-task SetScl(output scl);
-	scl = 1'bz;
-endtask
-
-
-task ClearScl(output scl);
-	scl = 0;
-endtask
