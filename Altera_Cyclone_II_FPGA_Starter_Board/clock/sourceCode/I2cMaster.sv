@@ -1,11 +1,13 @@
 `include "I2cMaster_Pins.sv"
 `include "I2cMaster_SendStart.sv"
 `include "I2cMaster_SendByte.sv"
+`include "I2cMaster_SendRestart.sv"
 
 import I2cMaster_Pins::setSda;
 import I2cMaster_Pins::setScl;
 import I2cMaster_SendStart::*;
 import I2cMaster_SendByte::*;
+import I2cMaster_SendRestart::*;
 
 module I2cMaster#(
 	parameter ClockFrequency = 1000000,
@@ -33,6 +35,7 @@ module I2cMaster#(
 	assign sda = sdaReg;
 	assign scl = sclReg;
 
+	//TODO: arbitration lost
 	always@(posedge clock or posedge reset)
 	begin
 		//All delays are made 1ms. This makes it slower but also simpler.
@@ -49,10 +52,10 @@ module I2cMaster#(
 			ReadData        = 3'b110,
 			Stop            = 3'b111;
 	
+		reg[2:0] state;
 		reg startSynchronized;
 		integer i2cClockCounter;
 		integer clockStretchTimeoutCounter;
-		reg[2:0] state;
 		static reg started = 0;
 	
 		//reg started;
@@ -63,6 +66,8 @@ module I2cMaster#(
 		begin
 			sendStart_reset();
 			sendByte_reset();
+			sendRestart_reset();
+			
 			setSda(sdaReg);
 			setScl(sclReg);
 			ready = 1;
@@ -127,34 +132,45 @@ module I2cMaster#(
 				SendData:
 				begin
 					sendByte(bytesToSend[byteIndex], sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
-					if(clockStretchTimeoutReached || noAcknowledge)
+					if(readyLocal)
 					begin
-						ready = 1;
-						state = Idle;
-					end
-					else if(readyLocal)
-					begin
-						if(byteIndex > 0)
+						if(clockStretchTimeoutReached || noAcknowledge)
 						begin
-							byteIndex--;
+							ready = 1;
+							state = Idle;
 						end
-						else
+						else 
 						begin
-							state = Restart;
+							if(byteIndex > 0)
+							begin
+								byteIndex--;
+							end
+							else
+							begin
+								state = Restart;
+							end
 						end
 					end
 				end
 				Restart:
 				begin
-					/*SendStart(0, sdaReg, sclReg, readyLocal);
+					sendRestart(1000, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached); //TODO: maxClockStretchTimeout von aussen vorgeben
 					if(readyLocal)
 					begin
-						state = AddressForRead;
-					end*/
+						if(clockStretchTimeoutCounter)
+						begin
+							ready = 1;
+							state = Idle;
+						end
+						else
+						begin	
+							state = AddressForRead;
+						end
+					end
 				end
 				AddressForRead:
 				begin
-					/*SendByte(0, {address, 1'b0}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					sendByte({address, 1'b0}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
@@ -164,7 +180,7 @@ module I2cMaster#(
 					begin
 						byteIndex = nrOfBytesToRead-1;
 						state = ReadData;
-					end*/
+					end
 				end
 				ReadData:
 				begin
@@ -178,71 +194,4 @@ module I2cMaster#(
 			end
 		end
 	end
-	
-/*
-	task ReadBit(
-		input reset,
-		input sda,
-		input scl,
-		output ready,
-		output dataBit,
-		output clockStretchTimeoutReached);
-		
-		localparam
-			SdaHigh = 2'b00,
-			SclHigh = 2'b01,
-			ReadSda = 2'b10;
-		
-		static reg [1:0] state = SdaHigh;
-		integer clockStretchTimeoutCounter;
-		
-		if(reset)
-		begin
-			ready = 1;
-			clockStretchTimeoutReached = 0;
-			state = SdaHigh;
-		end
-		else
-		begin
-			case(state)
-			SdaHigh:
-			begin
-				SetSda(sda);
-				clockStretchTimeoutCounter = 0;
-				clockStretchTimeoutReached = 0;
-				ready = 0;
-				state = SclHigh;
-			end
-			SclHigh:
-			begin
-				SetScl(scl);
-				if(scl)
-				begin
-					state = ReadSda;
-				end
-				else
-				begin
-					clockStretchTimeoutCounter++;
-					if(clockStretchTimeoutCounter >= ClockStretchTimeoutCount)
-					begin
-						clockStretchTimeoutReached = 1;
-						ready = 1;
-						state = SdaHigh;
-					end
-				end
-			end
-			ReadSda:
-			begin
-				dataBit = sda;
-				ClearScl(scl);
-				ready = 1;
-				state = SdaHigh;
-			end
-			endcase
-		end
-	endtask
-*/
-
-	
-
 endmodule

@@ -2,7 +2,6 @@
 	`define I2cMaster_SendByte
 	`include "I2cMaster_SendBit.sv"
 	`include "I2cMaster_ReadBit.sv"
-
 	package I2cMaster_SendByte;
 		import I2cMaster_SendBit::*;
 		import I2cMaster_ReadBit::*;
