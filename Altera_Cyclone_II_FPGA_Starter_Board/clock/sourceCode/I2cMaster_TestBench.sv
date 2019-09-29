@@ -14,6 +14,14 @@ module I2cMaster_TestBench;
 	wire ready;
 	wire clockStretchTimeoutReached;
 	
+	wire startReceived;
+	wire restartReceived;
+	wire stopReceived;
+	wire bitTransmitted;
+	wire [6:0] address;
+	wire addressedForReceive;
+	wire addressedForSend;
+	
 	I2cMaster#(
 	.ClockFrequency(24_000_000),
 	.ClockStretchTimeout(1),
@@ -33,6 +41,26 @@ module I2cMaster_TestBench;
 		.ready(ready),
 	 //output arbitrationLost,
 		.clockStretchTimeoutReached(clockStretchTimeoutReached)
+	);
+	
+	I2cMaster_TestBench_SimpleSlave#(
+	.MaxBytesToReceive(MaxBytesToSend),
+	.MaxBytesToSend(MaxBytesToRead))
+	i2cMaster_TestBench_SimpleSlave(
+		.reset(reset),
+		.sda(sda),
+		.scl(scl),
+		.nrOfBytesToReceive(MaxBytesToSend),
+		//.bytesToReceive,
+		.nrOfBytesToSend(MaxBytesToRead),
+		//.bytesToSend,
+		.startReceived(startReceived),
+		.restartReceived(restartReceived),
+		.stopReceived(stopReceived),
+		.bitTransmitted1(bitTransmitted),
+		.address(address),
+		.addressedForReceive(addressedForReceive),
+		.addressedForSend(addressedForSend)
 	);
 	
 	
@@ -58,7 +86,7 @@ module I2cMaster_TestBench;
 		//$finish;
 	end
 	
-	always@(scl)
+	/*always@(scl)
 	begin
 		static integer counter = 0;
 		
@@ -79,5 +107,5 @@ module I2cMaster_TestBench;
 		begin
 			sda_local = 1'bz;
 		end
-	end
+	end*/
 endmodule

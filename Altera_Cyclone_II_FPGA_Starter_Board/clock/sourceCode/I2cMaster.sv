@@ -18,6 +18,7 @@ import I2cMaster_SendStop::*;
 //- eliminate quartus warnings
 //- eliminate simulation warnings
 //- make clock stretch timeout more clean
+//- sind localparam (states) in packages nicht nur dort sichtbar?
 
 module I2cMaster#(
 	parameter ClockFrequency = 1000000,
@@ -128,7 +129,7 @@ module I2cMaster#(
 				end
 				AddressForWrite:
 				begin
-					sendByte({address, 1'b1}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					sendByte({address, 1'b0}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
@@ -181,7 +182,7 @@ module I2cMaster#(
 				end
 				AddressForRead:
 				begin
-					sendByte({address, 1'b0}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
+					sendByte({address, 1'b1}, sdaReg, sclReg, readyLocal, clockStretchTimeoutReached, noAcknowledge);
 					if(clockStretchTimeoutReached || noAcknowledge)
 					begin
 						ready = 1;
