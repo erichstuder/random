@@ -1,0 +1,2 @@
+- For the board Arduino Leonardo use the I2C pins and not A4 and A5 as it would be necessary for the Arduino Uno.
+- The led can be turned off by pulling the "LED" pin low.
