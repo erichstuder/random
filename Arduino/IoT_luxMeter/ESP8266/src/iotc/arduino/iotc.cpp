@@ -16,8 +16,11 @@ unsigned long _getNow() {
   unsigned long retVal = 0;
 
 retry_getNow:
-  IPAddress address(129, 6, 15,
+  /*IPAddress address(129, 6, 15,
                     retryCount % 2 == 1 ? 28 : 29);  // time.nist.gov NTP server
+					*/
+  IPAddress address(132, 163, 97, 2); // time.nist.gov NTP server (others are down for maintenance)
+  
   WiFiUDP Udp;
   if (Udp.begin(2390) == 0) {
     if (retryCount < 5) {
