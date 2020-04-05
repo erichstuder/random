@@ -1,15 +1,16 @@
 //board: Arduino Leonardo
+#include <Arduino.h>
+#include <stdio.h>
+#include <string.h>
 
-const char Terminator = '\r';
-char inputBuffer[100];
-unsigned char inputBufferIndex;
+static const char Terminator = '\r';
+static char inputBuffer[100];
+static unsigned char inputBufferIndex = 0;
 
 static inline void handleInput(void);
 static inline void appendToInputBuffer(char ch);
 
-void setup(void) {
-	inputBufferIndex = 0;
-}
+void setup(void) {}
 
 void loop(void) {
 	//if(Serial){
@@ -43,12 +44,12 @@ static inline void handleInput(void) {
 		char numberString[sizeof(int)+sizeof('\0')];
 		sprintf(numberString, "%d", analogRead(A0)); //TODO: sprintf hat einen Rückgabewert!
 		Serial.write(numberString);
+		Serial.write(Terminator);
 	}
-	Serial.write(Terminator);
 	inputBufferIndex = 0;
 }
 
-static inline void appendToInputBuffer(char ch){
+static inline void appendToInputBuffer(char ch) {
 	inputBuffer[inputBufferIndex] = ch;
 	inputBufferIndex++;
 }
