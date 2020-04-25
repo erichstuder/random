@@ -7,25 +7,31 @@
 
 static const char Terminator = '\r';
 static char inputBuffer[100];
-static unsigned char inputBufferIndex = 0;
+static unsigned char inputBufferIndex;
 
 static inline void handleInput(void);
-static inline void ledOn(void);
-static inline void ledOff(void);
+static inline void setLedOn(void);
+static inline void setLedOff(void);
 static inline void initLed(void);
 static inline void appendToInputBuffer(char ch);
 
-void setup(void) {}
+void setup(void) {
+	 inputBufferIndex = 0;
+}
+
+void setup_ForCppUTest(void){
+	setup();
+}
 
 void loop(void) {
 	//if(Serial){
 		//while(true){
 			int incomingInt = Serial.read();
 			char incomingChar = (char)incomingInt;
-                        if(incomingChar == Terminator) {
+			if(incomingChar == Terminator) {
 				appendToInputBuffer('\0');
 				handleInput();
-                                //delay(10);
+				//delay(10);
 			}
 			else if(incomingInt != -1) {
 				appendToInputBuffer(incomingChar);

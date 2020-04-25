@@ -6,12 +6,14 @@
 HardwareSerial Serial;
 
 extern void loop(void);
+extern void setup_ForCppUTest(void);
 
 static void expectInputString(const char* str);
 static void expectNoInputLeft(void);
 
 static void expectLedOn(void);
 static void expectLedOff(void);
+static void expectLedInit(void);
 static void expectReadAndSendAdcA0(void);
 
 void pinMode(uint8_t pin, uint8_t value) {
@@ -35,6 +37,7 @@ int analogRead(uint8_t pin) {
 TEST_GROUP(ArduinoLeonardoTerminalTest) {
 	void setup() {
 		mock().strictOrder();
+		setup_ForCppUTest();
 	}
 
 	void teardown() {
@@ -48,7 +51,10 @@ TEST(ArduinoLeonardoTerminalTest, turnLedOn) {
 	expectLedOn();
 	expectNoInputLeft();
 
-	loop();
+	for (int n = 0; n < 11; n++) {
+		loop();
+	}
+	
 }
 
 TEST(ArduinoLeonardoTerminalTest, turnLedOff) {
@@ -56,7 +62,9 @@ TEST(ArduinoLeonardoTerminalTest, turnLedOff) {
 	expectLedOff();
 	expectNoInputLeft();
 
-	loop();
+	for (int n = 0; n < 12; n++) {
+		loop();
+	}
 }
 
 TEST(ArduinoLeonardoTerminalTest, getAdcA0) {
@@ -64,7 +72,9 @@ TEST(ArduinoLeonardoTerminalTest, getAdcA0) {
 	expectReadAndSendAdcA0();
 	expectNoInputLeft();
 
-	loop();
+	for (int n = 0; n < 12; n++) {
+		loop();
+	}
 }
 
 static void expectInputString(const char* str) {
@@ -82,22 +92,89 @@ static void expectNoInputLeft(void) {
 }
 
 static void expectLedOn(void) {
-	mock().expectOneCall("pinMode")
-		.withIntParameter("pin", LED_BUILTIN)
+	expectLedInit();
+
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 0)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 1)
 		.withIntParameter("value", 1);
 	mock().expectOneCall("digitalWrite")
-		.withIntParameter("pin", LED_BUILTIN)
+		.withIntParameter("pin", 2)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 3)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 5)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 7)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 9)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 11)
 		.withIntParameter("value", 1);
 }
 
 static void expectLedOff(void) {
-	mock().expectOneCall("pinMode")
-		.withIntParameter("pin", LED_BUILTIN)
-		.withIntParameter("value", 1);
+	expectLedInit();
+
 	mock().expectOneCall("digitalWrite")
-		.withIntParameter("pin", LED_BUILTIN)
+		.withIntParameter("pin", 0)
 		.withIntParameter("value", 0);
-} 
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 1)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 2)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 3)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 5)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 7)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 9)
+		.withIntParameter("value", 0);
+	mock().expectOneCall("digitalWrite")
+		.withIntParameter("pin", 11)
+		.withIntParameter("value", 0);
+}
+
+static void expectLedInit(void) {
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 0)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 1)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 2)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 3)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 5)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 7)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 9)
+		.withIntParameter("value", 1);
+	mock().expectOneCall("pinMode")
+		.withIntParameter("pin", 11)
+		.withIntParameter("value", 1);	
+}
 
 static void expectReadAndSendAdcA0(void) {
 	mock().expectOneCall("analogRead")
@@ -110,6 +187,6 @@ static void expectReadAndSendAdcA0(void) {
 	    .andReturnValue((int)strlen(str));
 
 	mock().expectOneCall("write")
-		.withIntParameter("val", '\r')
+		.withIntParameter("val", '\n')
 		.andReturnValue(1);
 }
