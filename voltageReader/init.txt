@@ -1,0 +1,3 @@
+set comport /dev/ttyACM0
+reset
+log voltage
