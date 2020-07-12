@@ -1,0 +1,6 @@
+[submodule "voltageReader/src/IT_Server"]
+	path = voltageReader/src/IT_Server
+	url = https://github.com/erichstuder/IT_Server
+[submodule "voltageReader/IT_Client"]
+	path = voltageReader/IT_Client
+	url = https://github.com/erichstuder/IT_Client
