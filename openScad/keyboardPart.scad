@@ -17,6 +17,17 @@ module massivePart(){
 	rotate([-90,0,0])
 		translate([0, -barDiameter/2, -(barLength-cubeWidth)/2])
 			cylinder(h = barLength, d = barDiameter, center = false);
+	locks();
+}
+
+module locks(){
+	sideLength = 0.8;
+	translate([0, 0, (cubeHeight-sideLength*sqrt(2))/2])
+		rotate([45, 0, 0])
+			cube([4, sideLength, sideLength], center = false);
+	translate([0, cubeWidth, (cubeHeight-sideLength*sqrt(2))/2])
+		rotate([45, 0, 0])
+			cube([4, sideLength, sideLength], center = false);
 }
 
 module cutOut(){
