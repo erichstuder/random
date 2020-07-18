@@ -19,12 +19,12 @@ translate([0,0.5,-2])
 circleInnerCircumference = holeDiameter + PI*holeDiameter;
 circleInnerDiameter = circleInnerCircumference / PI;
 circleAngle = 273.08;
-translate([15,8,-1])
+translate([15,5.8,-1])
 	rotate([90,0,270])
 		rotate_extrude(angle = circleAngle, convexity = 10)
-			translate([circleInnerDiameter, 0, 0])
+			translate([circleInnerDiameter/2, 0, 0])
 				square([0.5,15]);
 				
-translate([0,8.597,-8.526])				
+translate([0,6.02,-6.26])				
 	rotate([360-circleAngle,0,0])
-		cube([15,3,1]);
+		cube([15,3,0.5]);
