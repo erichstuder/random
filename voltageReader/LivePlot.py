@@ -79,7 +79,7 @@ while True:
 
 	plt.legend(['voltage'], loc='lower left')
 	plt.xlabel('time [s]')
+	
+	plt.grid(linestyle='--')
 
 	figure.canvas.flush_events()
-	
-	continue
