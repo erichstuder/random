@@ -4,7 +4,7 @@ $fn = 90;
 
 length = 22;
 width = 8;
-cylinderInnerDiameter = 1.6;
+cylinderInnerDiameter = 2;
 cylinderOutterDiameter = cylinderInnerDiameter+4;
 plateThickness = cylinderOutterDiameter / 2;
 
@@ -21,9 +21,9 @@ difference(){
 		#cylinder(d=cylinderOutterDiameter+1, h=length/2);*/
 	
 	//screw holes
-	screwHoleDiameter = 2.9;
-	screwHeadDiameter = 5;
-	borderDistance = 3;
+	screwHoleDiameter = 3;
+	screwHeadDiameter = 5.2;
+	borderDistance = screwHeadDiameter/2;
 	translate([width-borderDistance, -plateThickness, 0])
 		rotate([-90,0,0]){
 			translate([0, -borderDistance, 0]){
