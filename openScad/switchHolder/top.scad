@@ -25,7 +25,7 @@ module top(length, width, height, wallThickness, screwHoleDiameter, screwHoleWal
 			
 			//cable holes
 			cableDiameter = 7.5;
-			cableHoleBorderDistance = cableDiameter;
+			cableHoleBorderDistance = cableDiameter/2 + 5;
 			#translate([length-wallThickness, 0, cableHoleBorderDistance])
 				rotate([90, 0, 90]){
 					translate([cableHoleBorderDistance, 0, 0])
