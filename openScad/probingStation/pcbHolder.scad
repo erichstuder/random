@@ -3,8 +3,12 @@ width = 10;
 baseLength = 22;
 baseThickness = 2;
 difference(){
-	cube([width, baseLength, baseThickness], center = true);
-	#cylinder(d=4, h=baseThickness, center=true);
+	union(){
+		cube([width, baseLength, baseThickness], center = true);
+		translate([0, 0, -0.5-baseThickness/2])
+			cube([3.9, baseLength, 1], center = true);
+	}
+	#cylinder(d=4, h=10, center=true);
 }
 
 printHolderHeight = 15;
@@ -14,7 +18,7 @@ translate([0, (baseLength+verticalThickness)/2, (printHolderHeight-baseThickness
 
 
 holderLength = 10;
-holderThickness = 2.5;
+holderThickness = 5;
 translate([0, (baseLength+holderLength)/2, printHolderHeight+(holderThickness-baseThickness)/2])
 	difference(){
 		cube([width, holderLength, holderThickness], center=true);
