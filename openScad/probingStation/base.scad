@@ -1,4 +1,4 @@
-$fn=360;
+$fn=90;
 
 height=7;
 diameter = 150;
