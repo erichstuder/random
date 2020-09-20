@@ -1,5 +1,5 @@
 
-scale([0.1, 0.1, 1]){
+scale([0.2, 0.2, 1]){
 	difference(){
 		union(){
 			translate([0, 0, 100.7])
@@ -14,8 +14,8 @@ scale([0.1, 0.1, 1]){
 }
 
 
-translate([0, 0, 7.5])
+translate([0, 0, 5])
 	difference(){
-		cube([40, 20, 15], center=true);
-		cube([40-4, 20-4, 15], center=true);
+		cube([80, 40, 10], center=true);
+		cube([80-4, 40-4, 10], center=true);
 	}
