@@ -21,8 +21,15 @@ translate([15, 55, 0])
 translate([-90, 30, 0])
 	squareWithBorder(130, borderWidth, height);
 	
-translate([-50, 30, height/2])
+translate([-50, 30, height/2-0.3])
 	cube([130+80, 130, 0.6], center=true);
+
+difference(){
+	translate([-50, 30, 0])
+		cube([130+80+20, 130+20, height], center=true);
+	#translate([-50, 30, -0.15])
+		cube([130+80, 130, height-0.3], center=true);
+}
 
 module squareWithBorder(sideLength, borderWidth, height){
 	difference(){
