@@ -1,8 +1,12 @@
-$fn = 360;
+$fn = 90;
 
+outterDiameter = 14;
+innerHeight = 10;
 difference(){
-	cylinder(d=14, h=12);
-	#cylinder(d=10, h=10);
+	cylinder(d=outterDiameter, h=12);
+	#cylinder(d=10.15, h=innerHeight);
 	#cylinder(d=2.6, h=12);
+	translate([0, 0, innerHeight/2])
+		cube([outterDiameter, 1, innerHeight], center = true);
 }
 
