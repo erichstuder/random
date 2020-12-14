@@ -14,10 +14,10 @@ translate([0, 20, 0]){
 	difference(){
 		tolerance = 1.1;
 		union(){
-			cube([length, width, wallThickness], center=true);
+			basePlate();
 			
-			translate([(length-buckleLength)/2, 0, (buckleHeight+2*wallThickness-wallThickness+tolerance)/2])
-				cube([buckleLength, width, buckleHeight+2*wallThickness+tolerance], center=true);
+			translate([(length-buckleLength)/2, 0, (buckleHeight+2*wallThickness+tolerance)/2])
+				cube([buckleLength, width, buckleHeight+wallThickness+tolerance], center=true);
 		}
 		#translate([(length-buckleLength)/2, 0, (buckleHeight+wallThickness+tolerance)/2])
 			cube([buckleLength, width-2*buckleEdge, buckleHeight+tolerance], center=true);
@@ -31,7 +31,8 @@ difference(){
 	lengthTolerance = 1;
 	widthTolerance = 0.5;
 	union(){
-		cube([length, width, wallThickness], center=true);
+		basePlate();
+		
 		blockLength = 2*buckleLength + snapperLength;
 		translate([(length-blockLength)/2+buckleLength+snapperLength+lengthTolerance, 0, (wallThickness+buckleHeight)/2])
 			cube([blockLength, width, buckleHeight], center=true);
@@ -63,6 +64,33 @@ difference(){
 	placeHoles();
 }
 
+module versionText(){
+	translate([10, 5, 0])
+		rotate([0, 0, -90])
+			linear_extrude(height=wallThickness/2+0.5)
+				text("V2", size=6);
+}
+
+module basePlate(){
+	difference(){
+		cube([length, width, wallThickness], center=true);
+		#translate([0, -(width-wallThickness+1e-3)/2, 0])
+			baseRounding();
+		#translate([0, (width-wallThickness+1e-3)/2, 0])
+			rotate([0, 0, 180])
+				baseRounding();
+	}
+	versionText();
+}
+
+module baseRounding(){
+	difference(){
+		cube([length, wallThickness, wallThickness], center=true);
+		#translate([0, wallThickness/2, wallThickness/2])
+			rotate([0, 90, 0])
+				cylinder(d=2*wallThickness, h=length, center=true);
+	}	
+}
 
 module placeHoles(){
 	angle = 45;
