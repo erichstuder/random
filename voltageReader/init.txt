@@ -1,3 +1,6 @@
-set comport /dev/ttyACM0
+set connectionType USB_RS232
+set VID 2341
+set PID 8036
 reset
+sampleTime_us 500000
 log voltage
