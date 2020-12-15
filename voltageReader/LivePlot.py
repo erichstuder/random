@@ -21,11 +21,13 @@ import numpy as np
 import time
 import os
 import array
+import sys
 
 from IT_Client.helpers.TelegramParser import TelegramParser
 
-os.system('mode 70,15')
-os.system("title LivePlot")
+if sys.platform.startswith("win"):
+    os.system('mode 70,15')
+    os.system("title LivePlot")
 plt.ion()
 plt.style.use('dark_background')
 
@@ -46,7 +48,7 @@ timeWindow = 30e6
 while True:
 	#millis1 = int(round(time.time() * 1000))
 	
-	with open('IT_Client/mySession.session', 'rb') as sessionFile:
+	with open('mySession.session', 'rb') as sessionFile:
 		data = sessionFile.read()
 
 	#print(data)
