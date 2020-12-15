@@ -24,6 +24,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 import os
+import sys
 
 from IT_Client.helpers.TelegramParser import TelegramParser
 
@@ -38,13 +39,14 @@ for i in range(10):
 plt.show()
 """
 
-os.system('mode 70,15')
-os.system("title plot")
+if sys.platform.startswith("win"):
+    os.system('mode 70,15')
+    os.system("title plot")
 plt.ion()
 
 plt.style.use('dark_background')
 # while True:
-with open('IT_Client/mySession.session', 'rb') as sessionFile:
+with open('mySession.session', 'rb') as sessionFile:
     data = sessionFile.read()
 
 # data = b'\x12\x15' + data + b'\x12\x17'
