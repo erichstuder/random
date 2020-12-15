@@ -2,17 +2,23 @@
 #include <Arduino.h>
 #include "src/IT_Server/IT_Server/it.h"
 
-#define APP_SAMPLETIME_US 1000000
-
+static inline unsigned long getSampleTimeMicros(void);
+static inline void setSampleTimeMicros(unsigned long);
 static inline float getVoltage(void);
 
 static ItSignal_t itSignals[] = {
-	{
-		"voltage",
-		ItValueType_Float,
-		(void (*)(void)) getVoltage,
-		NULL,
-	},
+  {
+    "sampleTime_us",
+    ItValueType_Ulong,
+    (void (*)(void)) getSampleTimeMicros,
+    (void (*)(void)) setSampleTimeMicros,
+  },
+  {
+    "voltage",
+    ItValueType_Float,
+    (void (*)(void)) getVoltage,
+    NULL,
+  },
 };
 
 //For compatibility with Linux the led pin is defined here.
@@ -26,12 +32,13 @@ static char itInputBuffer[30];
 
 static float voltage = 0.0f;
 
-static bool timerEvent;
+static bool timerEvent = false;
+static unsigned long sampleTimeMicros;
 static unsigned long tickMicros = 0;
 
 static inline void setBuiltinLedOn(void);
 static inline void setBuiltinLedOff(void);
-static inline void timerSetup(void);
+static inline void timerSetup(unsigned long sampleTime_us);
 static inline bool byteFromUartAvailable(void);
 static inline ItError_t readByteFromUart(char* const data);
 static inline ItError_t writeByteToUart(const unsigned char data);
@@ -53,8 +60,9 @@ void setup(void){
   itParameters.itSignals = itSignals;
   itParameters.itSignalCount = ItSignalCount;
   itInit(&itParameters, &itCallbacks);
-  
-	timerSetup();
+
+  sampleTimeMicros = 0;
+	timerSetup(sampleTimeMicros);
 }
 
 void setup_ForCppUTest(void){
@@ -71,7 +79,7 @@ void loop(void){
 	}
 	setBuiltinLedOn();
 	timerEvent=false;
-	voltage = (float)analogRead(A0) / 1024.0f * 5.0f;
+	voltage = (float)analogRead(A1) / 1024.0f * 5.0f;
 	itTick();
 	sendBufferToUart();
 }
@@ -90,39 +98,56 @@ static inline void setBuiltinLedOff(void){
 	digitalWrite(OnBoardLedPin, LOW);
 }
 
+static inline unsigned long getSampleTimeMicros(void){
+  return sampleTimeMicros;
+}
+
+static inline void setSampleTimeMicros(unsigned long sampleTime_us){
+  sampleTimeMicros = sampleTime_us;
+  timerSetup(sampleTimeMicros);
+}
+
 static inline float getVoltage(void){
 	return voltage;
 }
 
-static inline void timerSetup(void){
-	timerEvent=false;
-	TCCR1A = 0; //for any reason, this must be done!!
-	#if APP_SAMPLETIME_US == 1000000
-		TCCR1B = _BV(WGM12) | _BV(CS12) | _BV(CS10); //match on value of OCR1A and divide clock by 1024
-		OCR1A = 15625; //1000ms
-	#elif APP_SAMPLETIME_US == 500000
-		TCCR1B = _BV(WGM12) | _BV(CS12); //match on value of OCR1A and divide clock by 256
-		OCR1A = 5*6250; //500ms
-	#elif APP_SAMPLETIME_US == 100000
-		TCCR1B = _BV(WGM12) | _BV(CS12); //match on value of OCR1A and divide clock by 256
-		OCR1A = 6250; //100ms
-	#elif APP_SAMPLETIME_US == 10000
-		TCCR1B = _BV(WGM12) | _BV(CS12); //match on value of OCR1A and divide clock by 256
-		OCR1A = 625; //10ms
-	#elif APP_SAMPLETIME_US == 2000
-		TCCR1B = _BV(WGM12) | _BV(CS10); //match on value of OCR1A and divide clock by 1
-		OCR1A = 32000; //2ms
-	#elif APP_SAMPLETIME_US == 1000
-		TCCR1B = _BV(WGM12) | _BV(CS10); //match on value of OCR1A and divide clock by 1
-		OCR1A = 16000; //1ms
-	#else
-		#error APP_SAMPLETIME not supported
-	#endif
+static inline void timerSetup(unsigned long periodMicros){
+  const unsigned long CLOCK_FREQUENCY = 16e6;
+  const unsigned long COUNTER_MAXIMUM = 65535;
+
+  TCCR1A = 0; //for any reason, this must be done!!
+
+  unsigned long counts = (CLOCK_FREQUENCY / 1e6) * periodMicros;
+  if(counts <= COUNTER_MAXIMUM){
+    TCCR1B = _BV(WGM12) | _BV(CS10); //match on value of OCR1A and divide clock by 1
+    OCR1A = counts;
+  }
+  else if((counts / 8) <= COUNTER_MAXIMUM){
+    TCCR1B = _BV(WGM12) | _BV(CS11); //match on value of OCR1A and divide clock by 8
+    OCR1A = counts / 8;
+  }
+  else if((counts / 64) <= COUNTER_MAXIMUM){
+    TCCR1B = _BV(WGM12) | _BV(CS11) | _BV(CS10); //match on value of OCR1A and divide clock by 64
+    OCR1A = counts / 64;
+  }
+  else if((counts / 256) <= COUNTER_MAXIMUM){
+    TCCR1B = _BV(WGM12) | _BV(CS12); //match on value of OCR1A and divide clock by 256
+    OCR1A = counts / 256;
+  }
+  else if((counts / 1024) <= COUNTER_MAXIMUM){
+    TCCR1B = _BV(WGM12) | _BV(CS12) | _BV(CS10); //match on value of OCR1A and divide clock by 1024
+    OCR1A = counts / 1024;
+  }
+  else{ //maximum sampletime is 4.1942s
+    TCCR1B = _BV(WGM12) | _BV(CS12) | _BV(CS10); //match on value of OCR1A and divide clock by 1024
+    OCR1A = COUNTER_MAXIMUM;
+  }
+  
 	TIMSK1 = _BV(OCIE1A); //enable interrupt
 }
 
 ISR(TIMER1_COMPA_vect){
-	tickMicros += APP_SAMPLETIME_US;
+	tickMicros += sampleTimeMicros;
 	timerEvent = true;
 }
 
