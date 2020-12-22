@@ -1,7 +1,7 @@
 $fn=90;
 height = 18.6;
 baseHeight = 10;
-depth = 6.7;
+depth = 5.5;
 
 difference(){
 	union(){
@@ -9,7 +9,7 @@ difference(){
 		cube([18, depth, baseHeight]);
 	}
 	#translate([14, depth/2, 0])
-		cylinder(d=3.5, h=baseHeight);
+		cylinder(d=4, h=baseHeight);
 	
 	diameter = 5;
 	#translate([2+diameter/2, depth, height-4.5])

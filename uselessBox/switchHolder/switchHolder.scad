@@ -17,14 +17,15 @@ difference(){
 		translate([(cubeLength+supportThickness)/2, 0, -(supportHeight-cubeHeight)/2])
 			cube([supportThickness, cubeDepth, supportHeight], center=true);
 	}
+	diameter = 5;
 	#translate([(cubeLength+supportThickness)/2, 7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=4.5, h=supportHeight);
+		cylinder(d=diameter, h=supportHeight);
 	#translate([(cubeLength+supportThickness)/2, -7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=4.5, h=supportHeight);
+		cylinder(d=diameter, h=supportHeight);
 	#translate([-(cubeLength+supportThickness)/2, 7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=4.5, h=supportHeight);
+		cylinder(d=diameter, h=supportHeight);
 	#translate([-(cubeLength+supportThickness)/2, -7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=4.5, h=supportHeight);
+		cylinder(d=diameter, h=supportHeight);
 	
 	translate([0, 0, -(height/2-1)]){
 		#cylinder(d=15, h=2.5);
