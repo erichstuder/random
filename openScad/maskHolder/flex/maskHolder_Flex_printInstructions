@@ -1,0 +1,8 @@
+Print Temperature:
+- As there is some gapping necessary I tried to keep the printing temperature as low as possible.
+- Following settings lead to a decent result:
+	- Filament: renkforce, Flexible Filament, Bestell-Nr.: 1528334, conrad.ch
+	- Heat bed: 50°C
+	- Nozzle
+	  - first layer: 220°C
+	  - above: 195°C
