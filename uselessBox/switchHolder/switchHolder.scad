@@ -1,34 +1,21 @@
 $fn = 90;
-height = 9.2;
-cubeDepth = 25;
-cubeLength = 40;
-cubeHeight = 5;
-supportHeight = 25;
+height = 3;
+length = 35;
+width = 25;
+supportHeight = 20;
 supportThickness = 10;
 difference(){
 	union(){
-		translate([0, 0, -(height/2-1)])
-			difference(){
-				cylinder(d=19, h=height);
-			}
-		cube([cubeLength, cubeDepth, cubeHeight], center=true);
-		translate([-(cubeLength+supportThickness)/2, 0, -(supportHeight-cubeHeight)/2])
-			cube([supportThickness, cubeDepth, supportHeight], center=true);
-		translate([(cubeLength+supportThickness)/2, 0, -(supportHeight-cubeHeight)/2])
-			cube([supportThickness, cubeDepth, supportHeight], center=true);
+		cube([length, width, height], center=true);
+		translate([(length-supportThickness)/2, 0, -(supportHeight-height)/2])
+			cube([supportThickness, width, supportHeight], center=true);
 	}
 	diameter = 5;
-	#translate([(cubeLength+supportThickness)/2, 7, -(supportHeight-cubeHeight/2)])
+	#translate([(length-supportThickness)/2, 7, -(supportHeight-height/2)])
 		cylinder(d=diameter, h=supportHeight);
-	#translate([(cubeLength+supportThickness)/2, -7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=diameter, h=supportHeight);
-	#translate([-(cubeLength+supportThickness)/2, 7, -(supportHeight-cubeHeight/2)])
-		cylinder(d=diameter, h=supportHeight);
-	#translate([-(cubeLength+supportThickness)/2, -7, -(supportHeight-cubeHeight/2)])
+	#translate([(length-supportThickness)/2, -7, -(supportHeight-height/2)])
 		cylinder(d=diameter, h=supportHeight);
 	
-	translate([0, 0, -(height/2-1)]){
-		#cylinder(d=15, h=2.5);
-		#cylinder(d=12.1, h=height);
-	}
+	#translate([-length/2+5, 0, 0])
+		cylinder(d=6, h=height, center=true);
 }
