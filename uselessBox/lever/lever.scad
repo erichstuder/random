@@ -1,26 +1,26 @@
+use <servoAxisFit.scad>;
+
 $fn=90;
 toothAngle = 360/25;
 height = 4;
 leverWidth = 15;
 
 difference(){	
-	leverLength = 50;
+	leverLength = 45;
 	leverDepth = 30;
+	fingerWidth = 5;
 	union(){
 		cylinder(d=leverWidth, h=height);
 		translate([0, -leverWidth/2, 0])
-			cube([leverLength, leverWidth, height]);
-		translate([leverLength-leverWidth/2, 0, 0])
-			cube([leverWidth, leverDepth, height]);
+			cube([leverLength+fingerWidth/2, leverWidth, height]);
 		
-		translate([leverLength, 0, 0])
-			cylinder(d=leverWidth, h=height);
+		translate([leverLength-fingerWidth/2, 0, 0])
+			cube([fingerWidth, leverDepth, height]);
 	}
-	#servoAxis(3);
-	#cylinder(d=3, h=height);
-	#translate([leverLength-leverWidth/2, leverDepth, height/2])
+	#servoAxisFit();
+	#translate([leverLength-fingerWidth/2, leverDepth, height/2])
 		rotate([0, 90, 0])
-			cylinder(d=height, h=leverWidth);
+			cylinder(d=height, h=fingerWidth);
 }
 
 module servoAxis(height = 1){
