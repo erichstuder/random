@@ -19,13 +19,13 @@ difference(){
 translate([57, -17, wallThickness/2])
 	servoHolder();
 
-translate([35, 17, 0])
+translate([35, 18, 0])
 	arduinoNanoMount();
 
-translate([-35, 17, 0])
+translate([-35, 18, 0])
 	relayMount();
 
-translate([-35, -17, 0])
+translate([-35, -18, 0])
 	batteryMount();
 
 
@@ -110,7 +110,7 @@ module relayMount(){
 module batteryMount(){
 	sideLength = 6;
 	height = 5;
-	yDistance = 26.5;
+	yDistance = 26.5 + sideLength;
 	for(y = [-yDistance/2, yDistance/2]){
 		translate([0, y, height/2+wallThickness/2])
 			difference(){
