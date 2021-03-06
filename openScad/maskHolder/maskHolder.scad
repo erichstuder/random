@@ -1,7 +1,7 @@
 $fn=90;
 wallThickness = 0.9;
 
-length = 80;
+length = 110;
 width = 17;
 
 buckleLength = 10;
@@ -65,10 +65,10 @@ difference(){
 }
 
 module versionText(){
-	translate([10, 5, 0])
+	translate([25, 5, 0])
 		rotate([0, 0, -90])
 			linear_extrude(height=wallThickness/2+0.5)
-				text("V2", size=6);
+				text("V3", size=6);
 }
 
 module basePlate(){
@@ -98,7 +98,7 @@ module placeHoles(){
 	slotLength = 7;
 	holeDiameter = 2;
 	
-	for(n = [-35:7:0]){
+	for(n = [-51:7:15]){
 	#translate([n+2.5, width/2-2, 0])
 		rotate([0, 0, -angle])
 			cube([slotWidth, slotLength, wallThickness], center=true);
@@ -112,5 +112,3 @@ module placeHoles(){
 		cylinder(d=holeDiameter, h=wallThickness, center=true);
 	}
 }
-
-
