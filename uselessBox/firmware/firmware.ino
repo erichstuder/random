@@ -10,15 +10,15 @@ void setup(void) {
 	const uint8_t SwitchPin = 4;
 	pinMode(SwitchPin, INPUT_PULLUP);
 
-	const uint8_t RelayPin = 12;
+	const uint8_t RelayPin = 11;
 	pinMode(RelayPin, OUTPUT);
 	digitalWrite(RelayPin, LOW);
-	delay(500);
-	digitalWrite(LED_BUILTIN, LOW);
+	//delay(500);
+	//digitalWrite(LED_BUILTIN, LOW);
 
-	myservo.write(95);
+	myservo.write(130);
 	delay(500);
-	myservo.write(180);
+	myservo.write(185);
 	delay(700);
 
 	while( digitalRead(SwitchPin) == LOW );
