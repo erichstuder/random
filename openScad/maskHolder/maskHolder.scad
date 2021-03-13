@@ -1,5 +1,5 @@
 $fn=90;
-wallThickness = 0.9;
+wallThickness = 1.1;
 
 length = 110;
 width = 17;
@@ -38,37 +38,37 @@ difference(){
 			cube([blockLength, width, buckleHeight], center=true);
 	}
 	
-	translate([buckleLength+snapperLength+1, 0, (wallThickness+buckleHeight)/2]){	
+	translate([buckleLength+snapperLength+1, 0, (wallThickness+buckleHeight)/2]){
+		#translate([(length)/2-2*buckleLength-snapperLength, 0, buckleHeight/2])
+			rotate([90, 0, 0])
+				cylinder(d=2*buckleHeight, h=width, center=true);
+		
 		#translate([(length-buckleLength-snapperLength)/2, 0, 0])
 			cube([buckleLength+snapperLength, width-10, buckleHeight], center=true);
-
-		#translate([(length-buckleLength-1)/2-snapperLength, (width-buckleEdge-widthTolerance)/2, 0])
-			cube([buckleLength+lengthTolerance, buckleEdge+widthTolerance, buckleHeight], center=true);
 		
-		#translate([(length-buckleLength-1)/2-snapperLength, -(width-buckleEdge-widthTolerance)/2, 0])
-			cube([buckleLength+lengthTolerance, buckleEdge+widthTolerance, buckleHeight], center=true);
+		yAbs = (width-buckleEdge-widthTolerance)/2;
+		for(y = [-yAbs, yAbs]){
+			#translate([(length-buckleLength-1)/2-snapperLength, y, 0])
+				cube([buckleLength+lengthTolerance, buckleEdge+widthTolerance, buckleHeight], center=true);
+		}
 		
-		rotation = 25;
-		shift = 0.7;
-		l = 5;
-		w = 5;
-		#translate([(length-snapperLength)/2, width/2+shift, 0])
-			rotate([0, 0, -rotation])
-				cube([snapperLength+l, w, buckleHeight], center=true);
-		
-		#translate([(length-snapperLength)/2, -width/2-shift, 0])
-			rotate([0, 0, rotation])
-				cube([snapperLength+l, w, buckleHeight], center=true);
+		rotationAbs = 25;
+		yAbs_ = width/2 + 0.7;
+		for(values = [[-yAbs_, rotationAbs], [yAbs_, -rotationAbs]]){
+			#translate([(length-snapperLength)/2, values[0], 0])
+				rotate([0, 0, values[1]])
+					cube([snapperLength+5, 5, buckleHeight], center=true);
+		}
 	}
 	
 	placeHoles();
 }
 
 module versionText(){
-	translate([25, 5, 0])
+	translate([25, 5.7, 0])
 		rotate([0, 0, -90])
 			linear_extrude(height=wallThickness/2+0.5)
-				text("V3", size=6);
+				text("V4", size=7);
 }
 
 module basePlate(){
