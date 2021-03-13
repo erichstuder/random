@@ -4,7 +4,7 @@ baseHeight = 20;
 
 difference(){
 	union(){
-		bowl(height=209, width=210, exponent=0.3, wallThickness=0.5);
+		bowl(height=209, width=210, exponent=0.3, wallThickness=1);
 		cylinder(d=91, h=baseHeight);
 	}
 	
