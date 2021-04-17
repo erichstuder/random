@@ -4,3 +4,9 @@
 [submodule "voltageReader/IT_Client"]
 	path = voltageReader/IT_Client
 	url = https://github.com/erichstuder/IT_Client
+[submodule "batteryCycler/firmware/lib/IT_Client"]
+	path = batteryCycler/firmware/lib/IT_Client
+	url = https://github.com/erichstuder/IT_Client.git
+[submodule "batteryCycler/firmware/lib/IT_Server"]
+	path = batteryCycler/firmware/lib/IT_Server
+	url = https://github.com/erichstuder/IT_Server.git
