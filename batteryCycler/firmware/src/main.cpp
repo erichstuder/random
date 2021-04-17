@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "itHandler.h"
+#include "cellCurrent.h"
 
 static inline unsigned long getMicros(void);
 
