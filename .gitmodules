@@ -8,5 +8,8 @@
 	path = batteryCycler/firmware/lib/IT_Client
 	url = https://github.com/erichstuder/IT_Client.git
 [submodule "batteryCycler/firmware/lib/IT_Server"]
-	path = batteryCycler/firmware/lib/IT_Server
+	path = batteryCycler/firmware/firmware/lib/IT_Server
 	url = https://github.com/erichstuder/IT_Server.git
+[submodule "batteryCycler/firmware/IT_Client"]
+	path = batteryCycler/firmware/IT_Client
+	url = https://github.com/erichstuder/IT_Client.git

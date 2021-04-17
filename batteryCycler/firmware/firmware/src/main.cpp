@@ -35,6 +35,7 @@ void loop(void){
 		return;
 	}
 	lastMicros = currentMicros;
+	cellCurrentTick();
 	analogWrite(PwmPin, 204);
 	itHandlerTick();
 }
