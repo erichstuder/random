@@ -1,4 +1,4 @@
-$fn = 60;
+$fn = 360;
 
 difference(){
 	diameter = 260;
