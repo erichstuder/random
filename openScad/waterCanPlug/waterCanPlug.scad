@@ -1,7 +1,7 @@
 $fn = 90;
 bottomHeight = 40;
 middleOutterDiameter = 30;
-middleInnerDiameter = 22;
+middleInnerDiameter = 21;
 
 difference(){
 	bottomDiameter = 80;
@@ -23,9 +23,9 @@ difference(){
 }
 
 translate([0, 0, bottomHeight]){
-	topHeight = 30;
+	topHeight = 25;
 	difference(){
 		cylinder(d1=middleOutterDiameter, d2=25, h=topHeight, $fn=12);
-		cylinder(d1=21, d2=middleInnerDiameter, h=topHeight);
+		#cylinder(d1=middleInnerDiameter, d2=22, h=topHeight);
 	}
 }
