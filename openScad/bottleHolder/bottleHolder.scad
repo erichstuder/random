@@ -16,8 +16,6 @@ difference(){
 		translate([x, 0, 0]){
 			translate([0, 0, gap])
 				#cube([holeWidth, holeWidth, height], center=true);
-			rotate([90, 0, 0])
-				#cylinder(h=width, d=sideholeDiameter, center=true);
 		}
 	}
 	rotate([0, 90, 0])
