@@ -15,7 +15,7 @@ module template(){
 	difference(){
 		translate([70, 0, -30])
 			cube([thickness, 20, 30]);
-		translate([70, 9, -20])
+		translate([70, 9+thickness, -20])
 			rotate([0, 90, 0])
 				#cylinder(d=1, h=thickness);
 	}
