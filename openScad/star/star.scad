@@ -5,7 +5,7 @@ module star(separate=false){
 	   For some calculations see: https://de.wikipedia.org/wiki/Ikosaeder
 	*/
 	
-	separationDistance = separate ? 100 : 0;
+	separationDistance = separate ? 120 : 0;
 	
 	sideLength = 30;
 	ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
