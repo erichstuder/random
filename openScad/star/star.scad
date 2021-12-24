@@ -91,7 +91,7 @@ module ray(sideLength = 30){
 	}
 	
 	module cone(sideLength, height, twist=0){
-		diameter = sideLength / cos(30);
+		diameter = sideLength / cos(30) + 0.01; //Add some offset to prevent errors.
 		linear_extrude(height=height, convexity=10, twist=twist, slices=100, scale=0, $fn = 3)
 			circle(d=diameter);
 	}
