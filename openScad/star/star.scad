@@ -1,48 +1,52 @@
 star(separate=true);
 
 module star(separate=false){
-	sideLength = 30;
-	ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
+	/* The form is based on an Icosahedron.
+	   For some calculations see: https://de.wikipedia.org/wiki/Ikosaeder
+	*/
 	
 	separationDistance = separate ? 100 : 0;
 	
+	sideLength = 30;
+	ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
+	gamma = acos(-sqrt(1/6*(3-sqrt(5))));
+	beta = acos(-sqrt(5)/3);
+	
+	//Angle between a plane on the top vertice and the edge:
+	topPlaneToEdgeAngle = 90 - asin(1/(2*sin(36)));
+	
 	difference(){
 		union(){
-			angle_1 = 180 - (90 - asin(1/(2*sin(36)))) - acos(-sqrt(1/6*(3-sqrt(5))));
-			echo(angle_1);
+			angle_1 = 180 - topPlaneToEdgeAngle - gamma;
 			for(n = [0:4]){
 				rotate([0, -angle_1, 360/5*n])
-					translate([0, 0, ri])
-						ray(sideLength=sideLength);
+					ray(sideLength=sideLength);
 			}
 			
 			translate([separationDistance, 0 ,0]){
-				angle_2 = angle_1 + (180 - acos(-sqrt(5)/3));
-				echo(angle_2);
+				angle_2 = angle_1 + (180-beta);
 				for(n = [0:4]){
-						rotate([0, angle_2, 360/5*n+360/10])
-							translate([0, 0, ri])
-								ray(sideLength=sideLength);
+					rotate([0, angle_2, 360/5*n-360/10])
+						ray(sideLength=sideLength);
 				}
 				
-				angle_3 = 180-angle_2;
-				echo(angle_3);
+				angle_3 = 180 - angle_2;
 				for(n = [0:4]){
-						rotate([0, -angle_3, 360/5*n+360/10])
-							translate([0, 0, ri])
-								ray(sideLength=sideLength);
+					rotate([0, -angle_3, 360/5*n+360/10])
+						ray(sideLength=sideLength);
 				}
-				
-				angle_4 = 180-angle_1;
-				echo(angle_4);
+
+				angle_4 = 180 - angle_1;
 				for(n = [0:4]){
-						rotate([0, angle_4, 360/5*n])
-							translate([0, 0, ri])
-								ray(sideLength=sideLength);
+					rotate([0, angle_4, 360/5*n])
+						ray(sideLength=sideLength);
 				}
 			}
 		}
 		#sphere(r=ri);
+		if(separate){
+			#cylinder(r=2*ri, h=11);
+		}
 		translate([separationDistance, 0 ,0]){
 			#sphere(r=ri);
 		}
@@ -52,55 +56,55 @@ module star(separate=false){
 
 
 module ray(sideLength = 30){
-	$fn = 3;
-	wallThickness = 2;
-	diameter = sideLength/cos(30);
-	innerDiameter = diameter-2*wallThickness;
-	difference(){
-		height = 40;
-		twist = -120;
-		cone(height=height, twist=twist, diameter=diameter);
-		
-		innerHeight = height-2*wallThickness;
-		innerTwist = twist * innerHeight/height;
-		cone(height=innerHeight, twist=innerTwist, diameter=innerDiameter);
-		
-		for(angle = [0, 120, 240]){
-			rotate([0, 0, angle])
-				holes(coneHeight=height, coneTwist=twist);
-		}
+	ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
+	translate([0, 0, ri]){
+		twistedCone(sideLength=sideLength);
+		baseCone(sideLength=sideLength);
 	}
 	
-	difference(){
-		rotate([180, 0, 0]){
-			ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
-			difference(){
-				linear_extrude(height=ri, convexity=10, scale=0){
-					circle(d=diameter);
-				}
-				linear_extrude(height=ri-1, convexity=10, scale=0){
-					circle(d=innerDiameter);
-				}
+	
+	module twistedCone(sideLength, height, twist){
+		difference(){
+			height = 40;
+			twist = -120;
+			cone(sideLength=sideLength, height=height, twist=twist);
+			
+			innerHeight = height-4;
+			innerTwist = twist * innerHeight/height;
+			cone(sideLength=sideLength-4, height=innerHeight, twist=innerTwist);
+			
+			for(angle = [0, 120, 240]){
+				rotate([0, 0, angle])
+					holes(baseSideLength=sideLength, coneHeight=height, coneTwist=twist);
 			}
 		}
 	}
 	
+	module baseCone(sideLength){
+		mirror([0, 0, 1]){
+			ri = sideLength / 12 * sqrt(3) * (3+sqrt(5));
+			difference(){
+				cone(sideLength=sideLength, height=ri);
+				cone(sideLength=sideLength-4, height=ri-4);
+			}
+		}
+	}
 	
-	module cone(height, twist, diameter){
-		linear_extrude(height=height, convexity=10, twist=twist, slices=100, scale=0)
+	module cone(sideLength, height, twist=0){
+		diameter = sideLength / cos(30);
+		linear_extrude(height=height, convexity=10, twist=twist, slices=100, scale=0, $fn = 3)
 			circle(d=diameter);
 	}
 	
-	module holes(coneHeight, coneTwist){
-		$fn = 90;
-		tilt = -80;
+	module holes(baseSideLength, coneHeight, coneTwist){
+		$fn = 50;
+		tilt = -90 + atan(baseSideLength/(2*sqrt(3)*coneHeight));
 		
 		height = [5, 5, 15, 25];
 		diameter = [5, 5, 10, 5];
 		horizontalTranslation = [-5, 5, 0, 0];
 		
 		for(n = [0:len(height)-1]){
-			
 			twist = coneTwist * height[n]/coneHeight;
 			rotate([0, tilt, -twist]){
 				translate([height[n], horizontalTranslation[n], 5.5])
