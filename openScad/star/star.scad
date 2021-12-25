@@ -71,9 +71,9 @@ module ray(sideLength = 30){
 			twist = -120;
 			cone(sideLength=sideLength, height=height, twist=twist);
 			
-			innerHeight = height-4;
+			innerHeight = height-12;
 			innerTwist = twist * innerHeight/height;
-			cone(sideLength=sideLength-4, height=innerHeight, twist=innerTwist);
+			cone(sideLength=sideLength-6, height=innerHeight, twist=innerTwist);
 			
 			for(angle = [0, 120, 240]){
 				rotate([0, 0, angle])
