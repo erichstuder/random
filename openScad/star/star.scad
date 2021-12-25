@@ -46,9 +46,11 @@ module star(separate=false){
 		#sphere(r=ri);
 		if(separate){
 			#cylinder(r=2*ri, h=11);
-		}
-		translate([separationDistance, 0 ,0]){
-			#sphere(r=ri);
+			translate([separationDistance, 0 ,0]){
+				#sphere(r=ri);
+				translate([0, 0, 17])
+					#cylinder(r=2*ri, h=10);
+			}
 		}
 		
 	}
