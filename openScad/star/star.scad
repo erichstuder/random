@@ -103,7 +103,7 @@ module ray(sideLength = 30){
 		tilt = -90 + atan(baseSideLength/(2*sqrt(3)*coneHeight));
 		
 		height = [5, 5, 15, 25];
-		diameter = [5, 5, 10, 5];
+		diameter = [5, 5, 7, 5];
 		horizontalTranslation = [-5, 5, 0, 0];
 		
 		for(n = [0:len(height)-1]){
