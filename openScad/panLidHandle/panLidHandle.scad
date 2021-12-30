@@ -1,3 +1,8 @@
+/*TODOs:
+- Verbindungslöcher innen Ansenken.
+- Aussendurchmesser verkleinern
+*/
+
 $fn = 180;
 torusR = 12;
 torusX = 40;
