@@ -11,11 +11,11 @@ module holes(){
 }
 
 module moebius(){
-	for(angle = [0:0.1:360])
+	for(angle = [0:0.3:360])
 		rotate([0, angle, 0])
 			translate([80, 0, 0]) //make sure the circumference is something useful
 				rotate([0, 0, angle/2*3])
-					linear_extrude(1, convexity=10)
+					linear_extrude(0.5, center=true, convexity=10)
 						base();
 }
 
