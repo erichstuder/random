@@ -1,4 +1,3 @@
-
 difference(){
 	moebius();
 	holes(); //Plot the holes at the bottom for a nicer view later.
@@ -23,7 +22,8 @@ module moebius(){
 module base(){
 	baseHalf();
 	mirror([0, 1, 0])
-		baseHalf();
+		mirror([1, 0, 0])
+			baseHalf();
 }
 
 module baseHalf(){
@@ -33,8 +33,8 @@ module baseHalf(){
 	translate([-length/2, 0, 0])
 		polygon([	[0,0],
 					[length,0], [length,thickness],
-					[length/2+middleLength/2,thickness], [length/2+middleLength/2, thickness-1],
-					[length/2-middleLength/2,thickness-1], [length/2-middleLength/2, thickness],
+					[length/3*2+middleLength/2,thickness], [length/3*2+middleLength/2, thickness-1],
+					[length/3*2-middleLength/2,thickness-1], [length/3*2-middleLength/2, thickness],
 					[0, thickness]
 				]);
 }
