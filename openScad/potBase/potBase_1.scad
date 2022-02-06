@@ -1,7 +1,7 @@
 $fn = 360;
 
 rotate_extrude(angle=10)
-	translate([97, 0, 0])
+	translate([95.3, 0, 0])
 		polygon([[0, 0], [6, 0],
 				 [6, 12], [3, 12],
 				 [3, 6.3], [5.2, 6.3],
