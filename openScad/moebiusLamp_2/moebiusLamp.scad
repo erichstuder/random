@@ -1,36 +1,44 @@
 $fn = 90;
 
-height = 30;
+//moebius configuration
+radius = 20;
 thickness = 1;
-width = 3;
+width = 20;
 
 for(angle = [0, 120, 240]){
-	rotate([0, 0, angle]){
-		translate([0, 10, 0])
-			edge(angle=190, thickness=thickness);
-		rotate([0, -20, 0])
-			translate([0, -10, 0])
-				cube([20, width, thickness], center=true);
+	rotate([0, 0, angle])
+		translate([0, 50, 0])
+			corner(width=width, radius=radius, angle=240, thickness=thickness);
+}
+
+for(angle = [0, 120, 240]){
+	rotate([0, -40, angle])
+		translate([0, -40, 0])
+			cube([20, width, thickness], center=true);
+}
+
+
+
+module corner(width=10, radius=30, angle=180, thickness=1){
+	length = 2*radius*PI * angle/360;
+	height = length * tan(30);
+	stripZ = width / cos(30);
+	dAngle = 1;
+	dh = dAngle/360*2*PI*radius*sin(30);
+	h = 0;
+	rotate([0, 90, 0]){
+		rotate([0, 0, (180-angle)/2]){
+			translate([0, 0, -height/4]){
+				for(phi = [0:dAngle:angle-dAngle]){
+					hull(){
+						for(phiTemp = [phi, phi+dAngle]){
+						rotate([0, 0, phiTemp])
+							translate([radius, 0, phiTemp/360*2*PI*radius*sin(30)])
+								cube([thickness, 1e-3, stripZ], center=true);
+						}
+					}
+				}
+			}
+		}
 	}
 }
-
-
-module edge(angle=180, thickness=1){
-	rotate([0, 90, (180-angle)/2])
-		difference(){
-
-			rotate_extrude(angle=angle, convexity=10){
-				translate([5, 0])
-					square([thickness, 10], center=true);
-			}
-
-			linear_extrude(10+2e-3, twist=-360, convexity=10, center=true)
-				projection(cut=true)
-					rotate_extrude(angle=angle){
-						translate([5, 0])
-							square([1.1*thickness, 1], center=true);
-					}
-		}
-}
-
-
