@@ -1,22 +1,28 @@
 $fn = 90;
 
 //moebius configuration
-radius = 50;
-thickness = 10;
+radius = 23;
+thickness = 5;
 width = 50;
 
 
 
 for(angle = [0, 120, 240]){
-	rotate([0, 17, angle])
-		translate([0, 100, 0])
-			corner(width=width, radius=radius, angle=214, thickness=thickness);
+	rotate([0, 18.88, angle])
+		translate([0, 47, 0])
+			corner(width=width, radius=radius, angle=245, thickness=thickness);
 }
 
-
-rotate([0, 34, 180])
-	translate([0, 100, 0])
-		cube([133, 50, thickness], center=true);
+stripZ = width / cos(30);
+length = 67;
+h = 23.5;
+for(angle = [0, 120, 240]){
+	rotate([0, -34.4, angle])
+		translate([0, -46, 0])
+			linear_extrude(thickness, center=true)
+				polygon([[-length/2,h], [length/2,h], [0,-h]]);
+}
+		//cube([133, 50, thickness], center=true);
 
 
 /*for(angle = [0, 120, 240]){
@@ -49,4 +55,24 @@ module corner(width=10, radius=30, angle=180, thickness=1){
 			}
 		}
 	}
+}
+
+
+module cornerBase(width, thickness){
+	linear_extrude(1e-3)
+		for(y=[0,1]){
+			mirror([0, y, 0])
+				for(x=[0,1]){
+					mirror([x, 0, 0])
+						cornerBaseQuarter(width=width, thickness=thickness);
+				}
+		}
+}
+
+
+module cornerBaseQuarter(width, thickness){
+	polygon([	[0,0], [width/2,0],
+				[width/2,thickness/2], [6,thickness/2],
+				[6,thickness/2-1], [5,thickness/2-1],
+				[5,thickness/2-4], [0,thickness/2-4], ]);
 }
