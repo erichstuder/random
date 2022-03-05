@@ -1,3 +1,3 @@
 #pragma once
 
-float getTemperatureKelvin(void);
+extern float (*getTemperatureKelvin) (void);

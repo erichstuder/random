@@ -1,3 +1,3 @@
 #pragma once
 
-void lcd_printTemperatureCelsius(float temperatureKelvin);
+extern void (*lcd_printTemperatureCelsius) (float temperatureKelvin);

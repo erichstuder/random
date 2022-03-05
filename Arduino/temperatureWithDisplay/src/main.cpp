@@ -4,6 +4,10 @@
 
 void setup(void){}
 
+void setup_forCppUTest(){
+	setup();
+}
+
 void loop(void){
 	lcd_printTemperatureCelsius(getTemperatureKelvin());
 }

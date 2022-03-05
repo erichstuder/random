@@ -6,7 +6,7 @@ const uint8_t rs = 10, rw = 9, enable = 8, d4 = 7, d5 = 6, d6 = 5, d7 = 4;
 
 LiquidCrystal lcd(rs, rw, enable, d4, d5, d6, d7);
 
-void lcd_printTemperatureCelsius(float temperatureKelvin){
+static void lcd_printTemperatureCelsius_Implementation(float temperatureKelvin){
 	lcd.begin(16, 2);
 
 	const uint8_t TemperatureDigits = 6; // 6: -123.4
@@ -19,3 +19,4 @@ void lcd_printTemperatureCelsius(float temperatureKelvin){
 	sprintf(outputString, "%s %cC", temperatureString, Degree);
 	lcd.print(outputString);
 }
+void (*lcd_printTemperatureCelsius) (float temperatureKelvin) = lcd_printTemperatureCelsius_Implementation;
