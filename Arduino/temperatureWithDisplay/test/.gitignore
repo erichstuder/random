@@ -1,0 +1,4 @@
+temp/
+
+#ignore test executable
+temperatureWithDisplay_tests
