@@ -23,8 +23,8 @@ endif
 #
 # SRC_DIRS specifies directories containing
 # production code C and CPP files.
-SRC_FILES +=
-SRC_DIRS +=
+#SRC_FILES +=
+SRC_DIRS += ../src
 
 # --- TEST_SRC_FILES and TEST_SRC_DIRS ---
 # Test files are always included in the build.
@@ -34,14 +34,14 @@ SRC_DIRS +=
 #
 # TEST_SRC_FILES specifies individual test files to build.
 # TEST_SRC_DIRS, builds everything in the directory
-TEST_SRC_FILES +=
+#TEST_SRC_FILES +=
 TEST_SRC_DIRS += .
 
 # --- MOCKS_SRC_DIRS ---
 # MOCKS_SRC_DIRS specifies a directories where you can put your
 # mocks, stubs and fakes.  You can also just put them
 # in TEST_SRC_DIRS
-MOCKS_SRC_DIRS +=
+MOCKS_SRC_DIRS += mocks
 
 # Turn on CppUMock
 CPPUTEST_USE_EXTENSIONS = Y
@@ -50,6 +50,7 @@ CPPUTEST_USE_EXTENSIONS = Y
 # containing directory
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include/Platforms/Gcc
+INCLUDE_DIRS += ../include
 
 # --- CPPUTEST_OBJS_DIR ---
 # CPPUTEST_OBJS_DIR lets you control where the
