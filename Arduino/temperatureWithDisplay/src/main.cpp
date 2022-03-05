@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include "lcd.h"
+#include "temperatureSensor.h"
 
-void setup(void){
-	lcd_printTemperatureCelsius(100);
-}
+void setup(void){}
 
 void loop(void){
+	lcd_printTemperatureCelsius(getTemperatureKelvin());
 }

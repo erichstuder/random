@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 
-const uint8_t rs = 10, rw = 9, enable = 8, d4 = 4, d5 = 3, d6 = 2, d7 = 1;
+const uint8_t rs = 10, rw = 9, enable = 8, d4 = 7, d5 = 6, d6 = 5, d7 = 4;
 
 LiquidCrystal lcd(rs, rw, enable, d4, d5, d6, d7);
 
