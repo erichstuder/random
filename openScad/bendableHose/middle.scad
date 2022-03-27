@@ -3,7 +3,7 @@ $fn = 90;
 wallThickness = 1.5;
 bendingAngle = 30;
 
-pipe_length = 10;
+pipe_length = 30;
 
 pipe_innerDiameter = 30;
 pipe_innerRadius = pipe_innerDiameter / 2;
@@ -18,7 +18,7 @@ pipe_outterRadius = pipe_outterDiameter / 2;
 //deltaMax = 180 - 3*bendingAngle;
 connector_diameterMinimum = pipe_outterDiameter/sin(90-1.5*bendingAngle);
 //Add some margin to stabalize the connecion:
-connector_diameter = 1.05 * connector_diameterMinimum;
+connector_diameter = 1.03 * connector_diameterMinimum;
 connector_radius = connector_diameter / 2;
 delta = 2 * asin(pipe_outterDiameter / connector_diameter);
 connector_angle = 360 - delta - 2*bendingAngle;
@@ -56,7 +56,7 @@ module innerConnector(){
 }
 
 module outterConnector(){
-	connector_radiusFit = connector_radius * 0.99;
+	connector_radiusFit = connector_radius * 0.995;
 	outterRadius = connector_radiusFit+wallThickness;
 	outterDiameter = outterRadius * 2;
 	difference(){
