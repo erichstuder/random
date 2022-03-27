@@ -1,7 +1,7 @@
 $fn = 90;
 
 wallThickness = 2;
-bendingAngle = 45;
+bendingAngle = 30;
 
 pipe_length = 5;
 
@@ -13,21 +13,34 @@ pipe_outterRadius = pipe_outterDiameter / 2;
 
 //This is the minimum connector diameter for a specific bending angle.
 //But this would result in an unstable connection.
-connector_diameterMinimum = pipe_outterDiameter/cos(bendingAngle);
+//d     : hole diameter (mostly pipe_outterDiameter)
+//delta : angle between the radius in the triangle r-d-r
+//deltaMax = 180 - 3*bendingAngle;
+connector_diameterMinimum = pipe_outterDiameter/sin(90-1.5*bendingAngle);
 //Add some margin to stabalize the connecion:
-connector_diameter = 1.3 * connector_diameterMinimum;
+connector_diameter = 1.1 * connector_diameterMinimum;
 connector_radius = connector_diameter / 2;
+delta = 2 * asin(pipe_outterDiameter / connector_diameter);
+connector_angle = 360 - delta - 2*bendingAngle;
+connector_angleMin = 180 + bendingAngle;
+
+echo("***************************************");
+echo(connector_diameter = connector_diameter);
+echo(connector_angle = connector_angle);
+echo(connector_angleMin = connector_angleMin);
+echo("***************************************");
+assert(connector_angle >= connector_angleMin, "Connector angle is too small!");
 
 
 difference(){
 	union(){
 		cylinder(d=pipe_outterDiameter, h=pipe_length, center=true);
 		
-		translate([0, 0, pipe_length/2 + connector_diameter/2 - 5.6])
-			innerConnector();
-		
-		translate([0, 0, -(pipe_length/2 + connector_radius - 3.2)])
+		translate([0, 0, pipe_length/2 + connector_radius - 4.3])
 			outterConnector();
+		
+		translate([0, 0, -(pipe_length/2 + connector_diameter/2 - 6.5)])
+			innerConnector();
 	}
 	#cylinder(d=pipe_innerDiameter, h=pipe_length+pipe_innerDiameter, center=true);
 }
@@ -35,33 +48,20 @@ difference(){
 
 module innerConnector(){
 	innerRadius = connector_radius-wallThickness;
-	//The connector has to be cut off to make sure the air can flow at the full diameter.
-	beta = asin(pipe_innerRadius / connector_radius);
-	gamma = 90 - bendingAngle - beta;
-	h = connector_radius * sin(gamma);
-	height = connector_radius + h;
-	difference(){
-		bowl(rOutter=connector_radius, rInner=innerRadius);
-		translate([0, 0, height]){
-			cylinder(d=connector_diameter, h=connector_diameter, center=true);
+	rotate([180, 0, 0])
+		difference(){
+			bowl(rOutter=connector_radius, rInner=innerRadius);
+			#cone(topAngle=360-connector_angle, sideLength=connector_radius);
 		}
-	}
 }
 
 module outterConnector(){
-	outterRadius = connector_radius+wallThickness;
+	connector_radiusFit = connector_radius * 0.99;
+	outterRadius = connector_radiusFit+wallThickness;
 	outterDiameter = outterRadius * 2;
-	echo(outterDiameter);
-	//The connector has to be cut off to make sure the air can flow at the full diameter.
-	beta = asin(pipe_outterRadius / connector_radius);
-	gamma = 90 - bendingAngle - beta;
-	h = connector_radius * sin(gamma);
-	height = connector_radius + h;
 	difference(){
-		bowl(rOutter=outterRadius, rInner=connector_radius);
-		translate([0, 0, -height]){
-			cylinder(d=outterDiameter, h=outterDiameter, center=true);
-		}
+		bowl(rOutter=outterRadius, rInner=connector_radiusFit);
+		#cone(topAngle=360-connector_angle, sideLength=outterRadius);
 	}
 }
 
@@ -69,5 +69,15 @@ module bowl(rOutter, rInner){
 	difference(){
 		sphere(r=rOutter);
 		sphere(r=rInner);
+	}
+}
+
+module cone(topAngle, sideLength){
+	height = sideLength*cos(topAngle/2);
+	diameter = 2*sideLength*sin(topAngle/2);
+	//Don't use a real cone. Would look better but is harder to print.
+	//cylinder(d1=0, d2=diameter, h=height);
+	translate([0, 0, height]){
+		cylinder(d=diameter, h=sideLength);
 	}
 }
