@@ -1,9 +1,9 @@
 $fn = 90;
 
-wallThickness = 2;
+wallThickness = 1.5;
 bendingAngle = 30;
 
-pipe_length = 5;
+pipe_length = 10;
 
 pipe_innerDiameter = 30;
 pipe_innerRadius = pipe_innerDiameter / 2;
@@ -18,7 +18,7 @@ pipe_outterRadius = pipe_outterDiameter / 2;
 //deltaMax = 180 - 3*bendingAngle;
 connector_diameterMinimum = pipe_outterDiameter/sin(90-1.5*bendingAngle);
 //Add some margin to stabalize the connecion:
-connector_diameter = 1.1 * connector_diameterMinimum;
+connector_diameter = 1.05 * connector_diameterMinimum;
 connector_radius = connector_diameter / 2;
 delta = 2 * asin(pipe_outterDiameter / connector_diameter);
 connector_angle = 360 - delta - 2*bendingAngle;
@@ -36,10 +36,10 @@ difference(){
 	union(){
 		cylinder(d=pipe_outterDiameter, h=pipe_length, center=true);
 		
-		translate([0, 0, pipe_length/2 + connector_radius - 4.3])
+		translate([0, 0, pipe_length/2 + connector_radius - 4.8])
 			outterConnector();
 		
-		translate([0, 0, -(pipe_length/2 + connector_diameter/2 - 6.5)])
+		translate([0, 0, -(pipe_length/2 + connector_diameter/2 - 6.4)])
 			innerConnector();
 	}
 	#cylinder(d=pipe_innerDiameter, h=pipe_length+pipe_innerDiameter, center=true);
@@ -51,7 +51,7 @@ module innerConnector(){
 	rotate([180, 0, 0])
 		difference(){
 			bowl(rOutter=connector_radius, rInner=innerRadius);
-			#cone(topAngle=360-connector_angle, sideLength=connector_radius);
+			cone(topAngle=360-connector_angle, sideLength=connector_radius);
 		}
 }
 
@@ -61,7 +61,7 @@ module outterConnector(){
 	outterDiameter = outterRadius * 2;
 	difference(){
 		bowl(rOutter=outterRadius, rInner=connector_radiusFit);
-		#cone(topAngle=360-connector_angle, sideLength=outterRadius);
+		cone(topAngle=360-connector_angle, sideLength=outterRadius);
 	}
 }
 
