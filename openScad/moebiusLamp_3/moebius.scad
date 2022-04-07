@@ -9,7 +9,7 @@ factor = 60;
 				cube([1, 7, 120], center=true);*/
 
 difference(){
-	dAngle = 3;
+	dAngle = 2;
 	for(angle = [0:dAngle:360]){
 		hull(){
 			rotate([0, 0, angle])
@@ -26,6 +26,7 @@ difference(){
 
 	for(n = [1:len(points)-1]){
 		point = factor*points[n];
+		oldPoint = factor*points[n-1];
 		
 		x = point[0];
 		y = point[1];
@@ -35,16 +36,30 @@ difference(){
 		theta = acos(z / r);
 		phi = getPhi(x, y);
 		
+		oldX = oldPoint[0];
+		oldY = oldPoint[1];
+		oldZ = oldPoint[2];
+		
+		dirVector = oldPoint - point;
+		dirX = dirVector[0];
+		dirY = dirVector[1];
+		dirZ = dirVector[2];
+		dirAngle = acos((dirX*dirX + dirY*dirY) /(sqrt(dirX*dirX + dirY*dirY + dirZ*dirZ) * sqrt(dirX*dirX + dirY*dirY))) * -sign(phi-110);
+		echo(dirAngle);
+		echo(phi = phi);
+		
+		
 		translate(point)
-			part(r, theta, phi);
+			part(r, theta, phi, dirAngle);
 	}
 }
 
 
-module part(r, theta, phi){
+module part(r, theta, phi, dirAngle){
 	rotate([0, 0, phi])
 		rotate([0, 90-phi/2, 0])
-			#cube([5, 5, 10], center=true);
+			rotate([-dirAngle, 0, 0])
+				#cube([30, 5, 10], center=true);
 }
 
 
