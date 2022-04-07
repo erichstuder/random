@@ -1,67 +1,57 @@
-$fn = 90;
+$fn = 6;
 
 factor = 60;
 
-for(angle = [0:1:360])
+/*for(angle = [0:3:360])
 	rotate([0, 0, angle])
 		translate([-factor, 0, 0])
 			rotate([0, angle/2, 0])
-				cube([1, 3, 120], center=true);
+				cube([1, 7, 120], center=true);*/
 
 difference(){
-	for(angle = [0:1:360])
-		rotate([0, 0, angle])
-			translate([-factor, 0, 0])
-				rotate([0, angle/2, 0])
-					cube([3, 3, 120], center=true);
+	dAngle = 3;
+	for(angle = [0:dAngle:360]){
+		hull(){
+			rotate([0, 0, angle])
+				translate([-factor, 0, 0])
+					rotate([0, angle/2, 0])
+						cylinder(d=3, h=120, center=true);
+			oldAngle = angle-dAngle;
+			rotate([0, 0, oldAngle])
+				translate([-factor, 0, 0])
+					rotate([0, oldAngle/2, 0])
+						cylinder(d=3, h=120, center=true);
+		}
+	}
 
-	for(n = [0:len(points)-1]){
+	for(n = [1:len(points)-1]){
 		point = factor*points[n];
-		
-		//translate(point) #sphere(d=0.1);
 		
 		x = point[0];
 		y = point[1];
 		z = point[2];
 		
 		r = sqrt(x*x + y*y + z*z);
-		//theta = atan(sqrt(x*x + y*y)/z);
 		theta = acos(z / r);
+		phi = getPhi(x, y);
 		
 		translate(point)
-			if(x > 0){
-				phi = atan(y/x);
-				part(r, theta, phi);
-			}
-			else if(x < 0 && y >= 0){
-				phi = atan(y/x) + 180;
-				part(r, theta, phi);
-			}
-			else if(x < 0 && y < 0){
-				phi = atan(y/x) - 180;
-				part(r, theta, phi);
-			}
+			part(r, theta, phi);
 	}
 }
 
 
 module part(r, theta, phi){
-	//echo(phi);
 	rotate([0, 0, phi])
 		rotate([0, 90-phi/2, 0])
-			//translate([0, 0, r])
-				#cube([5, 6, 10], center=true);
+			#cube([5, 5, 10], center=true);
 }
 
-/*module part_old(r, theta, phi){
-	rotate([0, 0, phi])
-		rotate([0, theta, 0])
-			translate([0, 0, r])
-				//sphere(d=0.05);
-				cube([.01, .1, .01], center=true);
-}*/
 
-
+function getPhi(x, y) = 
+    (x > 0)           ? atan(y/x) :
+    (x < 0 && y >= 0) ? atan(y/x) + 180 :
+    (x < 0 && y < 0)  ? atan(y/x) - 180 : 0;
 
 
 points = [
@@ -166,5 +156,3 @@ points = [
 [-0.1051, -0.5685,  0.5071],
 [-0.0511, -0.5414,  0.5013],
 ];
-
-
