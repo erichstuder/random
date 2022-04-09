@@ -1,24 +1,33 @@
-use <sphereConnector.scad>
+use <cylinderConnector.scad>
 
 $fn = 90;
 
-wallThickness = 1.5;
+wall_thickness = 1.5;
 
-pipe_length = 30;
+pipe_length = 140;
 pipe_innerDiameter = 30;
-pipe_outterDiameter = pipe_innerDiameter + 2*wallThickness;
+pipe_outterDiameter = pipe_innerDiameter + 2*wall_thickness;
 
+rod_diameter = 3.9;
 
 difference(){
 	union(){
 		cylinder(d=pipe_outterDiameter, h=pipe_length, center=true);
 		
-		translate([0, 0, 34.3])
-			outterConnector(pipe_outterDiameter, wallThickness);
+		translate([0, 0, 95.3])
+			outterConnector(
+				pipe_outterDiameter=pipe_outterDiameter,
+				wall_thickness=wall_thickness,
+				rod_diameter=rod_diameter
+			);
 		
-		translate([0, 0, -32.4])
+		translate([0, 0, -94])
 			rotate([180, 0, 0])
-				innerConnector(pipe_outterDiameter, wallThickness);
+				innerConnector(
+					pipe_outterDiameter=pipe_outterDiameter,
+					wall_thickness=wall_thickness,
+					rod_diameter=rod_diameter
+				);
 	}
 	#cylinder(d=pipe_innerDiameter, h=pipe_length+pipe_innerDiameter, center=true);
 }
