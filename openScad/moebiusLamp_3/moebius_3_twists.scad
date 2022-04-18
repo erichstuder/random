@@ -41,10 +41,16 @@ difference(){
 			}
 		}
 		
-		rotate([0, 0, phi_c])
-			translate([-factor, 0, 0])
-				rotate([0, phi_c/2*3, 0])
-					cylinder(d=1, h=width, center=true);
+		hull(){
+			rotate([0, 0, phi_b])
+				translate([-factor, 0, 0])
+					rotate([0, phi_b/2*3, 0])
+						cylinder(d=1, h=width, center=true);
+			rotate([0, 0, phi_d])
+				translate([-factor, 0, 0])
+					rotate([0, phi_d/2*3, 0])
+						cylinder(d=1, h=width, center=true);
+		}
 	}
 	mountingHoles();
 }
