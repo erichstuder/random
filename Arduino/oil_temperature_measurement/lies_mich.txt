@@ -1,0 +1,17 @@
+- Arduino Entwicklungsumgebung Download
+ - https://www.arduino.cc/en/software
+ - Ich verwende immer "Windows Win 7 and newer"
+
+- Arduino Entwicklungsumgebung Installation
+  - sollte selbsterklärend sein
+
+- Aufspielen der Software auf den Arduino
+  - Arduino via USB Kabel mit dem PC verbinden
+  - oil_temperature_measurement.ino doppelclicken
+    => Arduino Entwicklungsumgebung öffnet sich
+  - Tools => Board => Aruduino Uno auswählen
+  - Tools => Port => Arduino Uno auswählen
+  - Sketch => Upload
+  - Auslesen der Sensortemperatur
+    - Tools => Serial Monitor => Es geht ein neues Fenster auf in dem die Sensortemperatur angezeigt wird.
+
