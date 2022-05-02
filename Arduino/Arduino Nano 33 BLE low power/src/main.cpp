@@ -1,7 +1,10 @@
 #include <Arduino.h>
 #include <pinDefinitions.h>
 
-// see
+// BT Module: u-blox NINA-B306-00B-00
+// https://www.u-blox.com/en/product/nina-b30-series-open-cpu-0
+
+// see:
 // https://forum.arduino.cc/t/setting-up-the-arduino-ble-board-for-low-power-applications-compilation/669574
 
 void setup(){
