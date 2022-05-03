@@ -31,6 +31,7 @@ namespace lowPower{
 		NRF_POWER->SYSTEMOFF = 1;
 
 		// Findings:
-		// - The wake-up pin triggers a startu-up including the boot-loader.
+		// - The wake-up pin triggers a start-up including the boot-loader.
+		// - According to Product Specivication v1.7 chapter 5.3.3 "The system is reset when it wakes up from System OFF mode."
 	}
 }
