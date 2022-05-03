@@ -26,8 +26,9 @@ namespace lowPower{
 		delay(2000);
 		digitalWrite(LED_PWR, LOW);
 
-		// Supply measurement: 8uA @3.3V
-		// This could be the lowest current achievable with the Arduino Nano 33 BLE
+		// Supply measurements: 
+		// - with USB-Cable connected: 8uA @ 3.3V
+		// - without USB-Cable:        0.4uA @ 3.3V (According to Product Specification 5.2.1.1 this is the lowest possible.)
 		NRF_POWER->SYSTEMOFF = 1;
 
 		// Findings:
