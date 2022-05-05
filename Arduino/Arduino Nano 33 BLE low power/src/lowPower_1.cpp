@@ -35,17 +35,17 @@ namespace lowPower_1{
 
 		//Disable Peripherals:
 
-		//NRF_AAR->TASKS_STOP = 1; //+0.7uA wenn ausgeschalten
+		//NRF_AAR->TASKS_STOP = 1; //no influence on current
 		//NRF_ACL //cannot be disabled
-		//NRF_CCM->TASKS_STOP = 1; //keine Wirkung
-		NRF_COMP->TASKS_STOP = 1; //-2uA wenn ausgeschalten
-		//NRF_CRYPTOCELL->ENABLE &= ~CRYPTOCELL_ENABLE_ENABLE_Msk; //keine Wirkung
-		//NRF_ECB->TASKS_STOPECB = 1; //keine Wirkung
+		//NRF_CCM->TASKS_STOP = 1; //no influence on current
+		//NRF_COMP->TASKS_STOP = 1; //no influence on current
+		//NRF_CRYPTOCELL->ENABLE &= ~CRYPTOCELL_ENABLE_ENABLE_Msk; //no influence on current
+		//NRF_ECB->TASKS_STOPECB = 1; //no influence on current
 		//NRF_EGU0 //cannot be disabled
 		//NRF_GPIO //cannot be disabled
 		//NRF_GPIOTE //cannot be disabled
-		//NRF_I2S->TASKS_STOP = 1; //keine Wirkung
-		//NRF_LPCOMP->TASKS_STOP = 1; //+1uA if stopped
+		//NRF_I2S->TASKS_STOP = 1; //no influence on current
+		//NRF_LPCOMP->TASKS_STOP = 1; //no influence on current
 		//NRF_MWU //cannot be disabled
 		//NRF_QDEC->TASKS_STOP = 1; //no influence on current
 		//NRF_QSPI->TASKS_DEACTIVATE = 1; //no influence on current
@@ -84,7 +84,7 @@ namespace lowPower_1{
 		//NRF_UARTE0->TASKS_STOPRX = 1; NRF_UARTE0->TASKS_STOPTX = 1; //no influence on current
 		//NRF_UARTE1->TASKS_STOPRX = 1; NRF_UARTE1->TASKS_STOPTX = 1; //no influence on current
 		//NRF_USBD //cannot be disabled
-		//NRF_WDT //cannot be disbled be design
+		//NRF_WDT //cannot be disabled be design
 
 		//configure the wake-up pin (low triggers wake-up)
 		//D8 is connected to P0.21
