@@ -1,6 +1,6 @@
 #pragma once
 
-namespace lowPower_0{
+namespace lowPower_1{
 	void setup();
 	void loop();
 }

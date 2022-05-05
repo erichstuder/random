@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include "pinDefinitions.h"
 
-namespace lowPower{
+namespace lowPower_0{
 	void setup(){
 		// HW-Setup:
 		// - cut 3.3V Jumper
