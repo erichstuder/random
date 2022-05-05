@@ -85,28 +85,39 @@ namespace lowPower_1{
 		//NRF_UARTE1->TASKS_STOPRX = 1; NRF_UARTE1->TASKS_STOPTX = 1; //no influence on current
 		//NRF_USBD //cannot be disabled
 		//NRF_WDT //cannot be disbled be design
+
+		//configure the wake-up pin (low triggers wake-up)
+		//D8 is connected to P0.21
+		pinMode(D8, INPUT_PULLUP);
+		NRF_P0->PIN_CNF[21] |= GPIO_PIN_CNF_SENSE_Low << GPIO_PIN_CNF_SENSE_Pos;
+
+		//light led a bit longer after a reset
+		digitalWrite(LED_PWR, HIGH);
+		volatile uint32_t dummy = 0;
+		while(dummy<5000000){
+			dummy++;
+		}
 	}
 
 	void loop(){
 		volatile uint32_t dummy;
-		for(;;){
-			digitalWrite(LED_PWR, LOW);
-			dummy = 0;
-			while(dummy<1000000){
-				dummy++;
-			}
+		for(int n=0; n<5; n++){
 			digitalWrite(LED_PWR, HIGH);
 			dummy = 0;
-			while(dummy<1000000){
+			while(dummy<2000000){
 				dummy++;
 			}
 			digitalWrite(LED_PWR, LOW);
-
-			// Supply measurements: 
-			// - with USB-Cable connected: 11.1uA @ 3.3V
-			// - without USB-Cable:        3uA @ 3.3V (According to Product Specification 5.2.1.1 table line two,
-			//                                         this is probably the lowest possible with system on and RAM retention.)
-			__WFE();
+			dummy = 0;
+			while(dummy<2000000){
+				dummy++;
+			}
 		}
+		
+		// Supply measurements: 
+		// - with USB-Cable connected: 11.1uA @ 3.3V
+		// - without USB-Cable:        3uA @ 3.3V (According to Product Specification 5.2.1.1 table line two,
+		//                                         this is probably the lowest possible with system on and RAM retention.)
+		__WFI();
 	}
 }
