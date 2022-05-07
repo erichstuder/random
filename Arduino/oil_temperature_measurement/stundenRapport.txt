@@ -1,2 +1,6 @@
 23.04.2022	2h	Erstellen von Übersichtsdiagramm und Implementation von Sensorschnittstelle.
 
+07.05.2022	4h	Umsetzen der Zeigeransteuerung
+		0.5h	Homing
+		0.5h	Dokumentation
+
