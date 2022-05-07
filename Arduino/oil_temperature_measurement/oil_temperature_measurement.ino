@@ -3,13 +3,15 @@
 #include "display.h"
 
 void setup(){
-	//TODO: Serial allenfalls so ändern, dass es zwar immer läuft aber nicht notwendig ist.
 	Serial.begin(9600);
+	display::init();
 }
 
 void loop(){
 	float temperatureCelsius = sensor::getTemperature_Celsius();
 	display::setTemperatureDegree(temperatureCelsius);
+	Serial.print("Temperatur: ");
 	Serial.println(temperatureCelsius);
+	Serial.println("");
 	delay(1000);
 }
