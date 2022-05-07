@@ -15,3 +15,13 @@
   - Auslesen der Sensortemperatur
     - Tools => Serial Monitor => Es geht ein neues Fenster auf in dem die Sensortemperatur angezeigt wird.
 
+- Ausrichten des Zeigers
+  - Den Arduino speisen.
+  - Den Sensor die beiden Anschlüsse kurzschliessen. Wichtig: Es muss ein voller Kurzschluss sein. Evtl. direkt am Arduino von A0 noch GND kurzschliessen.
+  - Das Servo dreht in die 150°C Position.
+  - Den Zeiger so montieren, dass er auf 150°C zeigt.
+  - Den Kurzschluss entfernen.
+
+- Homing
+  - Wenn Pin 12 auf GND gezogen wird, dann geht der Zeiger in die Home-Position.
+
