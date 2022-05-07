@@ -15,12 +15,17 @@ namespace display{
 	{ 150,  30 },
 	};
 
-	Servo servo;
+	static Servo servo;
+	static float MaxAngle = 130;
 
 	static float temperatureCelsiusToAngleDegree(float temperature);
 
 	void init(){
 		servo.attach(9);
+	}
+
+	void goHome(){
+		servo.write(MaxAngle);
 	}
 
 	void setTemperatureDegree(float temperature){
@@ -59,7 +64,7 @@ namespace display{
 			if(angleInterpolated < 0){
 				angleInterpolated = 0;
 			}
-			else if(angleInterpolated > 130){
+			else if(angleInterpolated > MaxAngle){
 				angleInterpolated = 130;
 			}
 
