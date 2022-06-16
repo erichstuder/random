@@ -1,14 +1,9 @@
 use <cylinderConnector.scad>
+include <parameters.scad>
 
 $fn = 90;
 
-wall_thickness = 1.5;
-
 pipe_length = 140;
-pipe_innerDiameter = 30;
-pipe_outterDiameter = pipe_innerDiameter + 2*wall_thickness;
-
-rod_diameter = 3.9;
 
 difference(){
 	union(){

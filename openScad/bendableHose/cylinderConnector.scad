@@ -40,17 +40,18 @@ module innerConnector(pipe_outterDiameter, wall_thickness, rod_diameter){
 		outterWidth=pipe_outterDiameter,
 		innerWidth=pipe_outterDiameter-2*wall_thickness,
 		rod_diameter=rod_diameter,
-		pipe_outterDiameter=pipe_outterDiameter
+		pipe_outterDiameter=pipe_outterDiameter,
+		hollowBar=true
 	);
 }
 
 
 module outterConnector(pipe_outterDiameter, wall_thickness, rod_diameter){
-	connector_innerDiameterFit = 0.995 * connector_getDiameter(pipe_outterDiameter);
-	connector_outterDiameter = connector_innerDiameterFit + 2*wall_thickness;
+	connector_innerDiameter = connector_getDiameter(pipe_outterDiameter);
+	connector_outterDiameter = connector_innerDiameter + 2*wall_thickness;
 	connector(
 		outterDiameter=connector_outterDiameter,
-		innerDiameter=connector_innerDiameterFit,
+		innerDiameter=connector_innerDiameter,
 		outterWidth=pipe_outterDiameter+2*wall_thickness,
 		innerWidth=pipe_outterDiameter,
 		rod_diameter=rod_diameter,
@@ -66,22 +67,29 @@ module connector(
 	innerWidth,
 	rod_diameter,
 	pipe_outterDiameter,
+	hollowBar=false,
 ){
 	connector_angle = connector_getAngle(pipe_outterDiameter);
 	enclosingAngle = 360-connector_angle;
-	rotate([0, 90, 0])
+	rotate([0, 90, 0]){
 		difference(){
 			union(){
-				cylinder(d=outterDiameter, h=outterWidth, center=true);
-				rotate([0, 90, 0])
-					cylinder(d=pipe_outterDiameter, h=outterDiameter, center=true);
-			
+				difference(){
+					union(){
+						cylinder(d=outterDiameter, h=outterWidth, center=true);
+						rotate([0, 90, 0])
+							cylinder(d=pipe_outterDiameter, h=outterDiameter, center=true);
+					}
+					cylinder(d=innerDiameter, h=innerWidth, center=true);
+					rotate([0, -90, 0])
+						topCut(enclosingAngle=enclosingAngle, connector_outterDiameter=outterDiameter);
+				}
+				if(hollowBar==true)
+					cylinder(d=1.5*rod_diameter, h=pipe_outterDiameter, center=true);
 			}
-			cylinder(d=innerDiameter, h=innerWidth, center=true);
 			cylinder(d=rod_diameter, h=outterWidth, center=true);
-			rotate([0, -90, 0])
-				topCut(enclosingAngle=enclosingAngle, connector_outterDiameter=outterDiameter);
 		}
+	}
 }
 
 // enclosingAngle: angle that the bowl encloses
