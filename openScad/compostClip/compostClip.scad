@@ -10,9 +10,13 @@ difference(){
 			}
 		}
 		
-		translate([0, 0, length-4])
-			resize([50, 45, 10])
-				sphere(1);
+		translate([0, 0, length])
+			resize([50, 45, 10], convexity=10)
+				difference(){
+					sphere(d=1);
+					translate([0, 0, 0.5])
+						cube([1, 1, 1], center=true);
+				}
 	}
 	
 	#base_shape();
