@@ -1,4 +1,4 @@
-window_height = 17.5;
+window_height = 16.5;
 window_length = 80.4;
 window_thickness = 2.4;
 
