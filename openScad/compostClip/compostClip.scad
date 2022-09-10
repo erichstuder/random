@@ -28,6 +28,10 @@ difference(){
 	translate([0, 15, 20+35])
 		rotate([30, 0, 0])
 			#cube([55, 20, 40], center=true);
+	
+	translate([0, -10, 49])
+		rotate([0, 90, 0])
+			#cylinder(d=12, h=50, center=true);
 }
 
 module base_shape(){
