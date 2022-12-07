@@ -2,10 +2,11 @@ $fn = 90;
 topThickness = 92;
 bottomLength = 137;
 bottomLength_half = bottomLength/2;
-topAngle_half = 100/2;
+topAngle = 104;
+topAngle_half = topAngle/2;
 height = bottomLength_half / tan(topAngle_half);
 
-//mountSurface(); //only for testing
+mountSurface(); //only for testing
 lampMount();
 
 
@@ -33,15 +34,16 @@ module lampMount_base(){
 module lampMount_holes(){
 	//cable hole
 	translate([30, 0, 0])
-		rotate([38, -29.5, 0])
+		rotate([39, -30.6, 0])
 			cylinder(d=7, h=200, center=true);
 	
 	//mounting holes for lamp
-	//rotate([0, 0, 10])
-	yAbs_1 = 35;
-	for(y = [-yAbs_1, yAbs_1]){
-		translate([0, y, 0])
-			cylinder(d=3, h=35);
+	rotate([0, 0, 10]){
+		yAbs_1 = 36;
+		for(y = [-yAbs_1, yAbs_1]){
+			translate([0, y, 0])
+				cylinder(d=3, h=35);
+		}
 	}
 	
 	//mounting holes
@@ -81,15 +83,16 @@ module baseShape(){
 
 
 module mountSurface(){
-	tz = 51.40;
+	tz = 50.39;
 	tx = 80;
+	angle = (180 - topAngle) / 2;
 	
 	color("green"){
 		translate([tx, 0, tz])
-			rotate([0, 40, 0])
+			rotate([0, angle, 0])
 				cube([300, topThickness, topThickness], center=true);
 		translate([-tx, 0, tz])
-			rotate([0, -40, 0])
+			rotate([0, -angle, 0])
 				cube([300, topThickness, topThickness], center=true);
 		translate([0, 0, -30-2.5])
 			minkowski(convexity=10){
