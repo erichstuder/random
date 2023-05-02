@@ -1,4 +1,4 @@
-$fn=90;
+$fn=30;
 handlePlate_thickness = 6.25;
 
 x_offset = 0.17;
@@ -61,7 +61,8 @@ module handle_base(){
 	blade_thickness = 0.85;
 	handle_thickness = blade_thickness + 2*handlePlate_thickness;
 	r = handlePlate_thickness/2;
-	dR = r/30;
+	dR = 0.07;
+	echo(dR);
 	
 	base_height = handlePlate_thickness-r;
 	linear_extrude(base_height) children();
