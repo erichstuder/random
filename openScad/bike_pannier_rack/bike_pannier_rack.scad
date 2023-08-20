@@ -1,25 +1,41 @@
-$fn = 60;
+$fn = 90;
 width = 180;
 length = 250;
 height = 75;
 
 rod_diameter = 10.4;
-rod_center_distance = 110-rod_diameter;
+rod_center_distance = 113-rod_diameter;
 
 
 difference(){
-	//translate([-width/2, 0, 0])
-	//	cube([width, length, 75]);
+	base();
 	
-	//translate([-width/2, length/2, 0])
-		base();
-	
-	#cutouts();
+	cutouts();
 	
 	xAbs = rod_center_distance/2;
 	for(x = [-xAbs, xAbs]){
 		translate([x, 0, 0])
 			rod();
+	}
+
+
+	for( y=[25:20:225] ){
+		translate([0, y, 1])
+			cylinder(d=15, h=height, $fn=6);
+	}
+
+	for( x=[-20,20], y=[35:20:215] ){
+		translate([x, y, 1])
+			cylinder(d=15, h=height, $fn=6);
+	}
+
+	for( x=[-40,40], y=[85:20:165] ){
+		translate([x, y, 1])
+			cylinder(d=15, h=height, $fn=6);
+	}
+	for( x=[-60,60], y=[105:20:145] ){
+		translate([x, y, 1])
+			cylinder(d=15, h=height, $fn=6);
 	}
 }
 
