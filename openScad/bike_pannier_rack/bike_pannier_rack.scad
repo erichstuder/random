@@ -39,9 +39,9 @@ module base(){
 
 module rod(){
 	active_length = 180;
-	translate([0, 20, 0])
+	translate([0, 19, 0])
 		rotate([-90, 0, 0])
-			cylinder(d=rod_diameter, h=active_length);
+			cylinder(d=rod_diameter, h=active_length+2);
 }
 
 
@@ -49,10 +49,10 @@ module cutouts(){
 	translate([0, length/2-15, 0])
 		side_cutout_raw();
 	
-	translate([0, 279, 0])
+	translate([0, 280, 0])
 		side_cutout_raw();
 	
-	translate([0, -59, 0])
+	translate([0, -60, 0])
 		side_cutout_raw();
 	
 	module side_cutout_raw(){
