@@ -1,1 +1,0 @@
-start "" "C:\Program Files\QCAD\qcad.exe" "-always-load-scripts" "-enable-script-debugger" "-rescan"
