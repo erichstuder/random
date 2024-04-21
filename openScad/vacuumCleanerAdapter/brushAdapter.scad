@@ -10,7 +10,7 @@ difference(){
 }
 
 module bottom(height){
-	cylinder(d=31.3, h=height);
+	cylinder(d=31.5, h=height);
 }
 
 module top(){
