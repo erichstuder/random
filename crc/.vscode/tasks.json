@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build app",
+            "type": "shell",
+            "command": "cargo build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "build tests",
+            "type": "shell",
+            "command": "cargo test --no-run",
+            "group": {
+                "kind": "test"
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+    ]
+}
